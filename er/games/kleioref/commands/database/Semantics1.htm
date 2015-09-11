@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der</b> <b>Parameter semantics:<br>
+<br>
+</b>Der Parameter semantics erwartet die Parameterwerte <b>yes</b> und <b>
+no</b>. Letzteres ist das Standardverhalten des Systems. Der Parameter steuert
+die L&ouml;schung von Datenbasen. Wird ein database-Befehl ausgef&uuml;hrt
+und dabei der Parameter <a href="Overwrite1.htm">overwrite</a>
+ mit dem Parameterwert yes angegeben<b>, </b>so l&ouml;scht Kleio ggf. den
+Inhalt einer bestehenden Datenbank. Allerdings bleiben in der Umgebung der
+Datenbank die Definitionen f&uuml;r die Gruppen und Elemente &nbsp;der Datenbank
+erhalten. <br>
+<br>
+Dies kann zu unangenehmen &nbsp;Folgen f&uuml;hren. Wird etwa in einer Datenbank
+mit dem Namen "Datenbank1" eine Element "nummer" definiert und diesem der
+Datentyp number zugewiesen, so bleibt diese Definition auch dann g&uuml;ltig,
+wenn der Inhalt von "Datenbank1" durch Ausf&uuml;hrung des Befehls database
+und Angabe von overwrite=yes gel&ouml;scht wird. Wenn nun eine weitere Datenbank
+erstellt wird, in der ebenfalls ein Element des Namens "nummer" vorgesehen
+ist, so setzt Kleio f&uuml;r dieses Element denselben Datentyp voraus. Ein
+&auml;hnliches Problem stellt sich, wenn in "Datenbank1" eine bestimmte Gruppe
+definiert wird, deren Name in weiteren Datenbanken Verwendung finden soll.
+Kleio erwartet in diesem Fall, da&szlig; die Gruppen jeweils entsprechend
+aufgebaut sind.<br>
+<br>
+Anders ist das Systemverhalten, wenn eine Datenbank mit overwrite=yes und
+zugleich mit semantics=yes &uuml;berschrieben wird. In diesem Falle l&ouml;scht
+Kleio nicht nur den Inhalt der betreffenden Datenbank, sondern entfernt auch
+alle definitorischen Angaben zu Elementen und Gruppen aus der Umwelt. Damit
+k&ouml;nnen die betreffenden Elemente oder Gruppe in einer anderen Datenbank
+frei verwendet werden.<br>
+<br>
+Ein entsprechender database-Befehl mu&szlig; daher der folgenden Form aufweisen:<br>
+<br>
+database name=datenbank1;first=p;overwrite=yes;semantics=yes<br>
+<br>
+<br>
+  
+<p><br>
+ <br>
+  </p>
+ 
+</body>
+</html>

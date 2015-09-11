@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                                         
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+  <title>grouneighbour</title>
+                                                                        
+ 
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+                                         
+  <meta name="CREATED" content="20020531;18202016">
+                                         
+  <meta name="CHANGEDBY" content=" ">
+                                         
+  <meta name="CHANGED" content="20020604;18334350">
+                                          
+  <style>
+
+
+
+        <!--
+
+
+
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+
+
+
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+
+
+
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+                A:visited { color: #666666; font-size: 12pt }
+
+
+
+                A:link { color: #666666; font-size: 12pt }
+
+
+
+        -->
+
+
+
+        </style>
+</head>
+<body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+                    
+<p class="h">Die Funktion :neighbour[]</p>
+            Die Funktion <b>:neighbour[]</b> erlaubt die Auswahl einzelner 
+Bilder innerhalb    von Bildgruppen. Die jeweiligen Bildgruppen m&uuml;ssen 
+durch eine entsprechende    Image-Vereinbarung innerhalb eines <a
+ href="../commands/item/index.htm" target="_blank">item</a>-Kommandos definiert 
+ sein. Innerhalb der Bildgruppe erm&ouml;glicht <b>:neighbour[]</b> die Adressierbarkeit 
+ in dem Sinne, da&szlig; das erste oder das letzte Bild innerhalb der Gruppe 
+ oder das dem aktuellen Bild unmittelbar vorangehende oder nachfolgende Bild 
+ ausgew&auml;hlt werden k&ouml;nnen.<br>
+  <br>
+  Die Funktion gehorcht folgender Sytnax: <b>:neighbour[:element,Schl&uuml;sselwort1,Schl&uuml;sselwort2]</b>
+ <br>
+  <br>
+ Das Element mu&szlig; dem Datentyp image entsprechen. Als erste Schl&uuml;sselworte 
+k&ouml;nnen <b>previous</b>, <b>next</b>, <b>last</b> und <b>first </b>eingesetzt
+ werden. Das zweite Schl&uuml;ssselwort ist optional und kann <b>group</b> 
+oder <b>document</b> lauten. Folgende Tabelle erl&auml;utert die Funktion 
+bei Eu&iacute;nsatz von group als zweitem Schl&uuml;sselwort:<br>
+  <br>
+   
+<table cellpadding="2" cellspacing="2" border="1" width="40%"
+ align="center">
+    <tbody>
+      <tr>
+        <td valign="top" width="40%" align="center"><u><b>Schl&uuml;sselwort</b></u><br>
+        </td>
+        <td valign="top" width="35%" align="center"><b><u>Bildgruppe</u></b><br>
+        </td>
+        <td valign="top" align="center"><u><b>Bildfolge<br>
+        </b></u>(image-items)<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%"><br>
+        </td>
+        <td valign="top" width="35%" align="center"><br>
+        </td>
+        <td valign="top" align="center"><br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%" align="right"><br>
+        </td>
+        <td valign="top" width="35%" align="center">xyz<br>
+        </td>
+        <td valign="top" align="center">009<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%" align="right"><b>first<br>
+        </b></td>
+        <td valign="top" width="35%" align="center" bgcolor="#ffcccc">xzz<br>
+        </td>
+        <td valign="top" align="center">001<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%"><br>
+        </td>
+        <td valign="top" width="35%" align="center" bgcolor="#ffcccc">xzz<br>
+        </td>
+        <td valign="top" align="center">002<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%" align="right"><b>previous<br>
+        </b></td>
+        <td valign="top" width="35%" align="center" bgcolor="#ffcccc">xzz<br>
+        </td>
+        <td valign="top" align="center">003<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%" align="right" bgcolor="#ffcccc"><b>group<br>
+        </b></td>
+        <td valign="top" width="35%" align="center" bgcolor="#ffcccc">xzz<br>
+        </td>
+        <td valign="top" align="center" bgcolor="#ffcccc">004<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%" align="right"><b>next<br>
+        </b></td>
+        <td valign="top" width="35%" align="center" bgcolor="#ffcccc">xzz<br>
+        </td>
+        <td valign="top" align="center">005<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%"><br>
+        </td>
+        <td valign="top" width="35%" align="center" bgcolor="#ffcccc">xzz<br>
+        </td>
+        <td valign="top" align="center">006<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top"><br>
+        </td>
+        <td valign="top" align="center" bgcolor="#ffcccc" width="35%">xzz<br>
+        </td>
+        <td valign="top" align="center">007<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" align="right"><b>last<br>
+        </b></td>
+        <td valign="top" align="center" bgcolor="#ffcccc" width="35%">xzz<br>
+        </td>
+        <td valign="top" align="center">008<br>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="40%"><br>
+        </td>
+        <td valign="top" width="35%" align="center">xzy<br>
+        </td>
+        <td valign="top" align="center">001<br>
+        </td>
+      </tr>
+       
+  </tbody>  
+</table>
+  <br>
+  <br>
+  Durch eine Imagedefinition seien acht Bilder zur Bildgruppe "xzz" zusammengefa&szlig;t. 
+Durch eine bestimmte Datenbankabfrage wird ein Bild ausgew&auml;hlt, welches 
+der Nummer "004" innerhalb der Bildgruppe entsprecht. Durch Einsatz der Funktion 
+:neighbour[] ist es nun m&ouml;glich, innerhalb der Bildgruppe ausgehend von
+diesem Bild weitere Bilder zu adressieren.<br>
+  <br>
+  Die Angabe <b>:neighbour[:bildnummer,first,group]</b> adressiert hier das
+ erste Bild innerhalb der Bildgruppe. Analog dazu w&uuml;rde <b>last </b>das
+ letzte Bild ausw&auml;hlen, w&auml;hrend &nbsp;<b>previous </b>und <b>next</b>
+ das jeweils vorherhige oder nachfolgende ansteuern. <br>
+   <br>
+      <br>
+ 
+</body>
+</html>

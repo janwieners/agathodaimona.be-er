@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der Parameter continue:<br>
+<br>
+</b>Der Parameter continue erwartet die Angaben yes oder no. &nbsp;Yes ist
+das Standardverhalten des Systems. Der Parameter bezieht sich auf die Darstellung
+von Verkn&uuml;pfungen &nbsp;die mittels des Datentyps relation erzeugt wurden.<br>
+<br>
+Man nehme die folgende Aufgabe:<br>
+<br>
+query name=basdat;part=per<br>
+write&nbsp; part=:name,:fre/m:name<br>
+stop&nbsp; <br>
+<br>
+Es wird hier aus der Datenbank "basdat" das Element :name ausgegeben, gefolgt
+von der Ausgabe des Elements :name aus der Datenbank "fre", die durch das
+Element :fre des Typs relation angesprochen wird. <br>
+<br>
+Standardm&auml;&szlig;ig wird hier folgende Ausgabe erzeugt:<br>
+<br>
+per (2 = "DOK050295") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABELE&nbsp;&nbsp; <br>
+&gt; per (2 = "DOK050295") :&nbsp; ---&gt; &lt;fre&gt;fam (3711 = "FRE-60-27")
+: &gt; &gt; <br>
+fam (3711 = "FRE-60-27") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Abele&nbsp;&nbsp; <br>
+&lt;&nbsp;&nbsp;&nbsp; <br>
+<br>
+Die Verbindung zwischen beiden Datenbanken wird durch die Symbolik der Pfeile
+angedeutet. Durch Angabe von continue=no wird dieses Ausgabeschema unterdr&uuml;ckt.
+Es werden nur mehr die Daten aus beiden Datenbanken ausgegeben:<br>
+<br>
+query name=basdat;part=per<br>
+write&nbsp; part=:name,:fre/m:name;cont=no<br>
+stop&nbsp; <br>
+<br>
+per (2 = "DOK050295") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABELE&nbsp;&nbsp; <br>
+fam (3711 = "FRE-60-27") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Abele&nbsp;&nbsp; <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  
+<p> </p>
+</body>
+</html>

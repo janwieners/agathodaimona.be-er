@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+             
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+  <title></title>
+                         
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+             
+  <meta name="CREATED" content="20020531;18202016">
+             
+  <meta name="CHANGEDBY" content=" ">
+             
+  <meta name="CHANGED" content="20020604;18334350">
+             
+  <style>
+
+        <!--
+
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+                A:visited { color: #666666; font-size: 12pt }
+
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+                A:link { color: #666666; font-size: 12pt }
+
+        -->
+
+        </style>
+</head>
+                                                                <body
+ link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+      
+<p class="h">Die Funktion :chain[]</p>
+   
+<p class="p">Die Funktion :chain[] ver&auml;ndert das Systemverahlten bei 
+der Ausgabe von Mehrfacheintr&auml;gen im Kontext des write-Befehls. Standardm&auml;&szlig;ig 
+w&uuml;rde Kleio im write-Befehl alle Mehrfacheintr&auml;ge jeweils gemeinsam 
+ausgeben und ggf. weitere Daten nach der Ausgabe der Mehrfacheintr&auml;ge 
+anschlie&szlig;en. Man habe z.B. eine Datenbank, in der Das Element "abbildung" 
+als Mehrfacheintrag vorkommt. Hier erzeugt folgender write-Befehl:</p>
+   
+<p class="b"> write part=:abbildung,<br>
+           &nbsp;&nbsp;&nbsp;   :kuenstler,<br>
+   &nbsp;&nbsp;&nbsp;           :kurzbezeichnung<br>
+    </p>
+    
+<p class="p">die folgende Ausgabe:</p>
+   
+<p class="b"> satz (6 = "sat-6") : abbildung    ABB-007A.JPG             
+                      ABB-007B-D.JPG<br>
+   satz (6 = "sat-6") : kuenstler    Gelb, (Vorname und Daten unbekannt), 
+Meister der Familie.                                    (Meistermarke: R3 
+697)<br>
+   satz (6 = "sat-6") : kurzbezeichnung Prunkgartnitur:                 
+                  Kelch und Me&szlig;k&auml;nnchen mit Platte<br>
+     </p>
+ 
+<p class="p">Es werden also f&uuml;r "abbildung" zwei Nummern ausgegeben und
+anschlie&szlig;end die &uuml;brigen angeforderten Daten zu diesem Dokument.</p>
+   
+<p class="p">Das Systemverhalten &auml;ndert sich signifikant, wenn man hier 
+:chain[] einsetzt:</p>
+   
+<p class="b">  write part=:chain[:abbildung],<br>
+    &nbsp;&nbsp;&nbsp;          :kuenstler,<br>
+   &nbsp;&nbsp;&nbsp;           :kurzbezeichnung<br>
+   </p>
+   
+<p class="p">:Chain[] bewirkt nun, da&szlig; jeder Mehrfacheintrag f&uuml;r 
+sich ausgegeben wird und diesem die jeweils angeforderten weiteren Informationen 
+gesondert zugeordnet werden:</p>
+   
+<p class="b">ABB-007A.JPG<br>
+   satz (6 = "sat-6") : kuenstler    Gelb, (Vorname und Daten unbekannt), 
+Meister der Familie.                                     (Meistermarke: R3 
+697)<br>
+   satz (6 = "sat-6") : kurzbezeichnung Prunkgartnitur:                 
+                  Kelch und Me&szlig;k&auml;nnchen mit Platte<br>
+ <br>
+    sat-6 ABB-007B-D.JPG<br>
+   satz (6 = "sat-6") : kuenstler    Gelb, (Vorname und Daten unbekannt), 
+Meister der Familie.                                    (Meistermarke: R3 
+697)<br>
+   satz (6 = "sat-6") : kurzbezeichnung Prunkgartnitur:                 
+                  Kelch und Me&szlig;k&auml;nnchen mit Platte<br>
+                                        </p>
+   
+<p class="p">Das hei&szlig;t, das jeder Mehrfacheintrag f&uuml;r sich die 
+komplette Wiederholung der Gesamtausgabe bewirkt.</p>
+  <br>
+ 
+</body>
+</html>

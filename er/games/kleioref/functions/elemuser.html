@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>function,user</title>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                         
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                                               
+<p class="h">Die Funktion user</p>
+                                                             
+<p class="p">Die Funktion user hat folgende Form:<br>
+   </p>
+     
+<p class="b">:user[schl&uuml;sselwort]<br>
+   </p>
+     
+<p class="p">Sie bezieht sich auf das logische Objekt der    Klasse user,
+ das durch ein item-Kommando definiert sein mu&szlig;.&nbsp;<br>
+        </p>
+               
+<p class="p">Eine solche Definition hat die folgende Form:<br>
+        </p>
+           
+<p class="b">   item name=anwender_gruppe_institution;usage=user;overwrite=yes<br>
+        user password="einpasswort";type=group<br>
+      exit name=anwender_gruppe_institution<br>
+     </p>
+       
+<p class="p"> Wenn unter kleio eine Funktion (z.B. eine <a
+ href="http://www.hki.uni-koeln.de/kleio/new/commands/item/Procedure/index.htm"
+ target="_blank">katalogisierte Prozedur</a>)   und dabei die erste Stelle
+des <a href="http://www.hki.uni-koeln.de/kleio/prot.html"
+ target="_blank">Protokollcodes</a>   den Wert "1" annimmt, so m&uuml;ssen
+legale Userdaten (Name, Gruppe, Institution)   sowie das Pa&szlig;wort angegeben
+werden, damit die Funktion ausgef&uuml;hrt   wird. Dass hei&szlig;t, in der
+logischen Umwelt m&uuml;ssen ein entsprechender   User und das zugeh&ouml;rige
+Pa&szlig;wort bekannt sein. Dazu wiederum mu&szlig;   eine Definition vorliegen,
+die der obigen entspricht.<br>
+    </p>
+       
+<p class="p">Die Funktion User wiederum schreibt die Zugangsdaten des jeweils&nbsp; 
+authentifizierten Users als Daten des Typs text aus der Umwelt heraus. Man 
+ben&ouml;tigt dies, um wiederum (z.B. in JavaSkript-Anwendungen) eine Weitergabe 
+der Authentifizierungsdaten durchf&uuml;hren zu k&ouml;nnen. Die Anwendung 
+erfolgt ohne Schl&uuml;sselwort ist denkbar einfach:<br>
+    </p>
+       
+<p class="b">write part=:user[]<br>
+       </p>
+           
+<p class="p">Dies w&uuml;rde also in unserem Falle folgenden Wert zur&uuml;ckgeben:
+ "anwender_gruppe_institution"<br>
+  </p>
+   
+<p class="p">Daneben kann :user[] mit dem <u><b>Schl&uuml;sselwort "passwd"</b></u>
+ aufgerufen werden. In diesem Falle wird das jeweilige Pa&szlig;wort zur&uuml;ckgegeben.
+ Der Befehl<br>
+  </p>
+   
+<p class="b">write part=:user[passwd]<br>
+  </p>
+   
+<p class="p">w&uuml;rde also den Wert "einpasswort" zur&uuml;ckgeben.<br>
+  </p>
+   
+<p class="p"><br>
+           </p>
+           
+</body>
+</html>

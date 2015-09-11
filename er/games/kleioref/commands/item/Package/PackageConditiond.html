@@ -1,0 +1,63 @@
+
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE>Package - Direktive conversion - allgemein</TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+
+<p class="h">Die Direktive condition </p>
+<p class="p">
+Die Direktive condition erlaubt die Erstellung bedingter Verpackungsanweisungen. Das hei&szlig;t, es ist m&ouml;glich, verschiedene alternative Verpackungsanwesungen in einem Gesamtpaket anzubieten und diese jeweils mit einer Bedingung zu verkn&uuml;pfen. Je nachdem, welche der Bedingungen erf&uuml;llt ist, wird eine der Verpackungsanweisungen aus dem Gesamtpaket ausgef&uuml;hrt. Eine typische Anwendung besteht in folgendem Szenario:<br>
+<br>
+Es gibt mehrere Bilddatenbanken. Jedes Dokument der jeweiligen Bilddatenbank enth&auml;lt wenigstens eine Bildnummer. Die Bildnummern aller Datenbanken sind in einem <b>gemeinsamen Katalog </b>zusammengefa&szlig;t. Die physikalischen Speicherorte der zugeh&ouml;rigen Bilddateien unterscheiden sich von Datenbank zu Datenbank (unterschiedliche Verzeichnisse bzw. sogar unterschiedliche WWW-Server). Das wiederum bedeuetet, da&szlig; bei der Erstellung von Bild-URLs je nach Ursprungsdatenbank des Bildes eine andere Pfadangabe erstellt werden mu&szlig;. Da der Bildpfad durch eine Verpackungsanweisung generiert wird, mu&szlig; das Package als so "intelligent" sein, da&szlig; es erkennt, aus welclher Datenbank ein Bild stammt und welche Pfadangabe demnach f&uuml;r die jeweilige Bilddatei G&uuml;ltigkeit besitzen soll. <br>
+<br>
+Mit Hilfe der funktion :database[] liefert der Katalog den Namen der jeweiligen datenbank zur&uuml;ck, aus der die betreffende (zu verpackende) Bildnummer stammt. Diese Information wiederum kann in der Dirketive condition als Bedingung gesetzt werden, um eine der alternativen Verpackungsanweisungen auszuf&uuml;hren und damit also jenen Bildpfad zu generieren, der dem jeweiligen physikalischen Speicherort der zugeh&ouml;rigen Bilddatei entspricht.
+<br>
+<br>
+Konkret kann ein bedingtes Paket die folgende Form haben:<p class="b">
+
+item name=imgref;usage=package;overwrite=yes<br>
+note diese jetzt gesichert in pack.old<br>
+field start='&lt;table border=1 bordercolor="#939393" width="96%"&gt;\n<br>
+&nbsp; &lt;tr&gt;\n<br>
+&nbsp; &lt;th rowspan="6" width="25%"&gt;\n<br>
+&nbsp;&nbsp;&nbsp; &lt;a target="_blank" href="';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; first='"&gt;&lt;img border="0" src="';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit='"&gt;&lt;/a&gt;\n<br>
+&nbsp;&nbsp;&nbsp; &lt;/th&gt;'<br>
+condition current=argument;<br>
+&nbsp;&nbsp;&nbsp; condition='/catalogue[objektfiles,complete,:dump[argument]]:database[]="archgiessen"'<br>
+convert<br>
+&nbsp;&nbsp;&nbsp; current=dbimageid; <br>
+&nbsp;&nbsp;&nbsp; path=':package[:convert[:dump[dbimageid],zoomencode],giessenzoom]'<br>
+convert usage=first;<br>
+&nbsp;&nbsp;&nbsp; current=dbimageid;<br>
+&nbsp;&nbsp;&nbsp; path='/iterate[zaehler,add,1]:package[:dump[dbimageid],thumbnaila]'<br>
+<br>
+condition current=argument;<br>
+&nbsp;&nbsp;&nbsp; condition='/catalogue[objektfiles,complete,:conv[:dump[argument],cgiencode]]:database[]="uustb"'<br>
+convert<br>
+&nbsp;&nbsp;&nbsp; current=dbimageid;<br>
+&nbsp;&nbsp;&nbsp; path=':package[:dump[dbimageid],uustbzoom]'<br>
+convert usage=first;<br>
+&nbsp;&nbsp;&nbsp; current=dbimageid;<br>
+&nbsp;&nbsp;&nbsp; path='/iterate[zaehler,add,1]:package[:dump[dbimageid],thumbnaila]'<br>
+item name=imgref<br>
+<br>
+</p>
+
+</p>

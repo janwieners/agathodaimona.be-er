@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterarguments</title>
+</head>
+ <body bgcolor="#ffffff">
+   <b>Der Parameter cumulate</b><br>
+  <br>
+  Der Parameter cumulate erweitert die Funktionalit&auml;t des Parameters 
+<a href="substitu.HTM"> substitution</a>
+  .<br>
+  &nbsp;<br>
+  Standardm&auml;&szlig;ig beziehen sich die Ersetzungen durch substitution
+ nur auf jene Spalte des Registers, f&uuml;r welche der substitution-Parameter
+ gesetzt wurde. Durch Angabe des Parameters cumulate mit dem Parameterwert
+ yes (no ist impliziter Standard) wird das Systemverhalten dahingehend abgewandelt,
+ da&szlig; die Ersetzungsanweisungen ab jener Spalte gelten, bei der der
+Parameter  cumulate erstmals eingetragen wird. Sie gelten bis zu jener Spalte,
+bei der der  cumulate-Parameter erneut aufscheint. Dabei bezieht sich die
+Ersetzung auf alle Spalten, die durch cumulate definiert sind. Das hei&szlig;t,
+das das Ersetzungszeichen nur einmal f&uuml;r den Inhalt aller betroffenen
+Spalten ausgegeben wird.<br>
+  <br>
+  index part=:name;substitution="---";cumulate=yes;part=:vorname;cumulate=yes;part=:hko<br>
+  <br>
+  Hier werden bei gleichen Familien- und Vornamen jeweils drei Bindestriche
+ als Ersetzungszeichen angef&uuml;hrt. F&uuml;r den Herkunftsort (:hko) ist
+ keine Ersetzung vorgesehen, da der zweite cumulate-Parameter bereits bei
+:vorname gesetzt  ist.<br>
+<br>
+Der Effekt ist folgender:<br>
+<br>
+BAUSCH WILHELM STETTEN DOK001276 <br>
+&nbsp;&nbsp;&nbsp; <br>
+BAY CARL ESSL DOK873171 <br>
+&nbsp;&nbsp;&nbsp; <br>
+--- CHRISTIAN ERDMANNSHAUSEN DOK000394 <br>
+&nbsp;&nbsp;&nbsp; <br>
+--- ESSL DOK873171 <br>
+&nbsp;&nbsp;&nbsp; <br>
+--- DAVID ERDMANNSHAUSEN DOK000394 <br>
+<br>
+<br>
+Bei der Person Christian Bay (DOK000394) wurde der Familienname ersetzt,
+da er mit dem Namen des Vorg&auml;ngerdokuments (DOK873171) &uuml;bereinstimmt.
+Bei der n&auml;chsten Person namen Christian Bay (DOK873171) wurden Name
+und Vorname ersetzt, da sie mit dem Vorg&auml;ngerdokument &uuml;bereinstimmen.
+Folglich erscheinen im Listing nur die Ersetzungszeichen, die Herkunftsangabe
+und die Identifikationsnummer.<br>
+<br>
+<br>
+  <br>
+  <br>
+     
+</body>
+</html>

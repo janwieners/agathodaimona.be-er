@@ -1,0 +1,84 @@
+<command>
+<name> bridge </name>
+<type> Executable / Definition </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<note>
+When the type parameter has the value "definitions", this command introduces
+a definition. Click <A HREF="..."> here </A> to see the directives available than.
+<directivelist>
+<directive>
+<name> Bridge</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> View value</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Visibility</name>
+<parametertype> Visibility value</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+</directivelist>
+</note>
+
+
+<parameterlist>
+<parameter>
+<name>Bridge</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>definitions</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                   
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>preparation</title>
+</head>
+ <body>
+<b>Der Parameter preparation:</b><br>
+<br>
+<br>
+         
+<p>Der Parameter preparation erwartet als Parameterwert den Namen einer Konversionsvereinbarung&nbsp; 
+ (i.e. eines logischen Objekts der Klasse Conversion).</p>
+         
+<p>Preparation bezieht sich auf die gesamte Registerzeile und bewirkt, da&szlig;
+  diese <b>vor</b> Erstellung der Sortierung entsprechend den Regeln der
+Konversionsvereinbarung  behandelt wird. Das bedeutet, da&szlig; die Ersetzungen
+nicht nur <b>das Aussehen </b>der Daten, sondern auch<b> die Sortierordnung</b>
+&nbsp; beeinflussen.  Der Parameter preparation ist damit das funktionelle
+Gegenst&uuml;ck zum Parameter <a href="After.htm">after</a>
+ .</p>
+         
+<p>Gegeben sei folgendes logische Objekt der Klasse conversion: <br>
+     </p>
+         
+<p>item name=<b>ohnevon</b>;<br>
+       &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ usage=conversion;<br>
+       &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ type=permanent;<br>
+       &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ overwrite=yes  <br>
+      type start=yes<br>
+      substitution current=" von";<br>
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result=""<br>
+      exit name=<b>ohnevon</b></p>
+         
+<p>Die Ersetzungsregeln ordnen in diesem Falle an, da&szlig; die Zeichenkette 
+  "von " (unter Einschlu&szlig; der Leerstelle), sofern sie am Zeilenanfang 
+  auftritt, durch nichts ersetzt wird, also entf&auml;llt. Der Name "ohnevon" 
+  dient der Identifikation der Konversionsvereinbarung und ist frei w&auml;hlbar. 
+  </p>
+         
+<p>Im&nbsp; Befehl </p>
+         
+<p>index part=:name;preparation=<b>ohnevon</b></p>
+         
+<p>stellt der Parameter preparation den Bezug zur Konversionsspezifikation 
+  des Namens "ohnevon" her und bewirkt damit, da&szlig; der Name "von Altenstein" 
+  in der Ausgabe als "Altenstein" erscheint. Zugleich wird&nbsp; er entsprechend 
+  dem oben genannten Systemverhalten in der Sortierfolge nicht mehr als "von 
+  Altenstein" sondern nur mehr als "Altenstein" eingeordnet. Folglich erscheint 
+  er konsequenterweise z.B. vor "Beilner".</p>
+         
+<p><br>
+      Altenstein DOK000085</p>
+         
+<p>Beilner DOK000456</p>
+         
+<p></p>
+         
+<p><br>
+      Will man dagegen erreichen, da&szlig; das Ergebnis der Ersetzungen
+zwar   das Aussehen der Daten, nicht aber&nbsp; die Sortierordnung beeinflu&szlig;t, 
+  so mu&szlig; man statt preparation den Parameter <a href="After.htm">  
+after</a>
+<a href="file:///C%7C/doku/NEW/COMMANDS/INDEX/After.htm"></a>
+ angeben.&nbsp;   </p>
+         
+<p><br>
+     <br>
+     </p>
+         
+</body>
+</html>

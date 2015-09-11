@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>beisp.html</title>
+</head>
+<body>
+<pre>item name=indexfile;usage=package;overwrite=yes
+fields
+   start='&lt;a HREF="';
+    first='.html"&gt;';
+    limit='&lt;/a&gt;'
+convert current=buchst;path=':substring[:conv[:dump[buchstabe],tausch],1,1]'
+convert path='substring[:conv[:dump[buchstabe],tausch],1,1]';usage=first
+exit name=indexfile
+
+item name=indexwrap;usage=package;overwrite=yes
+fields start='&lt;html&gt;&lt;head&gt;&lt;title&gt;Alphabetischer Index der Haushaltsvorst&amp;auml;nde&lt;/title&gt;
+     &lt;STYLE&gt;
+        &lt;!--
+                P { font-size: 14pt }
+                P.p { margin-bottom: 0.2cm; font-size: 14pt }
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.sdfootnote { margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0cm; font-size: 10pt }
+                                 A:link { color: #666666; font-size: 14pt }
+                                A:hover { color: #226666; font-size: 16pt }
+                                A:visited { color: #444400 }
+   --&gt;
+        &lt;/STYLE&gt;
+   &lt;/head&gt;
+  &lt;body FONT SIZE="4"  BGCOLOR="#FFFF00"&gt;
+  &lt;center&gt;&lt;H1&gt;Alphabetischer &lt;b&gt; Index der Haushaltsvorst&amp;auml;nde&lt;/H1&gt;&lt;br&gt;W&amp;auml;hlen Sie einen Anfangsbuchstaben&lt;br&gt;&lt;br&gt;&lt;br&gt;';
+       limit='&lt;/center&gt;&lt;/FONT&gt;&lt;/body&gt;&lt;/html&gt;'
+exit name=indexwrap
+
+
+
+query name=kurs;part=m:order[]=not null and :copy[:conv[:name,tausch],buchstabe]=not null
+index part=:package[:dump[buchstabe],indexfile];maxi=1;type=l
+cont target="index.html";overwrite=yes;form=html;package=indexwrap
+
+
+
+item name=pregfiles;usage=package;overwrite=yes
+fields start="";
+       limit=".html"
+exit name=pregfiles<br><br>item name=pregwrap;usage=package;overwrite=yes
+fields start='&lt;html&gt;&lt;head&gt;&lt;title&gt;Personenregister&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;FONT SIZE="4"&gt;
+  &lt;center&gt;&lt;H1&gt;Personenregister&lt;/H1&gt;&lt;/center&gt;\n';
+       limit='&lt;/FONT&gt;&lt;/body&gt;&lt;/html&gt;'
+exit name=pregwrap
+
+item name=signwrap;usage=package;overwrite=yes
+fields start='&lt;html&gt;&lt;head&gt;&lt;title&gt;Personenfile&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;FONT SIZE="4"&gt;
+  &lt;center&gt;&lt;H1&gt;Person&lt;/H1&gt;&lt;/center&gt;\n';
+       limit='&lt;/FONT&gt;&lt;/body&gt;&lt;/html&gt;'
+exit name=signwrap<br><br>item name=register;usage=package;overwrite=yes
+fields start='&lt;p&gt;&lt;A HREF="';
+       limit='.html"&gt; &lt;IMG border="0" SRC="pfeil.gif"&gt;&lt;/A&gt;'
+exit name=register
+
+
+query name=kurs;part=fam
+index target=m:package[:substr[:conv[:name,tausch],1,1],pregfiles];form=html;
+         overwrite=overwrite;package=pregwrap;
+      part=root[0]:package[:sign[],register];without=yes;
+      part=m:conversio[:name,tausch];write=no;
+      part=:name;
+      limit=": ";
+      part=:coll[:vorname]
+
+cont
+
+query name=kurs;part=fam
+index target=:package[:id,pregfiles];form=html;
+         overwrite=overwrite;package=signwrap;
+      part=m:form["&lt;br&gt;&lt;b&gt;"];part=:name;limit='&lt;/b&gt;&lt;br&gt;';part=:coll[:vorname];limit='&lt;br&gt;';
+      part=:coll[:beruf];limit='&lt;br&gt;';
+       part=:gebdat;limit=' - ';part=:todat;limit='&lt;br&gt;&lt;br&gt;Verheiratet in erster Ehe mit: ';
+      part=part[hei,1]/f:geborene;limit=", ";part=:coll[:vorname];
+       limit='&lt;br&gt;&lt;br&gt;Kinderzahl in der Erstehe:  ';part=root[0]/m/part[hei,1]/last[k]:order[];type=l</pre>
+</body>
+</html>

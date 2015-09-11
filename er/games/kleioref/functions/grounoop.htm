@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Funktion,nooperation</title>
+                                                                        
+                                                                        
+                                     
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body bgcolor="#e6e6e6">
+                                                       
+<p class="h">Die Funktion nooperation[]</p>
+                                                     
+<p class="p">Die Funktion nooperation[] unterdr&uuml;ckt die Ausf&uuml;hrung 
+  einer Datenbankaktion. Gegenw&auml;rtig kennt nooperation[] keine Argumente.&nbsp;<br>
+     </p>
+         
+<p class="p">Es mag paradox klingen, eine Funktion einzuf&uuml;hren, die die
+Datenbank daran hindert, eine Ausgabe vorzunehmen. Hier mu&szlig; man sich
+freilich die Logik der Datenausgabe vor Augen halten: Grunds&auml;tzlich entspricht
+jedes Dokument, das einer Bedingung des <a
+ href="../commands/query/index.htm" target="_blank">query-Befehl</a> entspricht, 
+  mindestens eine Ausgabe in einem anschlie&szlig;enden Auswertungskommando. 
+  Das hei&szlig;t, da&szlig; z.B. die Eingabe<br>
+     </p>
+         
+<p class="b">query name=piranesi;part=row<br>
+     write part=:kuenstler<br>
+     </p>
+         
+<p class="p">alle Mehrfacheintr&auml;ge des Elements "kuenstler" aus allen 
+  Dokumenten "row" ausgeben w&uuml;rde. Die Eingabe<br>
+     </p>
+         
+<p class="b">query name=piranesi;part=row:kuenstler="Piranesi"<br>
+      write part=:query[]<br>
+     </p>
+         
+<p class="p">w&uuml;rde immer noch alle Elemente des Inhalts "Piranesi" aus 
+  allen Dokumenten ausgeben.<br>
+    </p>
+       
+<p class="p">Nun kann es aber notwendig sein, f&uuml;r bestimmte Operationen,
+  z.B. zur Generierung einer dynamischen Webseite, lediglich eine einzelne
+ Ausgabe zu erzeugen. Dazu ist es wiederum nicht n&ouml;tig auf den Inhalt
+ der Datenbank (oder einer gesamten Datenbankumwelt) zuzugreifen. Vielmehr
+ ist es hinriechend, festzustellen, da&szlig; die Datenbank oder die Umwelt
+ existieren, um dann unabh&auml;ngig vom Inhalt der Datenbank oder der Datenbankumwelt
+ einen Output zu generieren. <br>
+    </p>
+       
+<p class="p">Die Funktion <b>nooperation[]</b> weist in diesem Falle das
+System an, keine weiteren Datenbankoperationen vorzunehmen. Das wiederum
+hei&szlig;t aber nicht, da&szlig; dem <a
+ href="../commands/query/index.htm" target="_blank">query-Befehl </a>keine
+weiteren Kommandos mehr folgen k&ouml;nnten. es k&ouml;nnen prinzipiell alle
+&uuml;blichen Auswertungskommando angeschlossen werden. Der Befehl <br>
+     </p>
+         
+<p class="b">query name=piranesi;part=nooperation[]<br>
+     write part=:kuenstler<br>
+     </p>
+           
+<p class="p">ist also syntaktisch legal, wenngleich er kein Ergebnis zeitigen 
+ wird, da die Wirksamkeit des query-Befehls durch die Funktion nooperation[] 
+ aufgehoben wird. Anders hingegen wird folgender Befehl:<br>
+   </p>
+     
+<p class="b">query name=piranesi;part=nooperation[]<br>
+     write part=<br>
+&nbsp; &nbsp;&nbsp; :printable["<u>Der beliebige Inhalt einer Webpage, <br>
+ </u>&nbsp; &nbsp; &nbsp;<u>deren Quelltext&nbsp;  hier&nbsp;eingetragen</u><u>
+wird</u>"]<br>
+   </p>
+     
+<p class="p">Die Funktion <a href="elemprintable.html" target="_blank">:printable</a>
+ generiert die Ausgabe einer beliebigen Zeichenkette. Nachdem der Inhalt
+dieser  Zeichenkette unabh&auml;ngig vom Inhalt der angesprochen Datenbank
+(bzw. deren Umwelt) existiert, kann die Zeichenkette also auch dann ausgegeben
+werden, wenn keine eigentliche Datenbankoperation erfolgt. Folglich wird
+das write-Kommando genau einmal abgearbeitet:<br>
+  </p>
+   
+<p class="b">Kleio Version 10.0.0 --- 04.04.2003, 15:02:18<br>
+  Historical Workstation Project / UNIX version<br>
+  <br>
+  query name=piranesi;part=nooperation[]<br>
+  write part=<br>
+&nbsp; &nbsp; &nbsp;:printable["<u>Der beliebige Inhalt einer Webpage, <br>
+</u>&nbsp; &nbsp; &nbsp;<u>deren Quelltext&nbsp;  hier&nbsp;eingetragen</u><u>
+wird</u>"]<br>
+  <br>
+  stop<br>
+  <br>
+  <br>
+  <br>
+  Die Ausfuehrung der von Ihnen gestellten Aufgabe beginnt.<br>
+  <br>
+ <u> Der beliebige Inhalt einer Webpage, deren Quelltext&nbsp; hier&nbsp;</u><u>eingetragen</u><u> 
+wird</u><br>
+  Die Ausfuehrung der von Ihnen gestellten Aufgabe wurde beendet.<br>
+  <br>
+  Auf Wiedersehen bei Ihrer naechsten Kleio Sitzung!<br>
+</p>
+ 
+<p class="p"> Es wurde also unabh&auml;ngig vom Datenbankinhalt genau eine
+"feste Ausgabe" generiert.<br>
+</p>
+<p class="p">Vgl. auch <a href="elemnoop.htm">:nooperation[]</a><br>
+</p>
+<br>
+                  
+</body>
+</html>

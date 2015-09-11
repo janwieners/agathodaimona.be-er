@@ -1,0 +1,7 @@
+s/&text/<tt>text<\/tt>/
+s/&number/<tt>number<\/tt>/
+s/&date/<tt>date<\/tt>/
+s/&category/<tt>category<\/tt>/
+s/&relation/<tt>relation<\/tt>/
+s/&location/<tt>location<\/tt>/
+s/&image/<tt>image<\/tt>/

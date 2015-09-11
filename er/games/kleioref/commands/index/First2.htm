@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterarguments</title>
+</head>
+ <body bgcolor="#ffffff">
+  <b>Der Parameter first:</b><br>
+  <br>
+  <br>
+  Standardm&auml;&szlig;ig&nbsp; generiert der Index-Befehl eine aufsteigende 
+ Sortierfolge. Die Stellung der einzelnen Zeichen (Buchstaben, Ziffern, Sonderzeichen) 
+innerhalb der Sortierordnung wird durch ein logisches Objekt der Klasse order 
+bestimmt, das den Namen &nbsp;order tr&auml;gt.<br>
+ <br>
+ Durch den Befehl <br>
+ <br>
+ description name=order;type=order<br>
+ <br>
+ kann man sich die standardm&auml;&szlig;ig eingestellte Sortierordung anzeigen 
+lassen.&nbsp; Ebenso ist es m&ouml;glich, durch entsprechende Umdefinition 
+des logischen Objekts order oder durch Neuanlage einer anderen Sortierordnung 
+mittels des <a href="../item/disc.htm">item</a>
+ -Befehls eine andere als die voreingestellte Sortierordnung anzulegen (vgl.
+hierzu auch den Parameter <a href="Order.htm">order</a>
+). Grunds&auml;tzlich aber gilt aber auch dann, da&szlig; alle Daten der gew&auml;hlten
+Sortierordnung entsprechend in aufsteigender Folge ausgegeben werden.<br>
+ <br>
+ &nbsp;Durch Angabe des Parameters first mit dem parameterwert limit  (implizite 
+Standardvorgabe: start) kann man aber eine absteigende Sortierfolge  explizit 
+einstellen.<br>
+   <br>
+   Der Befehl <br>
+   <br>
+   index part=:name;first=limit<br>
+   <br>
+   erzeugt damit folgendes Register:<br>
+   <br>
+   ZWINK DOK051064<br>
+    &nbsp; &nbsp; <br>
+   ZWEIGLEN DOK977124 <br>
+    &nbsp; &nbsp; <br>
+   ZWEIGLE DOK999390 <br>
+    &nbsp; &nbsp; <br>
+    &nbsp; ....<br>
+   <br>
+   <br>
+   ACKER DOK001199<br>
+   <br>
+   ABT DOK872101<br>
+   <br>
+   ABELE DOK050295<br>
+   <br>
+   <br>
+    <br>
+       
+</body>
+</html>

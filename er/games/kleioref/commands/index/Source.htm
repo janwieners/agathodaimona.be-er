@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Source.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+  <b>Der Parameter source:</b>  
+<p><br>
+ Der Parameter source dient der Differenzierung innerhalb von Aufgaben mit 
+mehreren Index-Kommandos. Der Parameter <a href="Line1.htm">lines</a>
+  weist bei Angabe des Parameterwerts yes das System an, bei der Reihenfolge 
+der Datenausgabe ggf. zu unterscheiden, ob eine Information durch den ersten, 
+zweiten dritten usw. Index-Befehl erzeugt wurde. Durch Angabe des Parameters 
+source, der als Parameterwert eine ganze Zahl erwartet, k&ouml;nnen den einzelnen 
+Index-Befehlen explizit Nummern zugewiesen werden, die dann nach den Regeln&nbsp; 
+des <a href="Line1.htm">lines</a>
+ -Parameters als Sortierkriterium gelten k&ouml;nnen. Dabei k&ouml;nnen mehrere 
+Index-Befehle dieselbe Nummer erhalten.</p>
+ 
+<p>Ein Beispiel w&auml;re folgende Aufgabe:</p>
+ 
+<p><br>
+   index part=part[kar,1]:beruf;<a href="file:///C:/doku/NEW/commands/index/Line1.htm">
+ lines</a>
+  =yes;source=1<br>
+    index part=part[kar,2]:beruf;source=2<br>
+ index part=pdat[kar,3]:beruf;source=2<br>
+ index part=pdat[kar,4]:beruf;source=2</p>
+ 
+<p>Hier werden alle Angaben aus der ersten Zeile als "erster Index-Befehl" 
+betrachtet, w&auml;hrend die &uuml;brigen drei Befehle hinsichtlich der Sortierung 
+als "zweiter Index-Befehl" gelten.<br>
+  </p>
+ 
+<p> </p>
+ 
+</body>
+</html>

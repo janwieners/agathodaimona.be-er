@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<TITLE>convert - text</TITLE>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<p class="h">Die Direktive convert</p>
+<p class="p">Die Direktive convert erm&ouml;glicht die Adhoc-Umwandlung des Inhalts eines beliebigen Elements, das durch die jeweilige Package-Vereinbarung verpackt wird. "Umwandlung" bedeutet hier, da&szlig; der Inhalt des jeweiligen Elements durch bestimmte Vereinbarungen ver&auml;ndert und/oder durch zus&auml;tzliche Angaben erg&auml;nzt werden kann. Zus&auml;tzliche Vereinbarungen k&ouml;nnen z.B. Objekte des Typs conversion oder package sein. In letzterem Falle wird dann also innerhalb eines Package ein weiteres Package aufgerufen.
+<br>
+ Ein typischer Einsatzzweck der Direktive kann darin bestehen, in einer Bilddatenbank eine Bildnummer zu einem URL zu erweitern. </p>
+ <p class="b"> convert current=thumbnailid;<br>
+&nbsp;&nbsp;&nbsp; path=':form["http://gilgamesch2.hki.uni-koeln.de/Prometheus1/dadaweb/res120x90/B"]<br>
+&nbsp;&nbsp;&nbsp;|+:dump[thumbnailid]|+:form[".jpg"]'<br>
+<br></p>
+<p class="p">Hier wird eine lokale Variable mit dem Namen "thumbnailid" angelegt, die im konkreten Fall eine Bildnummer anth&auml;lt. Der Wert der Bildnummer sei "B4555". Diese Angabe wiederum wird durch die Direktive convert um eine Pfadangabe und die Endung ".jpg"  erg&auml;nzt. Beide Erg&auml;nzungen werden schlicht mit der Funktion :form[] eingef&uuml;hrt und durch den entsprechenden Verbindungsoperator im Rahmen einen Stringoperation an die Bildnummer angeschlossen. Man erh&auml;lt damit fogenden URL:</p>
+<p class="b"> http://gilgamesch2.hki.uni-koeln.de/Prometheus1/dadaweb/res120x90/B4555.jpg </p>
+<p class="p">Die Bildnummer ist also im Rahmen der lokalen Ausgabe zu einem URL konvertiert worden.</p>
+</BODY>
+</HTML>

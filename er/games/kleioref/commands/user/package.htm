@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>user, package</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Win32)">
+	<META NAME="CREATED" CONTENT="20051021;12190080">
+	<META NAME="CHANGED" CONTENT="20051021;12194286">
+	<STYLE>
+	<!--
+		P.h { font-size: 14pt; font-weight: bold; text-align: center }
+		A:link { color: #666666; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="de-DE" LINK="#666666" BGCOLOR="#e6e6e6" DIR="LTR">
+<P CLASS="h">Der Parameter package</P>
+<P>Der Parameter package erwartet als Angabe den Namen eines Kleio
+packages, das durch ein entsprechendes item-Kommando in die Ulwelt
+eingef&uuml;hrt worden sein mu&szlig;.</P>
+<P>Es folgt ein Beispiel eines packages f&uuml;r den Mailversand bei
+der dynamischen Kontoverwaltung.<BR>Eine ausf&uuml;hrliche
+Beschreibung der logischen Klasse package und seiner einzelnen
+Parameter findet sich hier: <A HREF="../item/Package/index.htm" TARGET="_blank">package</A></P>
+<P STYLE="margin-left: 2cm"><B>item
+name=mailsettings;usage=package;overwrite=yes<BR>fields
+write=&quot;mailcopies&quot;;<BR>start=&quot;Ihre
+Benutzungsberechtigung f&uuml;r Prometheus l&auml;uft
+ab&quot;;<BR>before=&quot;Ihre Benutzungsberechtigung f&uuml;r
+Prometheus l&auml;uft ab am:&quot;;<BR>after=&quot;Ihre
+Benutzungsberechtigung f&uuml;r Prometheus ist abgelaufen
+am:&quot;;<BR>more=&quot;Verst&auml;ndigen Sie Ihren
+Dozenten.\nIhr\nPrometheus-Team&quot;;<BR>connect=&quot;/usr/sbin/sendmail&quot;<BR>exit
+name=mailsettings</B></P>
+<P>Folgende Parameter beeinflussen den Mailversand:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>connect=&quot;/usr/sbin/sendmail&quot;</B>
+	(entspricht dem Default) zu verwendender Mailer, 
+	</P>
+	<LI><P><B>write=&quot;mailcopies&quot;</B> (Default:
+	&quot;versandteMails&quot;) ein Directory, in das eine Kopie aller
+	versandten mails mit Dateinamen username.mail geschrieben werden. 
+	</P>
+</UL>
+<P>Aus den restlichen Parametern wird die Mailaufgebaut:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>start=</B> Subject der email. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>before=</B> Text, der
+	eingesetzt wird wenn das Ablaufen der Userid noch bevorsteht. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>after=</B> Text, der eingesetzt
+	wird wenn die Userid bereits abgelaufen ist. 
+	</P>
+	<LI><P><B>more=</B> Zus&auml;tzlicher Ratschlag. 
+	</P>
+</UL>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

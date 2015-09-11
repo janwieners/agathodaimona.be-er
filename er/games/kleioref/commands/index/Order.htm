@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Order.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b>Der Parameter order:<br>
+<br>
+<br>
+</b>In der Umwelt jeder Kleio-Datenbank befindet sich standardm&auml;&szlig;ig
+ein logisches Objekt der Klasse order, das den Namen order tr&auml;gt. Es
+bestimmt die Sortierfolge aller Zeichen des jeweiligen Zeichensatzes. <b><br>
+<br>
+</b>Durch den Befehl <br>
+<br>
+describe name=order;usage=order<br>
+<br>
+ist es m&ouml;glich, sich diese Sortierfolge anzeigen zu lassen.<br>
+<br>
+F&uuml;r bestimmte Anwendungen kann es aber sinnvoll oder sogar unumg&auml;nglich
+sein, die Standardsortierfolge abzuwandeln. Mann kann dies tun, indem man
+entweder das standardm&auml;&szlig;ige logische Objekt umdefiniert und damit
+global die Sortierfolge ver&auml;ndert oder ein zus&auml;tzliches Objekt
+der Klasse order einf&uuml;hrt und fallweise (d.h. in einzelnen Spalten)
+auf dieses Bezug nimmt. <br>
+<br>
+Wir wollen etwa erreichen, da&szlig; bei Familiennamen (aber nur bei diesen)
+der Buchstabe "z" in einem Register gleich dem Buchstaben "c" sortiert wird.
+Dazu definieren wir ein neues logisches Objekt der Klasse order mit dem Namen
+order2 (der Name ist frei w&auml;hlbar), in dem wir beiden Buchstaben denselben
+Rang in der Sortierfolge zuweisen (Kleio unterscheidet Gro&szlig;- und Kleinbuchstaben,
+weshalb wir "Z" in beiden Varianten angeben):<br>
+<br>
+item name=order2; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; usage=order;overwrite=yes<br>
+sign sign=Z;usage=c<br>
+sign sign=z;usage=c<br>
+exit name=order2<br>
+<br>
+<br>
+Das Objekt order2 enth&auml;lt also folgende Sortierordnung:<br>
+<br>
+<br>
+desc name=order2;usage=order<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+Wiedergabe einer Vereinbarung aus Ihrer Bibliothek.<br>
+Name der logischen Einheit: order2<br>
+Gattung der logischen Einheit: Order<br>
+Erlaeuterungstext: order2<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+Sortierfolge Zeichen <br>
+&nbsp;&nbsp;&nbsp; 
+<table border="0" width="100%" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td valign="Middle">0</td>
+      <td colspan="3">^@,,~`</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td colspan="16">A,a,&Agrave;,&Aacute;,&Acirc;,&Atilde;,&Auml;,&Aring;,&AElig;,&agrave;,&aacute;,&acirc;,&atilde;,&auml;,&aring;,&aelig;</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td colspan="2">B,b</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td colspan="6">C,Z,c,z,&Ccedil;,&ccedil;</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td colspan="2">D,d</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td colspan="10">E,e,&Egrave;,&Eacute;,&Ecirc;,&Euml;,&egrave;,&eacute;,&ecirc;,&euml;</td>
+    </tr>
+  </tbody>
+</table>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...........<br>
+<br>
+<br>
+Mittels des Parameters order k&ouml;nnen wir nun f&uuml;r einzelne Spalten
+explizit auf diese Sortierfolge zugreifen, w&auml;hrend f&uuml;r die &uuml;brigen
+Spalten die Standardsortierordnung gilt. (H&auml;tten wir dagegen das Standardobjekt
+mit dem Namen order umdefiniert, so w&uuml;rde die modifizierte Sortierordnung
+global gelten). Als Wert erwartet der Parameter order den Namen des logischen
+Objekts der Klasse order mittels dessen wir unsere Sortierordnung umdefiniert
+haben:<br>
+<br>
+Die Aufgabe <br>
+<br>
+index part=:name;order=order2;part=pdat/kar:beruf<br>
+<br>
+ergibt folgendes Ergebnis:<br>
+<br>
+&nbsp;&nbsp;&nbsp; <br>
+BURKHARDT EISENBAHNTGL DOK001522 <br>
+&nbsp;&nbsp;&nbsp; <br>
+BURSTER NAEHERIN DOK000220 <br>
+&nbsp;&nbsp;&nbsp; <br>
+BUSCH FABRARB,HARDTMANN DOK000835 <br>
+&nbsp;&nbsp;&nbsp; <br>
+ZAHN BEURL.SOLDAT DOK050271 <br>
+&nbsp;&nbsp;&nbsp; <br>
+ZAIS WGTR DOK999126 <br>
+&nbsp;&nbsp;&nbsp; <br>
+CALMBACH WEBERMSTR DOK021008 <br>
+&nbsp;&nbsp;&nbsp; <br>
+ZANKL SCHREINERMSTR DOK873074 <br>
+&nbsp;&nbsp;&nbsp; <br>
+CARLE FABRARB,MASCHFABR DOK051274 <br>
+<br>
+<br>
+.....<br>
+<br>
+<br>
+CURAS FABRARB,MERKEL DOK045013<br>
+<br>
+CURRLEN SCHREINERMSTR DOK001829<br>
+<br>
+ZWEIGLE&nbsp;&nbsp; DOK000913<br>
+<br>
+ZWEIGLEN UNTERGAENGER DOK907074<br>
+<br>
+ZWINK WEBER,GRUENZWEIG DOK051064<br>
+<br>
+DAEUBLER&nbsp;&nbsp; DOK871223<br>
+<br>
+DAHM DIAKONUS DOK000523<br>
+<br>
+DAIBER FABRARB,MASCHFABR DOK001386<br>
+<br>
+DALLINGER BAHNHOFPORTIER DOK030156<br>
+<br>
+<br>
+<br>
+<br>
+<p> </p>
+</body>
+</html>

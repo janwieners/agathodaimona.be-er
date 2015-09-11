@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Description</title>
+   
+</head>
+  <body bgcolor="#ffffff">
+<p><b>Der Befehl database:</b></p>
+<p><br>
+          Der Befehl database dient der Definition, das hei&szlig;t der Anlage
+ von  Datenbanken.   Er dient im wesentlichen zwei Zwecken:</p>
+<ol>
+  <li>Durch den Parameter <a href="Name.htm">name</a>
+           wird der jeweiligen Datenbank ein Name zugewiesen, unter dem Sie
+ sp&auml;ter    angesprochen werden kann.</li>
+  <li>Der Befehl database er&ouml;ffnet eine Umgebung, innerhalb derer durch
+ verschiedene    Direktiven, die Struktur der Datenbank definiert werden
+kann.  Dementsprechend    wird dieser Teil der Datenbankumwelt in der Kleio-Diktion
+ als "Strukturvereinbarung"    bezeichnet. &Uuml;blicherweise wird die Strukturvereinbarung
+ durch die Direktive        <a href="../exit/index.htm" target="_blank">exit</a>
+           abgeschlossen.</li>
+</ol>
+      Der Aufbau der Strukturvereinbarung wird ma&szlig;geblich vom Format
+ der Eingabedaten   bestimmt. Kleio kann gegenw&auml;rtig drei verschiedene
+ Arten von Rohdaten interpretieren.   Dies sind zum ersten formal ausgezeichnete
+ ASCII-Daten, die entweder im XML-Format  oder auch im klassischen Kleio-Format
+ vorliegen k&ouml;nnen. Daneben ist Kleio  in der Lage,  Daten der kommerziellen
+ Softwareprogramme sisis und dbase einzulesen.  Die entsprechende Auswahl
+wird durch den Parameter <a href="Other1.htm"> other</a>
+       festgelegt. Die entsprechende Auswahl des Eingabeformats zieht bei 
+der Definition der Strukturvereinbarung zwingend die Verwendung entsprechender
+  <a href="cont.htm" target="_blank">     Direktiven</a>
+     f&uuml;r die jeweiligen Eingabeformate nach sich.&nbsp; Das hei&szlig;t,
+ da&szlig; eine Strukturvereinbarung, die sich auf XML-Daten bezieht andere
+ Direktiven  enth&auml;lt, als eine Vereinbarung f&uuml;r sisis-Daten, die
+ sich wiederum von einer Vereinbarung f&uuml;r das dbase-Format unterscheidet.<br>
+<br>
+<br>
+  Als Beispiel eines g&uuml;ltigen database-Befehls kann folgende Zeile gelten:<br>
+<br>
+  database name=basdat;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; first=per;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; overwrite=yes<br>
+<br>
+  Es wird hier eine Datenbank mit dem Namen "basdat" angelegt. Die jeweils
+ erste Gruppe eines Dokuments hei&szlig;t "per". Wenn bereits Systemdateien
+ mit Bezug zu dieser Datenbank bestehen, so werden diese &uuml;berschrieben.
+ Die zugeh&ouml;rigen Daten m&uuml;ssen m&uuml;ssen (da nichts weiteres angegeben
+ ist) im Format "kleio" vorliegen.<br>
+<br>
+</body>
+</html>

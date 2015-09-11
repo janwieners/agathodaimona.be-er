@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>template,initialize,name</title>
+                                                                        
+                                                                        
+                                                                        
+                                                                     
+  <link rel="stylesheet" type="text/css" href="../../../../style.css">
+</head>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+                                                                        
+              
+<p class="h">Der Parameter package<br>
+                </p>
+                               
+<p class="p">Der Parameter package erwartet als Wert den Namen eines logischen
+      Objekt des Klasse Package. Dieses Package legt fest, wie die aus einem
+   Container   abgeleiteten Informationen zu einem Bild in eine Tabelle geschrieben
+   werden   sollen. <br>
+            </p>
+                       
+<p class="p">Das folgende Package definiert eine entsprechende Tabelle. <br>
+               </p>
+                             
+<p class="b">item name=desmap-i0;usage=package;overwrite=yes<br>
+            fields start='&lt;td height="90" width="140" align=center bgcolor="#CCCCCC"&gt;';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; first='&lt;/td&gt;&lt;td height="90"
+  width="10"     valign=bottom bgcolor="#CCCCCC"&gt;';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connect='&lt;td height="90"
+  width="10"&gt;&lt;/td&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td height="90" 
+width="140"      align=center bgcolor="#CCCCCC"&gt;';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit='&lt;td height="90"
+ width="10"&gt;&lt;/td&gt;';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; current=tabcoord;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; suspend=nextbatch<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+            convert current=folderbaseimageid;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path=':package[:dump[folderbaseimageid],folderimage]';<br>
+            convert usage=first;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path=':package[:dump[tabcoord]&amp;+:package[:dump[folderbaseimageid],folderref],folderpopup]';<br>
+            exit name=desmap-i0<br>
+            </p>
+            <br>
+           In diesem Package passiert - in groben Z&uuml;gen - folgendes:<br>
+                       
+<ul>
+              <li>Es werden f&uuml;r jede Bildnummer im Container je drei 
+Tabellenzellen  angelegt. Die erste Zelle enth&auml;lt das Bild als Thumbnail. 
+Die Umsetzung  der Bildnummer zu einem entsprechenden Bild-URL erfolgt in 
+der ersten convert-Direktive  des Package durch das conditional Package folderimage. 
+In die zweiten Zelle  wird ein Pfeil eingef&uuml;gt, der als graphischer Link
+mit verschiedenen  Funktionen versehen wird. Daf&uuml;r ist die zweite convert-Direktive
+("usage=first")  verantwortlich. Die dritte Zelle bleibt leer und dient als
+Abstandhalter zu n&auml;chsten Zelle (hier zur Kenntlichmachung rot gef&auml;bt.
+Durch das Package realiter aber ohne Hintergrundfarbe).</li>
+                       
+</ul>
+         
+<blockquote>          
+  <table>
+     <tbody>
+        <tr>
+     <td height="90" width="140" align="center" bgcolor="#cccccc"><a
+ target="_blank"
+ href="http://prometheus.hki.uni-koeln.de/prometheus-cgi/kleioc/1010KlProm/exec/zoom/%22ASS01%7CGR00927A.JPG%22/__kleioid/%22j%2enemitz%5fj%2enemitz%5fh%2ekoeln%22/__kleiopass/%22pacult%22"><img
+ border="0"
+ src="http://prometheus.hki.uni-koeln.de/Prometheus1/assissi/res128x93/GR00927A.jpg">
+          </a></td>
+          <td height="90" width="10" valign="bottom" bgcolor="#cccccc"><a
+ href="#" onclick="PosMenueFkt(1,1,1,'ASS01|GR00927A.JPG')"><img
+ src="http://prometheus.hki.uni-koeln.de/Prometheus1/abb/pfeil-am.jpg"
+ border="0">
+          </a></td>
+         <td height="90" width="10" bgcolor="#cc0000"><br>
+         </td>
+        </tr>
+                     
+    </tbody>          
+  </table>
+   </blockquote>
+                                       <br>
+                                    Der entsprechende Aufruf des oben angef&uuml;hrten 
+ package erfolgt im Parameter package.<br>
+      
+<p class="b">table package=desmap-i0</p>
+  <br>
+                                 <br>
+                               <br>
+                             <br>
+                           <br>
+                         <br>
+                       <br>
+                     <br>
+                   <br>
+                   <br>
+                       <br>
+</body>
+</html>

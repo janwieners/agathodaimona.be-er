@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+   
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Parameter usage:</b>
+<p><br>
+ Der Parameter usage steuert die Zugriffsrechte auf die Datenbank. Er erwartet 
+die Parameter <b>readonly</b> und <b>modifiable</b>. Letzterer ist das implizite 
+Standardverhalten des Systems.</p>
+<p>Die Angabe des Parameterwerts readonly verhindert, da&szlig; der Inhalt
+der Datenbank ver&auml;ndert werden kann. Dies ist besonders dann von Bedeutung,
+wenn eine Kleio-Datenbank als Web-Server betrieben wird, da damit jede unbefugte
+Manipulation der Daten verhindert wird. Es ist aber auch bei Angabe des Parameters
+<b>readonly</b> m&ouml;glich, Verwaltungst&auml;tigkeiten an der Datenbank 
+durchzuf&uuml;hren. So kann der Administrator z.B. bei laufendem Web-Server
+einen neuen Katalog anlegen.</p>
+<p>Die Umwelt der Datenbank (also z.B. Codeb&uuml;cher und andere Vereinbarungen) 
+sind durch den Parameter usage im <b>database</b>-Befehl nicht betroffen. 
+Es ist aber m&ouml;glich, auch die Objekte in der Umwelt der Datenbank zu
+sperren, indem man im Befehl <a href="../environment/index.htm" target="_blank">
+ environment</a>
+  den Parameter usage analog zu der hier beschriebenen Weise einsetzt.<br>
+</p>
+</body>
+</html>

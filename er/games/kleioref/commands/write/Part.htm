@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>write,Part.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+<b>Der </b><b>Parameter part: </b> 
+<p><br>
+Der Parameter part erwartet als Parameterwert eine Pfadangabe, die zumindest
+ein Element umfassen mu&szlig;. Es k&ouml;nnen verschiedene Elemente bzw.
+Pfadangaben durch Kommata getrennt angegeben werden. Dabei sind die Angaben
+hinsichtlich der Datenbankhierarchie zueinander relativ. Das hei&szlig;t,
+das System befindet sich nach jedem Komma auf der Ebene der Hierarchie, die
+vor dem Komma erreicht war. Ggf. mu&szlig; also durch Angabe von Informationsgruppen
+oder Gruppenfunktionen die hierarchische&nbsp; Eeben gewechselt werden.</p>
+<p>Beispiele f&uuml;r richtige write-Befehl sind die folgenden:</p>
+<p>write part=:name<br>
+continuation<br>
+</p>
+<p>write part=:name,:vorname<br>
+continuation<br>
+</p>
+<p>write part=:name,:vorname,pdat:gebdat<br>
+ continuation<br>
+</p>
+<p>write part=:name,:vorname,pdat:gebdat,root[0]:hko<br>
+ continuation</p>
+<p></p>
+<p></p>
+<p>write part=:name,:vorname,pdat:gebdat,query[]:hko<br>
+ continuation<br>
+</p>
+write part=:name,:collection[:vorname],pdat/kar:beruf,query[]:hko<br>
+ continuation<br>
+<br>
+write part=:each[]<br>
+ continuation<br>
+<br>
+ write part=:total[]<br>
+  continuation<br>
+<br>
+<br>
+<p> </p>
+</body>
+</html>

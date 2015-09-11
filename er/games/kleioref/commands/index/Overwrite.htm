@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterarguments</title>
+</head>
+<body bgcolor="#ffffff">
+<b>Der Parameter overwrite</b>:<br>
+<br>
+Der Parameter overwrite erwartet die Parameterwerte <b>preserve</b>, <b>overwrite</b>
+, <b>append </b>bzw. <b>cumulate</b>. Der erste Wert ist das Standardverhalten
+des Systems. <br>
+<br>
+Overwrite ist sinnvoll in Verbindung mit dem Parameter <a href="Target.htm">
+target</a>
+. Der Wert overwrite=preserve verhindert, da&szlig; Dateien, die durch den
+target-Parameter angelegt wurden, bei nochmaliger Abarbeitung der Aufgabe
+versehentlich &uuml;berschrieben werden. Die Angabe overwrite=overwrite erlaubt
+gerade dieses. <br>
+<br>
+Dagegen sieht die Angabe overwrite=append vor, da&szlig; bestehende Ausgabedateien
+um das Ergebnis einer weiteren Aufgabe erg&auml;nzt werden. In diesem Falle
+werden wiederholte Start- und Endtags, die durch den Parameter <a href="Package.htm">
+package</a>
+ eingef&uuml;hrt wurden, durch je ein ein einheitliches Start- und ein Endtag
+f&uuml;r die Gesamtdatei ersetzt. Die Gesamtdatei steht also zwischen einer
+Eingangs- und einer Endauszeichnung entsprechend den Angaben bei <a href="Package.htm">
+package</a>
+.<br>
+<br>
+Im Unterschied dazu sieht overwrite=cumulate vor, da&szlig; die Start- und
+Endauszeichnungen der einzelnen Dateien beibehalten werden. das hei&szlig;t,
+das Ergebnis der jeweiligen Folgeaufgaben wird einschlie&szlig;lich aller
+angeforderten Tags&nbsp; an die bestehende Datei angef&uuml;gt. Es entsteht
+damit zwar eine Datei, die sich &nbsp;in mehrere "Bl&ouml;cke" zwischen wiederholten
+Start- und Endtags gliedert.<br>
+ 
+</body>
+</html>

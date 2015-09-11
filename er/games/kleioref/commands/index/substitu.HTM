@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Repeat.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der Parameter substitution </b><br>
+ <br>
+ <br>
+     
+<p>Der Parameter substitution erlaubt die Ersetzung wiederkehrender Spalteneintr&auml;ge
+ durch eine frei w&auml;hlbare Zeichenkette, die als Parameterwert zwischen
+ Hochkommata eingeschlossen angegeben werden mu&szlig;. Im Falle l&auml;ngerer
+ Register kann dieser Parameter die Lesbarkeit der Listings erh&ouml;hen,
+da der jeweilige Wechsel eines Begriffs deutlich hervorgehoben werden kann.</p>
+   
+<p>Die Funktion des Parameters verdeutlicht folgendes Beispiel:</p>
+   
+<p>index part=:beruf;substitution="-----";<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; part=:von-bis</p>
+   
+<p><br>
+  Hier werden also wiederholte Berufsangaben so lange durch die Zeichenkette
+ '-----' ersetzt, bis ein neuer Begriff erscheint. Der Wechsel ist damit
+deutlich  markiert:</p>
+   
+<p>ACCOUCHEUR 1825.00.00 DOK000629<br>
+  <br>
+  ACTUAR 1842.00.00 DOK810012<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT 1841.07.01 DOK000516 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1845.07.01 DOK050900 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1846.07.01 DOK000509 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1847.00.00 DOK001338 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1848.05.00 DOK020447 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1849.07.01 DOK050834 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1850.07.01 DOK030642 <br>
+   &nbsp; &nbsp; <br>
+  ----- 1850.07.01 DOK050480 <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,OBERAMT 1840.00.00 DOK834784  </p>
+ 
+<p><br>
+ Eine Erweiterung des Systemverhaltens kann erreicht werden, wenn zus&auml;tzlich 
+der Parameter <a href="Cumulate.htm">cumulate</a>
+  mit dem Parameterwert yes angegeben wird. In diesem Falle bezieht sich
+die Ersetzungsanweiseung durch substitution nicht nur auf eine logische Spalte, 
+sondern auf alle Spalten beginnend mit jener, f&uuml;r die substitutuion
+angegeben wurde, bis hin zu jener Spalte bei der cumulate eingetragen wird.<br>
+   </p>
+   
+</body>
+</html>

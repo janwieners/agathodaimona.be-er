@@ -1,0 +1,72 @@
+
+
+Hei Jørn,
+please find attached the final version of "doc.txt" now.
+
+
+As soon as you have converted that into a set of interrelated pages,
+I'll start filling them up with descriptions; so the conversion does not
+haev to be repeated. This is another way of saying, that you may find it
+easier, ultimately, if you convert some of the very rare constructs in
+the file by hand.
+
+
+Unfortunately I had to introduce one more construct.
+
+
+The reasoning is the following. In the case of a few commands (notably
+"Item", which accounts for almost exactly 50 % of the whole file) a
+parameter of the command decides which directives may follow.
+
+
+I have described this situation as follows:
+
+
+<command>
+... parameter for this command ...
+<contextlist>
+<contextdescription> ... </contextdescription>
+
+
+<context>
+<name>xxxx</name>
+<directivelist>
+...
+</directivelist>
+</context>
+
+
+... more <context> </context> tags.
+</contextlist>
+</command>
+
+
+The idea behind this construction is as follows:
+
+
+In the window at the left side of the screen, the parameters for the
+command are displayed. If the command contains also a <context> tag,
+there shoudl also appear a (rather prominent) button "directives".
+
+
+If this is pressed, at the top of the lefthand window the content of
+<contextdescription> appears, followed by the names of all contexts.
+
+
+If the name of a context is clicked, the left hand window contains a
+list of the directives for that context.
+
+
+If the name of a directive is clicked, the names of the parameters for
+thsi directive appear.
+
+
+Well ... and than there is one special case; if you look for the tag
+<note> you'll see a descripytion of it. (That occurs only once.)
+
+
+Thanks a lot in advance,
+Manfred
+
+
+

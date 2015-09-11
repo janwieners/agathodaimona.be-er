@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der </b><b>Parameter more: </b> 
+<p><br>
+Der Parameter erwartet die Schl&uuml;sselworte yes oder no. Letzteres ist
+Standard. Der Parameter bewirkt, da&szlig; Mehrfacheintr&auml;ge innerhalb
+von Elementen jeweils aus einer Zeile ausgegeben werden.</p>
+<p>Folgende Aufgabe:</p>
+query name=basdat;part=per<br>
+write part=:each[];more=yes<br>
+stop<br>
+<br>
+<br>
+erzeugt daher diese Ausgabe:<br>
+<br>
+per (2 = "DOK050295")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; idd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DOK050295<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABELE&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vorname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+JOHANN ; FRIEDRICH<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; geschlecht&nbsp;&nbsp;
+maennlich<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hko&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OTTMARSHEIM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; land&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OA MARBACH<br>
+<br>
+<br>
+Der Vorname " JOHANN ; FRIEDRICH" erscheint auf einer Zeile.<br>
+<p><br>
+ </p>
+</body>
+</html>

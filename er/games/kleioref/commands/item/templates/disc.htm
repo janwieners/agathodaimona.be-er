@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>item,template</title>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                               
+  <link rel="stylesheet" type="text/css" href="../../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                                                        
+                    
+<p class="h">Das Objekt template<br>
+       </p>
+             
+<p class="p"><a href="#Allgemeines"><b>Allgemeines</b></a><br>
+  <a href="#Container"><b>Container</b></a><br><a href="#verwaltung"><strong>Verwaltung 
+  von Containern</strong></a><br>
+</p>
+<p class="p"><a name="Allgemeines"></a><br>
+  Unter einem "template" versteht man in Kleio ein System zur geordneten und optisch 
+  und funktional aufwendigen Wiedergabe von Daten, die ihrerseits in einer bestimmten 
+  festgelegten Form, sogenannten <b>Containern</b> vorliegen m&uuml;ssen. <br>
+     </p>
+         
+<p class="p">Der gegenw&auml;rtige Einsatzzweck liegt in der Umsetzung der
+  <b>Container</b> zu sortierten Arbeitsmappen und Pr&auml;sentationen. Dabei
+  werden in den Containern nicht die Bilddaten selbst (im Sinne von Objekten
+  des Datentyps image) verwaltet, sondern Bildkennungen (Identifikationsnummern)
+  des Typs text, die ihrerseits in einem <a
+ href="../../catalogue/index.htm" target="_blank">Katalog</a> enthalten sein
+  m&uuml;ssen. <br>
+    </p>
+       
+<p class="p">Der Aufruf eines Containers geschieht innerhalb eines Kleio-Kommandos. 
+  Da templates vor allem f&uuml;r interaktive Webanwendungen konzipiert sind, 
+  wird das ausf&uuml;hrende Kommando meist in Form eeiner <a href="../Procedure/index.htm" target="_blank">katalogisierten 
+  Prozedur</a>, vorliegen. Das Komamndo bewirkt in groben Z&uuml;gen folgendes: 
+</p>
+       
+<p class="p">Die Bildnummern werden dem <a
+ href="../../catalogue/index.htm" target="_blank">Katalog </a>der Bildnummern 
+  &uuml;bergeben. Damit ist der jeweilige Bilddatensatz in der zugeh&ouml;rigen 
+  Datenbank eindeutig identifiziert. Es kann damit auch auf andere Informationen 
+  (z.B. K&uuml;nstler, Titel etc.) zugegriffen werden. Zugleich kann unter Verwendung 
+  einer entsprechenden <a href="../Package/index.htm">Package</a>-Vereinbarung 
+  ein URL zu einer entsprechen Bilddatei auf einem Webserver dynamisch generiert 
+  werden, der es erm&ouml;glicht, das betreffende Bild in der Ausgabe darzustellen 
+  und ggf. "klickbar" mit weiteren Funktionen (z.B. Zoom-Funktion) zu versehen. 
+</p>
+<p class="p">Ein Beispiel f&uuml;r die Verwendung eines templates ist folgender 
+  Kommandoblock:</p>
+<p class="b">@+ctype@:Folder@<br>
+  @&gt;ctype@supply@<br>
+  describe name=@&lt;user@;first=@=project@;usage=user;write=projects;write=cgi;<br>
+  &nbsp;&nbsp;<u>template=desmap0</u>; package=wrapfolderopenstart;display=wrapprojectopen<br>
+  administer <u>template=desmap0</u>;<br>
+  request=list;<br>
+  user=@&lt;user@;<br>
+  project=@=project@;<br>
+  password=&quot;@&lt;pass@&quot;;<br>
+  write=cgi;<br>
+  package=wrapfolderopen;<br>
+  display=wrapfoldermenu </p>
+<p class="p">Sowohl das Kommando <a href="../../describe/index.htm" target="_blank">describe</a> 
+  als auch das Kommando <a href="../../administer/index.htm" target="_blank">administer</a> 
+  in diesem Block verweisen mittels des jeweiligen Parameters template auf eine 
+  Vereinbarung der Klasse template.</p>
+<p class="p">Es ist die "Aufgabe" des Objekts template allgemeine Anweisungen 
+  bereit zu stellen, die das &auml;u&szlig;ere Erscheinungsbild (i.e. das Design) 
+  der Arbeitsmappe bzw. der Pr&auml;sentation festlegen. Dazu wiederum erf&uuml;llt 
+  das template grunds&auml;tzlich verschiedene Teilfunktionen:</p>
+<blockquote>            
+  <ol>
+        <li>Das Template nimmt Bezug auf Vereinbarungen der Klasse <a
+ href="../Package/index.htm" target="_blank">package</a>, die ihrerseits
+als allgemeine Anweisungen die &auml;u&szlig;ere Form der Mappe bzw. der
+Pr&auml;sentation festlegen. Salopp gesprochen, k&ouml;nnte man formulieren,
+da&szlig; das Template durch Bezug auf Package-Vereinabrungen einen allgemeinen
+Rahmen aus Anweiungen (i.d.R. HTML-Code) produziert, der um die URLs der
+Bilder herumgebaut wird und damit Aussehen (und Funktionen) der Mappen und
+Pr&auml;sentation bestimmt. Der entsprechende HTML-Code kann seinerseits
+wiederum auf JavaScript-Programme verweisen, so da&szlig; das template sich
+als&nbsp; ein Bestandteil eines insgesamt recht komplexen Zusammenhangs von
+Skript-Anweisungen darstellt. Die JavaScript-Programme k&ouml;nnen&nbsp;
+weitere Funktionen wie etwa das Einf&uuml;gen, Kopieren, Verschieben oder
+L&ouml;schen von Bildidentifikationen innerhalb der Container bereitstellen,
+so da&szlig; auf diese Weise die Reihenfolge der Bildwiedergabe innerhalb
+von Mappen (oder Pr&auml;sentationen) variiert werden kann.&nbsp;</li>
+        
+    <li>Die Bildnummern innerhalb der Container k&ouml;nnen &uuml;ber zugeh&ouml;rige 
+      Datenbanken eindeutig in den zugeh&ouml;rigen Datenbanken identifiziert 
+      werden. Das Template erlaubt die Zusammenfassung von Einzelinformationen 
+      dieser Datenbanken in bestimmten Variablen, die neben dem eigentlichen Bild 
+      ausgegeben werden k&ouml;nnen. Das hei&szlig;t, es sit m&ouml;glich neben 
+      oder anstelle der Darstellung eines Bildes auch Textinformation ausgeben 
+      zu k&ouml;nnen.<br>
+        </li>
+               
+  </ol>
+    </blockquote>
+       <br>
+    Es ist hier bereits mehrfach der Begriff des <a name="Container"></a>Containers
+  gefallen. Unter einem Container versteht man eine Datei, in der die Daten 
+ (i.e. im konkreten fall die Bilidentifikationsnummern) in einem Format vorlegen, 
+ das den Regeln einer XML-Auszeichnung entspricht. Die Bildnummern werden 
+jeweils durch ein <a href="../../administer/index.htm" target="_blank">administer</a>-Kommando 
+ in einem Container abgelegt. Ein Container hat die folgende Form:<br>
+   
+<p class="b"> <br>
+   &lt;KlContainer&gt;<br>
+   &lt;KlCoArg column="1" row="1"&gt;443.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="2"&gt;1737.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="3"&gt;3008.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="4"&gt;3010.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="5"&gt;3017.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="6"&gt;3019.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="7"&gt;3020.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="8"&gt;3021.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="9"&gt;3022.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="10"&gt;3037.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="11"&gt;3038.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="12"&gt;3040.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="13"&gt;3042.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="14"&gt;3043.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="15"&gt;3045.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="16"&gt;3046.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="17"&gt;3047.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="18"&gt;3048.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="19"&gt;3049.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="20"&gt;3051.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="21"&gt;3062.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="22"&gt;3066.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="23"&gt;5943.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="24"&gt;6161.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="25"&gt;6174.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="26"&gt;6176.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="27"&gt;6177.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="28"&gt;6182.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="29"&gt;6203.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="30"&gt;6204.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="31"&gt;6220.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="32"&gt;6385.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="33"&gt;6386.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="34"&gt;3057.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="35"&gt;3058.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="36"&gt;3059.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="37"&gt;6095.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="38"&gt;3003.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="39"&gt;3004.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="40"&gt;3005.jpg&lt;/KlCoArg&gt;<br>
+   &lt;KlCoArg column="1" row="41"&gt;3061.jpg&lt;/KlCoArg&gt;<br>
+   &lt;/KlContainer&gt;<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </p>
+    Das Attribut "<b>row</b>" gibt die Reihenfolge wieder, in der ein Bild,
+ das durch das Markup <b>&lt;KlCoArg&gt;&lt;/KlCoArg&gt;</b> gekennzeichnet
+ ist, wiedergegeben wird. Das Markup  <b>&lt;KlContainer&gt; &lt;/KlContainer&gt;</b>
+ bezeichnet Anfang und Ende des Containers. <br>
+  <br>
+Aufgabe der Templates ist es, diese Minimalinformationen (&uuml;blicherweise im 
+Rahmen einer katalogisierten Prozedur) in eine Website zu &uuml;berf&uuml;hren. 
+<br>
+<br>
+Die Prozedur erf&uuml;llt dabei zwei Grundfunktionen:<br>
+<br>
+<ol>
+  <li>Die Bildnummer wird in einem Katalog von Bildnummern identifiziert und daraus 
+    einen URL zu einem Bild auf einem Webserver generiert</li>
+  <li>Es werden Packages ausfgerufen, die das Bild in ad&auml;quater Form
+in Tabellen und Rahmen einpassen, so da&szlig; ein gestaltete Ausgabe entsteht.</li>
+</ol>
+<p><br>
+  <strong>Verwaltung von Containern<br>
+  </strong><a name="verwaltung" id="verwaltung"></a><br>
+  Zur Verwaltung des Inhalts von Conatinern steht der Befehl <a href="../../administer/index.htm" target="_blank">administer</a> 
+  zur Verf&uuml;gung, der sinnvollerweise in Form einer <a href="../Procedure/index.htm" target="_blank">katalogisierten 
+  Prozedur</a> ausgef&uuml;hrt wird.</p>
+<p><a href="template.html">Hier findet sich ein Beispiel f&uuml;r ein komplexes template</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

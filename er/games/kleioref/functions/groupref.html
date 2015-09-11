@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                               
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>elempref</title>
+</head>
+  <body>
+      <b>Die Funktion preference[]</b><b> </b><br>
+      <br>
+      <br>
+        Die Funktion preference[] erlaubt die Auswahl von&nbsp; Gruppen entsprechend
+  dem Inhalt ihrer jeweiligen&nbsp; <a href="../commands/database/kleio/kleioproperties.htm" target="blank">
+     Property</a>
+        -Eigenschaften. Im Unterschied zu den Funktionen <a href="elemview.html" target="_blank">
+     :view[]</a>
+        oder <a href="elemvers.html" target="_blank">:version[]</a>
+       bewirkt <b>preference[] </b>&nbsp;aber nicht die Ausgabe des Inhalts
+  der Property-Eigenschaft selbst. <br>
+      <br>
+      Die Funktion verwendet mehrere Argumente, die jeweils durch Kommata 
+getrennt   angegeben werden m&uuml;ssen, und gehorcht der folgenden Syntax:<br>
+     <br>
+           
+<blockquote><b>preference[Gruppe | Property | (without) | Schl&uuml;sselwort 
+  | Vergleichsmuster]<br>
+        </b></blockquote>
+        <br>
+     Das erste Argument entspricht dem Namen der Gruppe, deren Property abgefragt 
+wird.<br>
+       <br>
+     Das zweite Argument gibt den Namen der Property-Eigenschaft wieder,
+auf   deren Inhalt preference[] Bezug nehmen soll.<br>
+       <br>
+     Das Schl&uuml;sselwort "without" ist optional und kann folglich weggelassen 
+  werden. Die Angabe von without bewirkt, da&szlig; Gruppen auch dann ausgew&auml;hlt 
+werden, wenn&nbsp; ihnen keine bei Argument 2 genannte Property-Eigenschaft 
+  zugeordnet ist. Das sind also auch diejenigen Gruppen, die entweder &uuml;berhaupt
+  keine Property-Eigenschaft oder keine Property-Eigenschaft des genannten
+ Namens aufweisen. Wenn without dagegen fehlt, werden folglich nur diejenigen 
+Gruppen ausgegeben, die explizit die Bedingung des Vergleichsmusters erf&uuml;llen.
+ Argumente mit fehlender Property-Eigenschaft bleiben unber&uuml;cksichtigt.<br>
+      <br>
+      <br>
+    Es kann jeweils eines der folgenden <b>Schl&uuml;sselw&ouml;rter</b>
+angegeben   werden:<b>&nbsp;</b> <b>all</b>,<b> first</b>, <b>ordered</b>
+, <b>collected</b>    .<br>
+      <br>
+  <ul>
+    <li>all: Das Schl&uuml;sselwort all ordnet an, da&szlig; alle Gruppen, 
+ die die Bedingung(en) des Vergleichmusters erf&uuml;llen, ausgegeben werden.</li>
+    <li>first: Das Schl&uuml;sselwort first legt eine Priorit&auml;tensetzung
+fest. &nbsp;Nach M&ouml;glichkeit wird jeweils ausschlie&szlig;lich die Gruppe
+ausgew&auml;hlt, deren Property-Eigenschaft dem Inhalt des erstgenannte Vergleichsmuster
+entspricht. Wenn dieses nicht vorliegt dann das wird folgende &nbsp;Vergleichsmuster
+herangezogen usw.&nbsp;</li>
+    <li>ordered: Das Schl&uuml;sselwort ordered gibt an, da&szlig; die Informationsgruppen
+ entsprechend der Reihenfolge der Vergleichsmuster ausgegeben werden.</li>
+    <li>collected: Das Schl&uuml;sselwort collected legt fest, da&szlig;
+der Inhalt von Gruppen mit verschiedenen Property-Eigenschaften nach den
+Regeln der Funktion <a href="file:///C:/doku/NEW/functions/elemcoll.htm">
+collection[]</a>
+  behandelt wird</li>
+  </ul>
+  <br>
+  <br>
+   Als Vergleichsmuster mu&szlig; wenigstens eine Zeichenkette angegeben
+werden,  die in Hochkommata eingeschlossen sein mu&szlig;. <br>
+     <br>
+   Ein Beispiel f&uuml;r den korrekten Einsatz von :preference[] stellen
+die  folgenden Befehle dar:<br>
+     <br>
+           
+  <blockquote><b>write part=preference[bibl,authority, ordered,"Hollas" 
+"Zensus"] :biblitem</b><br>
+       <br>
+             <b><br>
+ write part=preference[bibl,authority, without, ordered,"Hollas"  "Zensus"]:biblitem</b><br>
+       <br>
+       </blockquote>
+       <br>
+   Der erste Befehl gibt aus allen Gruppe bibl, in denen Property-Eigenschaft 
+ "authority" den Inhalt "Hollas" oder "Zensus" aufweist, das Elemente :biblitem 
+wieder. Dabei werden Elemente aus Gruppen mit der Property-Eigenschaft des 
+Inhalts "Hollas" zuerst ausgegeben.<br>
+       <br>
+   Das zweite Beispiel gibt zus&auml;tzlich auch die Gruppen bibl ohne Property-Eigenschaft 
+ des Namens "authority" wieder.<br>
+       <br>
+      <br>
+       <b>     </b><br>
+       <br>
+          <br>
+          <br>
+          <br>
+                               
+    </body>
+    </html>

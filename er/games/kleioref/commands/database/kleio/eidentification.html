@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+               
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>eidentification</title>
+</head>
+  <body>
+ <b>Der Parameter identification:<br>
+ <br>
+ <br>
+ </b>Der Parameter <b>identification</b> erwartet die Werte <b>yes</b> oder
+  <b>no</b>. <br>
+ <br>
+    Wenn eine Element die Eigenschaft aufweist, in einem Dokumentenidentifikation
+  (Primary Key) zu sein, so geht das System davon aus, da&szlig; diese Eigenschaft
+  f&uuml;r alle Elemente desselben Namens innerhalb einer Umwelt zutrifft.
+In Einzelf&auml;llen kann   dies zu Problemen&nbsp; f&uuml;hren. Typischerweise
+etwa, wenn der XML-Dump   klassischer relationaler Datenbanksysteme als Kleio-Datenbank
+eingelesen werden  soll. Relationale Datenbanksystem bestehen aus einzelnen,
+per se voneinander  unabh&auml;ngigen Tabellen, die dadurch in Beziehung
+gesetzt sind, da&szlig;  der Primary Key von Tabelle A in Tabelle B als "normale" 
+Information aufscheint.  Der Primary Key von Tabelle B wiederum ist eine Information
+in Tabelle C usw. Das hei&szlig;t, da&szlig; jeder Primary Key sowohl als
+Dokumentenidentifikation  als auch als "normale" Information vorliegt. <br>
+ <br>
+   Dieses Beispiel mag das Problem illustrieren. Gegeben seien zwei Tabellen:<br>
+ <br>
+ 
+<div align="Center"><b>Tabelle A</b><br>
+ </div>
+ <br>
+ 
+<table border="1" width="70%" cellpadding="2" cellspacing="2" align="Center">
+   <tbody>
+     <tr>
+       <td>       
+      <div align="Center">nummer (=Primary Key)</div>
+       </td>
+       <td>       
+      <div align="Center">Name</div>
+       </td>
+       <td>       
+      <div align="Center">Vorname</div>
+       </td>
+     </tr>
+     <tr>
+       <td>a1</td>
+       <td>Huber</td>
+       <td>Anton</td>
+     </tr>
+     <tr>
+       <td>a2</td>
+       <td>Meier</td>
+       <td>Xaver</td>
+     </tr>
+     <tr>
+       <td>a3</td>
+       <td>Mayer</td>
+       <td>Peter</td>
+     </tr>
+     <tr>
+       <td>a4</td>
+       <td>S&ouml;ldner</td>
+       <td>J&ouml;hann</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ <br>
+ <br>
+ <br>
+ 
+<div align="Center"><b>Tabelle B<br>
+ <br>
+ <br>
+ </b> 
+<table cellspacing="2" cellpadding="2" width="70%" border="1">
+   <tbody>
+     <tr>
+       <td width="50">       
+      <div align="Center">nummer2 (=Primary Key)</div>
+       </td>
+       <td width="30">       
+      <div align="Center">Beruf</div>
+       </td>
+       <td width="70">       
+      <div align="Center">nummer (=Bezug zu Tabelle A)</div>
+       </td>
+     </tr>
+     <tr>
+       <td width="50">b1</td>
+       <td width="50">B&auml;cker</td>
+       <td width="50">a4</td>
+     </tr>
+     <tr>
+       <td width="50">b2</td>
+       <td width="30">M&uuml;ller</td>
+       <td width="50" valign="Middle">a2</td>
+     </tr>
+     <tr>
+       <td width="50">b3</td>
+       <td width="70">Bauer</td>
+       <td width="50">a3</td>
+     </tr>
+     <tr>
+       <td width="50">b4</td>
+       <td width="50">B&auml;cker</td>
+       <td width="50">a1</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<div align="Left"><br>
+ </div>
+ 
+<div align="Left"><br>
+   Beide Tabelle stehen also dadurch in Beziehung, da&szlig; der Primary
+Key  von Tabelle A ("nummer") als "Bezugsinformation" wiederum in Tabelle
+B (ebenfalls "nummer") enthalten ist.<br>
+ </div>
+ </div>
+ <br>
+   Bei der Umsetzung in Kleio w&uuml;rde man die einzelnen Tabellen als jeweils
+  eigene Datenbanken generieren. In diesem Falle w&uuml;rde beim Einlesen
+von  Tabelle B eine Fehlermeldung auftreten, da Kleio neben dem genuinen
+Primary  Key in Tabelle B dort zugleich den Primary Key aus Tabelle A im
+Feld "nummer" vorfinden w&uuml;rde,  der in Tabelle B zwar nur eine "normale"
+Information darstellt, aber seine Eigenschaft Primary Key zu sein, aus der
+Definition zu Tabelle A bezieht.<br>
+ <br>
+    Um die entsprechende Fehlermeldung zu vermeiden, mu&szlig; also bei Erstellung
+der  Datenbank  zu Tabelle B das dortige Element "nummer", also jene Information,
+die zugleich den Primary Key in Tabelle A darstellt, so umdefiniert werden,
+da&szlig; sie ausnahmsweise ihre Eigenschaft, in der Umwelt als Dokumententidentifikation
+bekannt zu sein, einb&uuml;&szlig;t.<br>
+ <br>
+  Man erreicht dies&nbsp; indem man den Parameter identification&nbsp;  
+mit dem Wert no einsetzt.<br>
+ <br>
+ In der Strukturvereinbarung zu Tabelle B m&uuml;&szlig;te also folgende
+Zeile enthalten sein:<br>
+ <br>
+ 
+<blockquote><b>exception name=nummer;identification=no</b><br>
+   </blockquote>
+   <br>
+ Der Wert <b>yes</b> weist umgekehrt einer "normalen" Information ausnahmsweise 
+die Eigenschaft eines Primary Key zu.<br>
+   
+  </body>
+  </html>

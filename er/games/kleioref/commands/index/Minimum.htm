@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Minimum.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b>Der Parameter minimum<br>
+<br>
+</b>Der Parameter maximum erwartet als Parameterwert eine ganze Zahl, die
+ohne Hochkommata angegeben wird. Er bewirkt in Verbindung mit dem Parameter&nbsp;
+<a href="Type1.htm">type</a>
+ und dem Parameterwert count, da&szlig; wiederholte Registerzeilen identischen
+Inhalts nur dann ausgegeben werden, wenn ihre H&auml;ufigkeit die Zahl des
+Parameterwerts &uuml;bersteigt. Man kann damit also Register erzeugen, die
+nur jene Begriffe ausgeben, die eine bestimmte Fallzahl &uuml;bersteigen.<br>
+<br>
+Die folgende Beispielsaufgabe erzeugt ein Register, in dem nur jene Berufsbelege
+aufscheinen, die mehr als hundertmal in der Datenbank enthalten sind:<br>
+<br>
+query name=basdat;part=:beruf<br>
+index part=:beruf;type=count;minimum=100<br>
+stop&nbsp; <br>
+<br>
+ 
+<p> </p>
+</body>
+</html>

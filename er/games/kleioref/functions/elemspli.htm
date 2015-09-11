@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>split[]</title>
+                                                                        
+                                                
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body bgcolor="#e6e6e6">
+                                  
+<p class="h">Die Funktion :split[]</p>
+       
+<p class="p">Die Funktion :split[] erm&ouml;glicht die Aufgliederung von Zeichenketten
+anhand definierter Trennzeichen. Die einzelnen Bestandteile einer &nbsp;solcherma&szlig;en
+zerlegten Zeichenkette werden als selbst&auml;ndige Mehrfacheintr&auml;ge
+eine Elements behandelt. Das hei&szlig;t, die mittels :split[] erzeugten
+Teilstrings werden z.B. im Kontext von <a
+ href="../commands/index/index.htm" target="_blank">Index</a>- oder <a
+ href="../commands/catalogue/index.htm" target="_blank">Catalogue</a>-Befehlen 
+ jeweils gesondert sortiert bzw. als selbst&auml;ndiger Begriff in den Katalog 
+ eingetragen.&nbsp;</p>
+     
+<p class="p">Grunds&auml;tzlich gehorcht die Funktion :split[] folgender Syntax:<br>
+   </p>
+     
+<p class="b">:split[argument1,argument2,argument3]<br>
+   </p>
+     
+<ul>
+    <li>argument1: Als erstes Argument erwartet :split[] die Angabe eines 
+Elements des Datentyps text, dessen Inhalt in Teilstrings zerlegt werden
+soll.</li>
+    <li>argument2: Als zweites Argument mu&szlig; ein Zeichen als Konstante
+ (also in Hochkommata) definiert werden, das als Trenner der&nbsp; Teilstrings
+ betrachtet werden soll.&nbsp;</li>
+    <li>argument3: das dritte Argument ist optional. Standardm&auml;&szlig;ig
+ werden Leerstellen (neben dem definierten Trennzeichen) ebenfalls als Trennzeichen
+ interpretiert. D.h., da&szlig; eine String, der aus mehreren Worten besteht,
+ entsprechend in Einzelworte zerlegt wird. Durch die Angabe des Schl&uuml;sselworts
+     <u><b>nospace</b></u> kann dieses Systemverhalten unterdr&uuml;ckt werden.
+ Es gilt in diesem Falle nur das im zweiten Argument definierte Trennzeichen.</li>
+   
+</ul>
+  <br>
+  Die Funktion von :split[] kann mit folgendem einfachen Auswertungskommando
+ erl&auml;utert werden:<br>
+  <br>
+ 
+<p class="b"> index part=:split[:form["Das*ist*eine*Zeichenkette zu*Demonstrationszwecken"],"*"];type=list<br>
+  <br>
+ </p>
+ 
+<p class="p"> Dieses Index-Kommdo erzeugt folgende Ausgabe:<br>
+  <br>
+ </p>
+ 
+<p class="b"> Das<br>
+  <br>
+  Demonstrationszwecken<br>
+  <br>
+  eine<br>
+  <br>
+  ist<br>
+  <br>
+  Zeichenkette<br>
+  <br>
+  zu<br>
+  <br>
+ </p>
+ 
+<p class="p"> Die Zeichenkette wurde also an den in Argument2 definierten 
+Sternen ("*") geteilt und die Einzelstrings entsprechend sortiert. Der aufmerksamen 
+Leserin d&uuml;rfte nicht entgangen sein, da&szlig; auch das Wort "zu" gesondert
+ sortiert wird, da die vorangestellte Leerstelle ebenfalls als Worttrenner
+ gedeutet wird.<br>
+  <br>
+  Wenn man dagegen das dritte Argument nospace einsetzt, wird der Teilstring
+ "<b>Zeichenkette zu</b>" nicht getrennt:<br>
+  <br>
+ </p>
+ 
+<p class="b"> index part=:split[:form["Das*ist*eine*Zeichenkette zu*Demonstrationszwecken"],"*",nospace];type=list<br>
+  <br>
+  Das<br>
+  <br>
+  Demonstrationszwecken<br>
+  <br>
+  eine<br>
+  <br>
+  ist<br>
+  <br>
+  Zeichenkette zu<br>
+   </p>
+ 
+<p class="p"><br>
+ </p>
+   
+<ul>
+     
+</ul>
+ <br>
+       
+</body>
+</html>

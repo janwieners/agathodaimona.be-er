@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Rasmus Krempel">
+	<title>agathodaimona.be/er - A game of total holistic organization, demons and information, methods, ontologies, norms and beer</title>
+
+	<link rel="stylesheet" type="text/css" href="../../css/style.css" media="all">
+
+	<script src="libs/phaser.min.js"></script>
+	<script src="js/fliesen.js"></script>
+</head>
+
+<body id="fliesenlegespiel">
+
+<div class="hcentered">
+	<div id="infos">
+		Obacht! Lege das rechts oben abgebildete Mosaik im Empfangsbereich des Westflügels Deines Anwesens.
+		<br>
+		So funktioniert's:
+		<ul>
+			<li>Bewege Dich mit den <strong>Cursortasten</strong> durch die Wohnung.</li>
+			<li>Hebe einzelne Fliesen vom oberen Bildschirmrand mit der <strong>SPACE</strong> Taste auf und lege sie in Deinem Inventar ab.</li>
+			<li>Lege die Fliesen anschließend an ihre korrekte Position mit der <strong>SPACE</strong> Taste.</li>
+			<li>Gegenstände im Inventar lassen sich mit der Taste <strong>C</strong> wechseln.</li>
+			<li>Dir gefällt die Position einer Fliese nicht? Dann hebe Sie mit der Taste <strong>R</strong> wieder auf!</li>
+			<li>Muster vergessen? Dann schaue im Computer nach.</li>
+			<li>Keine Power mehr? Trinke eine Cola!</li>
+		</ul>
+	</div>
+	<div class="proceedbox">
+		<a id="proceedlink" href="../bruehl-uzkoeln/index.htm">&gt;&gt; Genug gefliest - mit Lichtgeschwindigkeit an den Arbeitsplatz nach Köln!</a>
+	</div>
+	<div id="fliesencanvas"></div>
+	<div class="proceedbox">
+		<a id="proceedlink" href="../bruehl-uzkoeln/index.htm">&gt;&gt; Genug gefliest - mit Lichtgeschwindigkeit an den Arbeitsplatz nach Köln!</a>
+	</div>
+
+</div>
+
+</body>
+</html>
+
+
+<!--
+<h2>Fliesen Legen</h2>
+
+<span>Lege Fliesen. Du hast einen Plan um Fliesen zu legen. Die Fliesen sind auf den Stapeln Oben am Bildschirm rand. Nimm die die Fliesen und lege das Muster! <br/><br/><p style="font-weight:bold">OBACHT!:</p> Die Fliesen müssen ordentlich gelegt werden damit du Punkte bekommst. Verusche so Akurat wie möglich zu Arbeiten. Die Kästchen zeigen die Fugen an die um die Fliesen herrum kommen, Sie dienen dir als Positionierungshilfe. 
+Tipps zum Entspannten Arbeiten: Du kannst nur 20 Fliesen auf einmal Tragen. Auch zerrt es stark an der beharrlichkeit viele Fliesen zu tragen. Wenn deine Beharrlichkeit nachlässt wird die Arbeit schlampig. Du wirst ungenauer (das Ziel Kästchen wird kleiner und Gelb und im Schlimsmten fall Rot!) und deine Bewegungen werden tapsig. Trink eine Cola, das hilft! Aber nicht alle auf einmal, es gibt nur eine begrenzte menge Cola!</span><br/>
+<span> Leider ist ein Gedächtnis kein digitaler Speicher. Du musst dir das Fliesenmuster Merken! Mit der Zeit verblasst das Muster in deinem Gedächtnis. Das ist kein Problem, du hast den Plan auf dem Laptop. Geh hin und schau ihn dir an.</span><br/>
+
+<div style="margin:10px;border-style:dashedborder-color: #ff0000 #0000ff;">
+<label style="font-weight:bold">Keys</label><value> Bewegen  <p style="font-size:10pt"> Oben Unten Links Rechts</p></value><br/>
+
+<label style="font-weight:bold">SPACE</label><value> Aktion <p style="font-size:10pt"> Zielmodus Starten /Fliese Legen || Fliese vom Stapel nehmen || Laptop Anschauen<p></value><br/>
+
+<label style="font-weight:bold">R</label><value> Zurück <p style="font-size:10pt">Fliese Abreißen(kommt nicht wieder in Inventory ist kaputt)/Fliese Zurück auf stapel Legen</p> </value><br/>
+
+<label style="font-weight:bold">C</label><value> Weiter im Inventar<p style="font-size:10pt">Zu verlegende Fliesenart ändern</p></value><br/>
+</div>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+	//LOAD LEVEL
+	var a = window.location.toString();
+	var levelpos = a.indexOf("lvl=")+4;
+	var name = a.substring(levelpos);
+
+	if(levelpos >7)
+		Level ="assets/"+name+".json";
+	
+	//DISABLE Scrolling By Keys
+	window.addEventListener("keydown", function(e) {
+	    // space and arrow keys
+	    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+	        e.preventDefault();
+	    }
+	}, false);
+	
+
+	//Load Game
+
+	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+
+</script>
+</body>
+</html>
+-->

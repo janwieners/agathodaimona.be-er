@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>kleio,transparent</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b> Die Direktive property:</b> 
+<p><br>
+                 Die Direktive Property wird bei Eingabedaten eingesetzt, 
+die   im  XML-Format    vorliegen. Sie weist bestimmten Gruppen eine   Eigenschaft zu, indem sie bestimmte   Elemente   innerhalb einer Gruppe
+dergestalt  definiert, da&szlig; sie nicht Bestandteil   der Datenbank  
+sind, sondern  als Eigenschaft der Gruppe und der in ihr enthaltenen Elemente
+  gelten. Das   hei&szlig;t, da&szlig; die mittels <b>property</b> definierten
+  Elemente  (=Tags  oder Attribute in den XML-Quelldaten) nicht genuiner
+Teil der Datenbank  sind, sondern unabh&auml;ngig von   der Struktur der
+ jeweiligen Datenbank  lediglich mit dieser verbunden sind.&nbsp;</p>
+ 
+<p>Der grunds&auml;tzliche Sinn der Direktive <b>property</b> besteht darin,
+  Elementen oder Gruppen einer Datenbank unabh&auml;gig von   der genuinen
+ Datenbankstruktur   allgemeine Informationen zuzuordnen.<br>
+ </p>
+ 
+<p>Ein Beispiel mag dies verdeutlichen. Gegeben sei ein Auszug aus einer Handschriftenbeschreibung
+im XML-Format, der bibliographische Angaben umfa&szlig;t. Unter anderem seien
+dies die folgenden Daten:</p>
+ 
+<p><br>
+ </p>
+ 
+<blockquote>  &lt;listBibl authority="Hollas: 150-151"&gt;<br>
+   <br>
+   <br>
+   </blockquote>
+   
+  <blockquote>  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;&lt;title usage="short"&gt;Hartzheim&lt;/title&gt;,
+     &lt;biblScope  ref="Hartzheim1752"&gt;p. 46-47&lt;/biblScope&gt;, &lt;biblScope
+     ref="Hartzheim1752"&gt;53&lt;/biblScope&gt;,  &lt;biblScope ref="Hartzheim1752"&gt;55&lt;/biblScope&gt;,
+     &lt;biblScope ref="Hartzheim1752"&gt;139&lt;/biblScope&gt;&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Jaffe/Wattenbach, p. 29-31&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;C. H. Beeson, lsidor-Studien (Munich 
+    1913), p. 70, 77, 90, 95, 102, 128&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Bischoff, "Panorama der Handschriftendberlieferung...",
+      Studien 3, p. 9 n.15 (English trans. "Manuscripts in the Age of Charlemagne",
+      MLAC, p. 24)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Bischoff, "&Uuml;ber Einritzungen 
+  in  Handschriften des fr&uuml;hen Mittelalters", Studien 1, p. 88, n.1&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;A. Chroust, Monumenta Paleographica, 
+    Ser. 2/ 1, Lief. 6  (M&uuml;nster 1906), Taf. 10&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;CLA 8.1154&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Decker, Manuskriptensammlung, p. 
+ 235&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Fontaine, Isidore de Seville, Trait&amp;eacute; 
+    de la nature  (Bordeaux 1960), p. 27-28, 46 seqq.&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;P. Heusgen: Die komputistische Handschrift
+    der K&ouml;lner  Dombibliothek, Colonia Sacra 1. Festgabe f&uuml;r W.
+Neuss,    ed. E. Hegel (K&ouml;ln 1947), p. 11-18 (not seen)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;W.M. Lindsay, Notae Latinae (Cambridge, 
+    Engl., 1915), passim&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Jones, Script of Cologne, p. 37-40, 
+    nr. 6&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Jones, "Cologne MS. 106...", Speculum 
+    4, pp. 52-61 and plate Vb&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;C.W. Jones, Bedae Opera de temporibus 
+    (Cambridge, Mass.,  1943), p. 144 and 151&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;C.W. Jones, Bedae Pseudepigrapha 
+ (Ithaca   1939), p. 115 with references to further pages&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;C.W. Jones, "The 'Lost' Sirmond 
+Manuscript    of Bede's 'Computus'",  English Historical Review 52 (1937), 
+p. 204-219  (not  seen)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;B. Krusch, Studien zur christlich-mittelalterlichen 
+    Chronologie,  I (Leipzig 1880), 39-42, 195 seqq.&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;B. Krusch, Studien zur christlich-mittelalterlichen 
+    Chronologie,  II (Berlin 1938), p. 8 (simple mention; this ms. = C in 
+his    editions)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;W. M. Lindsay, Notae Latinae (Cambridge, 
+    Engl., 1915), passim&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;T. Mommsen, Chronica minora 3 (MGH 
+   Auct. ant. , Berlin 1898), 240 (not seen)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Rand, "Symbols for -tur", p. 58-59, 
+    plates 2-3&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;MGH SS 17, p. 442, plate 3&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Ornamenta Ecclesiae 1, p. 391-392 
+  and  421&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Rhein und Maas 1, p. 165.&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;G. Thiele, Antike Himmelsbilder 
+(Berlin    1898), p. 158-160&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;Weitzmann, Ancient Book Illumination, 
+    p. 25 and pl. XIV,  figs. 29-30 (not seen)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;E. Zinner, Verzeichnis der astronomischen 
+    Handschriften  des deutschen Kulturgebiet (Munich 1925) (text an ff. 146r-171v
+    as no. 705)&lt;/bibl&gt;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;  &nbsp;&lt;bibl&gt;see also CLA Suppl. no. 1154, p. 
+ 62.&lt;/bibl&gt;<br>
+     <br>
+     <br>
+     </blockquote>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    &nbsp;&lt;/listBibl&gt;<br>
+     <br>
+     <br>
+            Wie man erkennen kann, enth&auml;lt der Tag <b>&lt;listBibl&gt;</b>
+     ein  Attribut    des Namens "<b>authority</b><b>"</b>, das den Wert
+"<b>    Hollas:  150-151</b>      " aufweist. Inhaltlich besagt dies ungef&auml;hr,
+  da&szlig;  die nachfolgenden    bibliographischen Angaben (Tag <b>&lt;bibl&gt;</b>
+    ) sich ihrerseits auf die Literaturangabe  "Hollas:  150-151"  st&uuml;tzen.
+  Es st&uuml;nde dem Benutzer prinzipiell  frei, das  Attribut "authority"
+ als Element innerhalb der Gruppe <b>listBibl      </b>zu definieren. In
+unserem   Falle f&uuml;hren wir das Attribut jedoch  nicht mittels der Direktive
+    <a href="kleioelement.htm" target="_blank"> element</a>
+            , sondern der Direktive <b>property</b> in das Environment ein:<br>
+     
+    <blockquote>property name=authority;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; association=version<br>
+       </blockquote>
+              Damit erreichen wir nun, da&szlig; die Eigenschaft <b>authority="Hollas: 
+    150-151"</b> f&uuml;r der Gruppe <b>listBibl</b> aus unserem obigen Datenbeispiel 
+    zugeordnet wird. Der Parameter <b>association=version</b> legt weiter&nbsp;
+    fest, da&szlig; die betreffende Eigenschaft nicht nur auf &nbsp;alle
+Elemente   der Gruppe, sondern auch auf alle von dieser abh&auml;ngigen Gruppen
+und  deren Elemente vererbt  wird.<br>
+       <br>
+           Es ist nun zum Beispiel m&ouml;glich, den Inhalt der Informationsgruppe
+           <b> bibl</b> auszugeben, die den Inhalt des Tags <b>&lt;bibl</b>
+      &gt;   repr&auml;sentiert, den wir als das Element <b>biblitem</b>
+definiert    haben.        <br>
+       <br>
+           Ein einfacher write-Befehl hier w&uuml;rde dies folgenderma&szlig;en 
+   aussehen:<br>
+       <br>
+       
+      <blockquote><b>query name=ceec;part=bibl</b><br>
+         <b>write part=:biblitem</b><br>
+         <b>stop</b><br>
+         </blockquote>
+         <br>
+         <br>
+           und folgendes Ergebnis liefern:<br>
+         
+        <blockquote><br>
+           cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; Hartzheim 
+   ,  p.  46-47, 53, 55, 139<br>
+           cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; Jaffe/Wattenbach, 
+     p. 29-31<br>
+           cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; C.
+H.  Beeson,     lsidor-Studien (Munich 1913), p. 70, 77, 90, 95, 102, 128<br>
+           <br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp;    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp;   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;   &nbsp;  . . .<br>
+           <br>
+           cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; E.
+Zinner,     Verzeichnis  der astronomischen Handschriften des deutschen Kulturgebiet
+   (Munich           <br>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+     1925) (text an ff. 146r-171v as no. 705)<br>
+           cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; see 
+also   CLA   Suppl. no. 1154, p. 62.<br>
+           <br>
+           </blockquote>
+           <br>
+           Nun haben wir jedoch (wie oben dargestellt) zus&auml;tzlich das
+ Attribut            <b>authority</b>&nbsp; mittels der Direktive   property
+ eingef&uuml;hrt  und damit  seinen Inhalt, n&auml;mlich die Information
+  "<b>Hollas: 150-151</b>    " mit der Datenbank verbunden. Es ist also m&ouml;glich,
+   diese Eigenschaft  gemeinsam mit dem durch sie charakterisierten Element
+ auszugeben.  Dazu bedienen  wir uns der Elementarfunktion <a href="../../../functions/elemvers.html" target="_blank">
+:   version[]</a>
+         , die die Property-Eigenschaften eines Elements anzeigt.<br>
+           <br>
+         Entsprechend modifizieren wir die obige Aufgabe:<br>
+           <br>
+           
+          <blockquote><b><br>
+         query name=ceec;part=bibl<br>
+         write part=:biblitem,:version[:biblitem]<br>
+         stop<br>
+             </b></blockquote>
+             <br>
+        und erhalten nun folgendes Ergebnis:<br>
+             <br>
+             
+            <blockquote>cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; 
+    Hartzheim , p. 46-47, 53, 55, 139<br>
+         cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+         cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; Jaffe/Wattenbach, 
+    p. 29-31<br>
+         cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+         cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; C. H. 
+Beeson,     lsidor-Studien (Munich 1913), p. 70, 77, 90, 95, 102, 128<br>
+         cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+               <br>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;   &nbsp;  &nbsp; &nbsp; &nbsp; . . . <br>
+               <br>
+         cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; E. Zinner,
+   Verzeichnis  der astronomischen Handschriften des deutschen Kulturgebiet
+  (Munich               <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    1925) (text an ff. 146r-171v as no. 705)<br>
+         cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+         cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; see also
+  CLA   Suppl. no. 1154, p. 62.<br>
+         cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+               </blockquote>
+               <br>
+        Die Angabe "Hollas: 150-151" wird nun als Eigenschaft des Elements
+ "biblitem"    in der Gruppe bibl sichtbar. Entsprechend erscheint diese
+Information  bei   jeder Ausgabe des Elements auf, dessen Inhalt solcherma&szlig;en
+eine  n&auml;here   Qualifizierung erf&auml;hrt.<br>
+               <br>
+       Grunds&auml;tzlich gilt, da&szlig; bei Angabe des Parameters association 
+   mit dem Wert version alle Eigenschaften, die durch property eingef&uuml;hrt 
+   wurden, auf alle nachrangigen Gruppen und die darin enthaltenen Elemente 
+  vererbt werden. Damit k&ouml;nnen Elemente, die in der Hierarchie weit
+"unten"   angesiedelt sind, ggf. eine gr&ouml;&szlig;ere Anzahl von zugeordneten 
+Eigenschaften   aufweisen, die sie jeweils von allen &uuml;bergeordneten Gruppen
+ererbt haben. <br>
+               <br>
+ Dabei k&ouml;nnen jede Gruppe und jedes Element grunds&auml;tzlich eine
+beliebige Anzahl von Property-Eigenschaften besitzen. Es gilt jedoch folgende
+Regel: Wenn ein Element oder eine Gruppe eine Property-Eigenschaft besitzen
+und zugleich eine <b>gleichnamige</b> Property-Eigenschaft von einer &uuml;bergeordneten 
+Gruppe ererben, so &uuml;berschreibt der Inhalt der genuinen Property-Eigenschaft 
+den Inhalt der ererbten Eigenschaft.<br>
+               <br>
+                      Durch die Funktion <a href="../../../functions/elemview.html" target="_blank">
+    :view[]    </a>
+    k&ouml;nnen ggf. alle Property-Eigenschaften innerhalb einer Gruppe angezeigt
+  werden. Die Gruppenfunktion <a href="../../../functions/groupref.html">
+preference[]</a>
+ bzw. die Elementarfunktion <a href="../../../functions/elempref.html">:preference[]</a>
+ erlauben die gezielte Ausgabe von Gruppen bzw. Elementen entsprechend dem
+Inhalt ihrer Propertys.<br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+              <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               
+              <p><br>
+               <br>
+               </p>
+               
+              </body>
+              </html>

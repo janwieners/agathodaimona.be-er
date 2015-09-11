@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Part.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Paramater part</b><b>:</b><b><br>
+</b><br>
+<br>
+       
+<p>Der Paramater part kann als das wichtigste Steuerwort des Index-Befehls 
+ gelten. Jeder part-Parameter er&ouml;ffnet eine logische Registerspalte. 
+Der Partameter ist damit f&uuml;r die grundlegende Gestaltung des Registers 
+verantwortlich. Dementsprechend kann er&nbsp; je nach Anzahl der erw&uuml;nschten 
+Spalten  innerhalb eines Index-Befehls beliebig oft vorkommen. Die Gesamtzahl 
+der Part-Parameter innerhalb eines index-Befehls&nbsp; legt demnach die Anzahl 
+der Registerspalten und deren jeweiligen Inhalt fest. Als Parameterwert erwartet 
+part eine Elementarinformation. Dabei sind hier auch l&auml;ngere Pfadangaben 
+m&ouml;glich:</p>
+     
+<p>index part=pdat/kar:beruf</p>
+     
+<p>Dieser Befehl gibt die Elementarinformation :beruf am Ende des Pfades
+pdat/kar in alphabetischer Reihenfolge aus. Anstelle einer "echten" Elementarinformation
+ kann durch die Elementarfurnktion :form[] auch eine Konstante in eine Registerspalte 
+eingesetzt werden:&nbsp; </p>
+     
+<p>index part=:form[" Berufsbezeichnung: "];<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; part=pdat/kar:beruf</p>
+     
+<p>Dieser Befehl erzeugt die Standardausgabeform, bei&nbsp; der hier in ersten
+ Spalte die Konstante aufscheint, in der zweiten Spalte der Inhalt des Elements
+ :beruf am Ende des angegeben Pfades und in der dritten Spalte die Dokumentenidentifikation:</p>
+     
+<p> </p>
+     
+<p>Berufsbezeichnung:&nbsp; APOTHEKER,AUSW DOK050800 <br>
+       <br>
+    Berufsbezeichnung:  APOTHEKER,SELBST DOK801806 <br>
+       <br>
+    Berufsbezeichnung:  ARBEITER,STADT DOK888834 <br>
+       <br>
+    Berufsbezeichnung:  ARBEITER,STADT DOK888835 <br>
+       <br>
+    Berufsbezeichnung:  ARBEITER,WOLLE DOK000285 <br>
+       <br>
+    Berufsbezeichnung:  ARBEITSHAUSAUFSEHER DOK802425 <br>
+       <br>
+    Berufsbezeichnung:  ARBEITSHAUSAUFSEHER DOK872613 <br>
+       <br>
+    Berufsbezeichnung:  ARCHITEKT DOK050081 </p>
+     
+<p><br>
+   </p>
+     
+<p>Ein Beispiel einer Ausgabe mit noch mehr Spalten sieht so aus:</p>
+     
+<p>index part=:form[" Berufsbezeichnung: "];<br>
+    &nbsp;&nbsp; &nbsp; part=pdat/kar:beruf;<br>
+    &nbsp;&nbsp; &nbsp; part=:von-bis; <br>
+    &nbsp;&nbsp; &nbsp; part=root[0]:name<br>
+   <br>
+   </p>
+     
+<p>Die ersten beiden Spalten sind uns bereits bekannt. In der dritten Spalte&nbsp; 
+wird eien Datumsangabe :von-bis ausgegeben, die wie :beruf in der Informationsgruppe&nbsp; 
+kar steht. Eine weitere Pfadangabe er&uuml;brigt sich damit. Dagegen in der&nbsp; 
+Name der jeweiligen Person auf der obersten Ebene der Datenbankhierarchie&nbsp; 
+zu finden. Daher ist es unumg&auml;nglich, sich durch Angabe von root[] mit&nbsp; 
+dem Wert "0" in die oberste Gruppe (die Wurzel) des jeweiligen Dokuments zu
+positionieren, um sich die dort vorhanden Informationen (u.a. den Namen) ausgeben
+lassen&nbsp; zu k&ouml;nnen. Die Gruppenfurnktion root[] wird wie alle anderen
+Gruppenfunktionen auch syntaktisch und funktionell wie eine Informationsgruppe
+behandelt.</p>
+     
+<p><br>
+   Das Ergebnis dieser Beispielaufgabe sieht so aus: </p>
+    Berufsbezeichnung:&nbsp; APOTHEKER,AUSW 1850.06.00 FRANK DOK050800<br>
+    &nbsp;&nbsp; <br>
+    Berufsbezeichnung:&nbsp; APOTHEKER,SELBST 1835.03.15 SCHNECKENBURGER
+DOK801806  <br>
+    &nbsp;&nbsp; <br>
+    Berufsbezeichnung:&nbsp; ARBEITER,STADT 1848.00.00 LAISLE DOK888834<br>
+    &nbsp;&nbsp; <br>
+    Berufsbezeichnung:&nbsp; ARBEITER,STADT 1848.00.00 MERSCHWINSKI DOK888835 
+ <br>
+   <br>
+    Berufsbezeichnung:&nbsp; ARBEITER,WOLLE 1810.00.00 WENDNAGEL DOK000285<br>
+    &nbsp;&nbsp; <br>
+    Berufsbezeichnung:&nbsp; ARBEITSHAUSAUFSEHER 1847.00.00 WINKELER DOK802425<br>
+    &nbsp;&nbsp; &nbsp; &nbsp; <br>
+    Berufsbezeichnung:&nbsp; ARBEITSHAUSAUFSEHER 1851.11.04 SCHEFBUCH DOK872613 
+ &nbsp; <br>
+   <br>
+  Berufsbezeichnung:&nbsp; ARCHITEKT 1842.00.00 FUCHS DOK87218<br>
+  <br>
+  <br>
+  Abschlie&szlig;end sei darauf hingewiesen, da&szlig; innerhalb einer durch
+ part definierten Spalte verschiedene Elemente angegeben werden k&ouml;nnen,
+ die syntaktisch durch Kommata getrennt angegeben werden m&uuml;ssen:<br>
+  <br>
+  Der Befehl <br>
+  <br>
+  index part=:name,:vorname<br>
+  <br>
+  w&uuml;rde Familiennamen und Vornamen in einer Spalte zusammenfassen und
+ alphabetisch sortieren. Der Befehl ist in dieser Form funktional identisch
+ mit der Registererzeugung mittels zweier Index-Befehle:<br>
+  <br>
+  index part=:name<br>
+  index part=:vorname<br>
+       
+<p> </p>
+     
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                                                             
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+  <title></title>
+                                                                        
+                                    
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+                                                             
+  <meta name="CREATED" content="20020531;18202016">
+                                                             
+  <meta name="CHANGEDBY" content=" ">
+                                                             
+  <meta name="CHANGED" content="20020604;18334350">
+                                                                   
+  <style>
+
+
+
+        <!--
+
+
+
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+
+
+
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+
+
+
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+
+
+
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+                A:visited { color: #666666; font-size: 12pt }
+
+
+
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+                A:link { color: #666666; font-size: 12pt }
+
+
+
+        -->
+
+
+
+        </style>
+</head>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+                                  
+<p class="h">Die Funktion :copy[]</p>
+                       
+<p class="p">Die Funktion copy erm&ouml;glicht, den Inhalt eines bestimmten 
+     Elements in einer lokalen Variablen zu speichern, deren Inhalt an anderer 
+     Stelle mit der Funktion <a href="elemdump.htm">:dump[]</a> wieder ausgegeben 
+     werden kann. Der Datentyp der jeweiligen Variable wird grunds&auml;tzlich
+in den Datentyp <b>text </b>konvertiert. Bei Mehrfacheintr&auml;gen wird
+der letzte Eintrag &uuml;bernommen, sofern nicht mit <a
+ href="elemcoll.htm">:collection[]</a>, die Mehrfacheintr&auml;ge zu einer
+Zeichenkette zusammengezogen werden.&nbsp; Die grundlegende Syntax hat die
+folgende Form:</p>
+                 
+<p class="b">  :copy[element,name]<br>
+         </p>
+               
+<p class="p"> Dabei ist "element" ein Element beliebigen Datentyps. "Name" 
+   steht f&uuml;r eine frei w&auml;hlbare Zeichenkette. Unter dem hier gew&auml;hlten 
+   Namen wird der Inhalt des Elements in einer lokalen Variable gespeichert. 
+  Die Angabe :copy[:beruf,ber1] speichert also den Inhalt des Elements "beruf" 
+  in die Variable "ber1".<br>
+       </p>
+             
+<p class="p">Eine Erweiterung von :copy[] kann durch verschiedene Schl&uuml;sselw&ouml;rter 
+   angeordnet werden:<br>
+     </p>
+              
+<p class="b"> :copy[element,name,Schl&uuml;sselwort1, Schl&uuml;sselwort2]<br>
+     <br>
+     </p>
+           
+<p class="p">Als Schl&uuml;sselwort 1 sind gegenw&auml;rtig folgende Werte
+  definiert:</p>
+       
+<blockquote>            
+  <ul>
+        <li>success (= Systemstandard)</li>
+        <li>failure</li>
+           
+  </ul>
+   </blockquote>
+     
+<ul>
+         
+</ul>
+   Success geht davon aus, da&szlig; der Inhalt des Elements ausgegeben,
+also  in der Ausgabe angezeigt wird, bevor er in die lokale Variable geschrieben 
+ wird. F&uuml;r viele Aufgaben kann dies nachteilig sein. In diesem Falle 
+kann&nbsp; durch das Schl&uuml;sselwort <b>failure</b> angeordnet werden, 
+da&szlig; der Wert Inhalt des Elements in die lokale Variable "unsichtbar" 
+&uuml;bertragen wird. <br>
+     
+<p class="p">Als Schl&uuml;sslewort 2 sind gegenw&auml;rtig folgende Werte
+  definiert:</p>
+        
+<blockquote>            
+  <ul>
+       <li>strict (= Systemstandard)</li>
+       <li>relaxed<br>
+       </li>
+           
+  </ul>
+   </blockquote>
+   Grunds&auml;tzlich geht das System davon aus, da&szlig; eine lokale Variable 
+ im weiteren Verlauf des Scripts tats&auml;chlich benutzt wird. Wird durch 
+ :copy[] eine Variable erzeugt, die sp&auml;ter nicht wieder aufgerufen wird, 
+ so reagiert das System mit einer Fehlermeldung. Dies ist das implizite Verhalten, 
+ welches durch die Default-Einstellung <b>strict </b>angeordnet wird. &nbsp;Durch 
+ Angabe von <b>relaxed</b> kann die Fehlermeldung unterdr&uuml;ckt werden. 
+<br>
+   Eine legale Form des Aufrufs von :copy[] kann also folgenderma&szlig;en 
+aussehen:<br>
+        
+<p class="b">:copy[:gattung,test,failure,relaxed]  </p>
+        
+<p class="p">Es wird hier also der Inhalt des Elements gattung in die Variable
+test geschrieben. Der Inhalt von gattung wird dabei nicht angezeigt (Schl&uuml;sselwort
+failure). Die Variable test mu&szlig; sp&auml;ter nicht aufgerufen werden
+(Schl&uuml;sselwort relaxed). </p>
+       
+</body>
+</html>

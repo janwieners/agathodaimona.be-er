@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Sequence.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+    <b>Der Parameter sequence<br>
+   <br>
+   </b>Der Parameter sequence<b> </b>bezieht sich auf Sortierspalten, die 
+mit  dem Parameter <a href="ident.html">identification</a>
+    erzeugt wurden. Er dient der Erstellung von Belegstellenlisten.<b><br>
+   <br>
+   </b>Dabei gilt die Grundregel, da&szlig; identische Begriffe zu einem
+Eintrag  zusammengefa&szlig;t werden, zu dem dann die entsprechenden Belegstellen 
+ausgegeben werden. Als Belegstelle kann eine frei w&auml;hlbare Information 
+(Element) innerhalb der Datenbank dienen. &nbsp;Hier bietet sich u.a. die 
+Dokumentenidentifikation, die Nummer des Dokuments (zu ermitteln durch die 
+Funktion <a href="../../functions/elemorde.htm"> :order[]</a>
+   ), eine Bildnummer, Archiv- &nbsp;oder Bibliothekssignatur u. dergl. mehr 
+ an. <br>
+   <br>
+   Kleio versucht, bei der Erstellung von Belegstellenlisten Folgenummern 
+nach  g&auml;ngigen Zitierkonventionen zusammenzufassen.<br>
+   <br>
+   Aus den Dokumentennummern 1,2,3,4,5 und 6 w&uuml;rde also 1 - 6. Ebenso
+ w&uuml;rden 2 und 3 umgewandelt zu 2 f. <br>
+   <br>
+   Ein grunds&auml;tzliches Problem besteht freilich darin, da&szlig; man 
+nicht  davon ausgehen kann, da&szlig; Belegstellenangaben immer und ausschlie&szlig;lich 
+ als Zahlen vorliegen. Der Parameter sequence erwartet daher Angaben, wie 
+genuin nichtnumerische Daten in Belegstellenlisten betrachtet werden sollen:<br>
+   <br>
+     
+<ul>
+           
+  <li>Der Wert "0" steht hier f&uuml;r arabische Zahlen, die als nat&uuml;rliche 
+ Zahlen im numerischen Sinne interpretiert werden. Der Wert "2" w&uuml;rde 
+ also vor dem Wert 11 sortiert :</li>
+     
+</ul>
+   Der Befehl<br>
+   <br>
+   index part=:beruf;identification=root[0]:conversion[:order[],null4];sequence="0" 
+ <br>
+   <br>
+   erzeugt damit eine Berufsliste, in der die systeminternen Ordnungsnummern 
+ der Dokumente als numerische Belegstellen verwaltet werden. Das logische
+ Objekt der Klasse conversion mit dem Namen "null4" dient dazu, die standardm&auml;&szlig;igen
+ Nachkommastellen bei numerischen Daten zu unterdr&uuml;cken.<br>
+   <br>
+   Das Resultat hat die folgende Form:<br>
+   <br>
+   <br>
+   BADINHABER 1638, 4784 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BADKNECHT 541 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BEACKER 14 - 17, 19 - 21, 55, 68, 89, 203, 206, 228, 337, 355, 373, 38<br>
+   7, 400, 444, 572, 590, 642, 661, 679, 702, 709 f., 712 f.<br>
+   <br>
+   Der Beruf B&auml;cker taucht also u.a. in den Dokumenten Nr. 14 bis 17 
+und  712 und 713 auf.<br>
+   <br>
+   <br>
+     
+<ul>
+           
+  <li>Durch Angabe des Wertes "1" werden arabische Zahlen als Abschnitte interpretiert.
+Bei diesem Systemverhalten w&uuml;rde also der Wert "11" als Differenzierung
+zum Wert "1" gesehen und entsprechend <b>vor </b>dem Wert 2 sortiert!</li>
+           
+  <li>Der Parameterwert "x" weist das System an, Buchstaben als r&ouml;mische 
+ Zahlen zu interpretieren. Der Wert "X" w&uuml;rde als vor dem Wert "LIII" 
+ sortiert.</li>
+           
+  <li>Der Wert "9" erlaubt die Kombination arabischer und r&ouml;mischer Zahlen.
+Dies ist sinnvoll, wenn die Datenbank sich z.B. auf Buchseiten bezieht und
+dort beide Formen der Numerierung vorkommen. In diesem Falle werden die r&ouml;mischen
+Zahlen vor den arabischen angezeigt.</li>
+           
+  <li>Der Wert "a" weist das System an, Eintr&auml;ge als Buchstaben zu erkennen. 
+ Es erfolgte eine alphabetische Sortierung. Gro&szlig;- und Kleinbuchstaben 
+ werden nicht unterschieden.</li>
+           
+  <li>Der Wert "A" unterscheidet zwischen Klein und Gro&szlig;schreibung: 
+ Letzere werden nach den Kleinbuchstaben sortiert.</li>
+           
+  <li>der Wert "b" betrachtet Buchstaben als Zahlen. Die Zeichenkette "aa" 
+ entspricht daher einem h&ouml;heren Wert als der einzelne Buchstabe "z". 
+Folglich wird "aa" nach "z" sortiert. Gro&szlig; und Kleinbuchstaben werden 
+nicht unterschieden.</li>
+           
+  <li>Der Wert "B" differenziert dieses Verhalten in dem Sinne, da&szlig; 
+ Gro&szlig;buchstaben grunds&auml;tzlich einem h&ouml;heren Wert entsprechen 
+ als Kleinbuchstaben.&nbsp; Folglich erscheint z.B. "d" vor "Ba".</li>
+           
+  <li>Der Wert "z" erlaubt die Definition eines alphabetischen Anhangs bei 
+ Zahlenangaben. Die Angabe sequence="0z" w&uuml;rde also erlauben Belegstellenangaben 
+ wie etwa "120a" oder "27b" ordnungsgem&auml;&szlig; zu verarbeiten.</li>
+     
+</ul>
+   <br>
+   Die hier vorgestellten Parameterwerte k&ouml;nnen (wie im letzten Beispiel 
+ gezeigt) untereinander kombiniert und durch feste Zeichen zu sog. "Masken" 
+ erweitert werden, die komplexere Sortierdefinitionen erm&ouml;glichen. In
+ einer Datenbank gibt es z.B.&nbsp; Belege aus katholischen und evangelischen
+ Kirchenb&uuml;chern, die hier als FRE und FRK bezeichnet sind. Eine Zahlenangabe
+ kennzeichnet die jeweilige Bandnummer, eine weitere Zahl die Bandseite:
+So  bedeutet z.B. "FRE-54-100", da&szlig; der entsprechende Beleg in Band
+54 auf S. 100 zu finden ist. Zus&auml;tzlich kann die Seitenzahl gelegentlich
+erweitert sein: "FRE-54-207a"<br>
+  <br>
+   Wir wollen alle Berufsangaben aus der Datenbank ausgegeben haben und dazu
+ auch die entsprechenden Belegstellen dieser Berufe in den genannten Quellen.
+ Um dies zu erreichen, kann man sich der folgenden Maske bedienen:<br>
+   <br>
+  index part=:beruf;identification=root[0]:sign[];<b>sequence="a-0-0z"</b><br>
+  <br>
+   <br>
+   Das bedeutet, da&szlig; die Signatur als zusammengesetzter String folgenden 
+ Inhalts interpretiert wird:<br>
+   <br>
+     
+<blockquote>Buchstabenfolge&nbsp;&lt;Bindestrich&gt; numerischer Wert &lt;Bindestrich&gt; 
+ numerischer Wert mit ggf. alphabetischer Erweiterung<br>
+     </blockquote>
+     <br>
+   Das Ergebnis hat z.B. die folgende Form:<br>
+    <br>
+    <br>
+     Baecker FRK-1-56, FRK-1-123 f., FRK-1-127, FRE-10-115a, FRE-10-129,
+FRE-13-189  - FRE-13-191, FRE-20-77b, FRE-20-84b, FRE-20-89b, FRE-30-3a,
+FRE-30-40a, FRE-40-60b, FRE-40-64b, FRE-40-77a, FRE-40-96, FRE-41-6b, FRE-41-57b,
+FRE-41-85a, FRE-50-26, FRE-50-75, FRE-50-97, FRE-50-115a, FRE-50-116, FRE-50-131,
+FRE-50-141, FRE-50-147, &nbsp;FRE-50-169<br>
+    <br>
+    <br>
+  Die Belge aus "FRK" wurden vor jene aus FRE sortiert. Innerhalb dieser
+Gruppen  folgt die Sortierung nach den B&auml;nden. Innerhalb der B&auml;nde
+nach den Seiten. Weil B&auml;cker in FRK-1-123 und FRK-1-124 vorkommt, wurde
+dies zu FRK-1-123 f. abgewandelt. Ebenso wurden die Belege von FRE-13-189,
+FRE-13-190 und&nbsp; FRE-13-191 zu FRE-13-189 - FRE-13-191 zusammengefa&szlig;t.
+Die alphabetischen Erweiterungen der Seitenzahlen wurden als Teil der Sortierordnung
+ akzeptiert.<br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+              
+  <p> </p>
+           
+  </body>
+  </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Parameter without:</b><br>
+<br>
+<br>
+       
+<p>Das System geht &uuml;blicherweise davon aus, da&szlig; der Inhalt der
+  durch part-Parameter erzeugten Spalten jeweils sowohl in die Sortierung
+einbezogen  als auch sichtbar dargestellt wird. Im Falle komplexerer Register
+kann es  notwendig sein, da&szlig; der Inhalt einzelner Spalten zwar ausgegeben
+wird, aber die Sortierung des Registers nicht beeinflu&szlig;t. Der Parameter
+without erlaubt daher, durch Angabe des Parameterwerts yes (no ist impliziter
+Standard), einzelne Registerspalten aus der Sortierordnung auszunehmen.&nbsp;
+Der Parameter without ist in diesem Fall also das funktionale Gegenteil des
+Parameters <a href="file:///C%7C/doku/NEW/COMMANDS/INDEX/Without1.htm"></a>
+ <a href="Write1.htm">   write.</a>
+ </p>
+     
+<p>Ein Beispiel soll die Funktionalit&auml;t des Parameters without verdeutlichen.
+  Zu erstellen sei ein alphabetisches Berufsregister. Aus bestimmten Gr&uuml;nden&nbsp; 
+ wollen wir, da&szlig; die Dokumentenidentifikation vor der Berufsangabe erscheint.&nbsp;
+ Die Dokumentenidentifikation "verschieben" wir in die erste Registerspalte,
+ indem wir sie mit dem Parameter <a href="Ident.html"> identification</a>
+   ansprechen. Damit diese Angabe nicht die&nbsp; alphabetische Reihung der
+ Berufe&nbsp; ver&auml;ndert, weisen wir nun das System durch Angabe von
+without=yes  an, die Identifikationsnummer&nbsp; als Sortierkriterium zu
+ignorieren. </p>
+   query name=basdat;part=kar<br>
+   index ident=root[0]:sign[];<b>without=yes;</b><br>
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=query[]:beruf<br>
+   <br>
+   <br>
+   Das Ergebnis ist dementsprechend eine alphabetische Berufsliste:<br>
+   <br>
+   DOK050389 ABLOESUNGSCOMM,AUSW <br>
+    &nbsp;&nbsp; <br>
+   DOK000557 ACCISER <br>
+    &nbsp;&nbsp; <br>
+   DOK999401 ACCISER <br>
+    &nbsp;&nbsp; <br>
+   DOK999031 ACCISER <br>
+    &nbsp;&nbsp; <br>
+   DOK000629 ACCOUCHEUR <br>
+    &nbsp;&nbsp; <br>
+   DOK810012 ACTUAR&nbsp; <br>
+    &nbsp;&nbsp; <br>
+   DOK050480 ACTUAR,GERICHT <br>
+    &nbsp;&nbsp; <br>
+   DOK030642 ACTUAR,GERICHT <br>
+    &nbsp;&nbsp; <br>
+   DOK020447 ACTUAR,GERICHT <br>
+    &nbsp;&nbsp; <br>
+   DOK001338 ACTUAR,GERICHT <br>
+   <br>
+     
+<p> </p>
+     
+<p></p>
+     
+<p> </p>
+     
+</body>
+</html>

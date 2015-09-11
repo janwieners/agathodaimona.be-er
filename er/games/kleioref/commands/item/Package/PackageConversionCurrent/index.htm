@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Package - conversion - current</title>
+          
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+                      
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+             
+  <meta name="CREATED" content="20020531;18202016">
+             
+  <meta name="CHANGEDBY" content=" ">
+             
+  <meta name="CHANGED" content="20020604;18334350">
+             
+  <style>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </style>
+</head>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+      
+<p class="h">Der Parameter current</p>
+ 
+<p> </p>
+ 
+<p class="p">Der Parameter current erwartet als Parameter den frei w&auml;hlbaren 
+Namen einer Variable. Der Parameterwert wird damit zu einer "Stand-in-Variable", 
+die adhoc in das Package eingef&uuml;hrt wird und durch die Direktive conversion 
+weiter verarbeitet wird. Es handelt sich dabei um den Inhalt des Elements, 
+das in der fields-Direktive verpackt wird.<br>
+  <br>
+  Eine typische Anwendung hat die folgende Form:<br>
+  <br>
+  </p>
+ 
+<p class="b">  field start='Starttag';<br>
+   &nbsp;&nbsp;&nbsp;      limit='Endtag'<br>
+    convert<br>
+   &nbsp;&nbsp;&nbsp;    current=dbimageid;<br>
+   &nbsp;&nbsp;&nbsp;    path=':package[:dump[dbimageid],uustbzoom]'<br>
+    </p>
+ 
+<p class="p"> Hier wird also der Inhalt des Elements das in der Fields-Direktive 
+verpackt wird, wiederum in die Stand-in-Variable "dbimageid" geschrieben, 
+die dann ihrerseits im Parameter path mit :dump[] aufgerufen und&nbsp; nach
+den Regeln des Package "uustbzoom" verpackt wird.</p>
+  <br>
+ <br>
+</body>
+</html>

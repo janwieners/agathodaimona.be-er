@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Repeat.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+       
+<p><b>Der Parameter repeat</b><br>
+ </p>
+ 
+<p><br>
+ Der Parameter repeat dient der Zusammenfassung von Registerzeilen, wenn
+diese in den vorangehenden logischen Spalten &uuml;bereinstimmen. Als Parameterwert 
+kann man eine Konstante angeben, durch welche der Inhalt der Spalte, bei der
+repeat gesetzt wurde, verbunden wird.</p>
+ 
+<p>Ein Beispiel ist ein Berufregister, das Namen, Vornamen und Beruf bestimmter 
+Personen enth&auml;lt. Zur Unterscheidung namensgleicher Personen wird die 
+Dokumentenidentifikation&nbsp; explizit&nbsp; ausgegeben.</p>
+ 
+<p>index part=:name;<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:vorname;<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:sign[];substitution="----";<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=pdat/kar:beruf;<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type=list<br>
+ </p>
+ 
+<p><br>
+ Da es bei der Information :beruf Mehrfacheintr&auml;ge geben kann und &uuml;berdies 
+jeweils mehrere Gruppen kar von pdat abh&auml;ngig sein k&ouml;nnen, produziert 
+das System dementsprechend mehrere Ausgabezeilen f&uuml;r ein und dieselbe 
+Person, wie die Ersetzung der Dokumentenidentifikation durch <a href="substitu.HTM">
+ substitution</a>
+  anzeigt:</p>
+ 
+<p>So entstehen f&uuml;r eine Person z.B. drei Registerzeilen:<br>
+ <br>
+ </p>
+ BECHT JOHANNES DOK050906 FABRARB,MASCHFABR <br>
+ &nbsp;&nbsp; &nbsp;<br>
+ BECHT JOHANNES ---- SCHREINER <br>
+ &nbsp;&nbsp; &nbsp;<br>
+ BECHT JOHANNES ---- SCHREINERGESELLE <br>
+ <br>
+ 
+<p>Durch Angabe des Parameters repeat kann nun erreicht werden, da&szlig; 
+das System diese drei Ausgabezeilen zu einer einzigen zusammenf&uuml;hrt und
+dabei die drei unterschiedlichen Berufsangaben durch eine fixe Zeichenkette 
+verbindet. Hierzu bietet sich in diesem Fall das Wort "und" an:<br>
+ <br>
+ index part=:name;<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:vorname;<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:sign[];substitution="----";<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=pdat/kar:beruf;<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;repeat=" und ";<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type=list</p>
+ 
+<p></p>
+ <br>
+ Wie zu sehen ist, m&uuml;ssen die Leerstellen vor und nach dem "und" explizit 
+angegeben werden. <br>
+ <br>
+ Das Resultat der Aufgabe ist in unserem Beispielsfall nunmehr folgende zusammengefa&szlig;te 
+Ausgabezeile:<br>
+ <br>
+ BECHT JOHANNES DOK050906 FABRARB,MASCHFABR und SCHREINER und SCHREINERGESELLE<br>
+ <br>
+ <br>
+ 
+<p><br>
+  </p>
+   
+<p><br>
+  &nbsp; </p>
+     
+</body>
+</html>

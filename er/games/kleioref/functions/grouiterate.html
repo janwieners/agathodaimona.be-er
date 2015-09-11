@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>function,iterate</title>
+                                                                        
+                                                                        
+                                                                        
+                        
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                     
+<p class="h">Die Funktion iterate</p>
+                                   
+<p class="p">Die Funktion iterate erm&ouml;glicht einzelne Items der Datenausgabe 
+      zu z&auml;hlen und das Resultat der Z&auml;hlung in einer lokalen Variable 
+      abzulegen. Die Funktion gehorcht folgender Syntax:<br>
+             </p>
+                         
+<p class="b">iterate[Variablenname,Schl&uuml;sselwort,Zahl]<br>
+            </p>
+                       
+<p class="p">Als lokale Variable kann eine beliebiger Name      angegeben
+werden, der den <a href="../namenregeln.html">Regeln</a> f&uuml;r Namen unter
+kleio folgen mu&szlig;. <br>
+          </p>
+                   
+<p class="p">Als Schl&uuml;sselworte k&ouml;nnen jeweils die Begriffe<br>
+          </p>
+                   
+<blockquote>                  
+  <blockquote>                              
+    <ul>
+            <li><b>initialize </b></li>
+                                           
+    </ul>
+                                   
+    <ul>
+            <li><b>add </b></li>
+                                           
+    </ul>
+                                   
+    <ul>
+            <li><b>sub </b></li>
+                                           
+    </ul>
+                                   
+    <ul>
+            <li><b>multiply </b></li>
+                                           
+    </ul>
+                                   
+    <ul>
+            <li><b>divide</b></li>
+                                           
+    </ul>
+        </blockquote>
+      </blockquote>
+                                                  
+<p class="p">angegeben werden. Die Schl&uuml;sselworte k&ouml;nnen jeweils
+   auf den ersten Buchstaben abgek&uuml;rzt werden. <br>
+      </p>
+           
+<p class="p">Das Schl&uuml;sselwert <b>initialize </b>erlaubt, den Wert der 
+  Variable zu initialisieren. Der Wert der angegebenen Zahl entspricht in 
+diesem  Falle dem Startwert. <b>Wird die Variable nicht expliziert initialisiert, 
+  so gilt automatisch der Ausgangswert "0".</b> Die Angabe<br>
+      </p>
+           
+<p class="b">iterate[zahl,initialize,10]<br>
+      </p>
+           
+<p class="p">weist also der Variable "zahl" den Wert "10" zu.<br>
+     </p>
+         
+<p class="p">Das Schl&uuml;sselwert <b>add</b> ordnet an, da&szlig; die jeweilige 
+  Items der Ausgabe addiert werden sollen. Der Wert von Zahl gibt an, welchen 
+  Wert jedes der addierten items haben soll. Die folgende Aufgabe addiert 
+jedes  Vorkommen des Elements "kuenstler". Dabei wird jeder Mehrfacheintrag 
+mit "1" gez&auml;hlt. Der Startwert ist "0":<br>
+     </p>
+         
+<p class="b">query name=piranesi;part=:kuenstler<br>
+     write part=/iterate[wert,add,1]:kuenstler,:number[:dump[wert],text]
+</p>
+       
+<p class="p"><br>
+   Diese Aufgabe liefert folgendes Resultat:<br>
+   </p>
+     
+<p class="b">row (1 = "38") : kuenstler&nbsp;&nbsp;&nbsp; Giovanni Battista 
+ Piranesi<br>
+   &nbsp; 1<br>
+   row (2 = "39") : kuenstler&nbsp;&nbsp;&nbsp; Giovanni Battista Piranesi<br>
+   &nbsp; 2<br>
+   row (3 = "40") : kuenstler&nbsp;&nbsp;&nbsp; Giovanni Battista Piranesi<br>
+   &nbsp; 3<br>
+   </p>
+     
+<blockquote>         
+  <blockquote>               
+    <blockquote>                     
+      <blockquote>                           
+        <p class="p">...<br>
+           </p>
+         </blockquote>
+       </blockquote>
+     </blockquote>
+   </blockquote>
+     
+<p class="b">row (534 = "33858") : kuenstler&nbsp;&nbsp;&nbsp; Andrea Palladio<br>
+   &nbsp; 517<br>
+   row (535 = "33859") : kuenstler&nbsp;&nbsp;&nbsp; Andrea Palladio<br>
+   &nbsp; 518<br>
+   row (536 = "33861") : kuenstler&nbsp;&nbsp;&nbsp; Andrea Palladio<br>
+   &nbsp; 519<br>
+   </p>
+     
+<p class="p">Es hei&szlig;t also, da&szlig; alle Elemente in der Ausgabe bis
+zum letzten (Nr. 519) durchgez&auml;hlt worden sind. Der Wert wurde mit der
+Funktion <a href="elemdump.htm">dump[]</a> zur&uuml;ckgegeben.<br>
+ </p>
+ 
+<p class="p">Das Schl&uuml;sselwort <b>sub</b> ordnet analog eine Subtraktion 
+an. Stattdessen k&ouml;nnten freilich auch das Wort <b>add </b>angegeben und
+bei Zahl ein negativer Wert gesetzt werden. <br>
+ </p>
+ 
+<p class="p">Das Schl&uuml;sselwort <b>multiply</b> ordnet eine Multiplikation 
+an. In diesem Fall ist der Wert von Zahl der gegebene Multiplikator.<br>
+ </p>
+ 
+<p class="p">Das Schl&uuml;sselwort <b>divide</b> ordnet eine Division an. 
+In diesem Fall ist der Wert von Zahl der gegebene Divisor.<br>
+   </p>
+     
+<p class="p">   </p>
+              
+<p class="p">Als Zahlenwert bei "Zahl" kann eine beliebige ganze Zahl mit 
+positivem oder negativem Vorzeichen eingetragen  werden.<br>
+      </p>
+           
+<p class="p"><br>
+            </p>
+                           <br>
+</body>
+</html>

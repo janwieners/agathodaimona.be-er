@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>write,Sequence.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+<b>Der&nbsp; </b><b>Parameter sequence </b> 
+<p><br>
+Als Parameterwert erwartet sequence eine ganze Zahl. Die Zahl entspricht
+der Anzahl &nbsp;der Ausgabeeinheiten, nach denen das System einen Seitenvorschub
+ausgibt. In Verbindung mit dem Parameter <a href="Comment.htm">comment</a>
+ l&auml;&szlig;t sich sequence dazu verwenden, um nach einer bestimmen Zahl
+von Ausgaben eine Konstante auszugeben.</p>
+<p>Der Befehl</p>
+<p>query name=basdat;part=per<br>
+write part=:name;comment="Listing Nr. 10";<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp; sequence=20;<br>
+stop</p>
+<p><br>
+bewirkt also, da&szlig; nach 20 Zeilen die Zeichenkette "Listing Nr. 10"
+ausgegeben wird:</p>
+<p><br>
+</p>
+<p>per (1 = "DOK030011") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABELE<br>
+per (2 = "DOK050295") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABELE<br>
+per (3 = "DOK001191") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABT<br>
+per (4 = "DOK000085") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABT<br>
+per (5 = "DOK001199") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACKER<br>
+per (6 = "DOK010013") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACKERL<br>
+per (7 = "DOK000901") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACKERL<br>
+per (8 = "DOK050903") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACKERL<br>
+per (9 = "DOK000147") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACKERL<br>
+per (10 = "DOK050902") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACKERL<br>
+per (11 = "DOK030015") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ADELMANN VON<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Kommentar&nbsp;&nbsp; GRAF<br>
+per (12 = "DOK010003") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AFFENARZ<br>
+per (13 = "DOK001120") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (14 = "DOK050256") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (15 = "DOK000978") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (16 = "DOK000610") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (17 = "DOK000914") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (18 = "DOK000926") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (19 = "DOK000270") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+per (20 = "DOK001454") : name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AGNER<br>
+Listing Nr. 10<br>
+<br>
+</p>
+<p><br>
+ </p>
+</body>
+</html>

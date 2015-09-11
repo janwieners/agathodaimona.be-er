@@ -1,0 +1,194 @@
+<html>
+<head>
+  <title>Description</title>
+</head>
+ <body bgcolor="#ffffff">
+         
+<p><b>Der Index-Befehl</b></p>
+       
+<p><b>Sortieren und Z&auml;hlen mit einem Index-Befehl</b><br>
+    </p>
+              
+<p>Der Index-Befehl erf&uuml;llt zwei wesentliche Auswertungsfunktionen: Das
+Sortieren und das <a href="Type1.htm"> Z&auml;hlen</a> ausgew&auml;hlter
+Informationen und deren jeweilige Ausgabe in Registerform. Ein Register gliedert
+sich in jeweils beliebig viele waagrechte Zeilen und senkrechte Spalten.
+Sofern nicht durch Angabe des Parameters sign eine andere Einstellung getroffen
+wird, reserviert das System f&uuml;r jeden einzelnen Spalteneintrag jeweils
+so viele Zeichen wie zu dessen Darstellung  notwenig sind. Das bedeutet,
+da&szlig; je nach L&auml;nge der Eintr&auml;ge  in den jeweiligen Spalten
+Registerzeilen mit jeweils unterschiedlicher Breite  generiert werden.&nbsp;
+Standardm&auml;&szlig;ig wird&nbsp; in der&nbsp; jeweils letzten Registerspalte
+die&nbsp; Dokumentenidentifikation ausgegeben,  die dar&uuml;ber Auskunft
+gibt, welchem Dokument die Informationen der Registerzeile  entstammen. Die
+Ausgabe der Dokumentenidentifikation kann auf Wunsch durch Angabe des Parameters
+<a href="Type1.htm"> type</a> unterdr&uuml;ckt&nbsp; werden. </p>
+           
+<p> Daten des Typs text werden in&nbsp; alphabetisch aufsteigender <a href="First2.htm">
+  Sortierordnung</a>&nbsp; ausgegeben. Ziffernfolgen, die nicht explizit
+als  Datentyp number definiert&nbsp; sind, und Kombinationen aus beginnenden
+Ziffern&nbsp;  und Buchstaben (z.B.&nbsp; "3. Stadtbezirk") werden nach den
+mit Buchstaben  beginnenden&nbsp; Eintr&auml;gen&nbsp; ausgegeben. </p>
+             
+<p>Die Ausgabedaten werden innerhalb der einzelnen Registerspalten&nbsp;
+jeweils linksb&uuml;ndig gesetzt.&nbsp; F&uuml;r Ziffernfolgen des Datentyps&nbsp;
+  text mit unregelm&auml;&szlig;iger L&auml;nge bedeutet dies, da&szlig;
+z.B.&nbsp;   der Wert "8" nach dem Wert "19" sortiert wird (die Ziffer "8"
+steht im Register   unter der Ziffer "1" und wird daher nach dieser ausgegeben)
+. Will man dieses&nbsp;  Systemverhalten &auml;ndern, so kann man durch Angabe
+des Parameters&nbsp;   form mit dem Wert right eine rechtsb&uuml;ndige Ausrichtung
+innerhalb der&nbsp;   Spalte einstellen. Wenn in einer Registerspalte ausschlie&szlig;lich
+Ziffern&nbsp;   des Datentyps text vorkommen, ist es alternativ auch m&ouml;glich,
+diese  durch Angabe der Elementarfunktion&nbsp; number[] als Daten des Typs
+number  zu behandeln, um damit eine numerische Sortierung zu erreichen.</p>
+             
+<p>Daten des Typs category werden wie Daten des Typs text behandelt.</p>
+           
+<p>Daten des Typs number werden&nbsp; vom kleinsten Wert&nbsp; an aufsteigend 
+  sortiert.&nbsp; </p>
+     Daten des Typs date werden als Triple in der Abfolge Jahr, Monat, Tag
+ in  chronologisch aufsteigender Folge ausgegeben. Tages- und Monatsangaben
+ werden  zweistellig, Jahresangaben vierstellig dargestellt.&nbsp; Da das
+System f&uuml;r  Datumsangaben standardm&auml;&szlig;ig eine Spaltenbreite
+von elf Zeichen  reserviert, ergibt sich daraus, da&szlig; bei Zeitintervallen
+jeweils nur  das Anfangsdatum in der Ausgabe erscheint. Will man dies &auml;ndern,
+ so kann man entweder durch Angabe des sign-Parameters eine h&ouml;here Spaltenbreite
+  einstellen oder mit Hilfe z.B. der Funktion :before[] explizit auf den
+Endpunkt   des Intervalls zugreifen. <br>
+    <br>
+    Daten des Typs relation, image und relation werden bei der Ausgabe in 
+Registern&nbsp;  als Daten des Typs text dargestellt und behandelt.&nbsp; 
+<br>
+         
+<p></p>
+         
+<p>Ein korrekter Index-Befehl hat&nbsp; wenigstens den folgenden Umfang:</p>
+      index part=:element<br>
+     <br>
+      Der part-Parameter er&ouml;ffnet eine Registerspalte mit dem Inhalt 
+von   :element1. Zur Erzeugung mehrspaltiger&nbsp; Register m&uuml;ssen entsprechend 
+  weitere part-Parameter angegeben werden:      
+<p> </p>
+             
+<p> </p>
+      index part=:element;part=:element2;part=:element3 &nbsp;<br>
+     <br>
+     Der &Uuml;bersichtlichkeit halber empfiehlt es sich, l&auml;ngere Index-Befehle 
+  nach jedem part-Parameter umzubrechen. Dabei ist darauf zu achten, da&szlig; 
+  die neue Zeile um mindestens eine Stelle einger&uuml;ckt werden mu&szlig;:<br>
+     <br>
+       index part=:element;<br>
+      &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:element2;<br>
+      &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:element3     
+<p>Dieser Befehl erzeugt ein vierspaltiges Register, das in den ersten drei 
+  Spalten den Inhalt der jeweils durch einen part-Parameter angesprochenen 
+ Elementarinformationen sowie in der vierten Spalte die standardm&auml;&szlig;ig 
+ ausgegebene Dokumentenidentifikation enth&auml;lt. </p>
+         
+<p>Hierbei gilt&nbsp; folgende Regel: Eine Registerzeile wird &uuml;berhaupt 
+  nur dann ausgegeben, wenn die jeweils erste Registerspalte besetzt ist. 
+Ist  das Element dagegen "leer", so entf&auml;llt die gesamte Zeile, selbst 
+wenn  in den Folgespalten Daten vorliegen. Man kann (falls erw&uuml;nscht) 
+das Systemverhalten problemlos &auml;ndern, indem man die erste Spalte f&uuml;r 
+ eine Dummy-Information reserviert, die immer vorliegt. Mann kann z.B. durch 
+ die Elementarfunktion :form[] eine Leerstelle erzeugen, die dann jeweils 
+als erste Registerspalte ausgegeben wird:</p>
+      index part=:form[" "];part=:element;part=:element2;part=:element3 &nbsp; 
+  &nbsp;      
+<p>In diesem Fall wird die komplette Registerzeile auch dann ausgegeben, wenn
+bei :element keine Information vorliegt. Die vorangestellte Leerstelle hat
+keinen Einflu&szlig; auf die Sortierung.</p>
+         
+<p>Der index-Befehl erlaubt die Definition komplexer Sortierordnungen und 
+  die optische Gestaltung der Register durch Einstellung von Spaltenbreiten, 
+  Ersetzungen identischer Spalteneintr&auml;ge sowie sie Angabe von Default-Werten 
+  bei fehlenden Angaben. Hierzu sei im besonderen auf die Funktionalit&auml;t 
+  der Parameter without, write, limit, position, self und sign verwiesen.</p>
+       
+<p> </p>
+         
+<p><br>
+    <b>Sortieren und Z&auml;hlen mit mehreren Index-Befehlen</b></p>
+       
+<p>Zur Erstellung komplexer Register kann es unumg&auml;nglich sein, mehrere
+  Index-Befehle zu kombinieren. Man habe zum Beispiel in einer Datenbank
+Familiennamen   von M&auml;nnern (:name) und M&auml;dchennamen von Ehefrauen
+(:geborene)  und will diese in einem einheitlichen Register zusammenfassen.
+Hierzu bietet  sich diese Abfolge von Index-Befehlen an:</p>
+       
+<p>index part=:name<br>
+    index part=:geborene</p>
+       
+<p>Die Befehle bewirken, da&szlig; beide Elementarinformationen (also die
+  M&auml;nnernamen und die M&auml;dchennamen) in derselben Spalte erscheinen.
+  Die Reihenfolge der Index-Befehle ist ohne Einflu&szlig; auf die Sortierfolge,
+  die wiederum ausschlie&szlig;lich durch die alphabetische Abfolge der jeweiligen
+  Namen oder M&auml;dchennamen bestimmt wird. Die Anzahl an kombinierbaren
+ Index-Befehlen ist technisch prinzipiell unbeschr&auml;nkt. </p>
+       
+<p>Beim Einsatz mehrerer Index-Befehle ist es nicht m&ouml;glich, jeweils 
+ verschiedene limit-Parameter auf&nbsp; dieselbe Splate anzuwenden, da der 
+ Inhalt des limit-Parameters im&nbsp; jeweils letztes Index-Befehls die Werte 
+ der vorhergehenden Parameter &uuml;berschreibt. Folgende Aufgabe wird <b>
+   nicht</b> das erw&uuml;nschte Ergebnis liefern und die Vornamen der Frau 
+ und des Mannes gesondert auszeichnen. </p>
+        
+<p>index part=:name;limit=" Vorname des Mannes: ";part=:vorname<br>
+    index part=:geborene;limit=" Vorname der Frau: ";part=:vornam</p>
+     
+<p>Vielmehr werden auch die m&auml;nnlichen Vornamen als "Vornamen der Frau" 
+ etikettiert:</p>
+   Abrecht Vorname der Frau: Christina FRE-54-213 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname der Frau: Christof FRE-54-1 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname der Frau: Christof FRE-54-3 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname der Frau: Christoph FRE-54-2 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname der Frau: Elias FRE-56-567 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname der Frau: Elisabeth FRE-55-94 <br>
+   <br>
+     
+<p>Man kann das Problem in diesem Falle aber umgehen, indem man die Spaltenbeschriftung 
+ durch die Elementarfunktion :form[] erzeugt. In diesem Falle steht die Beschriftung 
+ jedoch nicht zwischen den Spalten, sondern bildet selbst eine Registerspalte, 
+ die daher durch den Parameter without mit dem Wert yes explizit von der Sortierung
+ ausgeschlossen werden mu&szlig;:</p>
+     
+<p>index part=:name;part=:form["Vorname des Mannes: "];without=yes;part=:vorname<br>
+    index part=:geborene;part=:form["Vorname der Frau: "];without=yes;part=:vorname</p>
+     
+<p>Das Listing liefert nun das erw&uuml;nschte Resultat:</p>
+   <br>
+   Abrecht Vorname der Frau:&nbsp; Christina FRE-54-213 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname des Mannes:&nbsp; Christof FRE-54-1 <br>
+    &nbsp; &nbsp; <br>
+   Abt Vorname des Mannes:&nbsp; Christof FRE-54-3 <br>
+   <br>
+   Abt Vorname des Mannes:&nbsp; Christoph FRE-54-2<br>
+   <br>
+   Abt Vorname des Mannes:&nbsp; Elias FRE-56-567<br>
+   <br>
+   Abt Vorname der Frau:&nbsp; Elisabeth FRE-55-94<br>
+   <br>
+   <br>
+       
+<p> </p>
+       
+<p><br>
+    </p>
+       
+<p> <br>
+    <br>
+    </p>
+       
+<p><br>
+    </p>
+             
+<p> </p>
+             
+</body>
+</html>

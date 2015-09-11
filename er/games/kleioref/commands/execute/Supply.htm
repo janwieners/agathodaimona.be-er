@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>execute, supply</title>
+                                                                        
+                                                                        
+                    
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                                             
+<p class="h">Der Parameter supply<br>
+                  </p>
+                        
+<p class="p">Eine katalogisierte Prozedur kann <a
+ href="http://www.hki.uni-koeln.de/kleio/marker.html" target="_blank">benannte 
+ Ersetzungsmarker</a>     oder <b>gez&auml;hlte Marker</b> enthalten. Dabei 
+ handelt es sich im Grunde um allgemeine Variable, die  anstelle   einzelner 
+ Bestandteile im Quelltext der zu katalogisierenden Aufgabe  enthalten   sein
+ k&ouml;nnen. Der Parameter supply erm&ouml;glicht es, bei  lokaler Ausf&uuml;hrung
+   katalogisierter Prozeduren diesen Variablen konkrete  Werte zuzuweisen.
+ <br>
+   </p>
+     
+<p class="p">Im Falle von <b>benannten Markern </b>erwrten supply als <b>Parameterwert 
+ </b>jeweils durch Kommata getrennt die Angabe der Ersetzungsmarker und der 
+ ihnen jeweils zugeh&ouml;rigen Werte. Dabei mu&szlig; der Wert als Konstante 
+ als Konstante, also in Hochkommata angegeben werden.<br>
+           </p>
+                     
+<p class="p">Nehmen wir als Beispiel die folgende Prozedur:<br>
+           </p>
+                     
+<p class="b">item name=job2;usage=procedure;overwrite=yes<br>
+           cata source='query name=piranesi;<br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=row:datierung="@=date@" 
+     @=bool@ :kuenstler="@=artist@"\nwrite'<br>
+           exit name=job2<br>
+          </p>
+                     
+<p class="p">Wie man also hier sehen kann, wird als eine ganz normale Datenbankabfrage 
+    formuliert, in der die Werte f&uuml;r "kuenstler" und "datierung" sowie 
+  der  Operator als Variable mit den Namen "artist", "date" und "bool" deklariert 
+    sind. Beim Aufruf der Prozedur werden den drei Ersetzungsmarkern folgende
+   Werte zugewiesen:</p>
+              
+<p class="b">exec name=job2;supply=artist, "Antoine", bool, "and" , date,
+    "1682"<br>
+      </p>
+      Das wiederum entspr&auml;che der folgenden Aufgabe:       
+<p class="b"> query name=piranesi;<br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=row:datierung="<u>1682</u>"
+   <u>and</u> :kuenstler="<u>Antoine</u>"<br>
+      write<br>
+                  </p>
+                   
+<p class="p">Es wurde also hier nicht nur der Inhalt von zwei Elementen durch
+  einen Ersetzungsmarker repr&auml;sentiert, sondern auch ein syntaktisches
+  Schl&uuml;sselwort ("and"). <br>
+   </p>
+     
+<p class="p">Dieselbe Aufgabe lie&szlig;e sich syntaktisch auch durch <b>gez&auml;hlte 
+ Marker</b> l&ouml;sen. In diesem Fall werden die Marker 1) durch eine fortlaufende 
+ Nummer identifiziert. 2) werden die jeweiligen Werte in der Reihenfolge ihres
+ Auftrtetens im supply-Parameter zugewiesen. Der gez&auml;hlte Marker mit
+dem Wert "1" erh&auml;lt also den Wert der ersten Konstanten, der Markers 
+des Werts "2" den der zweiten und so fort.<br>
+   </p>
+     
+<p class="p">Obige Aufgabe h&auml;tte mit gew&auml;hlten Markern also folgende 
+ Form:<br>
+   </p>
+     
+<p class="b">item name=job2;usage=procedure;overwrite=yes<br>
+           cata source='query name=piranesi;<br>
+  &nbsp; &nbsp; &nbsp; &nbsp;part=row:datierung="@#3@" @#2@<br>
+  &nbsp; &nbsp; &nbsp; &nbsp;:kuenstler="@#1@"\nwrite'<br>
+           exit name=job2   </p>
+               <br>
+  <br>
+  Mit dem Befehl <br>
+  <br>
+   
+<p class="b">exec name=job2;supply="Antoine", "and", "1682"</p>
+   
+<p class="p"> w&uuml;rden die entsprechenden Werte wie in job1 zugewiesen.<br>
+            <br>
+    </p>
+ 
+</body>
+</html>

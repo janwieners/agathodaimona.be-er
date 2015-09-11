@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Target.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+     <b>Der Parameter Target:<br>
+     <br>
+     </b><br>
+         Gew&ouml;hnlich werden Register als Ergebnisse eines Index-Befehls 
+ in  einer  Gesamtdatei  abgelegt. Dies geschieht, indem man unter Linux bzw.
+ Unix oder  im Fenster "Eingabeaufforderung" unter Windows eine Zieldatei
+ f&uuml;r das Resultat  einer Aufgabe angibt. In unserem Fall sei die Aufgabe
+ in der Datei aufg1 enthalten: <br>
+     <br>
+         Die Eingabe<br>
+     <br>
+         kleiob aufg1 aufg1.erg<br>
+     <br>
+         w&uuml;rde also das Resultat der Abarbeitung von aufg1 in die Datei
+  aufg1.erg   schreiben.<br>
+     <br>
+         Alternativ kann man durch Angabe des Parameters target in der stop 
+ oder   continuation-Direktive eine Zieldatei angeben:<br>
+     <br>
+         query name=basdat;part=per<br>
+         index part=:name<br>
+         stop target="aufg1.erg"<br>
+     <br>
+         In diesem Falle schreibt kleio das Ergebnis des Index-Befehls in 
+die   Datei   aufg1.erg. S&auml;mtliche Systemmeldungen werden &uuml;ber den
+Bildschirm   ausgegeben,   und die Zieldatei enth&auml;lt ausschlie&szlig;lich 
+die angeforderten   Daten.<br>
+     <br>
+         F&uuml;r bestimmte Aufgaben ist es jedoch praktisch oder sogar unumg&auml;nglich, 
+   die  Datenausgabe systematisch in mehrere Dateien zu zerlegen. Hierzu dient
+   der  Parameter target, der sinnvollerweise als erster Parameter eines
+Index-Befehls   angegeben wird. Er erwartet als Parameterwert den Namen einer
+g&uuml;ltigen    Elementarinformation. Target bewirkt, da&szlig; der jeweilige
+Inhalt des   dort angegebenen&nbsp; Elements als g&uuml;ltiger Name einer
+Datei verwendet   wird, die wiederum als Ausgabedatei der nachfolgend angeforderten
+Informationen   dient. Das hei&szlig;t, da&szlig; jeweils beim Wechsel des
+Spalteninhalts,   der bei target erzeugt wird, eine neue Datei angelegt wird.
+Das wiederum  bewirkt, da&szlig; alle Registerzeilen, die im Inhalt des Parameterwerts
+von target &uuml;bereinstimmen in einer gemeinsamen Datei abgelegt werden,
+die ihrerseits nach dem Inhalt des Parameterwerts benannt ist. <br>
+     <br>
+     Ein Beispiel &nbsp;verdeutlicht die Funktionalit&auml;t von Target:<br>
+     <br>
+     Will man z.B. ein Namenverzeichnis anlegen, in dem  f&uuml;r jeden Beleg 
+  eines  Familiennamens eine eigene Datei erzeugt wird, so kann man sich folgender
+   Aufgabe bedienen:<br>
+     <br>
+         query name=Basdat;part=per<br>
+         index target=:name;part=:name;part=:vorname<br>
+     <br>
+         Das Parameter target weist das System hier an, da&szlig; f&uuml;r
+ alle  Personen identischen Familiennamens (:name) jeweils eine eigene Datei
+ angelegt  wird, die den Namen, Vornamen und die standardm&auml;&szlig;ige
+ Dokumentenidentifikation  dieser Personen enth&auml;lt. Der Familienname
+wird zum Namen dieser Datei.<br>
+     <br>
+     Betrachtet man nun einen Ausschnitt aus dem Inhalt des Zielverzeichnisses
+  oben angef&uuml;hrter Aufgabe (indem man unter Unix/Linux z.B. den Befehl
+  ls -l eingibt), dann erkennt man, da&szlig; das System unterschiedlich
+gro&szlig;e   Dateien angelegt hat, die als Dateibezeichnung die Inhalte
+des Elements :name  tragen:<br>
+     <br>
+         
+<table width="60%" cellpadding="2" cellspacing="2" border="0" bgcolor="#ffffff">
+       <tbody>
+         <tr>
+           <td bgcolor="#ffffff">-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">77</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ABELE</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td valign="Middle">userxyz</td>
+           <td>users</td>
+           <td align="Right">97</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ABT</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">30</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ACKER</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">155</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ACKERL</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">28</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ADELMANN</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">24</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>AFFENARZ</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">362</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>AGNER</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">58</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>AICHELE</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">33</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>AICHINGER</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">151</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ALBER</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz</td>
+           <td>users</td>
+           <td align="Right">31</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>14:23</td>
+           <td>ALDINGER</td>
+         </tr>
+                   
+  </tbody>     
+</table>
+     <br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;......<br>
+     <br>
+     <br>
+     Die gr&ouml;&szlig;te der hier erzeugten Dateien tr&auml;gt den Namen
+ "AGNER"  und umfa&szlig;t 362 Zeichen. Betrachtet man diese Datei (indem
+man sie z.B.  mit einem beliebigen Editor aufruft oder unter Unix/Linux mit
+dem Befehl more ansieht),  so offenbart sich der folgende Dateiinhalt:<br>
+     <br>
+     ACKERL&nbsp;&nbsp; DOK000901 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ACKERL&nbsp;&nbsp; DOK010013 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ACKERL GOTTHILF DOK050903 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ACKERL GOTTLIEB DOK000147 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ACKERL HEINRICH DOK000147 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ACKERL HEINRICH DOK050902 <br>
+     <br>
+     Das System halt also alle Personen des Namens (:name) "ACKERL" in die
+ Datei  "ACKERL" geschrieben. Als Inhalt der Datei wurden jene Registereintr&auml;ge 
+  verwendet, die durch die <a href="Part.htm">part</a>
+    -Parameter nach target erzeugt wurden (die Ausgabe der Identifikationsnummer 
+  ist impliziter Standard).<br>
+     <br>
+     Man kann das Systemverhalten noch weiter differenzieren, indem man des 
+ Inhalt  des Elements bei target durch bestimmte Elementarfunktionen ver&auml;ndert. 
+  So kann man z.B. durch die Funktion   <a href="../../functions/elemsubs.htm">
+  :substring[]</a>
+      &nbsp;den Inhalt des Elements auf die erste Stelle abschneiden:<br>
+     <br>
+         query name=Basdat;part=per<br>
+          index target=:substring[:name,1,1];<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; part=:name;<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; part=:vorname<br>
+     <br>
+     In diesem Falle wird also nicht f&uuml;r jeden Namen, sondern f&uuml;r 
+ jeden  neuen Anfangsbuchstaben eine eigene Ausgabedatei angelegt:<br>
+     <br>
+     Das Inhaltsverzeichnis zeigt nun u.a. folgende Dateien:<br>
+     <br>
+         
+<table border="0" width="60%" cellpadding="2" cellspacing="2">
+       <tbody>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz<br>
+           </td>
+           <td>users</td>
+           <td>2454</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>16:15</td>
+           <td>A</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz<br>
+           </td>
+           <td valign="Middle">users</td>
+           <td>12385</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>16:15</td>
+           <td>B</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz<br>
+           </td>
+           <td>users</td>
+           <td>1384</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>16:15</td>
+           <td>C</td>
+         </tr>
+                   
+  </tbody>     
+</table>
+     <br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ........<br>
+     <br>
+     <br>
+     Es gibt also Dateien&nbsp; mit den Namen A, B, C und so fort, die jeweils 
+  alle Personen enthalten, deren Name mit dem jeweiligen Buchstaben beginnt:<br>
+     <br>
+     So sieht z.B. der Inhalt der Datei A folgenderma&szlig;en aus:<br>
+     <br>
+     ABELE CARL DOK030011 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ABELE FRIEDRICH DOK050295 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ABELE JOHANN DOK050295 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ABT ELIAS DOK000085 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ABT FRIEDERIKE DOK001191 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ABT MARTIN DOK000085 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp; <br>
+     ..........<br>
+     <br>
+     <br>
+     AUTENRIETH FERDINAND DOK000054<br>
+     <br>
+     AUTENRIETH JOHANN DOK001611<br>
+     <br>
+     AUTHENRIETH CHRISTIAN DOK000280<br>
+     <br>
+     AUTHENRIETH CHRISTIAN DOK050155<br>
+     <br>
+     AUTHENRIETH JAKOB DOK000461<br>
+     <br>
+     <br>
+     <br>
+     <b>Anlage statischer CGI-Server mittels target</b><b><br>
+     </b><br>
+     <br>
+     Ein realistischer Einsatzzweck des target-Parameters besteht darin,
+zusammengeh&ouml;rige   Daten in einer Datei zusammenzufassen, um diese &uuml;ber
+einen HTML-Link   ansprechbar zu machen. F&uuml;r die folgenden Ausf&uuml;hrungen
+wird die  Kenntnis logischer Objekte des Typs <a href="../ITEM/PACKAGE/Index.htm">
+ package</a>
+      vorausgesetzt:<br>
+     <br>
+     Folgende Definitionen befinden sich in der Umwelt der Datenbank:<br>
+     <br>
+         
+<pre><code>item name=pack1;usage=package;overwrite=yes<br>fields limit=".htm"<br>exit name=pack1</code></pre>
+         
+<pre><code></code></pre>
+         
+<pre><code>item name=pack2;usage=package;overwrite=yes<br>fields limit="&lt;br&gt;"<br>exit name=pack2</code></pre>
+     Folgender Befehl wird ausgef&uuml;hrt:<br>
+     <br>
+     query name=basdat;part=per<br>
+     index target=:package[:substring[:name,1,1],pack1];<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;form=html;<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:name;<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:package[:vorname,pack2];<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type=list<br>
+     stop<br>
+     <br>
+     <br>
+     Das Ergebnis dieser Abfrage ist nun eine Serie von Dateien, die entsprechend 
+  den Anweisungen im package pack1 &nbsp;die Erweiterung *.htm tragen und 
+folglich  von Standardbrowsern als HTML-Dateien erkannt werden k&ouml;nnen. 
+<br>
+     <br>
+         
+<table border="0" width="60%" cellpadding="2" cellspacing="2">
+       <tbody>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz<br>
+           </td>
+           <td>users</td>
+           <td>1848</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>17:39</td>
+           <td>A.htm</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz<br>
+           </td>
+           <td>users</td>
+           <td valign="Middle">9289</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>17:39</td>
+           <td>B.htm</td>
+         </tr>
+         <tr>
+           <td>-rw-r--r--</td>
+           <td>1</td>
+           <td>userxyz<br>
+           </td>
+           <td>users</td>
+           <td>1064</td>
+           <td>Aug</td>
+           <td>13</td>
+           <td>17:39</td>
+           <td>C.htm</td>
+         </tr>
+                   
+  </tbody>     
+</table>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ ......<br>
+     <br>
+     Der Inhalt der Dateien wurde durch Zeilenumbr&uuml;che rudiment&auml;r 
+ formatiert.  Der Parameter type=list bewirkt die Unterdr&uuml;ckung der Dokumentenidentifikation:<br>
+     <br>
+     ABELE CARL&lt;br&gt; <br>
+     <br>
+     ABELE FRIEDRICH&lt;br&gt; <br>
+     <br>
+     ABELE JOHANN&lt;br&gt; <br>
+     <br>
+     ABT ELIAS&lt;br&gt; <br>
+     <br>
+     ABT FRIEDERIKE&lt;br&gt; <br>
+     <br>
+     ABT MARTIN&lt;br&gt; <br>
+     <br>
+     &nbsp; &nbsp; &nbsp; ....<br>
+     <br>
+     <br>
+     Das Ergebnis dieses Index-Befehls mit dem Parameter target ist&nbsp; 
+also   eine Liste "anklickbarer" HTML-Dateien, die wiederum als Grundelement 
+eines   statischen Servers dienen k&ouml;nnten, der die Personen unserer Beispielsdatenbank
+  enth&auml;lt.<br>
+<br>
+<br>
+Eine wiederholte Ausf&uuml;hrung des o. ang. Befehls w&uuml;rde zu einer
+Fehlermeldung f&uuml;hren, da Dateien, die mittels des Parameters target
+angelegt wurden, standardm&auml;&szlig;ig nicht &uuml;berschrieben werden
+k&ouml;nnen. Dieses Systemverhalten l&auml;&szlig;t sich durch Einsatz des
+Parameters <a href="Overwrite.htm">overwrite</a>
+ mit dem Parameterwert overwrite aufheben.<a href="Overwrite.htm"><br>
+</a>
+<br>
+     <br>
+     &nbsp;<br>
+     <br>
+         
+<pre><code></code></pre>
+     <br>
+         
+<pre><code>
+</code></pre>
+     <br>
+     <br>
+     <br>
+     <br>
+         
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+                                                              <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<TITLE>remain[]</TITLE>
+
+
+<P CLASS="h">Die Funktion remain[]</p>
+<p class="p">Bei der Abarbeitung relationalen &Uuml;berg&auml;ngen zwischen Datenbanken die durch den Befehl <a href="../commands/bridge/index.htm" target=_blank>bridge</a> eingef&uuml;hrt wurden, gilt folgende Regel hinsichtlich der Pfade: Wenn eine relationaler Pfad von datenbank1 zu datenbank2 erfolgreich abgearbeitet wurde, positioniert sich kleio wieder in datenbank1. Man habe folgendes Beispiel:</p>
+<p class="b">query name=datenbank1;part=gruppe<br>
+index part=:element1;<br>
+
+&nbsp;&nbsp;&nbsp;part=:datenbank2:element2;<br>
+&nbsp;&nbsp;&nbsp;part=:element3</p>
+<p class="p">In diesem Fall wird durch die Angabe :datenbank2 ein &Uuml;bergang in die enstprechend verlinkte Datenbank vollzogen und das Element des Namens "element2" aus dieser Datenbank in das Register geschrieben. Nach Abrabeitung dieses Pfades befindet sich das System wieder in der Ausgangsdatenbank (also datenbank1). Der Inhalt von "element3" entstammt demnach der Datenbank "datenbank1".</p>
+<p class="p">Dieses Systemverhalten kann durch remain[] ver&auml;ndert werden. Die Angabe von remain[] bewirkt, da&szlig; Kleio nach Abarbeitung des relationalen Pfades in der Zieldatenbank verharrt, so da&szlig; die weiteren Angaben sich auf diese Datenbank beziehen:</p>
+
+<p class="b">query name=datenbank1;part=gruppe<br>
+index part=:element1;<br>
+
+&nbsp;&nbsp;&nbsp;part=remain[]:datenbank2:element2;<br>
+&nbsp;&nbsp;&nbsp;part=:element3</p>
+<p class="p">
+In diesem Fall wird also in der dritten Registerspalte der Inhalt des Elements "element3" aus der Datenbank "datenbank2" ausgegeben.
+</p>
+</body>

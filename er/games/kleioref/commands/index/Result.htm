@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Result.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b>Der Parameter result:<br>
+<br>
+</b>Der Parameter result erwartet als Parameterwert ein einzelnes, frei w&auml;hlbares
+Zeichen.<b><br>
+<br>
+</b>Beim Einsatz mehrere Index-Befehle werden die einzelnen Registerzeilen
+&uuml;blicherweise unabh&auml;ngig von der Nummer des Index-Befehls sortiert,
+der diese generiert hat. Durch Anwendung der Parameter <a href="Line1.htm">
+lines</a>
+,&nbsp; <a href="Also.htm">also</a>
+ und <a href="Source.htm">source</a>
+ kann dies modifiziert werden.<br>
+<br>
+Dabei gehen die genannten Parameter davon aus, da&szlig; jeweils der gesamte
+Spalteninhalt zur Sortierung herangezogen wird. Im Unterschied dazu erlaubt
+der Parameter result, da&szlig; der Parameterwert zus&auml;tzlich als Sortierkriterium
+eingef&uuml;gt wird. Bei zusammenh&auml;ngenden Zeichenketten wird das jeweilige
+Zeichen an das Ende des Spalteninhalts gesetzt. Wenn der Spalteninhalt durch
+Leerstellen gegliedert ist, so ersetzt der Parameterwert von result die erste
+vorkommende Leerstelle. Damit result funktioniert, mu&szlig; einer der Index-Befehle
+mit dem Parameter <a href="Second.htm">second</a>
+ markiert sein.<br>
+<br>
+<b>Diese Einf&uuml;gungen gelten jeweils f&uuml;r die Sortierung, nicht aber
+f&uuml;r die Darstellung der Ausgabe!</b><br>
+<br>
+Eine entsprechenden Aufgabe hat die folgende Grundform:<br>
+<br>
+<br>
+query name=basdat;part=per<br>
+index part=pdat/part[kar,1]:beruf;second=~;part=:form["Zeile 1"];without=yes<br>
+index part=pdat/part[kar,2]:beruf;result=y;part=:form["Zeile 2"];without=yes<br>
+index part=pdat/part[kar,3]:beruf;result=x;part=:form["Zeile 3"];without=yes<br>
+stop&nbsp; <br>
+<br>
+<br>
+Im zweiten und dritten Index-Befehl werden an das Ende der Zeile bzw. anstelle
+der ersten Leerstelle ein "y" bzw. ein "x" eingef&uuml;gt. Da "x" vor "y"
+sortiert wird, erscheinen bei identischem Inhalt diejenigen Daten, die durch
+den 3. Index-Befehl erzeugt wurden, vor jenen, die der dritte Befehl generiert
+hat.<br>
+<br>
+<b><br>
+</b> 
+<p><br>
+<br>
+ </p>
+</body>
+</html>

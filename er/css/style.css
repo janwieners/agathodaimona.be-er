@@ -1,0 +1,629 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+/**
+ Styles for agathodaimona.be/er
+
+ 2015, Jan G. Wieners
+*/
+
+body {
+    /*
+    width: 100%;
+    min-width: 600px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    */
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+#footer {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-size: 0.9em;
+}
+
+#footer a {
+    color: #555;
+    text-decoration: none;
+    border-bottom: 2px dotted #999;
+}
+
+/* Intro */
+.hvcentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+#introimage {
+
+    display: none;
+    width: 600px;
+    position: relative;
+}
+
+#introportrait {
+
+    display: none;
+    cursor: pointer;
+    position: relative;
+    left: -59px;
+    top: -154px;
+}
+
+/* Kleio Intro */
+
+#kleio-intro {
+
+    background-image: url("../img/grazerturmuhr.png");
+    background-position: left top;
+    background-size: cover;
+}
+
+.typed-cursor{
+
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.text-editor-wrap {
+
+    border-radius: 5px;
+    clear: both;
+    display: block;
+    margin: auto;
+    min-width: 750px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+    width: 750px;
+    overflow: hidden;
+    transition: all 0.5s ease-out 0s;
+}
+.title-bar {
+
+    background-color: #f8f8f8;
+    background-image: -moz-linear-gradient(center top , #e8e8e8, #bcbbbc);
+    border-bottom: 1px solid #6a6a6a;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7) inset;
+    font-family: "Lucida Grande",sans-serif;
+    font-size: 0.75em;
+    padding: 5px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.text-body {
+
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #f0f0f0;
+    font-family: "Consolas","Courier New","Courier";
+    font-size: 1.1em;
+    font-weight: 500;
+    height: 550px;
+    line-height: 1.4em;
+    overflow: hidden;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 0 1px 0 #000;
+    transition: all 0.5s ease-out 0s;
+}
+
+#kleiogui {
+
+    display: none;
+}
+
+/* Eifelvulkan */
+#eifelvulkan {
+
+    background-image: url("../img/vulkanunausgebrochen.png");
+    /*
+    background-position: left top;
+    background-size: auto;
+    background-color: #3ca2c8;
+    */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#eifelvulkan #papyrus-cover,
+#eifelvulkan #papyrus_story-01,
+#eifelvulkan #papyrus_story-02 {
+    display: none;
+}
+
+#papyrus-cover,
+#papyrus_story-01,
+#papyrus_story-02 {
+
+    cursor: pointer;
+}
+
+/* Seite Vulkanausbruch */
+#eifelvulkanausbruch {
+
+    background-image: url("../img/vulkanausgebrochen.png");
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+#eifelvulkanausbruch canvas {
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* Gruß Schwardmann */
+#schwardmann {
+
+    background-image: url("../img/gwdg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+    padding: 50px 50px 50px 100px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+#schwardmann #wrapper {
+
+    width: 800px;
+    background: #fff;
+    opacity: 0.9;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    padding: 25px;
+}
+
+/*
+html #schwardmann {
+    overflow: visible;
+}
+*/
+
+#schwardmann #thallerpic {
+
+    width: 50px;
+    display: none;
+}
+
+/* Konferenzseite */
+#konferenzmap .ui-widget-header {
+
+    background: none;
+    background-color: #247dc9;
+    border: 0;
+}
+
+#konferenzmap .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+
+    background: #247dc9;
+    border: 2px solid #fff;
+    color: #247dc9;
+    font-weight: bold;
+}
+
+#konferenzmap .ui-state-default .ui-icon {
+
+    background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+
+#konferenzmap #introcite {
+
+    font-size: 1.4em;
+    padding: 5px 5px 15px 5px;
+    border-bottom: 2px solid #70b3ec;
+    margin: 0 0 15px 0;
+}
+
+#konferenzmap #dialog {
+
+    text-align: center;
+}
+
+/* Kleio Brühl */
+#lovesong {
+
+    display: none;
+}
+
+.hcentered {
+
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fliesenlegespiel */
+#fliesenlegespiel {
+
+    background-image: url("../img/fliesenbgr_small.jpg");
+    background-position: left top;
+    background-size: auto;
+
+    font-family: helvetica, sans-serif;
+}
+
+.proceedbox {
+    background-color: #eee;
+    opacity: 0.9;
+    padding: 15px;
+    font-size: 19px;
+}
+
+.proceedbox:hover {
+    background-color: #70b3ec;
+    opacity: 0.9;
+}
+
+.proceedbox a {
+
+    color: #000;
+    text-decoration: none;
+}
+
+#fliesenlegespiel canvas {
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+#fliesenlegespiel #infos {
+    
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 15px;
+}
+
+/* Reise von Brühl nach Köln */
+#bruehl-uzkoeln {
+
+    background-image: url("../img/montecarlo.jpg");
+    background-position: left top;
+    background-size: auto;
+}
+
+#bruehl-uzkoeln  canvas {
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* HKI Büro Kerpener Str. */
+#buero-kerpener {
+
+    background-image: url("../img/unikoeln3.png");
+    background-position: left top;
+    background-size: auto;
+}
+
+#buero-kerpener #buero img {
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+#bueromap area, #kleioguimap area {
+    cursor: pointer;
+}
+
+#connectgame {
+
+    font-family: "Consolas", "Courier New", "Courier";
+    font-size: 1.1em;
+}
+
+#connectgame h1 {
+    font-size: 1.5em;
+}
+
+#buero-kerpener #connectgame {
+
+    display: none;
+}
+
+#buero-kerpener #connectgame {
+
+    padding: 75px;
+    background-color: #fff;
+    opacity: 0.9;
+}
+
+/* Styles Kevin Wieland */
+input
+{
+    margin-right: 12px;
+}
+
+select
+{
+    text-align: center;
+}
+
+#board
+{
+    border: 2px solid #d3d3d3;
+    border-spacing: 3px;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+#pieces
+{
+    border: 1px dotted #d3d3d3;
+    border-spacing: 3px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+#board td
+{
+    height: 2em;
+    width: 2em;
+    text-align: center;
+}
+
+#pieces td
+{
+    height: 2em;
+    text-align: center;
+    border: 2px solid #d3d3d3;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.piece
+{
+    color: #000000;
+}
+
+.pieceOk
+{
+    color: #d3d3d3;
+}
+
+.pieceError
+{
+    color: red;
+}
+
+.locNormal
+{
+    border: 2px solid #d3d3d3;
+}
+
+.locHighlightedUp
+{
+    border: 2px dashed #d3d3d3;
+    border-top: 2px solid white;
+}
+
+.locHighlightedDown
+{
+    border: 2px dashed #d3d3d3;
+    border-bottom: 2px solid white;
+}
+
+.locHighlightedRight
+{
+    border: 2px dashed #d3d3d3;
+    border-right: 2px solid white;
+}
+
+.locHighlightedLeft
+{
+    border: 2px dashed #d3d3d3;
+    border-left: 2px solid white;
+}
+
+.locLinkedUp
+{
+    border: 2px solid black;
+    border-top: 2px solid white;
+}
+
+.locLinkedDown
+{
+    border: 2px solid black;
+    border-bottom: 2px solid white;
+}
+
+.locLinkedRight
+{
+    border: 2px solid black;
+    border-right: 2px solid white;
+}
+
+.locLinkedLeft
+{
+    border: 2px solid black;
+    border-left: 2px solid white;
+}
+
+.locErrorUp
+{
+    border: 2px solid red;
+    border-top: 2px solid white;
+}
+
+.locErrorDown
+{
+    border: 2px solid red;
+    border-bottom: 2px solid white;
+}
+
+.locErrorRight
+{
+    border: 2px solid red;
+    border-right: 2px solid white;
+}
+
+.locErrorLeft
+{
+    border: 2px solid red;
+    border-left: 2px solid white;
+}
+
+.locSolvedUp
+{
+    border: 2px solid green;
+    border-top: 2px solid white;
+}
+
+.locSolvedDown
+{
+    border: 2px solid green;
+    border-bottom: 2px solid white;
+}
+
+.locSolvedRight
+{
+    border: 2px solid green;
+    border-right: 2px solid white;
+}
+
+.locSolvedLeft
+{
+    border: 2px solid green;
+    border-left: 2px solid white;
+}
+
+/* Grüße von Willard McCarty */
+#mccarty {
+
+    background-image: url("../img/turingtest_small.jpg");
+    background-position: left top;
+    background-repeat: repeat;
+
+    font-family: helvetica, sans-serif;
+}
+
+#mccarty #greetings {
+
+    display: none;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+    margin-top: 75px;
+}
+
+/* Urlaub */
+#holidays {
+
+    background-image: url("../img/insel-ungezoomt_small.jpg");
+    background-position: left top;
+    background-size: cover;
+}
+
+#holidays img {
+
+    height: 600px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+#nextholiday {
+    
+    padding: 25px;
+    background-color: #fff;
+    opacity: 0.95;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.3em;
+    width: 750px;
+    text-align: center;
+    display: none;
+}
+
+#kleioworlddomination {
+
+    display: none;
+}
+
+#thallerspace {
+
+    display: none;
+}
+
+#thallerspace img {
+
+    width: 250px;
+    height: 146px;
+}
+
+/* Invaders */
+#kleioinvaders {
+
+    background-image: url("../img/starfield-pattern.jpg");
+    background-position: left top;
+    background-size: auto;
+}
+
+#kleioinvaders canvas {
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* Credits */
+#credits {
+
+    background-image: url("../img/feuerwerk_small.gif");
+    background-position: left top;
+    background-size: auto;
+}
+
+#creditsboard {
+
+    font-family: "Consolas", "Courier New", "Courier";
+    width: 800px;
+    background-color: #fff;
+    opacity: 0.95;
+    margin-top: 75px;
+    padding: 50px;
+    font-size: 1.3em;
+}
+
+.smallmini {
+    font-size: 0.6em;
+}
+
+#creditsboard ul {
+
+    list-style-type: square;
+}
+
+#creditsboard a {
+
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px dotted #333;
+}
+
+.smallminimini {
+
+    margin: -20px 0 15px 0;
+    font-size: 0.6em;
+}

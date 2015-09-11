@@ -1,0 +1,112 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<TITLE>convert - usage</TITLE>
+<p class="h">
+Der Parameter usage
+</p>
+<p class="p">Der Parameter usage erwartet als Parameterwert eines der Schl&uuml;sselworte <b>primary</b>,
+<b>first</b> oder
+<b>second.</b> Primary ist die Standardannahme des Systems. Usage bezieht sich auf die Mehrfachausgabe von Elementen, die durch die Parameter first bzw. second in der <b>fields-Direktive</b> der Package-Vereinbarung angeordnet werden kann.<br>
+<br>
+
+Usage erlaubt, die Wirkung der Direktive conversion gezielt auf die erste Ausgabe eines Elements oder dessen erste bzw. zweite Wiederholung anzuwenden. Dabei  bezieht sich <b>primary</b> auf die erste Ausgabe, <b>first </b>auf die erste Wiederholung und <b>second </b>auf die zweite Wiederholung. Es ist damit also m&ouml;glich den Inhalt eines Elements je nach Abfolge der Ausgabe unterschiedlich zu behandeln (i.e. unterschiedlich zu verpacken).</p>
+<br>
+
+Ein typisches Anwendungsbeispiel kann darin bestehen, einen "aktiven Thumbnail" zu generieren. Der Klick auf den Thumbnail soll eine katalogisierte Prozedur aufrufen, die ihrerseits ein entsprechendes Gro&szlig;bild und die zugeh&ouml;rige Metadaten liefert, die in einem neuen Fenster aufscheinen sollen. Die Prozedur tr&auml;gt den Namen "zoom". um diese Aufgabe zu erf&uuml;llen mu&szlig; ein HTML-Quellcode der folgenden Art generiert werden:
+<br>
+   </p>
+
+<pre>&lt;<span class="start-tag">a</span><span class="attribute-name"> target</span>=<span
+ class="attribute-value">"_blank" </span><span class="attribute-name">href</span>=<span
+ class="attribute-value">"http://gilgamesch2.hki.uni-koeln.de/prometheus-cgi/kleioc/1010KlProm/exec/zoom/%22<u><b>4555</b></u>%22/__kleioid/%22gast1%5fgast%5fh%2ek%f6ln%22/__kleiopass/%22gast1%22"</span>&gt;&lt;<span
+ class="start-tag">img</span><span class="attribute-name"> border</span>=<span
+ class="attribute-value">"0" </span><span class="attribute-name">src</span>=<span
+ class="attribute-value">"http://gilgamesch2.hki.uni-koeln.de/Prometheus1/dadaweb/res120x90/B<u><b>4555</b></u><b></b>.jpg"</span>&gt;&lt;/<span
+ class="end-tag">a</span>&gt;</pre>
+
+
+
+ <p class="p"><font face="Times New Roman">Realiter entspricht dies der folgenden Funktion:</font></p>
+ <div align="center"><a target="_blank" href="http://gilgamesch2.hki.uni-koeln.de/prometheus-cgi/kleioc/1010KlProm/exec/zoom/%224555%22/__kleioid/%22gast1%5fgast%5fh%2ek%f6ln%22/__kleiopass/%22gast1%22"><img border="0" src="http://gilgamesch2.hki.uni-koeln.de/Prometheus1/dadaweb/res120x90/B4555.jpg"></a>
+     </th><br>
+     (klickbares Bild)</div><br>
+     <br>
+<p class="p"><font face="Times New Roman"><div align="left">Zur Erzeugung des entsprechenden Quellcodes wurde die in der Datenbank enthaltene originale Bildnummer "4555" zweimal unterschiedlich verpackt.  Dies wird deutlich, wenn man sich die jeweilige Verwendung der Nummer im oben angef&uuml;hrten Quelltext betrachtet (vgl. fett-unterstrichene Bestandteile des Codes). <br>         <br>
+
+Zur Generierung des Quellcodes bedienen wir uns einer Package-Vereinbarung, die ihrerseits wiederum zwei Packages aufruft. Aber der Reihe nach. Die Bildnummer aus der Datenbank wird zuerst durch das Package "imgref" behandelt, das folgenderma&szlig;en aussieht: </div></font></p>
+<p class="b">
+
+item name=imgref;usage=package;overwrite=yes<br>
+field start='
+ &lt;a target="_blank" href="';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; first='"&gt;&lt;img border="0" src="';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit='"&gt;&lt;/a&gt;'<br>
+convert<br>
+&nbsp;&nbsp;&nbsp; current=dbimageid;<br>
+&nbsp;&nbsp;&nbsp; path=':package[:dump[dbimageid],dadawebzoom]'<br>
+convert usage=first;<br>
+&nbsp;&nbsp;&nbsp; current=dbimageid;<br>
+&nbsp;&nbsp;&nbsp; path=':package[:dump[dbimageid],thumbnaila]'<br>
+<br>
+<p class="p">Ganz offenkundig wird hier durch die fields-Direktive das Grundger&uuml;st des Quellcodes erzeugt, indem die entsprechenden Tags eingef&uuml;hrt werden und die Bildnummer aus der Datenbank jeweils zwischen die Werte des start- und first-Parameters bzw. zwischen die Werte des first- und limit-Parameter gesetzt wird.<br>  <br>
+
+<b>Ohne</b> Einsatz der Direktive convert w&uuml;rde man damit folgenden URL erhalten:</p>
+
+<pre>&lt;<span class="start-tag">a</span><span class="attribute-name"> target</span>=<span
+ class="attribute-value">"_blank" </span><span class="attribute-name">href</span>=<span
+ class="attribute-value">"<u><b>4555</b></u>"</span>&gt;&lt;<span
+ class="start-tag">img</span><span class="attribute-name"> border</span>=<span
+ class="attribute-value">"0" </span><span class="attribute-name">src</span>=<span
+ class="attribute-value">"<u><b>4555</b></u>"</span>&gt;&lt;/<span
+ class="end-tag">a</span>&gt;</pre>
+<p class="p">Das entspricht nat&uuml;rlich noch keineswegs dem Quellcode, den wir eigentlich generieren wollten. Hierf&uuml;r wiederum ist die Direktive <b>convert</b> zust&auml;ndig. Wie obige Aufgabe zeigt, wird der Inhalt der Variablen "dbimageid" vor der Ausgabe jeweils durch die Pakete "dadawebzoom" bzw. "thumbnaila" behandelt. Dabei wird das erstgenannte Paket auf die erste Ausgabe von dbimageid angewendet, w&auml;hrend sich das andere  Paket auf die erste Wiederholung bezieht. Das erste Paket hat folgende Form:</p>
+<p class="b">
+item name=dadawebzoom;usage=package;overwrite=yes<br>
+bracket sensitive=yes<br>
+field start='http://gilgamesch2.hki.uni-koeln.de/promtest-cgi/kleioc/1010KlPTest/exec/zoom/%22';<br>
+&nbsp;&nbsp;&nbsp; limit='%22/__kleioid/%22@&lt;cgiuser@%22/__kleiopass/%22@&lt;cgipass@%22';<br>
+convert current=zoomid;<br>
+&nbsp;&nbsp;&nbsp; path=':convert[:dump[zoomid],zoomencode]'<br>
+exit name=dadawebzoom
+</p>
+<p class"b">Wenn wir nun den oben dargestellte URL betrachten, den wir eigentlich generieren wollen, so stellen wir fest, da&szlig; wir unserem Ziel schon wesentlich n&auml;her kommen. Dieses Paket generiert den eigentlich funktionellen Teil des URL, n&auml;mlich den den Aufruf der katalogisierten Prozedur (dabei werden anstelle der Variablen @&lt;cgipass@ und @&lt;cgiuser@ automatisch die tats&auml;chliche Userkennung und das Password eingesetzt). Die Bildnummer wird als Wert zwischen dem Inhalt des start- und limit-Parameters der field-Direktive eingetragen. Sie wird als Wert an die katalogisierte Prozedur &uuml;bergeben und dient dazu, "das richtige Gro&szlig;bild" zu finden.<br>
+<br></p>
+<p class="p">
+Was uns jetzt noch fehlt ist das "klickbare Bild", das uns erlaubt, die katalogisierte Prozedur in gang zu setzen, also der interaktive Link auf den Thumbnail. Das ist also die Angabe, die bei der ersten Bildwiederholung generiert werden mu&szlig;. Dazu bedienen wir uns eines "conditional Package":
+</p>
+<p class="b">
+item name=thumbnaila;usage=package;overwrite=yes<br>
+condition current=argument;<br>
+&nbsp;&nbsp;&nbsp; condition='/catalogue[objektfiles,complete,:dump[argument]]:database[]="dadaweb"'<br>
+convert current=thumbnailid;<br>
+&nbsp;&nbsp;&nbsp; path=':form["http://gilgamesch2.hki.uni-koeln.de/Prometheus1/dadaweb/res120x90/B"]|+:dump[thumbnailid]|+:form[".jpg"]'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...................<br>
+<br>
+exit name=thumbnaila<br>
+</p>
+<p class="p">Das hei&szlig;t, die Bildnummer der ersten Wiederholung wird an das Package "thumbnaila" &uuml;bergeben. Dort wiederum wird durch Abgleich mit dem Katalog "objektfiles", der die Bildnummern enth&auml;lt, &uuml;berpr&uuml;ft, aus welcher Datenbank das Bild stammt. Dann wird entsprechend der identifizierten Datenbank durch eine einfache ein Zeichenkettenoperation ein Bild-URL generiert, der auf den tats&auml;chlichen pyhsikalischen Speicherort der Thumbnails verweist. Zugleich wird die Bildnummer in diesem Zusammenhang und die Endung ".jpg" erg&auml;nzt.<br> <br>
+Zusammenfassend also kann man also feststellen da&szlig; die Bildnummer aus der Datenbank zweimal ausgegeben wurde und f&uuml;r jede dieser Ausgaben eine unterschiedliche Behandlung durch andere Packages angeordnet wurde, so da&szlig; die Bildnummer einmal als Variable im Aufruf einer katalogisierten Prozedur und einmal als Bild-URL in einem klickbaren Thumbnail erscheint.
+ </p>
+
+</body></html>

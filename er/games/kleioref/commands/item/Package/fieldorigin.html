@@ -1,0 +1,252 @@
+                                        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<TITLE>fieldorigin</TITLE>
+
+<P CLASS="h">Der Parameter origin:</p>      <p class="p">
+ Der Parameter complete erwartet als Wert eine Zeichenkette in Hochkommata.
+Der Parameter origin kann je nach Kontext verschiedene Wirkungen entfalten.
+Prim&auml;r kann der Parameter in Verbindung mit seinem Komplement&auml;rparameter
+<b>complete</b> dazu eingesetzt werden, ganze Elemente zu klammern.
+Dabei entspricht der Inhalt von <b>origin</b> dem Wert, der vor das Element
+gesetzt wird. W&auml;hrend <b>start/limit</b>
+sich auf einzelne Mehrfacheitr&auml;ge beziehen, umschlie&szlig;en <b>origin/complete</b>
+den Gesamteintrag einschlie&szlig;lich der Aspekte. Am besten l&auml;&szlig;t sich dies
+ mit einem Beispiel verdeutlichen.
+Man habe folgendes Paket mit den Parametern <b>start/limit</b>: </p>
+<p CLASS="b">
+           item name=paket1;usage=package;overwrite=yes<br>
+fields start="anfang ";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit=" ende"<br>
+exit name=paket1<br>
+</p>
+<P CLASS="p">und dazu folgende Aufgabe: </p><p class="b">
+      query name=kurs;part=k<br>
+write part=:each[=noheaders,=packaged,:vorname,paket1]<br>
+</p>
+<p class="p">
+so erh&auml;lt man folgendes Ergebnis:
+</p>
+
+<p class="b">
+
+                              <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; anfang Friedrich ende<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Gottlob ende<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Carl ende<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Christian ende<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Marie ende<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Barbara ende<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; anfang Ernst ende<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Hellmuth ende<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Viktor ende<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Emil ende<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; anfang Otto ende<br>
+<br>
+</p>
+
+<p class="p">Es wird also jeder einzelne Vorname "f&uuml;r sich" ausgezeichnet.
+Wenn man dagegen das
+Paar start/limit durch origin/complete ersetzt</p>
+<p class="b">item name=paket1;usage=package;overwrite=yes<br>
+fields origin="anfang ";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete=" ende"<br>
+exit name=paket1<br>
+<br></p>
+<p class="p">so liefert dieselbe Aufgabe nun folgendes Resultat:</p>
+<p class="b">
+                  anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Friedrich<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gottlob<br>
+&nbsp;ende<br>
+<br>
+anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Carl<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Christian<br>
+&nbsp;ende<br>
+<br>
+anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Marie<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Barbara<br>
+&nbsp;ende<br>
+<br>
+&nbsp;........<br>
+<br>
+anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ernst<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hellmuth<br>
+&nbsp;ende<br>
+<br>
+anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Viktor<br>
+&nbsp;ende<br>
+<br>
+anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emil<br>
+&nbsp;ende<br>
+<br>
+anfang <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Otto<br>
+&nbsp;ende<br>
+<br>
+</p>
+
+<p class="p">Mehrfacheintr&auml;ge werden also erkennbar gemeinsam geklammert.</p>
+<p class="p"> Das Paar <b>origin/complete</b> kann im Zusammenhang mit der Funktion
+:total[] in komplexerer Funktion eingesetzt werden, indem das Parameterpaar
+dazu verwendet wird, sowohl Gruppen als auch Elemente auszuzeichen. Dabei gilt bei
+der Auszeichnung von Gruppen
+die Regel, da&szlig; der Inhalt von "origin" vor dem ersten
+Element einer Gruppe ausgegeben wird, w&auml;hrend der Inhalt von "complete" analog nach dem jeweils
+letzten angeforderten Element der Gruppe erscheint. Man kann diese Funktionalit&auml;t
+zum Beispiel dazu nutzen, bestimmte Daten aus einer Datenbank im XML-Format
+auszugeben. Dazu definieren wir uns eine
+Reihe von Packages:</p>
+<p class="b">
+
+
+           item name=register;usage=package;overwrite=yes<br>
+fields origin='&lt;dokument&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete='&lt;/dokument&gt;'<br>
+exit name=register<br>
+<br>
+item name=register2;usage=package;overwrite=yes<br>
+fields origin=' &lt;gruppem&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete=' &lt;/gruppem&gt;'<br>
+exit name=register2<br>
+<br>
+item name=register3;usage=package;overwrite=yes<br>
+fields origin='&nbsp;&nbsp; &lt;gruppehei&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete='&nbsp;&nbsp; &lt;/gruppehei&gt;'<br>
+exit name=register3<br>
+<br>
+item name=register4;usage=package;overwrite=yes<br>
+fields origin='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;gruppek&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/gruppek&gt;'<br>
+exit name=register4<br>
+<br>
+item name=dokid;usage=package;overwrite=yes<br>
+fields start='&nbsp;&nbsp; &lt;Identifikation&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit='&nbsp;&nbsp; &lt;/Identifikation&gt;'<br>
+exit name=dokid<br>
+<br>
+item name=vorname;usage=package;overwrite=yes<br>
+fields origin='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;vorname&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/vorname&gt;'<br>
+exit name=vorname<br>
+<br>
+item name=gebdat;usage=package;overwrite=yes<br>
+fields origin='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;gebdat&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; complete='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/gebdat&gt;'<br>
+exit name=gebdat<br>
+<br>
+</p>
+
+<p class="p">
+Diese Pakete kommen in folgender Aufgabe vor, die die Dokumentendetifikation sowie
+die Elemente "vorname" und "gebdat" im XML-Format ausgibt. Dabi ist "K" von "HEI" und "M" abh&auml;ngig.
+Wir wollen auch dies in der Ausgabe durch entsprechendes Markup widerspiegeln. Folgende
+Aufgabe l&ouml;st das Problem:
+</p>
+<p class="b">
+query name=kurs;part=fam<br>
+write part=:total[=groups,fam,=header,register,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =packaged,:id,dokid,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =groups,m,=header,register2,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =groups,hei,=header,register3,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =groups,k,=header,register4,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =packaged,:vorname,vorname,:gebdat,gebdat]<br>
+<br>
+
+</p>
+<p class="p">Diese Aufgabe ist folgenderma&szlig;en zu lesen:
+<ol start="1" type="1">
+<li>Die Gruppe "fam", die die Wurzel des Dokuments bildet wird nach den Regeln
+des Pakets "register" verpackt. Das bedeutet, da&szlig; jedes Dokuement ("fam" ist die Wuzel!)
+mit den Markups umschlossen wird, die in "register" definiert sind. </li>
+<li>Innerhalb jeder Gruppe "fam" soll das Element "id" nach den Regeln von "dokid"
+verpackt werden.</li>
+<li>Die Gruppe "m" wird nach den Regeln von "register2" verpackt. Es wird also vor den Beginn
+der Gruppe der Inhalt von "origin" plaziert, w&auml;hrend der Inhalt von "complete" nach
+der Ausgabe aller in "m" enthaltenen Markups erfolgt</li>
+<li>Analog dazu wird das Package "register3" auf die Gruppe "Hei" angewendet</li>
+<li>Die Gruppe "k" wird nach den Regeln von "register4" verpackt. Innerhalb von "k" werden die Elemente
+ "gebdat" und "vorname" verpackt. Damit bewirkt "register4", da&szlig; der Inhalt von "origin"
+ vor "gebdat" erscheint, w&auml;hrend der Inhalt von "complete"
+ nach "vorname" ausgegeben wird.</li>
+ <li>Innerhalb von "k" werden die Elemente "vorname" und "gebdat" mit den Packages
+"gebdat" und "vorname" verpackt. </li>
+</ol>
+</p>
+<p class"p">Das Resultat ist folgende Ausgabe:</p>
+<p class="b">
+
+                &lt;dokument&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Identifikation&gt;FRE-56-130&nbsp;&nbsp; &lt;/Identifikation&gt;<br>
+<br>
+&nbsp;&lt;gruppem&gt;<br>
+<br>
+&nbsp;&nbsp; &lt;gruppehei&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;gruppek&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;gebdat&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+21.10.1841<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/gebdat&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;vorname&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Friedrich<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Gottlob<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/vorname&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/gruppek&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;gruppek&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;gebdat&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+30.7.1844<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/gebdat&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;vorname&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Carl<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Christian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/vorname&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/gruppek&gt;<br>
+&nbsp;&nbsp; &lt;/gruppehei&gt;<br>
+&nbsp;&lt;/gruppem&gt;<br>
+&lt;/dokument&gt;<br>
+
+
+   </p>
+
+

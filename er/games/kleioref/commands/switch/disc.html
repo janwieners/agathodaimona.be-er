@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>switch,disc</title>
+                                                   
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+              
+<p class="h">Der Befehl switch</p>
+             
+<p class="p">Der Befehl<b> switch</b> er&ouml;ffnet eine Umwelt, innerhalb
+   derer bedingte Bl&ouml;cke mit Auswertungsbefehlen definiert werden k&ouml;nnen.
+   Jeder switch-Befehl zieht daher zumindest eine <b>block</b>-Direktive
+nach    sich, die einen bedingten Ausf&uuml;hrungsblock er&ouml;ffnet. Die
+durch   den switch-Befehl er&ouml;ffnete Umwelt wird mittels einer <b>exit</b>-Direktive
+   abgeschlossen. <br>
+      </p>
+                                     Der Sinn des Mechanismus besteht darin,
+  ein  bestimmtes Element anzugeben, um dann je nach Inhalt des Elements
+jeweils    eine entsprechend modifizierte Auswertung anschlie&szlig;en zu
+k&ouml;nnen.    Ein Beispiel soll dies exemplifizieren:<br>
+     <br>
+     Man habe mehrere unterschiedlich strukturierte Datenbanken mit Bilddaten. 
+  Daraus wird ein Katalog erstellt, der Bilddaten (z.B. K&uuml;nstlernamen)
+ enth&auml;lt. Die eigentlichen&nbsp;  Bilder sind als Bildnummern oder dergl.
+ in den Datenbanken vermerkt. Die entsprechenden physikalischen Bilddateien
+ liegen nach Datenbanken getrennt jeweils physikalisch in einem anderem Verzeichnis
+ eines Webservers.<br>
+      <br>
+      Aus den Bildnummern sollen als Teil einer Webausgabe der Bilddaten
+URLs   generiert werden, deren Zweck es ist, das entsprechende Bild darzustellen. 
+  Da die Bilder der einzelnen Datenbanken in unterschiedlichen Directorys 
+(oder theoretisch auch auf unterschiedlichen Servern) liegen,  mu&szlig; also
+f&uuml;r jede Datenbank ein eigener Pfad generiert werden.  Dies l&auml;&szlig;t 
+sich im Prinzip am einfachsten dadurch bewerkstelligen,  da&szlig; die jeweiligen
+ Bildnummern einer Datenbank durch je eine spezifische  Package-Vereinbarung
+ ausgezeichnet werden, die den entsprechenden Pfad erzeugt  und damit auf
+das jeweils richtige Unterverzeichnis verweist. Zudem besteht  das Problem,
+da&szlig; die Datenbanken unterschiedlich strukturiert sind.  Das hei&szlig;t,
+da&szlig; die jeweiligen Auswertungsbefehle sich auch syntaktisch  unterscheiden
+m&uuml;ssen (und sei es nur, da&szlig; das Element, welches  die Bildnummer
+enth&auml;lt jeweils anders benannt sein kann).<br>
+      <br>
+  Das also wiederum bedeutet, da&szlig; f&uuml;r jede einzelne Datenbank
+ eine  eigene Ausgabe generiert werden mu&szlig;, die jeweils das "passende" 
+ Package  und den passenden Pfad zur Bildnummer enth&auml;lt. Das impliziert 
+ zugleich,  da&szlig; das System erkennen mu&szlig;, welche Bildnummer aus 
+ jeweils welcher  Datenbank stammt, um dann die entsprechende Ausgabe mit 
+dem passenden Package  aufzurufen.<br>
+     <br>
+     Man kann dies durch folgende Aufgabe l&ouml;sen:    
+<p class="b"> query name=kleio;part=/catalogue[kuenstler,complete,"picasso"]<br>
+    switch part=<a href="../../functions/elemdata.html">:database[]</a>;name=selectDB<br>
+     block name=sdkuenstler;part="sdkuenstler"<br>
+ exit name=sdkuenstler<br>
+     write part=:package[:bildnummer,paket1],<br>
+  block name=piranesi;part="piranesi"<br>
+     write part=:package[:conversion[:bildreferenz,noending],paket2],<br>
+ exit name=piranesi<br>
+     block name=dadaweb;part="dadaweb"<br>
+     write part=:package[:zzzscan,paket3],<br>
+ exit name=dadaweb<br>
+     exit name=selectDB</p>
+      <br>
+   
+<p class="p"> Zur Erkl&auml;rung erst einmal der Reihe nach:&nbsp;<br>
+  </p>
+   
+<p class="p">Das System durchsucht in der Standardumwelt (<b>kleio</b>),
+die hier anstelle einer Datenbank angegeben wird, den Katalog "<b>kuenstler</b>"
+ nach dem Suchbegriff "<b>picasso</b>". &nbsp;Der Katalog umfa&szlig;t die
+ K&uuml;nstlernamen aus den Datenbanken "sdkuenstler", "piranesi" und "dadaweb".
+ Die jeweilige Bildnummer, die ben&ouml;tigt wird, um das Bild tats&auml;chlich
+ zu sehen (also die Bilddatei anzusprechen) ist in den Elementen "bildnummer",
+ "bildreferenz" bzw. "zzzscan" in je einer der drei Datenbanken enthalten.
+ Um daraus einen Bild-URL zu generieren werden die Packages "paket1" bis
+"paket3"  ben&ouml;tigt (realiter w&uuml;rde man ein conditional Package
+einsetzen,  aber wir wollen es hier nicht zu schwierig machen).&nbsp;<br>
+  </p>
+   
+<p class="p">Die Elementarfunktion <a
+ href="../../functions/elemdata.html">:database[]</a> gibt als Datentyp text
+den Namen jeder Datenbank zur&uuml;ck, in der der Suchbegriff "<b>picasso</b>" 
+enthalten ist. Dies Information wird durch den part-Prameter des switch.Kommandos 
+als Unterscheidungskriterium f&uuml;r Auswahl einzelner Kommandobl&ouml;cke 
+definiert. Wenn nun im Katalog ein K&uuml;nstler namens Picasso gefunden wird,
+so gibt das System also an, aus welcher Datenbank (oder aus welchen Datenbanken)
+der Katalogeintrag herr&uuml;hrt. Dieser Wert wiederum wird mit den Konstanten
+verglichen, die im part-Parameter der block-Direktiven angegeben sind. Wenn
+die Konstante und der Wert, den :database[] zur&uuml;ckliefert &uuml;bereinstimmen,
+so wird der entsprechende Kommandoblock ausgef&uuml;hrt.<br>
+ </p>
+ 
+<p class="p">Das hei&szlig;t, wenn z.B. die Datenbanken "sdkuenstler" und 
+"dadaweb" je ein oder mehr Dokumente zum K&uuml;nstler "<b>picasso</b>" enthalten, 
+so wird jeweils die Bildnummer ausgegeben und mit den Definitionen "paket1" 
+bzw. "paket3" verpackt. Damit entsteht jeweils der geeignete URL zur Wiedergabe 
+des Bildes. <br>
+ </p>
+ 
+<p class="p"><br>
+      </p>
+     <br>
+</body>
+</html>

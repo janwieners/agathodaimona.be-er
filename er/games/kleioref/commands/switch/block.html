@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>switch,block</title>
+                                                                        
+                                         
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body bgcolor="#e6e6e6">
+                                
+<p class="h">Die Direktive block</p>
+                
+<p class="p">Die Direktive block dient dazu, innerhalb einer Umgebung, die 
+ durch den switch-Befehl definiert wird, einzelne bedingte Kommandos zu definieren
+und aufzurufen.  Die Direktive block kennt die Parameter <b>name</b> und
+<b>part</b>.<br>
+   </p>
+     
+<p class="p">Der Parameter <b>name </b>erwartet als Parameterwert eine frei 
+ w&auml;hlbare Zeichenkette und bestimmt einen frei w&auml;hlbaren Namen unter
+ dem der jeweilige Kommandoblock in die switch-Umgebung eingef&uuml;hrt wird.
+ Der Block mu&szlig; durch eine entsprechende exit-Direktive abgeschlossen 
+ werden, deren name-Parameter wiederum denselben Namen verwendet.<br>
+   </p>
+     
+<p class="p">Der Parameter <b>part </b>erwartet als Parameterwert eine Konstante, 
+ die in Hochkommata angegeben werden mu&szlig;. Der Wert der Konstante gilt 
+ als Vergleichsmuster zum Inhalt des Elements, das im <b>part-Parameter des 
+ switch-Befehls</b> angegeben wird. Wenn der Inhalt des Elements und das Vergleichsmuster
+ &uuml;bereinstimmen, gilt die Bedingung als erf&uuml;llt und der entsprechende
+ Kommandoblock wird ausgef&uuml;hrt.<br>
+   </p>
+     
+<p class="p">Dies geschieht also in folgender Form:<br>
+   </p>
+     
+<p class="b"> query name=kleio;part=/catalogue[kuenstler,complete,"picasso"]<br>
+       switch part=:database[];name=selectDB<br>
+        block name=sdkuenstler;part="sdkuenstler"<br>
+    exit name=sdkuenstler<br>
+        write part=:package[:bildnummer,paket1],<br>
+     block name=piranesi;part="piranesi"<br>
+        write part=:package[:conversion[:bildreferenz,noending],paket2],<br>
+    exit name=piranesi<br>
+        block name=dadaweb;part="<u>dadaweb</u>"<br>
+        write part=:package[:zzzscan,paket3],<br>
+    exit name=dadaweb<br>
+        exit name=selectDB </p>
+      
+<p class="p"><br>
+ Es wird also abgepr&uuml;ft, aus welcher Datenbank der Eintrag "picasso" 
+im Katalog "kuenstler" stammt. Wenn <a
+ href="../../functions/elemdata.html">:database[]</a> z.B. den Wert "dadaweb"
+zur&uuml;ckgibt, so stimmt dieser Wert mit der Konstante im dritten Kommandoblock
+&uuml;berein und der entsprechende Auswertungsbefehl <br>
+ </p>
+ 
+<p class="b">write part=:package[:zzzscan,paket3]<br>
+ </p>
+ 
+<p class="p"> wird ausgef&uuml;hrt. <br>
+   </p>
+       
+</body>
+</html>

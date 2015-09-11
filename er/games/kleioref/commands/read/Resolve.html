@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>Resolve</title>
+</head>
+<body>
+<b>Der Parameter resolve:</b><br>
+<br>
+Der Parameter resolve kann die Werte <b>yes </b>(Standard) oder <b>no</b>
+ annehmen. Er bezieht sich auf die Verarbeitung von daten, die in einem Markup-Format
+vorliegen. Der Wert no ordnete an, da&szlig; Zeichen, die in XML als Sonderzeichen
+reserviert sind (wie z.B. das "&amp;") "entwertet", also als normaler Textbestanteil
+interpretiert werden.<br>
+<br>
+<br>
+Der Markup<br>
+<br>
+<blockquote>&lt;firmenname&gt;Huber &amp; Sohn&lt;/firmenname&gt; <br>
+  </blockquote>
+  <br>
+w&uuml;rde also bei Angabe von resolve=no im read-Befehl als einheitlicher
+Gesamttext eingelesen und k&ouml;nnte dementsprechend aus so wieder aus der
+Datenbank ausgegeben werden.<br>
+  <br>
+  </body>
+  </html>

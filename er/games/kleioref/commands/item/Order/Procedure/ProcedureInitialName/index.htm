@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Procedure, initial, name</title>
+                                                                        
+                                                                        
+                                                                        
+                 
+  <link rel="stylesheet" type="text/css" href="../../../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                                                        
+                                           
+<p class="h">Der Parameter name</p>
+             
+<p class="p">Der Parameter name erwartet als Parameterwert den Namen einer
+<b><u>benannten</u></b>&nbsp;   Ersetzungsvariablen (<a
+ href="http://www.hki.uni-koeln.de/kleio/marker.html" target="_blank">Ersetzungsmarker</a>),
+wie z.B. <b>@=person@</b>..   Es ist dies dann derjenige Ersetzungsmarker,
+der durch die Direktive initial   einen Startwert zugewiesen bekommt. Wenn
+innerhalb einer katalogisierten  Prozedur mehrere benannte Ersetzungsmarker
+vorkommen, mu&szlig; die Direktive initial  (und damit der Parameter name)
+entsprechend oft wiederholt werden:<br>
+     </p>
+         
+<p class="b">item name=search;usage=procedure;overwrite=yes<br>
+       catalogue source="search.txt";type=file<br>
+       initial <u>name=cat2use</u>;text="kuenstler"<br>
+       initial <u>name=term</u>;text="a*"<br>
+       initial <u>name=dir</u>;text="after"<br>
+       exit name=search<br>
+   </p>
+     
+<p class="p">Es werden also hier nacheinander Startwerte f&uuml;r je je Ersetzungsvariable 
+definiert, die jeweils durch eine neue initial-Direktive und einen neuen name-Parameter
+angesprochen werden.<br>
+   <br>
+      </p>
+    <br>
+     <br>
+</body>
+</html>

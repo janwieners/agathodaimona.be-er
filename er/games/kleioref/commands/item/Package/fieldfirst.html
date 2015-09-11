@@ -1,0 +1,74 @@
+                                                              <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<TITLE>fieldfirst</TITLE>
+
+<P CLASS="h">Der Parameter first:</p>
+<p CLASS="p"> Der Parameter <b>first</b> erwartet als Parameterwert eine Konstante, die
+folglich in Hochkommata angegeben werden mu&szlig;. Die Angabe von field bewirkt, da&szlig;
+der zu verpackende Inhalt einmal wiederholt und mit dem Wert des field-Parameters
+ausgezeichnet wird. Dabei wird der Wert von field nach dem zu verpackenden Inhalt ausgegeben.   </p>
+<p CLASS="p"> Der typische Einsatzzweck des first-Parameter besteht in der automatisierten
+Generierung von HTML-Hyperlinks. Man habe folgende Problemstellung. Aus einer Datenbank
+mit Personen solle eine HTML-Seite generiert werden, die alle Personen alphabetisch
+auflistet und es erm&ouml;glicht, &uuml;ber einen Link auf weitere Seiten zuzugreifen, die Detailinformationen
+zu den betreffenden Personen enthalten. Dazu sollen die Dokumentenidentifikationen
+als Hyperlinks gestaltet werden, die auf einzelne Seiten verweisen, deren Namen dem Inhalt der
+Dokumentenidentifikation mit der Erweiterung ".html" entsprechen soll. Dazu mu&szlig; die Dokumentenidentifikation
+zweimal ausgegeben werden: Einmal zur Benennung der verlinkten Datei sowie das zweite Mal
+zur tats&auml;chlichen Darstellung des Dateinamens. Entsprechend kann mit dem
+Parameter first die Wiederholung und Auszeichnung der Ausgabe angeordnet werden. In Verbindung
+mit den Parametern<b> start </b>und <b>limit</b> kann man damit folgendes Package
+entwerfen, in welchem die Parameter<b> start</b>, <b>first</b> und <b>limit</b> interagieren: </p>
+   <p CLASS="b">
+item name=register;usage=package;overwrite=yes<br>
+fields start='&lt;p&gt;&lt;A HREF="';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; first='.html"&gt;';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit='&lt;/a&gt;'<br>
+exit name=register<br>     </p>
+     <p CLASS="p">
+Wenn nun ein entsprechender Index-Befehl formuliert wird, in welchem die Dokumentenidentifikation
+mit dem Package "register" verpackt wird     </p>
+  <p CLASS="b">
+query name=kurs;part=fam<br>
+index ident=:package[:sign[],register];part=m:name;limit="&lt;/p&gt;"<br>
+<br>        </p>
+<p CLASS="p">so erh&auml;lt man folgendes Listing und damit den Kern einer HTML-Datei, die
+ihrerseits auf andere Dateien verweist:</p>
+  <p CLASS="b">
+
+
+&lt;p&gt;&lt;A HREF="FRE-56-567.html"&gt;FRE-56-567&lt;/a&gt; Abt&lt;/p&gt;<br>
+<br>
+&lt;p&gt;&lt;A HREF="FRE-55-1.html"&gt;FRE-55-1&lt;/a&gt; Agner&lt;/p&gt;<br>
+<br>
+&lt;p&gt;&lt;A HREF="FRE-57-35.html"&gt;FRE-57-35&lt;/a&gt; Arnold&lt;/p&gt;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; .........<br>
+<br>
+&lt;p&gt;&lt;A HREF="FRE-59-297.html"&gt;FRE-59-297&lt;/a&gt; Zillinger&lt;/p&gt;<br>
+<br>
+&lt;p&gt;&lt;A HREF="FRE-59-306.html"&gt;FRE-59-306&lt;/a&gt; Zoller&lt;/p&gt;<br>
+<br>
+&lt;p&gt;&lt;A HREF="FRE-58-880.html"&gt;FRE-58-880&lt;/a&gt; Zorn&lt;/p&gt;<br> </p>

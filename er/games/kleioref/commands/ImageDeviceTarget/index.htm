@@ -1,0 +1,43 @@
+                     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+        <meta HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <title></title>
+        <meta NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <meta NAME="CREATED" CONTENT="20020531;15284323">
+        <meta NAME="CHANGEDBY" CONTENT=" ">
+        <meta NAME="CHANGED" CONTENT="20020531;15523804">
+        <style>
+        <!--
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:visited { color: #666666; font-size: 12pt }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+
+</head>
+<title>Parameter Target zur Device-Direktive (image-Vereinbarung)</title>
+</head>
+<body LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<p class="h">Der Parameter Target</p>
+<p class="p">Der Parameter Target erwartet als Paramterwert eine Konstante,
+die in Hochkommata angegeben werden muß. Der Inthalt von "target" entspricht
+dem Verzeichnis oder dem Laufwerk, in dem das im name-Parameter angegebene
+Verzeichnis vorliegt.          <br>
+<br>
+Es kann hier neben einem Laufwerk auch eine Maschine wie z.B. eine Jukebox anegeben
+werden, die als Laufwerk gemountet ist.
+
+ Die Angabe
+h&auml;ngt vom Betriebssystem und der Konfiguration des jeweiligen File-Systems ab. Eine typische Anwendung
+hat die folgende Form:</p>
+<p class="b">
+device name=scans;target="."
+</p>
+<p class="p">Es werden hier also Bilddateien zur Bearbeitung ausgew&auml;hlt, die sich
+im Verzeichnis "scans" befinden. Das Verzeichnis scans wiederum ist abhängig vom aktuellen Verzeichnis,
+in dem die Image-Vereinbarung definiert wurde.</p>
+
+

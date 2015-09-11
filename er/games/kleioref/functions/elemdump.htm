@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                                                                        
+           
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+  <title>Elementarfunktion dump</title>
+                                                                        
+                                                                        
+     
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+                                                                        
+           
+  <meta name="CREATED" content="20020531;18202016">
+                                                                        
+           
+  <meta name="CHANGEDBY" content=" ">
+                                                                        
+           
+  <meta name="CHANGED" content="20020604;18334350">
+                                                                        
+                  
+  <style>
+
+
+
+
+
+
+
+        <!--
+
+
+
+
+
+
+
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+
+
+
+
+
+
+
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+
+
+
+
+
+
+
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+
+
+
+
+
+
+
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+
+
+
+
+                A:visited { color: #666666; font-size: 12pt }
+
+
+
+
+
+
+
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+
+
+
+
+                A:link { color: #666666; font-size: 12pt }
+
+
+
+
+
+
+
+        -->
+
+
+
+
+
+
+
+        </style>
+</head>
+<body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+                                              
+<p class="h">Die Funktion :dump[]</p>
+       
+<p class="p"> Die Elementarfunktion <b>:dump[]  </b>dient dazu, den Inhalt 
+ lokaler Variablen auszugeben. Dump wird nach der Syntax :dump[variablenname]
+aufgerufen. Eine lokale Variable kann durch die Funktion  <a
+ href="elemcopy.htm">:copy[] </a>angelegt werden und z.B. den Inhalt eines 
+ Elements enthalten. Der Befehl <br>
+  </p>
+   
+<blockquote>      
+  <blockquote>query name=dmr;part=:technik<br>
+  write part=:copy[:technik,test],:order[],:dump[:test]<br>
+  stop<br>
+    </blockquote>
+  </blockquote>
+  w&uuml;rde also den Inhalt des Elements technik in die Variable test schreiben,
+ dann die Ordnungsnummer des Dokuments und dann den Inhalt von test ausgeben.
+ Das Resultat hat folgende Form:<br>
+   
+<blockquote>      
+  <blockquote>Perlenstickerei<br>
+  100<br>
+  Perlenstickerei<br>
+    </blockquote>
+  </blockquote>
+  Ebenso kann eine lokale Variable durch den Parameter current der convert-
+ oder der condition-Direktive innerhalb einer <a
+ href="../commands/item/Package/index.htm" target="_blank">Package-Vereinbarung 
+ </a>definiert werden:<br>
+      
+<blockquote>         
+  <blockquote>item name=karlsruhezoom;usage=package;overwrite=yes<br>
+   bracket sensitive=yes<br>
+   field start='http://gilgamesch2.hki.uni-koeln.de/promtest-cgi/kleioc/1010KlPTest/exec/zoom/%22';<br>
+   &nbsp;&nbsp;&nbsp; limit='%22/__kleioid/%22@&lt;cgiuser@%22/__kleiopass/%22@&lt;cgipass@%22';<br>
+   convert <u>current=zoomid</u>;<br>
+   &nbsp;&nbsp;&nbsp; path=':convert[<u>:dump[zoomid]</u>,zoomencode]'<br>
+   exit name=karlsruhezoom<br>
+   </blockquote>
+  </blockquote>
+     
+<p class="p">  In diesem Beispiel wird der Inhalt des zu verpackenden Elements
+ in der Variable zoom zwischengespeichert und mittels :dump[zoom] an geeigneter 
+Stelle wieder ausgegeben. <br>
+   <br>
+   </p>
+     
+<p class="p"><br>
+  <!-- 
+sorted plain  
+--> </p>
+       
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der</b> <b>Parameter target:<br>
+<br>
+</b>Der Befehl write kann dazu eingesetzt werden, den gesamten Inhalt einer
+Datenbank in maschinenlesbarer Form auszugeben, also einen "Dump" zu erzeugen.
+Dazu dient der Parameter target. Er hat standardm&auml;&szlig;ig den Parameterwert
+human. Diese implizit eingestellte Angabe bewirkt eine Datenausgabe als lesbares
+Dokument. Die Ausgabeform l&auml;&szlig;t sich durch verschiedene weitere
+Parameter steuern.<br>
+<br>
+Der Parameterwert machine bewirkt hingegen, da&szlig; der Gesamtinhalt der
+Datenbank als Datei im "klassischen" Kleio-Eingabeformat ausgegeben wird.
+Dabei werden die Felder durch Slashes (/) getrennt und die Feldnamen durch
+Etiketten explizit angegeben. Das Semikolon trennt Mehrfacheintr&auml;ge.
+Originaltext- und Kommentarfelder werden durch die entsprechenden Sonderzeichen
+(% bzw. #) kenntlich gemacht.<br>
+<br>
+<br>
+Folgende Aufgabe <br>
+<br>
+query name=basdat;part=per<br>
+write part=:total[];target=machine <br>
+stop <br>
+<br>
+<br>
+schreibt also den gesamten Inhalt der Datenbank Basdat als eine (nach klassischen
+Kleio-Konventionen) maschinenlesbare Datei heraus. <br>
+<br>
+das Ergebnis hat also die folgende Form:<br>
+<br>
+per $ idd = DOK030011 / name = ABELE / vorname = CARL / geschlecht = M /
+hko = KIRCHHEIM,TECK / land = OA KIRCHHEIM<br>
+pdat $&nbsp; <br>
+kar $ von-bis = 1.7.1846 - 1.7.1850 / beruf = FABRIKANT,SESSEL(CARL ABELE)
+# WSP<br>
+mob $ <br>
+wsp $ name = ABELE / vorname = CARL / hko = KIRCHHEIM,TECK / land = OA KIRCHHEIM
+/ beruf = FABRIKANT,SESSEL / id = DOK030011 / &nbsp;verbleib = 1.000000 /
+ersteintrag = 1.7.1846 / letzteintrag = 1.7.1850 # AB 50 FORT&nbsp; <br>
+<br>
+<br>
+<br>
+<br>
+    
+</body>
+</html>

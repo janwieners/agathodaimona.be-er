@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>user</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Win32)">
+	<META NAME="CREATED" CONTENT="20051014;12134786">
+	<META NAME="CHANGED" CONTENT="20051021;11422990">
+	<STYLE>
+	<!--
+		P.h { font-size: 14pt; font-weight: bold; text-align: center }
+		A:link { color: #666666; font-size: 12pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="de-DE" LINK="#666666" BGCOLOR="#e6e6e6" DIR="LTR">
+<P CLASS="h">Der Befehl user</P>
+<P>Der Befehl User dient zur dynamischen Nutzerverwaltung. Benutzer
+die &uuml;ber die usage Direktive des <A HREF="../index.htm" TARGET="_blank">Item</A>-Befehls
+angelegt wurden, k&ouml;nnen durch einen Abgleich mit den hier
+angegebenen Parametern bei Ablauf ihrer G&uuml;ltigkeitsfrist
+automatisch per e-Mail benachrichtigt werden bzw. abgelaufene
+Accounts k&ouml;nnen gel&ouml;scht werden. 
+</P>
+<P>Die Syntax:</P>
+<P><BR><B>user
+date=&quot;24.10.2007&quot;;number=30;type=&lt;mode&gt;;package=mailsettings</B><BR><BR>Alle
+Benutzer deren &quot;Verfallsdatum&quot;, zum Zeitpunkt des
+Programmaufrufs weniger als &quot;number&quot; Tage vor dem Stichtag
+&quot;date&quot; liegen, werden nach der Vorgehensweise &quot;mode&quot;
+behandelt. Ein Anwendungsbeispiel k&ouml;nnte zum Beispiel wie folgt
+aussehen <BR><BR><B>user
+date=&quot;24.10.2007&quot;;number=30;type=mail;package=mailsettings<BR>continue<BR>user
+date=&quot;24.10.2007&quot;;number=1;type=kill;package=mailsettings<BR></B><BR>Hier
+wird ein Bezugsdatum &bdquo;24.10.2007&ldquo; definiert: Wenn die
+Zeitdistanz zwischen dem &bdquo;Verfallsdatum&ldquo; in der
+Vereinbarung des Typs User (wie diese im item-Kommando definiert
+wurde) und dem Bezugsdatum weniger als die Anzahl Tage betr&auml;gt,
+die im number-Parameter spezifiziert ist, erfolgt eine Handlung
+entsprechend dem type-Parameter</P>
+<P>In diesem Fall w&uuml;rden alle User, die nach 24.09.2007 weniger
+als 30 Tage verbleibende Nutzerfrist aufweisen, per e-Mail
+angeschrieben. Accounts, die unter einem Tag G&uuml;ltigkeitsfrist
+haben, w&uuml;rden  gel&ouml;scht.</P>
+<P><BR>Der Aufbau der benachrichtigenden e-Mail entspricht dabei den
+Angaben aus einem Package, das einen frei w&auml;hlbaren Namen tragen
+kann und hier &bdquo;mailsettings&ldquo; hei&szlig;t.</P>
+<P STYLE="margin-left: 2cm"><BR>Dieses Package k&ouml;nnte z.B. so
+aussehen:<BR><BR><B>item
+name=mailsettings;usage=package;overwrite=yes<BR>fields
+write=&quot;mailcopies&quot;;<BR>start=&quot;Ihre
+Benutzungsberechtigung f&uuml;r Prometheus l&auml;uft
+ab&quot;;<BR>before=&quot;Ihre Benutzungsberechtigung f&uuml;r
+Prometheus l&auml;uft ab am:&quot;;<BR>after=&quot;Ihre
+Benutzungsberechtigung f&uuml;r Prometheus ist abgelaufen
+am:&quot;;<BR>more=&quot;Verst&auml;ndigen Sie Ihren
+Dozenten.\nIhr\nPrometheus-Team&quot;;<BR>connect=&quot;/usr/sbin/sendmail&quot;<BR>exit
+name=mailsettings</B></P>
+<PRE STYLE="margin-bottom: 0.5cm"><FONT FACE="Times New Roman, serif">F<FONT SIZE=3>olgende Parameter beeinflussen den Mailversand:</FONT></FONT></PRE>
+<UL>
+	<LI><PRE STYLE="margin-bottom: 0.5cm">    <B><U><FONT SIZE=3><FONT FACE="Times New Roman, serif">connect=&quot;/usr/sbin/sendmail&quot; (das ist auch der Default)</FONT></FONT></U></B></PRE>
+</UL>
+<PRE STYLE="margin-bottom: 0.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>zu verwendender Mailer,</FONT></FONT></PRE>
+<UL>
+	<LI><PRE STYLE="margin-bottom: 0.5cm"><U>    <FONT SIZE=3><FONT FACE="Times New Roman, serif">write=&quot;mailcopies&quot;  (Default: &quot;versandteMails&quot;)</FONT></FONT></U></PRE>
+</UL>
+<PRE><FONT FACE="Times New Roman, serif"><FONT SIZE=3>ein Directory, in das eine Kopie aller versandten mails mit Dateinamen username.mail geschrieben werden.   </FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Aus den restlichen Parametern wird die Mail aufgebaut:</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Subject: Username &lt;Betreff&gt;</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&lt;Haupthinweis&gt;</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>&lt;Ratschlag&gt;</FONT></FONT>
+
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Dabei gilt:</B></FONT></FONT></PRE>
+<UL>
+	<LI><PRE STYLE="margin-bottom: 0.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>&lt;Betreff&gt; wird definiert durch start=</FONT></FONT></PRE>
+</UL>
+<UL>
+	<LI><PRE STYLE="margin-bottom: 0.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Steht das Ablaufen der Userid noch bevor, wird der Text von before= als &lt;Haupthinweis&gt; verwendet;</FONT></FONT></PRE>
+</UL>
+<UL>
+	<LI><PRE STYLE="margin-bottom: 0.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>ist sie bereits abgelaufen wird after= verwendet.</FONT></FONT></PRE>
+	<LI><PRE STYLE="margin-bottom: 0.5cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>&lt;Ratschlag&gt; wird durch more= definiert.</FONT></FONT></PRE>
+</UL>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

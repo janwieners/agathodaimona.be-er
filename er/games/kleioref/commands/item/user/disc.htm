@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>usage, user</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Win32)">
+	<META NAME="CREATED" CONTENT="20051014;10282286">
+	<META NAME="CHANGED" CONTENT="20051014;10391600">
+</HEAD>
+<BODY LANG="de-DE" BGCOLOR="#e6e6e6" DIR="LTR">
+<P><B>Das Objekt user</B></P>
+<P>Ein item-Kommando mit dem Parameterwert user im Parameter Usage
+legt im Environment einen Nutzer an. Der Name der Vereinbarung
+entspricht hierbei dem Nutzernamen. Nutzername und Passwd (das in der
+Direktive user definiert wird), werden im Rahmen von cgi-Abfragen
+&uuml;berpr&uuml;ft, wenn der <A HREF="http://www.hki.uni-koeln.de/kleio/prot.html" TARGET="_blank">Kleio-Protokollcode</A>
+an der entsprechenden ersten Stelle auf &bdquo;1&ldquo; gesetzt ist.
+Das hei&szlig;t, der CGI-Aufruf, mu&szlig; in diesem Falle auch einen
+Nutzernamen,  der im entsprechenden Environment bekannt ist, und das
+zugeh&ouml;rige Passwd &uuml;bergeben, damit die angeforderte  stored
+procedure ausgef&uuml;hrt wird. &Uuml;ber die Direktiven user und
+project k&ouml;nnen weitere Eigenschaften des Benutzers wie sein
+Passwort und G&uuml;ltigkeitsdauer des Accounts festgelegt werden:
+<BR><BR><B>Beispiel:</B><BR>item name=testuser_diathek_k.dresden;
+usage=user; explanations=&quot;testuser_diathek_k.dresden&quot;<BR>user
+mail=&quot;test@t-online.de&quot;;date=&quot;21.11.2008&quot;;
+password=&quot;xxxyyyzzz&quot;; <BR>project name=&quot;k.dresden&quot;;
+overwrite=yes<BR>exit name=testuser_diathek_k.dresden</P>
+</BODY>
+</HTML>

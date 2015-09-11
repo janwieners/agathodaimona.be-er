@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>read,Supply.htm</title>
+    
+</head>
+  <body bgcolor="#ffffff">
+<b>Der</b><b> Parameter supply: </b>
+<p><br>
+    Der Parameter supply stellt eine Erg&auml;nzung des Parameters <a href="Package.htm" target="_blank">
+    package</a>
+     zum read-Befehl dar. &nbsp;Supply funktioniert im Zusammenhang mit dem&nbsp;
+Parameter<b> connect</b> in einer Package-Vereinbarung (vgl. Befehl <a href="../item/index.htm" target="_blank">
+  item</a>
+  ) und erlaubt als Parameterwert die Angabe einer beliebigen Zeichenkette, 
+die als Konstante in Hochkommata eingeschlossen sein mu&szlig;.</p>
+<p>Supply bewirkt, da&szlig; bei Abarbeitung einer Verpackungsanweisung jeweils 
+der Wert von supply vor demjenigen Markup-Element ausgegeben wird, das im 
+connect-Paramter der Package Vereinbarung definiert wird. Der Inhalt von
+connect wiederum wird nach dem Inhalt des Start-Tags am Beginn des Inhalts
+jeder Datei ausgegeben, die mit dem read-Befehl in eine Systemdatei umgewandelt
+wird.</p>
+<p>Um das Ganze hier ein wenig deutlicher zu machen, beziehen wir uns wieder 
+auf ein Beispiel:</p>
+<p>Wie h&auml;tten zwei Dateien mit den Namen "datei1.xml" und "datei2.xml", 
+die folgende Daten enthalten.</p>
+<blockquote>
+  <p><b>Datei1:</b></p>
+ &lt;tag1&gt;1234&lt;/tag1&gt;<br>
+ &lt;tag2&gt;Irgendein Text&lt;/tag2&gt;<br>
+ &lt;tag3&gt;mit einem erl&auml;uternden Zusatztext&lt;/tag3&gt;<br>
+  <br>
+  <br>
+  <b>Datei2:</b><br>
+  </blockquote>
+  <blockquote>&lt;tag1&gt;123&lt;/tag1&gt;<br>
+ &lt;tag2&gt;Ein ganz anderer Text&lt;/tag2&gt;<br>
+ &lt;tag3&gt;Die Erl&auml;uterung dazu&lt;/tag3&gt;<br>
+    </blockquote>
+    <br>
+ Beide Dateien sollen in eine gemeinsame Systemdatei &uuml;berf&uuml;hrt
+werden. Dabei wollen wir folgendes erreichen:<br>
+    <br>
+    <ol>
+      <li>Jede Datei soll in einem eigenen Dokument zusammengefa&szlig;t
+werden.</li>
+      <li>Der Name der Quelldatei soll k&uuml;nftig in der Datenbank als Element
+verf&uuml;gbar sein, das den Namen<b> file</b> tragen soll.</li>
+    </ol>
+Damit soll unsere Datenbank also folgende Struktur aufweisen:<br>
+    <br>
+    <blockquote><b>database name=test;first=dokument;overwrite=yes;write=structure<br>
+part name=dokument;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; also=tag1,tag2,tag3,file<br>
+exit name=test</b><br>
+      <br>
+      </blockquote>
+ Die L&ouml;sung des unter 1) skizzierten Problems findet sich in den Erl&auml;uterungen 
+zum <a href="Package.htm" target="_blank">package</a>
+ -Parameter des read-Befehls beschrieben. Zur L&ouml;sung des zweiten Problems
+dient der Parameter supply des read-Befehls in Verbindung mit dem connect-Parameter
+einer geeigneten Verpackungsanweisung:<br>
+      <br>
+      <blockquote><b>item name=dok;usage=package;overwrite=yes</b><br>
+        <b>field start="&lt;dokument&gt;&lt;file&gt;";</b><br>
+        <b>&nbsp;&nbsp;&nbsp;&nbsp; connect="&lt;/file&gt;";</b><br>
+        <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit="&lt;/dokument&gt;"</b><br>
+        <b>exit name=dok</b><br>
+        </blockquote>
+        <br>
+Das Paket besagt also, da&szlig; an den Anfang jeder Datei die Auszeichnung
+        <b>&lt;dokument&gt;&lt;file&gt;</b> gesetzt werden soll und jede
+Datei wiederum mit der Auszeichnung <b>&lt;/dokument&gt;</b> abzuschlie&szlig;en
+ist. Der Parameter <b>connect</b> in der package-Definition legt fest, da&szlig;
+jeweils beim Einlesen einer neuen Datei nach dem Start-Tag den Inhalt von
+connect (also <b>&lt;/file&gt;</b>) gesetzt wird. Der Wert des Parameters
+        <b>supply</b> wiederum wird vor demjenigen Markup-Element ausgegeben,
+das durch connect definiert ist.<br>
+        <br>
+Wenn man nun also die folgenden beiden read-Kommandos ausf&uuml;hrt<br>
+        <br>
+        <blockquote><b>read name=test;other=markup;</b><br>
+          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+origin="datei1.xml";</b><br>
+          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; package=dok;supply="datei1";</b><br>
+          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+repeat=yes</b><br>
+          <br>
+          <b>continuation</b><br>
+          <b>read name=test;other=markup;</b><br>
+          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+origin="datei2.xml";<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; package=dok;supply="datei2";</b><br>
+          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+repeat=yes</b><br>
+          </blockquote>
+so werden dem System tats&auml;chlich die folgenden Daten zur Weiterverarbeitung
+&uuml;bergeben:<br>
+          <br>
+          <blockquote>&lt;dokument&gt;<br>
+            <blockquote>&lt;file&gt;datei1&lt;/file&gt;<br>
+&lt;tag1&gt;1234&lt;/tag1&gt;<br>
+&lt;tag2&gt;Irgendein Text&lt;/tag2&gt;<br>
+&lt;tag3&gt;mit einem erl&auml;uternden Zusatztext&lt;/tag3&gt;</blockquote>
+              </blockquote>
+              <blockquote>&lt;/dokument&gt;<br>
+                </blockquote>
+                <br>
+                <blockquote>&lt;dokument&gt;<br>
+                  <blockquote>&lt;file&gt;datei2&lt;/file&gt;<br>
+&lt;tag1&gt;123&lt;/tag1&gt;<br>
+&lt;tag2&gt;Ein ganz anderer Text&lt;/tag2&gt;<br>
+&lt;tag3&gt;Die Erlauterung dazu&lt;/tag3&gt;<br>
+                    </blockquote>
+&lt;/dokument&gt;<br>
+                    </blockquote>
+                    <br>
+Entsprechend unserer oben dargestellten Strukturvereinbarung ergibt sich
+damit eine Datenbank mit zwei Dokumenten, die je vier Elemente umfassen:<br>
+                    <br>
+Der Befehl <br>
+                    <blockquote><b>query name=test<br>
+write</b><br>
+                      </blockquote>
+liefert entsprechend folgendes Resultat:<br>
+                      <br>
+                      <br>
+                      <blockquote><b>dokument (1 = "1234")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Irgendein Text<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mit einem erl&auml;uternden Zusatztext<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+datei1<br>
+                        <br>
+dokument (2 = "123")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+123<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Ein ganz anderer Text<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Die Erl&auml;uterung dazu<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+datei2<br>
+                        </b><br>
+                        <br>
+                        </blockquote>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <blockquote><b><br>
+                          </b></blockquote>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <blockquote><br>
+                            </blockquote>
+                            </body>
+                            </html>

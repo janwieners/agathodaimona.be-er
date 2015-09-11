@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>execute, description</title>
+                                                                        
+         
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                     
+<p class="h">Das Kommando execute<br>
+      </p>
+           
+<p class="p">Das Kommando execute dient dazu, eine <a
+ href="http://www.hki.uni-koeln.de/kleio/new/commands/item/Procedure/index.htm"
+ target="_blank">katalogisierte Prozedur</a> auszuf&uuml;hren. Dies kann sowohl
+lokal als auch in Web-Anwendungen innerhalb eines CGI-Directorys geschehen.<br>
+    </p>
+       
+<p class="p">Man habe folgende einfache katalogisierte Prozedur: <br>
+    </p>
+            
+<p class="b">item name=<u>job1</u>;usage=procedure;overwrite=yes<br>
+   cata source="query name=piranesi\nwrite"<br>
+   exit name=<u>job1</u> </p>
+  
+<p class="p">Es wird hier also eine Aufgabe namens "job1" katalogisert, die
+ den Inhalt der Datenbank "piranesi" mittels eines "write-Kommandos" wiedergibt.
+ durch den folgenden execute-Befehl kann dieses Prozedur aufgerufen werden:<br>
+  </p>
+    
+<p class="b">exec name=<u>job1</u><br>
+   </p>
+ 
+<p class="p">Als Beispiel f&uuml;r den Aufruf im Rahmen einer CGI-Anwendung
+kann der folgende URL&nbsp;   dienen. Der aufmersame Leser wird bemerken,
+da&szlig; darin ein execute-Kommando   (abgek&uuml;rzt als "exec") enthalten
+ist:<br>
+     </p>
+         
+<p class="p">http://gilgamesch2.hki.uni-koeln.de/prometheus-cgi/kleioc/1010KlProm/<u><b>exec</b></u>/zoom/%223475%22/__kleioid/%22gast4%5fgast4%5fh%2ekoeln%22/__kleiopass/%222%2e2%2e20000%22<br>
+     </p>
+         
+<p class="p">Hier wird in Verzeichnis "prometheus-cgi" eine katalogisierte 
+  Prozedur namens "zoom" aufgerufen, der dabei mehrere Werte &uuml;bergeben 
+  werden. Dies entspricht der folgenden&nbsp; <a
+ href="http://gilgamesch2.hki.uni-koeln.de/prometheus-cgi/kleioc/1010KlProm/exec/zoom/%223475%22/__kleioid/%22gast%5fgast%5fh%2ekoeln%22/__kleiopass/%221%2e1%2e1900%22"
+ target="_blank">Funktion</a> (klickbar). <br>
+     </p>
+         
+<p class="p"><br>
+     </p>
+         
+<p class="p"><br>
+      </p>
+             <br>
+       
+</body>
+</html>

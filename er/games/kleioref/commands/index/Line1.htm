@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+    <b>Der Parameter lines:<br>
+   <br>
+   <br>
+   Die Grundfunktion des Parameters:<br>
+   <br>
+   <br>
+   </b>Man kann Register durch mehrere aufeinander folgende <a href="index.htm">
+   Index</a>
+   -Befehle erzeugen.<br>
+   <br>
+   Die Befehle<br>
+   <br>
+   query name=basdat;part=per<br>
+   index part=pdat/part[kar,1]:beruf<br>
+   index part=root[0]/pdat/part[kar,2]:beruf<br>
+   <br>
+   w&uuml;rden ein Berufsregister erzeugen, das die jeweils erste und jeweils 
+ dritte Berufsangabe einer Person enth&auml;lt. Dabei w&auml;re es f&uuml;r 
+ die Sortierung der Berufsangaben belanglos, ob diese durch den ersten oder 
+ den zweiten der Index-Befehle in das Register eingebracht wurden. Dieses 
+ist das Standardverhalten des Systems.<br>
+   <br>
+   F&uuml;r bestimmte Einsatzzwecke kann es aber sinnvoll sein, da&szlig; 
+die  Reihenfolge der Index-Befehle selbst als Sortierkriterium herangezogen 
+wird.  In diesem Falle kann durch Angabe des Parameters lines mit dem Parameterwert 
+ yes (no ist impliziter Standard) in jeweils allen index-Befehlen ausdr&uuml;cklich 
+ angeordnet werden, da&szlig; diejenigen Zeilen, deren erste Spalte &uuml;bereinstimmt 
+ und die zugleich durch den ersten Index-Befehl erzeugt wurden (unabh&auml;nging 
+ vom Inhalt der Folgespalten) vor denjenigen Zeilen sortiert werden, die ebenfalls
+ in der ersten Spalte &uuml;bereinstimmen, aber durch den zweiten, dritten
+ usw. index-Befehl generiert wurden. <br>
+   <br>
+   Wir modifizieren obige Ausgabe, indem wir den Namen der jeweiligen Person 
+ erg&auml;nzen, zus&auml;tzlich als Kontrolle des Systemverhaltens die Nummer 
+ der Aufgabe explizit durch form[] angeben und schlie&szlig;lich den Parameter 
+ lines=yes spezifizieren:<br>
+   <br>
+   <br>
+   query name=basdat;part=per<br>
+   index part=pdat/part[kar,1]:beruf;lines=yes;<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=root[0]:name;<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:form["Zeile 1"];lines=yes<br>
+   index part=pdat/part[kar,2]:beruf;lines=yes;<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=root[0]:name;<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:form["Zeile 2"];lines=yes<br>
+   <br>
+   <br>
+   Wir erhalten u.a. folgende Ausgabe:<br>
+   <br>
+   BAECKER AUCH Zeile 1 DOK870267 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER BERKHEMER Zeile 1 DOK051368 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER BREHLE Zeile 1 DOK020324 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER BUCK Zeile 1 DOK010254 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER DUMOLD Zeile 1 DOK010373 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER EITEL Zeile 1 DOK051168 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER FALCH Zeile 1 DOK050672 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER FALCH Zeile 1 DOK050886 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER FELDNER Zeile 1 DOK050299 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   BAECKER FUCHS Zeile 1 DOK001736 <br>
+   &nbsp;&nbsp;&nbsp; <br>
+   <br>
+   .....<br>
+   <br>
+   <br>
+   BAECKER SCHRAY Zeile 1 DOK800655<br>
+   <br>
+   BAECKER SPENGLER Zeile 1 DOK051275<br>
+   <br>
+   BAECKER UTZ Zeile 1 DOK873025<br>
+   <br>
+   BAECKER FEYHL Zeile 2 DOK872836<br>
+   <br>
+   BAECKER FUCHS Zeile 2 DOK001783<br>
+   <br>
+   BAECKER HARDTMANN Zeile 2 DOK050488<br>
+   <br>
+   BAECKER MAYER Zeile 2 DOK002175<br>
+   <br>
+   BAECKER MAYER Zeile 2 DOK020224<br>
+   <br>
+   BAECKER SPENGLER Zeile 2 DOK051275<br>
+   <br>
+   <br>
+   <br>
+   Alle Angaben zum Beruf "BAECKER", die durch den zweiten Index-Befehl generiert 
+ wurden, finden sich nach den enstsprechenden Angaben, die der erste Befehl 
+ erzeugt hat (ab "BAECKER FEYHL Zeile 2 DOK872836"). Die Familiennamen haben 
+ also nur innerhalb der jeweiligen Bl&ouml;cke Einflu&szlig; auf die Sortierung. 
+ <br>
+   <br>
+   <br>
+   <b>Die erweiterte Funktion des Parameters:</b><br>
+  <br>
+ Der Parameter lines kann auch den Wert eines einzelnen Zeichens annehmen, 
+das der Trunkierung von Spalteninhalten dient, um bei Aufgaben mit mehreren 
+Index-Kommandos explizite Sortieranweisungen zu treffen. Vgl. hierzu die Ausf&uuml;hrungen
+zum Parameter <a href="Also.htm">also</a>
+  .<br>
+   <br>
+   <br>
+   <b><br>
+   </b>    
+<p> </p>
+     
+</body>
+</html>

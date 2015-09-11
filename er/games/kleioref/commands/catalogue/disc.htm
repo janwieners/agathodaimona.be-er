@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                                         
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+  <title></title>
+                                                                        
+ 
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+                                         
+  <meta name="CREATED" content="20020531;18202016">
+                                         
+  <meta name="CHANGEDBY" content=" ">
+                                         
+  <meta name="CHANGED" content="20020604;18334350">
+                                         
+  <style>
+
+
+
+
+
+
+
+        <!--
+
+
+
+
+
+
+
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+
+
+
+
+
+
+
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+
+
+
+
+
+
+
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+
+
+
+
+
+
+
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+a:hover { font-weight:bold; color:#666666 ; text-decoration:none;font-size:16pt }
+
+
+
+
+                A:visited { color: #666666; font-size: 12pt }
+
+
+
+
+
+
+
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+
+
+
+
+                A:link { color: #666666; font-size: 12pt }
+
+
+
+
+
+
+
+        -->
+
+
+
+
+
+
+
+        </style>
+</head>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+                    
+<p class="h">Der Befehl catalogue:</p>
+        <br>
+      Der Befehl catalogue dient der Anlage von Katalogen. Unter einem Katalog
+   versteht man in Kleio eine indexierte Liste von Suchbegriffen, die unter
+  einem frei w&auml;hlbaren Namen dem Environment der Datenbank zugeordnet
+ wird. Der Katalog erf&uuml;llt prim&auml;r die Funktion, die Performance
+der Datenbank zu steigern. Um ein bestimmtes Vergleichsmuster in einer Datenbank
+ zu finden, werden gew&ouml;hnlich alle Dokumente einer Datenbank durchsucht,
+ die angeforderten Informationen ausgew&auml;hlt und dann ausgegeben.&nbsp;<br>
+           
+<p class="p">Der Einsatz von Katalogen verk&uuml;rzt diese Prozedur. Bei
+der Anlage eines Katalogs wird der Inhalt eines oder mehrerer Elemente in
+einer alphabetischen Fundestellenliste abgelegt, die jeden Begriff genau
+einmal enth&auml;lt. Man habe also z.B. eine Personendatenbank mit 10.000
+Dokumenten, in der der Familienname "Mayer" im Element "name" 500 mal aufscheint.
+Bei Anlage des Katalogs wird der Inhalt des Elements&nbsp; name in die Suchliste 
+  &uuml;bertragen und dabei der Begriff "Mayer" damit genau einmal abgelegt. 
+  Dabei wird zus&auml;tzlich die Information verzeichnet, in welchen 500 der
+  10.000 Dokumente in der jeweiligen Datenbank der Name "Mayer" zu finden 
+ist.  <br>
+      </p>
+           
+<p class="p">Wird nun &uuml;ber den <b>Katalog</b> eine Abfrage nach "Mayer"
+   in Gang gesetzt, so m&uuml;ssen nicht alle 10.000 Dokumente durchsucht
+werden.   Vielmehr wird die Maschine in der Suchliste (also im Katalog) gezielt
+den   Eintrag "Mayer" aufsuchen und von dort unmittelbar die 500 Dokumente
+der  Datenbank adressieren, in denen der Suchbegriff tats&auml;chlich vorliegt.
+  Die &uuml;brigen 9.500 Dokument der Datenbank sind f&uuml;r die Recherche
+  ohne Belang.<br>
+      </p>
+           
+<p class="p">Kataloge k&ouml;nnen f&uuml;r verschiedene Abfragekontexte vorbereitet
+   werden. Grunds&auml;tzlich kann ein Katalogeintrag in seiner vollen L&auml;nge
+   mit einen Muster verglichen werden (die Suche nach "Mayer" findet den
+Katalogeintrag    "<i>Mayer</i>"). Daneben ist auch der Zugriff auf den Wortanfang
+m&ouml;glich.   Die Suche nach "<i>May</i>" w&uuml;rde als im Katalog den
+Eintrag "<i>Mayer</i>"   auffinden. Der Katalog kann auch so eingestellt
+werden, da&szlig; eine Suche   nach Wortendungen m&ouml;glich wird. Nicht
+m&ouml;glich ist die Suche nach   Textbestandteilen, die in Katalogeintr&auml;gen
+enthalten sind, aber nicht   am Anfang oder Ende des Eintrags stehen (die
+Suche nach "<i>aye</i>" w&auml;re   erfolglos). Weiterhin ist ein algorithmischer
+Zugriff auf den Katalog (z.B.   &uuml;ber eine Soundex-Definition) neben
+dem uncodierten Textzugriff einstellbar.   <br>
+      </p>
+           
+<p class="p">Wenn der Inhalt eines nicht nur aus einem Wort, sondern aus
+mehreren Begriffen oder sogar umfangreichen Texten besteht, so k&ouml;nnen
+wahlweise der gesamte String oder die Einzelworte im Katalog verzeichnet
+werden. Letzeres ist zugleich ein Tool zur Erschlie&szlig;ung von Volltexten.<br>
+     </p>
+         
+<p class="p">Ein Katalog mu&szlig; sich nicht nur auf eine einzelne Datenbank 
+  beziehen. Durch den suspend/augment/complete-Mechanismus k&ouml;nnen Kataloge 
+  angelegt werden, die sich auf mehrere Datenbanken beziehen. Damit kann ein
+  Katalog den Inhalt verschiedener Datenbanken erschlie&szlig;en, die heterogen
+  strukturiert sein k&ouml;nnen. <br>
+     </p>
+         
+<p class="p">Ein catalogue-Befehl hat mindestens folgende Form:<br>
+     </p>
+          
+<p class="b">query name=dmr;part=:kuenstler<br>
+     catalogue name=artist;part=:kuenstler;<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+     
+<p class="p">Hier wird zur Datenbank "dmr" eine Katalog angelegt, der den
+  Inhalt des Elements "kuenstler" umfa&szlig;t.&nbsp; Der frei w&auml;hlbare
+  Name des Katalogs lautet artist.<br>
+   </p>
+     
+<p class="p">Jeder &nbsp;Katalog kann jeweils unter seinem benutzerdefinierten 
+ Namen angesprochen und ausgewertet werden. Hierzu dient die Funktion <a
+ href="../../functions/groucata.htm" target="_blank">catalogue[]</a>. Sie 
+ erwartet als erstes Argument den Namen des jeweils abgefragten Katalogs, 
+der damit eindeutig angesprochen werden kann.<br>
+</p>
+<p class="p">Zur weitere Beschreibung des Befehsl vgl. auch S. 263f. im "<a
+ href="http://www.hki.uni-koeln.de/kleio/paper/index.html">alten Handbuch</a>".<br>
+     </p>
+         
+<p class="p"><br>
+     <br>
+      </p>
+           
+<p class="p"><br>
+      </p>
+        <br>
+       <br>
+   <br>
+</body>
+</html>

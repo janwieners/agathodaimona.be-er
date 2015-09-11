@@ -1,0 +1,69 @@
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE>Package - Direktive conversion</TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+
+<p class="h">Der Parameter condition</p>
+
+<p> </p>
+
+<p class="p">Der Parameter cndition erwartet als Parameter einen legalen Kleio-Pfad
+mit Angabe einer Bedingung. Die Pfandangabe mu&szlig; als Konstante ich Hochkommata angegeben werden.<br>
+<br>Da auch die Bedingung entsprechend der allgemeinen Syntax in Hochkommata geschrieben werden mu&szlig;, bedeutet
+dies, da&szlig; der Gesamtpfad in einfache Anf&uuml;hrungszeichen und die
+Bedingung in doppelte Anf&uuml;hrungszeichen erscheinen mu&szlig; (oder
+vice versa).&nbsp; </p>
+
+<p class="p">Eine typische Anwendung hat die folgende Form:<br>
+    </p>
+
+<p class="b">  field start='Starttag';<br>
+     &nbsp;&nbsp;&nbsp;      limit='Endtag'<br>
+      condition<br>
+     &nbsp;&nbsp;&nbsp;    current=argument;<br>
+     &nbsp;&nbsp;&nbsp; condition='/catalogue[objektfiles,complete,:convert[:dump[argument],cgiencode]] <br>
+
+     &nbsp;&nbsp;&nbsp;:database[]="uustb"'<br>
+      <b>convert</b><b><br>
+&nbsp;&nbsp;&nbsp; current=dbimageid;</b><b><br>
+&nbsp;&nbsp;&nbsp; path=':package[:dump[dbimageid],uustbzoom]'</b><br>
+      condition<br>
+     &nbsp;&nbsp;&nbsp;    current=argument;<br>
+     &nbsp;&nbsp;&nbsp; condition='/catalogue[objektfiles,complete,:convert[:dump[argument],cgiencode]]<br>
+     &nbsp;&nbsp;&nbsp;:database[]="dadaweb"'<br>
+      <b>convert</b><b><br>
+ &nbsp;&nbsp;&nbsp; current=dbimageid;</b><b><br>
+ &nbsp;&nbsp;&nbsp; path=':package[:dump[dbimageid],dadawebzoom]'</b><br>
+</p>
+
+<p class="p"> </p>
+<p class="p"><br>
+Wendet man dieses Package auf ein Element an, so wird der Inhalt des betreffenden Elements grunds&auml;tzlich mit dem Start und dem Endtag verpackt, welches in der Fields-Direktive angegeben ist. Anschlie&szlig;end wird der Inhalt des betreffenden Elements durch den Parameter <b>current</b> in der Direktive <b>condition</b> in die Variable "argument" geschrieben. <br>
+<br>
+Im n&auml;chsten Schritt wird gespr&uuml;ft, aus welcher Datenbank der Inhalt der Variable "argument" urspr&uuml;nglich stammt. Das wird mittels der Funktion <b>:database[]</b> der Name der betreffenden, im zugeh&ouml;rigen Katalog "objektfiles" vermerkten Quelldatenbank zur&uuml;ckgegeben und mit den Vergleichsmustern "uustb" bzw. "dadaweb" abgegelichen. Wenn also der Inhalt der Variable "argument" aus der Datenbank "uustb2" stammt, wird anschlie&szlig;end die entsprechende convert-Direktive auf diese Inhalt angewendet und dieser nach den Regeln des Pakets  "uustbzoom" verpackt. Stammt der Inhalt von  "argument" dagegen aus dadaweb, so wird ebenfalls die entsprechende convert-Direktive mit der zugeh&ouml;rigen Verpackung ausgegeben.<br>
+<br>
+Dem aufmerksamen Leser wird nicht entgangen sein, da&szlig; im current-Parameter der condition-Direktive und der convert-Direktive jeweils unterschiedlich benannte lokale Variablen eingef&uuml;hrt werden (dbimageid bzw. argument). Dies h&auml;ngt damit zusammen, da&szlig; der Wert der Variable im Aufruf in der condition-Direktive ggf. ver&auml;ndert werden kann, wie dies in unserem Beispiel durch den Einsatz eines logischen Objekts der Klasse conversion geschieht. Das hei&szlig;t, da&szlig; der Wert von "argument" nach Abarbeitung der condition-Direktive nicht mehr mit dem Ausgangswert &uuml;bereinstimmt. <br>
+<br>
+W&uuml;rde man nun "argument" wiederum in der convert-Direktive einsetzen, so w&auml;re der Startwert  innerhalb dieser Direktive nicht mit dem Inhalt des eigentlich zu verpackenden Elements identisch. Sofern man dieses Systemverhalten nicht ausdr&uuml;cklich w&uuml;nscht, empfiehlt es sich daher, eine neue lokale Variable (hier: dbimageid) zu initialisieren, die dann in jedem Fall mit dem Inhalt des zu verpackenden Elements &uuml;bereinstimmt.
+
+</p>
+    <br>
+   <br>
+   <br>
+</body>
+</html>

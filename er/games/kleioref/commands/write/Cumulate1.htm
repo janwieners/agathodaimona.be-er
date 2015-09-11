@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der Parameter cumulate: </b> 
+<p><br>
+Der write-Befehl bewirkt normalerweise, da&szlig; der Inhalt jedes Elements
+auf einer neuen Zeile ausgegeben wird. Durch die Einstellung cumulate=yes
+(no ist Standard) kann das Systemverhalten dahingehend ver&auml;ndert werden,
+da&szlig; so viele Elemente wie m&ouml;glich auf einer Zeile ausgegeben werden.</p>
+<p>Die Aufgabe</p>
+<p>query name=basdat;part=per<br>
+write part=:each[];cumulate=yes <br>
+stop&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p>erzeugt damit folgendes Ergebnis:</p>
+per (1 = "DOK030011") idd = DOK030011 / name = ABELE / vorname = CARL / geschlecht
+= maennlich / hko = KIRCHHEIM,TECK / land = OA KIRCHHEIM<br>
+&nbsp;&nbsp;&nbsp; &nbsp;<br>
+<br>
+<p> </p>
+</body>
+</html>

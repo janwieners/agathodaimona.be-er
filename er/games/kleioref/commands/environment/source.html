@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>environment,source</title>
+                                                                        
+                                                                        
+                                  
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+           
+<p class="h">Der Parameter source</p>
+           
+<p class="p">Der Parameter source erwartet als Parameterwert den Namen einer
+ Datenbank, die innerhalb eines <a href="../database/index.htm">database</a>-Kommandos
+ definiert sein mu&szlig;. Es k&ouml;nnen  hier als kommaseparierte Liste
+auch die Namen mehrerer Datenbanken angegeben werden.&nbsp;<br>
+     </p>
+         
+<p class="p">Die Angabe bewirkt, da&szlig; die entsprechende aktuelle Umwelt 
+  sich ausschlie&szlig;lich auf die gelisteten Datenbanken bezieht. Dies bedeutet
+auch, da&szlig; z.B. &nbsp;Kataloge, die sich auf mehrere Datenbanken beziehen,
+ ausschlie&szlig;lich den Datenbestand indexieren, der in denjenigen Datenbanken
+ enthalten ist, die in der aktuellen Umwelt zugelassen sind. <br>
+    </p>
+       
+<p class="p">Im folgenden Beispiel existieren in der Umwelt eine ganze Reihe
+ von Datenbanken und ein Katalog "institution", der sich auf alle Datenbanken
+ bezieht. F&uuml;r eine bestimmte Auswertung soll aber in der Umwelt nur
+die  Datenbank "archgiessen" existieren. Es wird also im source-Parameter
+des environment-Befehls der entsprechende Wert spezifiziert. Wie der nachfolgende 
+Index-Befehl zeigt, werden tats&auml;chlich nur die EinTr&auml;ge des Katalogs 
+herangezogen, die aus der Datenbank "archgiessen" herr&uuml;hren.<br>
+  <br>
+     </p>
+         
+<p class="b"><br>
+ <u> environment source=archgiessen</u><br>
+  query name=kleio;part=/catalogue[institution,complete,"a*"]<br>
+  index part=:database[];maxi=1 <br>
+  cont<br>
+  <br>
+  <br>
+  Die Ausfuehrung der von Ihnen gestellten Aufgabe beginnt.<br>
+ <u> archgiessen&nbsp;</u>&nbsp; <br>
+  <br>
+  <br>
+  Die Ausfuehrung der von Ihnen gestellten Aufgabe wurde beendet.<br>
+  <br>
+  <br>
+     </p>
+      <br>
+           <br>
+</body>
+</html>

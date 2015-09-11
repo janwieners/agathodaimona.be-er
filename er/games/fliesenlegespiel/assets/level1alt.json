@@ -1,0 +1,44 @@
+{ "height":3,
+ "layers":[
+        {
+         "data":[801, 251, 801, 251, 257, 251, 260, 260, 260],
+         "height":3,
+         "name":"TileLayerFliesen",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":3,
+         "x":0,
+         "y":0
+        }],
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "tileheight":16,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"simples_pimples.png",
+         "imageheight":1280,
+         "imagewidth":800,
+         "margin":0,
+         "name":"simples_pimples",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":16,
+         "tileoffset":
+            {
+             "x":2,
+             "y":2
+            },
+         "tilewidth":16
+        }],
+ "tilewidth":16,
+ "version":1,
+ "width":3
+}

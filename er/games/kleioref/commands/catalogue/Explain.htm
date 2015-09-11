@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>catalogue,Explain</title>
+                                                                        
+                                                                        
+                          
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                            
+<p class="h">Der Parameter explain</p>
+                              <br>
+                                
+<p class="p">Der Parameter explain erwartet als Parameterwert eine Konstante,
+      die folglich in Hochkommata angegeben werden mu&szlig;. <br>
+            </p>
+                       
+<p class="p">Der Parameter erf&uuml;llt eine ganz spezifische Funktion. Der
+      Name eines Katalogs kann durch den Befehl <a
+ href="../describe/index.htm" target="_blank">describe</a> wiedergegeben
+werden. Dies ist z.B. von zentraler Bedeutung, wenn &nbsp;im Rahmen eines
+CGI-Servers dem Endanwender eine Auswahl aus verschiedenen Katalogen angeboten
+werden soll. Dazu m&uuml;ssen die Namen der vorhandenen Kataloge "ausgelesen"
+&nbsp;und in einem Web-Formular zur Auswahl angeboten werden. Standardm&auml;&szlig;ig 
+     wird hier der Name des Katalogs ausgegeben, der im name-Parameter des 
+ catalogue-Befehls    angegeben wurde.&nbsp;<br>
+           </p>
+                     
+<p class="p">Dies kann im Einzelfall als ungeeignet erscheinen, wenn man z.B.
+den Namen dem Katalogs eine Erkl&auml;rung beif&uuml;gen m&ouml;chte. Hierzu
+dient der Parameter explain. Explain erlaubt, dem Katalog eine frei w&auml;hlbare
+Zeichenkette zuweisen, die alternativ zum eigentlichen Namen des Katalogs
+angezeigt werden kann. Man ver&auml;ndert damit gleichsam den Ph&auml;notypus
+des Katalogs ohne seine tats&auml;chliche systeminterne Benennung zu ver&auml;ndern.
+<br>
+           </p>
+                     
+<p class="p">Ein Beispiel mag dies verdeutlichen. Folgendes catalogue-Kommando 
+     legt einen Katalog mit dem internen Namen "<i>fundort</i>" an, der in 
+ der   Darstellung als "<i>Fundort (nur Arch&auml;ologie)</i>" erscheinen 
+soll:<br>
+          </p>
+                   
+<p class="b">query name=archgiessen;part=:p_Bildfreigabe="Prometheus"<br>
+          catalogue name=fundort;part=:p_f_Ort|+:form[", "]|+:p_f_Land;symbol=*;type=terms;overwrite=yes;<br>
+         &nbsp; &nbsp; &nbsp; <u>explain="Fundort (nur Arch&amp;auml;ologie)"</u><br>
+          continue</p>
+                 
+<p class="p">Das hei&szlig;t,&nbsp; dem Katalog "<i>fundort"</i> ist die
+Zusatzinformation "<i>Fundort (nur Arch&auml;ologie)</i>" zugeordnet &nbsp;worden,
+die nun mittels eines entsprechenden <a href="../describe/index.htm"
+ target="_blank">describe</a>-Komandos abgefragt werden kann, das zugleich 
+   alle sonstigen Kataloge des Environments ausgibt:<br>
+        </p>
+               
+<p class="b">describe usage=catalogue;write=cgi;first=fundort;display=regular</p>
+             
+<p class="p">Das Resultat dieses Kommandos ist der folgende Output:<br>
+      </p>
+           
+<p class="b">&lt;html&gt;&lt;head&gt;&lt;title&gt;Navigator Suche&lt;/title&gt;<br>
+      &nbsp;&nbsp;&nbsp; &lt;/head&gt;<br>
+      &nbsp;&nbsp;&nbsp; &lt;body&gt;&lt;form target="http://gilgamesch2.hki.uni-koeln.de/promtest-cgi/kleioc"
+   method="POST" name="search"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="__kleioid" type="hidden" value=""&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="__kleiopass" type="hidden" 
+value=""&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="term" type="hidden" value=""&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="dir" type="hidden" value=""&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="scope" type="hidden" value=""&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name="!_kleioprot" 
+value="1010KlPTest"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name="_1" value="search"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="line1"&gt;&lt;/div&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;table border=0 cellspacing="0" 
+  cellpadding="0" width="100%"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td 
+class="zeile1"   width="25%" align="center"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;select name="cat2use" onChange="javascript:rebase();"&gt;<br>
+      &lt;option value=fundort SELECTED&gt;Fundort (nur Arch&amp;auml;ologie)&lt;/option&gt;<br>
+      &lt;option value=institution&gt;Institution&lt;/option&gt;<br>
+      &lt;option value=kuenstler&gt;K&uuml;nstler/in&lt;/option&gt;<br>
+      &lt;option value=schlagworte&gt;Schlagwort&lt;/option&gt;<br>
+      &lt;option value=standorte&gt;Standort&lt;/option&gt;<br>
+      &lt;option value=titel&gt;Titel&lt;/option&gt;<br>
+      &lt;option value=titelworte&gt;Titelworte&lt;/option&gt;<br>
+      &lt;/select&gt;<br>
+      <br>
+      </p>
+             
+<p class="p"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dies wiederum 
+  entpricht folgender Funktion:<br>
+        <br>
+<title>Navigator Suche</title>
+                   </p>
+       
+<form target="http://gilgamesch2.hki.uni-koeln.de/promtest-cgi/kleioc"
+ method="post" name="search">      <input name="__kleioid" type="hidden"
+ value="">      <input name="__kleiopass" type="hidden" value="">      <input
+ name="term" type="hidden" value="">      <input name="dir"
+ type="hidden" value="">      <input name="scope" type="hidden" value=""> 
+       <input type="hidden" name="!_kleioprot" value="1010KlPTest">      
+ <input type="hidden" name="_1" value="search">                         
+ 
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+          <tr>
+                <td class="zeile1" width="25%" align="center">          
+                               
+        <select name="cat2use" onchange="javascript:rebase();">
+        <option value="fundort" selected="selected">Fundort (nur Arch&auml;ologie)</option>
+        <option value="institution">Institution</option>
+        <option value="kuenstler">K&uuml;nstler/in</option>
+        <option value="schlagworte">Schlagwort</option>
+        <option value="standorte">Standort</option>
+        <option value="titel">Titel</option>
+        <option value="titelworte">Titelworte</option>
+        </select>
+                                                             
+        <p class="p"><br>
+           </p>
+                               
+        <p class="p"><br>
+           </p>
+                                   </td>
+          </tr>
+                       
+    </tbody>            
+  </table>
+    </form>
+      
+<p class="p">Wie man also erkennen kann, &nbsp;wurde der Katalog "<i>fundort</i>" 
+zwar im Kommando als "fundort" angesprochen, aber mit der Zeichenkette&nbsp;"<i>Fundort 
+(nur Arch&auml;ologie)</i>" ausgegeben, die wiederum bei &nbsp;Anlage des 
+Katalogs im explain-Parameter vorgegeben wurde.&nbsp;</p>
+     
+</body>
+</html>

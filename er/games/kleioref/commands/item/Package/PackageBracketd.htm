@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                                                 
+  <meta http-equiv="CONTENT-TYPE"
+ content="text/html; charset=iso-8859-1">
+  <title>Packge Direktive Bracket</title>
+                                                                        
+               
+  <meta name="GENERATOR" content="StarOffice/5.2 (Win32)">
+                                                 
+  <meta name="CREATED" content="20020531;18202016">
+                                                 
+  <meta name="CHANGEDBY" content=" ">
+                                                 
+  <meta name="CHANGED" content="20020604;18334350">
+                                                 
+  <style>
+
+
+
+
+
+        <!--
+
+
+
+
+
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+
+
+
+
+
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+
+
+
+
+
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+
+
+
+
+
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+                   A:link { color: #666666; font-size: 12pt }
+
+
+               A:visited { color: #666666; font-size: 12pt }
+
+
+                A:hover { color: #666666; font-size: 14pt }
+
+
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+
+
+
+
+
+               
+
+
+
+
+
+        -->
+
+
+
+
+
+        </style>
+</head>
+  <body link="#666666" vlink="#666666" bgcolor="#e6e6e6">
+                       
+<p class="h">Die Direktive bracket</p>
+          
+<p class="p">   Die Direktive bracket stellt die Ausgewogenheit von Markup 
+ her. Wenn die zu verpackenden Daten gelegentliche Markup-Bestandteile&nbsp;
+ enthalten, die in Verbindung mit den Verpackungsanweisungen der fields-Direktive
+ ein unausgewogenes Markup ergeben, so kann durch die Direktive bracket das
+ Markup in seiner Gesamtheit so gestaltet werden, da&szlig; es ausgewogen
+ist.&nbsp;</p>
+ 
+<p class="p">Bracket bewirkt eine P&uuml;fung des Markup und ggf. die Erg&auml;nzung 
+zur Herstellung der Einheitlichkeit. Typischerweise entspricht der Einsatz
+die Direktive "bracket" der folgenden Form:<br>
+ </p>
+ 
+<p class="b">item name=showlines;usage=package;overwrite=yes<br>
+ fields limit="&lt;/tr&gt;";<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connect="\n&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;"<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; before='&lt;td colspan="3" bgcolor="#CCCCCC"&gt;';<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; after='&lt;/td&gt;&lt;td width="2%" 
+align="center"&gt;&amp;nbsp;&lt;/td&gt;';<br>
+ bracket start="\n&lt;tr&gt;";<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit="&lt;/tr&gt;\n&lt;tr&gt;\n"<br>
+ exit name=showlines<br>
+ <br>
+ </p>
+ 
+</body>
+</html>

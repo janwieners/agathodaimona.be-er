@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Augment.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+<b>Der </b><b>Parameter augment:</b> 
+<p><br>
+Der Parameter augment erwartet als Parameterwert den Namen einer tempor&auml;ren
+Datei, der in Hochkommata angegeben werden mu&szlig;. Die tempor&auml;re
+Datei mu&szlig; in einem vorhergehenden Index-Befeh mittels des Parameters
+<a href="Suspend.htm">suspend</a>
+ angelegt worden sein, also bereits bestehen.</p>
+<p>Augment bewirkt nun, da&szlig; das Ergebnis der jeweiligen Indexaufgabe
+zus&auml;tzlich in die angegebene tempor&auml;re Datei eingef&uuml;gt wird.
+In unserem Beispiel hatten wir mittels <a href="Suspend.htm">suspend</a>
+ eine Datei angelegt, in der alle Berufe aus der Datenbank basdat in der
+tempor&auml;ren Datei "datei1" zwischengespeichert wurden. Dieser Datei f&uuml;gen
+wir nun auch die Berufe aus der Datenbank fre an:</p>
+<p>query name=fre;part=:beruf<br>
+index part=:beruf;augment="datei1"<br>
+cont&nbsp; </p>
+<p>Bei der Anwendung dieses Mechanismus ist es nicht n&ouml;tig, da&szlig;
+die jeweiligen Datenbanken identisch strukturiert sind. Es ist jedoch unabdingbar,
+da&szlig; die jeweiligen Index-Befehle denselben Aufbau (i.e. Parameter,
+Spaltenzahl u.&auml;. haben). Die Elemente in den Index-Befehlen k&ouml;nnen
+dabei in den verschiedenen Datenbanken jedoch durchaus unterschiedlich bezeichnet
+sein.</p>
+<p>In unserem Beispiel enth&auml;lt die tempor&auml;re Datei "datei1" nunmehr
+also die Berufe aus den datenbanken basdat und fre. Im folgenden Schritt
+wollen wir der tempor&auml;ren Datei nunmehr aus den Inhalt der Datenbank
+frk einf&uuml;gen und anschlie&szlig;end das Gesamtregister ausgeben. Hierzu
+bedienen wir uns des Parameters <a href="Complete.htm">complete</a>
+.<br>
+</p>
+</body>
+</html>

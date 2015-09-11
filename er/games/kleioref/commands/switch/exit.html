@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>switch,exit</title>
+                                                                        
+                                         
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body bgcolor="#e6e6e6">
+                                
+<p class="h">Die Direktive exit</p>
+                       
+<p class="p"> Die Direktive exit schlie&szlig;t eine Befehlsumgebung, die
+   durch das Kommando switch eingef&uuml;hrt wurde, ab. Ebenso beendet exit
+ einzelne  Kommandobl&ouml;cke, die jeweils durch eine block-Direktive eingef&uuml;hrt
+   worden sein m&uuml;ssen. Exit kennt nur den Parameter <b>name</b>. Dieser
+   wiederum erwartet als Parameterwert eine Zeichenkette, die vorab durch
+den   name-Parameter des switch-Befehls oder der block-Direktive eingef&uuml;hrt
+   worden sein mu&szlig;.&nbsp;<br>
+      <br>
+      Typischerweise hat also die Kommandoumwelt des switch-Befehls folgende
+  Grundstruktur:<br>
+     </p>
+         
+<p class="b"><br>
+         switch name=selectDB<br>
+     ...<br>
+          exit name=selectDB<br>
+    </p>
+                
+<p class="p"><br>
+Nicht nur der switch-Befehl selbst f&uuml;hrt einen Namen ein,  der durch
+eine exit-Direktive aufgehoben (also abgeschlossen) werden mu&szlig;.  Auch
+die einzelnen block-Direktiven innerhalb der switch-Umgebung sind durch 
+eindeutige Namen gekennzeichnet. Daraus wiederum folgt, da&szlig; die Abfolge 
+ der Kommandobl&ouml;cke durch den gesamten switch-Befehl geklammert werden 
+ mu&szlig;. Das hei&szlig;t, die einzelnen Bl&ouml;cke werden ebenfalls durch 
+ name-Parameter (der block-Direktive) identifiziert und innerhalb der switch-Umgebung 
+ durch entsprechende exit-Direktiven abgeschlossen bis schlie&szlig;lich die
+ finale exit-Direktive, die sich auf den switch-Befehl bezieht, die Gesamtstruktur 
+ beendet. Dies hat folgende Grundform:<br>
+   </p>
+     
+<p class="b">      switch name=selectDB</p>
+   
+<p class="b">block name=block1<br>
+  ...<br>
+  exit name=block1<br>
+  </p>
+     
+<p class="b">block name=block2<br>
+  ...<br>
+  exit name=block2<br>
+  </p>
+     
+<p class="b">block name=block3<br>
+  ...<br>
+  exit name=block3</p>
+   
+<p class="b">exit name=selectDB  </p>
+        
+<p class="p"><br>
+<br>
+     </p>
+                    
+</body>
+</html>

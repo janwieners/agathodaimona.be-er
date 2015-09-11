@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Parameter form:</b><br>
+<br>
+<br>
+     
+<p>Das System richtet die Eintr&auml;ge in den Sortierspalten standardm&auml;&szlig;ig
+ linksb&uuml;ndig aus. Insbesondere bei Ziffernfolgen des Datentyps text
+kann  dies zu unsch&ouml;nen Ergebnissen f&uuml;hren, da z.B. die Zahl "8"
+hinter  "32" sortiert wird (bei linksb&uuml;ndiger Sortierung steht die "8"
+unter  der "3" und wird folglich entsprechend nach der "3" gereiht). Durch
+Angabe  des Parameters form mit dem Parameterwert right (der Parameterwert
+left ist  impliziter Standard) kann ein rechtsb&uuml;ndige Spaltenausrichtung
+eingestellt  werden.</p>
+   
+<p><br>
+  Ein korrekter Befehl lautet z.B.:</p>
+   
+<p><br>
+  index part=:name;form=right</p>
+ 
+<p><br>
+ Eine spezielle Bedeutung hat der Parameterwert html. Es handelt sich hierbei 
+um einen symbolischen Ausgabetreiber, der Umlaute und nationale Sonderzeichen 
+in HTML-Standard &uuml;berf&uuml;hrt. Dieser Parameter wird ben&ouml;tigt, 
+wenn kleio HTML-Dateien erzeugen soll.&nbsp; <br>
+  </p>
+   
+</body>
+</html>

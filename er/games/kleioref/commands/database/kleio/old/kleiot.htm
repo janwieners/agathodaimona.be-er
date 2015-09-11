@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>kleio</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b>W&auml;hlen Sie eine Direktive!<br>
+ <br>
+ </b>Bis zur &nbsp;endg&uuml;ltigen Fertigstellung der www-Dokumentation
+ werden hier nur die mit "*" gekennzeichneten Direktiven ausf&uuml;hrlich
+beschrieben, da diese im bisherigen <a href="http://www.hki.uni-koeln.de/kleio/paper/index.html">
+   Systemhandbuch</a>
+    nicht enthalten sind. F&uuml;r die &uuml;brigen Paramater gelten einstweilen 
+ die Ausf&uuml;hrungen in <a href="http://www.hki.uni-koeln.de/kleio/old/eman5.htm">
+   Kapitel 5 des Systemhandbuchs</a>
+    .<b><br>
+ </b><br>
+  Grunds&auml;tzlich gilt, da&szlig; das Format "kleio" zum einen das Handling
+ des "klassischen" Kleio Eingabeformats betrifft, dessen Aussehen sich wie
+ folgt darstellt:<br>
+ <br>
+ <br>
+ 
+<blockquote>PER$DOK030011/ABELE/CARL/M/KIRCHHEIM,TECK/OA KIRCHHEIM<br>
+  PDAT$ <br>
+  KAR$1.7.1846-1.7.1850/FABRIKANT,SESSEL(CARL ABELE)#WSP<br>
+  MOB$&nbsp; <br>
+  WSP$DOK030011/ABELE/CARL/FABRIKANT,SESSEL//KIRCHHEIM,TECK<br>
+  /OA KIRCHHEIM/1/1.7.1846/1.7.1850#AB 50 FORT/BEM=UNSICHERE LESUNG<br>
+   </blockquote>
+   <br>
+  Hier wird die Eingabe der Daten durch sog. "Datensignalzeichen" ($/#%?=&lt;&gt;;:)
+ gesteuert. Der Name der Informationsgruppen steht vor dem "$"-Zeichen, Elemente
+ werden entsprechend der Reihenfolge, die in der part-Dirketive festgelegt
+ ist, durch "/" getrennt aufgef&uuml;hrt. Kommentare und Originaltextfelder
+ werden durch "#" bzw. "%" eingeleitet. Abweichend von de Vorgaben der Strukturverinbarung
+ k&ouml;nnen Elemente durch Etiketten eingef&uuml;hrt werden. F&uuml;r Einzelheiten
+ sein auf <a href="http://www.hki.uni-koeln.de/kleio/old/eman4.htm">Kapitel
+ 4 des Systemhandbuchs</a>
+   verwiesen.<br>
+   <br>
+  Alternativ dazu umfa&szlig;t das Datenformat "kleio" auch die Handhabung
+ von XML-Dateien. Kleio ben&ouml;tigt dazu keine DTD. Die reinen Eingabedaten
+ sind hinl&auml;nglich. Da viele Datenbankprogramme in der Lage sind, einen
+ Datendump im XML-Format zu erzeugen, kann dieses Format auch dazu benutzt
+ werden, Daten anderer Softwareprodukte als Kleio-Datenbank einzulesen.<br>
+   <br>
+  Die Unterscheidung zwischen der Verarbeitung des "klassischen" Kleio-Formats
+ und einer XML-Datei wird im other-Parameter des <a href="../../read/index.htm" target="_blank">
+  read-Befehls</a>
+   getroffen. Als Standard ist dort das "klassische" Format eingestellt,
+wogegen die Einstellung "other=markup" die Verarbeitung einer XML-Datei anordnet.<br>
+   <br>
+   
+  </body>
+  </html>

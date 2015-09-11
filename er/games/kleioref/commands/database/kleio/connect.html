@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+   
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>connect</title>
+   
+</head>
+<body>
+<b>Der Parameter connect<br>
+<br>
+<br>
+</b>Der Parameter kann die Werte <b>yes</b> oder <b>no</b> annehmen. Der
+Standardwert ist no. Connect wird sinnvoll bei Ausgangsdaten eingesetzt,
+die im XML-Format vorliegen.<br>
+<br>
+ Er dient dazu, den Inhalt identisch benannter Tags in einem &nbsp;Element
+zusammenzufassen. Ein Beispiel kann dies verdeutlichen. Man habe folgenden
+Datensatz mit bibliographischen Angaben:<br>
+<blockquote><br>
+&lt;listBibl-31&gt;&nbsp; <br>
+  <blockquote><br>
+    <b>&lt;bibl-31&gt;</b>Weitzmann, Ancient Book Illumination, p. 25 and
+pl. XIV, figs. 29-30<br>
+(not seen)<b>&lt;/bibl-31&gt;</b><br>
+    <br>
+    <b>&lt;bibl-31&gt;</b>E. Zinner, Verzeichnis der astronomischen Handschriften
+des deutschen Kulturgebiet (Munich 1925) (text an ff. 146r-171v as no. 705)<b>
+&lt;/bibl-31&gt;</b><br>
+    <br>
+    </blockquote>
+&lt;/listBibl-31&gt;<br>
+    <br>
+    </blockquote>
+    <br>
+Wie zu erkennen ist, enth&auml;lt der Datensatz zweimal die Angabe (bzw.
+den Markup)<b> &lt;bibl-31&gt;</b>. Wenn dieser Tag nun als Element innerhalb
+der Gruppe &lt;listBibl-31&gt;&nbsp; definiert wird, so ergibt sich adhoc
+ein Problem, da jede Gruppe nur ein Element desselben Namens enthalten darf.
+Damit mu&szlig; der Inhalt aller gleichnamigen Tags als <b>Mehrfacheintrag</b>
+ in einem Element zusammengefa&szlig;t werden. <br>
+    <br>
+Man erreicht dies, indem man in der Direktive element dem Element bibl-31
+den Parameter connect mit dem Parameterwert yes zuweist. Damit ergibt sich
+f&uuml;r unser Beispiel folgende Struktur:<br>
+    <br>
+    <blockquote><br>
+database name=dim25-31;first=listBibl-31;overwrite=yes<br>
+      <br>
+part name=listBibl-31;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; position=listBibl-31;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; also=bibl-31<br>
+      <br>
+      <b>element name=bibl-31;</b><br>
+      <b>&nbsp;&nbsp;&nbsp;&nbsp; connect=yes</b><br>
+      <br>
+exit name=dim25-31<br>
+      <br>
+      </blockquote>
+Das hei&szlig;t also, da&szlig; das Element bibl-31 zuerst<b> </b>durch den
+Parameter also in der part-Direktive eingef&uuml;hrt wird. Anschlie&szlig;end
+wird durch den Parameter connect in der Element-Direktive festgelegt, da&szlig;
+der Inhalt mehrerer identisch benannter Tags in einem Element zusammengefa&szlig;t
+werden soll.<br>
+      <br>
+Damit entspricht das Tagging<br>
+      <blockquote><br>
+        <b>&lt;bibl-31&gt;</b>Weitzmann, Ancient Book Illumination, p. 25
+and pl. XIV, figs. 29-30<br>
+ (not seen)<b>&lt;/bibl-31&gt;</b><br>
+        <br>
+        <b> &lt;bibl-31&gt;</b>E. Zinner, Verzeichnis der astronomischen
+Handschriften des deutschen Kulturgebiet (Munich 1925) (text an ff. 146r-171v
+as no. 705)<b>&lt;/bibl-31&gt;</b><br>
+        </blockquote>
+        <br>
+hier dem folgenden Eintrag "klassischen" Kleio-Format:<br>
+        <br>
+        <blockquote><b>bibl-31</b>=Weitzmann, Ancient Book Illumination,
+p. 25 and pl. XIV, figs. 29-30(not seen)<b>;</b> E. Zinner, Verzeichnis der
+astronomischen Handschriften des deutschen Kulturgebiet (Munich 1925) (text
+an ff. 146r-171v as no. 705)<br>
+          <br>
+          </blockquote>
+Gibt man den Inhalt der Datenbank aus, so zeigt das Ergebnis die Bedeutung
+des Parameters connect:<br>
+          <br>
+Der Befehl <br>
+          <blockquote><br>
+            <b>query name=dim25-31</b><br>
+            <b>write</b><br>
+            <br>
+            </blockquote>
+            <br>
+liefert folgendes Ergebnis:<br>
+            <blockquote><br>
+listbibl-31 (1 = "see")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; listbibl-31&nbsp;
+              <br>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bibl-31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Weitzmann, Ancient Book Illumination, p. 25 and pl. </b><br>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+XIV, figs. 29-30 (not seen)</b><br>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+E. Zinner, Verzeichnis der astronomischen </b><br>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Handschriften des deutschen Kulturgebiet (Munich 1925)</b><br>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(text an ff. 146r-171v as no. 705)</b><br>
+              <br>
+              <br>
+              </blockquote>
+              <br>
+              <br>
+Der Inhalt der beiden gleichnamigen Markups ist also einheitlich im Element
+              <b>bibl-31</b> zusammengefa&szlig;t.<br>
+              <br>
+Da es sich um einen <b>Mehrfacheintrag</b> handelt, k&ouml;nnen nunmehr die
+hierf&uuml;r typischen Einbaufunktionen eingesetzt werden. <br>
+              <br>
+So greift z.B. das Kommando <br>
+              <blockquote><br>
+                <b>write part=:part[:bibl-31,2]</b><br>
+                <br>
+                </blockquote>
+gezielt auf den zweiten Mehrfacheintrag zu und liefert folglich das entsprechende
+Resultat:<br>
+                <br>
+                <blockquote>&nbsp;<b>Zinner, Verzeichnis der astronomischen
+Handschriften des deutschen </b><br>
+                  <b>Kulturgebiet (Munich 1925) (text an ff. 146r-171v as
+no. 705)</b><br>
+                  <br>
+                  </blockquote>
+                  <br>
+                  <br>
+                  </body>
+                  </html>

@@ -1,0 +1,36 @@
+
+                                                              <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+        <META NAME="CREATED" CONTENT="20020531;18202016">
+        <META NAME="CHANGEDBY" CONTENT=" ">
+        <META NAME="CHANGED" CONTENT="20020604;18334350">
+        <STYLE>
+        <!--
+                br {margin-bottom: 0.2cm;margin-top: 0.2cm}
+                P.h { font-size: 14pt; font-weight: bold; text-align: center }
+                P.p { margin-bottom: 0.2cm; font-size: 12pt }
+                P.b { margin-left: 2cm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                :visited { color: #666666; font-size: 12pt }
+                P.bb { margin-left: 25mm; margin-bottom: 0.2cm; font-size: 12pt; font-weight: bold }
+                A:link { color: #666666; font-size: 12pt }
+        -->
+        </STYLE>
+</HEAD>
+<BODY LINK="#666666" VLINK="#666666" BGCOLOR="#e6e6e6">
+<TITLE>comeback[]</TITLE>
+
+
+<P CLASS="h">Die Funktion comeback[]</p>
+<p class="p">Die Funktion comeback[] ist die Komplement&auml;rfunktion von remain[]. Bei relationalen &Uuml;berg&auml;ngen zwischen Datenbanken ordnet remain[] an, da&szlig; das System in der Zieldatenbank verharrt und alle weiteren Pfadangaben relativ zur Zieldatenbank sind. Die Funktion comeback[] hebt die Wirkung von remain[] auf:</p><p class="b">query name=datenbank1;part=gruppe<br>
+index part=:element1;<br>
+
+&nbsp;&nbsp;&nbsp;part=remain[]:datenbank2:element2;<br>
+&nbsp;&nbsp;&nbsp;part=:element3;<br>
+&nbsp;&nbsp;&nbsp;part=comeback[]:element4
+</p>
+<p class="p">Dieser index-Befehl hat folgende Logik: Der Inhalt von "element1" entstammt der Datenbank "datenbank1". Nach dem &Uuml;bergang in "datenbank2", der mit remain[] vollzogen wurde, entstammt der Inhalt von "element2" und "element3" der Datenbank "datenbank2". Dann hebt comeback[] die Wirkung von remain[] auf. Daher bezieht sich  die Ausgabe von "element4" wiederum auf die Datenbank "datenbank1". </p>
+

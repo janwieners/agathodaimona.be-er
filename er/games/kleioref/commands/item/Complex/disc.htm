@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>item,procedure</title>
+                                                                        
+                                                                        
+                                                                        
+                                                       
+  <link rel="stylesheet" type="text/css" href="../../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                                                        
+      
+<p class="h">Das Objekt complex<br>
+</p>
+<p class="p">               Das Objekt der Klasse complex weist einzelnen 
+oder Gruppen von   Datenbanken   einen symbolischen Namen zu. Der Name entspricht 
+dem Wert des   name-Parameters   zum <a href="../index.htm"
+ target="_blank">item</a>-Kommando   bei der jeweiligen   Definition. &nbsp;<br>
+          <br>
+          Der zugewiesene Name kann durch ein <a
+ href="../../describe/index.htm" target="_blank">describe</a>-Kommando wiederum 
+   zur&uuml;ckgegeben werden.  Ebenso k&ouml;nnen alle Namen, die Datenbanken 
+   zugewiesen wurden auf diese  Weise abgerufen werden. Diese Namen wiederum 
+   k&ouml;nnen dann in anderem Kontext weiter verwendet werden. Typischerweise 
+   kann dies zum Beispiel im Rahmen eines <a
+ href="../../environment/index.htm" target="_blank">environment</a>-Kommandos
+     geschehen. <br>
+          <br>
+          Das hei&szlig;t, es ist m&ouml;glich durch das Objekt complex verschiedene
+     Datenbanken nach bestimmten Kriterien zu gruppieren und anschlie&szlig;end
+     in einer Auswertung durch &Uuml;bergabe des Gruppennamens das Environment
+     so zu ver&auml;ndern, da&szlig; einzelne Bestandteile (z.B. Kataloge)
+ nur    auf bestimmte Gruppen von Datenbanken referenzieren. <br>
+          <br>
+          Man habe zum Beispiel verschiedene Datenbanken kulturhistorischen
+ Inhalts.     Eine Gruppe von Datenbanken geh&ouml;rt dem Fachgebiet "Arch&auml;ologie"
+     an, w&auml;hrend die &uuml;brigen in einer Gruppe "bildende Kunst" zusammengefa&szlig;t
+     werden sollen. Dies kann man folgenderma&szlig;en bewerkstelligen:<br>
+                  </p>
+ 
+<p class="b"> item name=<u>archaeologie</u>;usage=complex;overwrite=yes;<br>
+          complex source=<u>arachne,archgiessen</u><br>
+          exit name=<u>archaeologie</u><br>
+          <br>
+          item name=kunst;usage=complex;overwrite=yes;<br>
+          complex source=piransi,digidia,kunstmuc,karlsruhe<br>
+          exit name=kunst <br>
+              </p>
+             
+<p class="p"> Es werden also hier die Datenbanken "<b><u>arachne</u></b>" 
+   und "<b><u>archgiessen</u></b>" in der Gruppe "<u><b>archaeologie</b></u>" 
+   zusammengefa&szlig;t, w&auml;hrend analog die Datenbanken "piranesi", "digidia",
+   "kunstmuc" und "karlsruhe" die Gruppe "kunst" bilden!<br>
+      </p>
+           
+<p class="p">Ein entsprechender describe-Befehl zeigt dies an:<br>
+      </p>
+           
+<p class="b"><u>describe name=archaeologie;usage=complex;</u><br>
+      <br>
+      Wiedergabe einer Vereinbarung aus Ihrer Bibliothek.<br>
+      Name der logischen Einheit: archaeologie<br>
+      Gattung der logischen Einheit: Datenbankkomplex<br>
+      Erlaeuterungstext: arch<br>
+      <br>
+      Datenbanken in diesem Komplex:<br>
+      arachne<br>
+      archgiessen<br>
+      <br>
+       </p>
+             
+<p class="p">In einem n&auml;chsten Schritt erstellen wir mittels des "suspend/augment/complete"-Mechanismus 
+   einen <a href="../../catalogue/index.htm" target="_blank">Katalog</a> "standorte",
+   der f&uuml;r alle f&uuml;nf Datenbanken, die Aufbewahrungsorte, der darin
+   verwalteten Objekte enth&auml;lt. <br>
+       </p>
+             
+<p class="p">Im Rahmen einer Auswertung wollen wir nun alle Standorte abfragen, 
+   die mit "A" beginnen. Dabei wiederum soll ausschlie&szlig;lich auf die 
+arch&auml;ologischen   Datenbanken zugegriffen werden. <br>
+       </p>
+             
+<p class="p">Dazu wird vorab mittels des Kommandos <a
+ href="../../environment/index.htm" target="_blank">environment </a>die Umwelt 
+   so "zugeschnitten", da&szlig; nur mehr diejenigen Datenbanken ber&uuml;cksichtigt 
+   werden, die der Gruppe "archaeologie" angeh&ouml;ren! Durch die Ausgabe
+des Datenbanknamens mittels der Funktion <a
+ href="../../../functions/elemdata.html" target="_blank">:database[]</a>
+k&ouml;nnen wir dies pr&uuml;fen:<br>
+       </p>
+             
+<p class="b">environment <u>complex=archaeologie</u><br>
+       query name=kleio;part=/catalogue[standorte,complete,"a*"]<br>
+       index part=:database[];maxi=1<br>
+       stop</p>
+<p class="b"><br>
+</p>
+<p class="b">       Die Ausfuehrung der von Ihnen gestellten Aufgabe beginnt.<br>
+<u>arachne</u><br>
+<br>
+<u>archgiessen</u><br>
+<br>
+<br>
+Die Ausfuehrung der von Ihnen gestellten Aufgabe wurde beendet.<br>
+<br>
+Auf Wiedersehen bei Ihrer naechsten Kleio Sitzung!<br>
+<br>
+       </p>
+             
+<p class="p">Das hei&szlig;t, da&szlig; innerhalb des Katalogs "standorte"
+nur Eintr&auml;ge aus Datenbanken ber&uuml;cksichtigt wurden, die ihrerseits
+der Gruppe "archaeologie" angeh&ouml;ren. <br>
+       </p>
+               
+</body>
+</html>

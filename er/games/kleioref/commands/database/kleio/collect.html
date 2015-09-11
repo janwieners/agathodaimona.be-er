@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>collect</title>
+   
+</head>
+<body>
+<b>Der Parameter collect<br>
+<br>
+<br>
+</b>Der Parameter kann die Werte yes oder no annehmen. Der Standardwert ist 
+no. Connect wird sinnvoll bei Ausgangsdaten eingesetzt, die im XML-Format 
+vorliegen.<br>
+<br>
+ Er dient dazu, den Inhalt <br>
+<br>
+<br>
+<br>
+<pre>database name=dim25-31;first=listBibl-31;overwrite=yes
+
+part name=listBibl-31;
+     position=listBibl-31;
+     also=bibl-31
+
+element name=bibl-31;
+     connect=yes
+
+limit name=note-31;
+      type=data comment
+
+exit name=dim25-31</pre>
+<b>&nbsp;<br>
+</b><br>
+</body>
+</html>

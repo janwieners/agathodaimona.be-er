@@ -1,0 +1,8435 @@
+
+<command>
+<name> alias </name>
+<type> Environment control </type>
+<status> Recent </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Bitmap</keyword>
+<keyword>Browser</keyword>
+<keyword>Catalogue</keyword>
+<keyword>Category</keyword>
+<keyword>Chronology</keyword>
+<keyword>Classification</keyword>
+<keyword>Codedebook</keyword>
+<keyword>Connection</keyword>
+<keyword>Conversion</keyword>
+<keyword>Date</keyword>
+<keyword>Editor-macros</keyword>
+<keyword>Entity</keyword>
+<keyword>Environmente</keyword>
+<keyword>Guth</keyword>
+<keyword>Image</keyword>
+<keyword>Interpretation</keyword>
+<keyword>Keyword</keyword>
+<keyword>Location</keyword>
+<keyword>Macro</keyword>
+<keyword>Names</keyword>
+<keyword>Number</keyword>
+<keyword>Order</keyword>
+<keyword>Output</keyword>
+<keyword>Packackage</keyword>
+<keyword>Palaeography</keyword>
+<keyword>Path</keyword>
+<keyword>Procedure</keyword>
+<keyword>Relation</keyword>
+<keyword>Show</keyword>
+<keyword>Skeleton</keyword>
+<keyword>Soundex</keyword>
+<keyword>Source</keyword>
+<keyword>Substitution</keyword>
+<keyword>Symbol</keyword>
+<keyword>Text</keyword>
+<keyword>Thesaurus</keyword>
+<keyword>Write</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> apply </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Angle</name>
+<parametertype> Short decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Area</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Bitmap</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Color</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>242</keyword>
+<keyword>332</keyword>
+<keyword>666</keyword>
+<keyword>676</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Contrast</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Exception</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>tiff</keyword>
+<keyword>jpeg</keyword>
+<keyword>sdif</keyword>
+<keyword>gif</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>suffix</keyword>
+<keyword>page</keyword>
+<keyword>folio</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>absolute</keyword>
+<keyword>relative</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>centre</keyword>
+<keyword>upperleft</keyword>
+<keyword>upperright</keyword>
+<keyword>lowerleft</keyword>
+<keyword>lowerright</keyword>
+<keyword>complete</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Rotate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>none</keyword>
+<keyword>horizontal</keyword>
+<keyword>vertical</keyword>
+<keyword>exchange</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Segment</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>left</keyword>
+<keyword>right</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Split</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Substitute</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>192x128</keyword>
+<keyword>384x256</keyword>
+<keyword>768x512</keyword>
+<keyword>1536x1024</keyword>
+<keyword>3072x2048</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Visibility</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>brighter</keyword>
+<keyword>darker</keyword>
+<keyword>contrast</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> bitmap </name>
+<type> Definition </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Color</name>
+<parametertype> Comma separated list of character strings</parametertype>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Bitmap as character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>blackwhite</keyword>
+<keyword>color</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> bridge </name>
+<type> Executable / Definition </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<note>
+When the type parameter has the value "definitions", this command introduces
+a definition. Click <A HREF="..."> here </A> to see the directives available than.
+<directivelist>
+<directive>
+<name> Bridge</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> View value</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Visibility</name>
+<parametertype> Visibility value</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+</directivelist>
+</note>
+
+
+<parameterlist>
+<parameter>
+<name>Bridge</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>definitions</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> button </name>
+<type> GUI control </type>
+<status> Recent </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Explain</name>
+<parametertype> Name of GUI button</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Name of GUI button</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>inactive</keyword>
+<keyword>active</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> career </name>
+<type> Executable </type>
+<status> Rarely used </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Always</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Classify</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Date</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>index</keyword>
+<keyword>count</keyword>
+<keyword>table</keyword>
+<keyword>list</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Other</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Condition as character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> case </name>
+<type> Executable </type>
+<status> Rarely used </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Date</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>days</keyword>
+<keyword>months</keyword>
+<keyword>years</keyword>
+<keyword>weeks</keyword>
+<keyword>difference</keyword>
+<keyword>number</keyword>
+<keyword>after</keyword>
+<keyword>before</keyword>
+<keyword>double</keyword>
+<keyword>date</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Name of statistical variable</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>small</keyword>
+<keyword>large</keyword>
+<keyword>mean</keyword>
+<keyword>deviation</keyword>
+<keyword>count</keyword>
+<keyword>total</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>no</keyword>
+<keyword>yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Print format as decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> catalogue </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Also</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Augment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Classify</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Complete</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Germanic</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Lemma</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Path</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>words</keyword>
+<keyword>sentences</keyword>
+<keyword>multiple entries</keyword>
+<keyword>elements</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>sentence</keyword>
+<keyword>multiple entry</keyword>
+<keyword>element</keyword>
+<keyword>back</keyword>
+<keyword>root</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Skeleton</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Soundex</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Suspend</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Directory name of operating system as character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>words</keyword>
+<keyword>terms</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Access mode name</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> category </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Convert</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Always</keyword>
+<keyword>Sometimes</keyword>
+<keyword>Never</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Internal</keyword>
+<keyword>External</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> concordance </name>
+<type> Executable </type>
+<status> Experimental </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Also</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Catalogue</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Classify</name>
+<parametertype> Comma separated list of classification category names</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Access mode name</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> confirm </name>
+<type> Flow control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Block name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype> 
+<keywordlist>
+<keyword>Permanent</keyword>
+<keyword>Temporary</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> continue </name>
+<type> Flow control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> create </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Directory name of operating system as character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> cumulate </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> database </name>
+<type> Definition </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Other</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>kleio</keyword>
+<keyword>dBase</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Semantics</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Directory name of operating system as character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Permanent</keyword>
+<keyword>Temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>modifiable</keyword>
+<keyword>readonly</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>names</keyword>
+<keyword>parts</keyword>
+<keyword>structure</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+
+
+<contextlist>
+<contextdescription>
+Different sets of directives are activated depending on the value of the
+parameter other. If this parameter is not specified, "kleio" is assumed.
+</contextdescription>
+<context>
+<name>kleio</name>
+<directivelist>
+<directive>
+<name> category </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> date </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> element </name>
+<status> Core </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Alias</name>
+<parametertype> Element name</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Category</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Date</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>Category</keyword>
+<keyword>Date</keyword>
+<keyword>Image</keyword>
+<keyword>Location</keyword>
+<keyword>Number</keyword>
+<keyword>Relation</keyword>
+<keyword>Text</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Location</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>Multiple</keyword>
+<keyword>Simple</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>Category</keyword>
+<keyword>Date</keyword>
+<keyword>Image</keyword>
+<keyword>Location</keyword>
+<keyword>Number</keyword>
+<keyword>Relation</keyword>
+<keyword>Text</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Element name</parametertype>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword </parametertype>
+<keywordlist>
+<keyword>Category</keyword>
+<keyword>Date</keyword>
+<keyword>Image</keyword>
+<keyword>Location</keyword>
+<keyword>Number</keyword>
+<keyword>Relation</keyword>
+<keyword>Text</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> limit </name>
+<status> Core </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>continue</keyword>
+<keyword>stop</keyword>
+<keyword>note</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> note </name>
+<identical-with-command-with-same-name>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> number </name>
+<identical-with-command-with-same-name>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> part </name>
+<status> Core </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<directive>
+<name>part</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Alias</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Also</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Always</name>
+<parametertype> Comma separated list of group names with optional integer added after colon</parametertype>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Guaranteed</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of group names</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Comma separated list of group names with optional integer added after colon</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Comma separated list of group names</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Prefix</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Preserve</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Read</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Comma separated list of relation names</parametertype>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype> Comma separated list of group names</parametertype>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Substitute</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> relation </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> series </name>
+<status> Core </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Also</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Element name</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated list of element names, with field width indicators</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> text </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name>transparent</name>
+<status> Recent </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of element or group names</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>tag</keyword>
+<keyword>attribute</keyword>
+<keyword>ignore</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>insert</keyword>
+<keyword>delete</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+</directivelist>
+</context>
+
+
+<context>
+<name>dBase</name>
+<directivelist>
+<directive>
+<name> Assign</name>
+<status> Recent  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Category</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Date</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Location</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype> Element name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>text</keyword>
+<keyword>date</keyword>
+<keyword>number</keyword>
+<keyword>category</keyword>
+<keyword>relation</keyword>
+<keyword>location</keyword>
+<keyword>image</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Equivalence</name>
+<status> Recent  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Alias</name>
+<parametertype> dBase name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Element name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Recent  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Split</name>
+<status> Recent  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> dBase name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated list of dBase names</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>drop</keyword>
+<keyword>repeat</keyword>
+<keyword>empty</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+</contextlist>
+</command>
+
+
+<command>
+<name> date </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Convert</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Always</keyword>
+<keyword>Sometimes</keyword>
+<keyword>Never</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Calendar date as character string</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Calendar date as character string</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Calendar date as character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Internal</keyword>
+<keyword>External</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> delete </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Semantics</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Permanent</keyword>
+<keyword>Temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Bitmap</keyword>
+<keyword>Browser</keyword>
+<keyword>Catalogue</keyword>
+<keyword>Category</keyword>
+<keyword>Chronology</keyword>
+<keyword>Classification</keyword>
+<keyword>Codedebook</keyword>
+<keyword>Connection</keyword>
+<keyword>Conversion</keyword>
+<keyword>Date</keyword>
+<keyword>Editor-macros</keyword>
+<keyword>Entity</keyword>
+<keyword>Environmente</keyword>
+<keyword>Guth</keyword>
+<keyword>Image</keyword>
+<keyword>Interpretation</keyword>
+<keyword>Keyword</keyword>
+<keyword>Location</keyword>
+<keyword>Macro</keyword>
+<keyword>Names</keyword>
+<keyword>Number</keyword>
+<keyword>Order</keyword>
+<keyword>Output</keyword>
+<keyword>Packackage</keyword>
+<keyword>Palaeography</keyword>
+<keyword>Path</keyword>
+<keyword>Procedure</keyword>
+<keyword>Relation</keyword>
+<keyword>Show</keyword>
+<keyword>Skeleton</keyword>
+<keyword>Soundex</keyword>
+<keyword>Source</keyword>
+<keyword>Substitution</keyword>
+<keyword>Symbol</keyword>
+<keyword>Text</keyword>
+<keyword>Thesaurus</keyword>
+<keyword>Write</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> describe </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter><link-to-explanation-with-continue>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Permanent</keyword>
+<keyword>Temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Bitmap</keyword>
+<keyword>Browser</keyword>
+<keyword>Catalogue</keyword>
+<keyword>Category</keyword>
+<keyword>Chronology</keyword>
+<keyword>Classification</keyword>
+<keyword>Codedebook</keyword>
+<keyword>Connection</keyword>
+<keyword>Conversion</keyword>
+<keyword>Date</keyword>
+<keyword>Editor-macros</keyword>
+<keyword>Entity</keyword>
+<keyword>Environmente</keyword>
+<keyword>Guth</keyword>
+<keyword>Image</keyword>
+<keyword>Interpretation</keyword>
+<keyword>Keyword</keyword>
+<keyword>Location</keyword>
+<keyword>Macro</keyword>
+<keyword>Names</keyword>
+<keyword>Number</keyword>
+<keyword>Order</keyword>
+<keyword>Output</keyword>
+<keyword>Packackage</keyword>
+<keyword>Palaeography</keyword>
+<keyword>Path</keyword>
+<keyword>Procedure</keyword>
+<keyword>Relation</keyword>
+<keyword>Show</keyword>
+<keyword>Skeleton</keyword>
+<keyword>Soundex</keyword>
+<keyword>Source</keyword>
+<keyword>Substitution</keyword>
+<keyword>Symbol</keyword>
+<keyword>Text</keyword>
+<keyword>Thesaurus</keyword>
+<keyword>Write</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>names</keyword>
+<keyword>parts</keyword>
+<keyword>structure</keyword>
+<keyword>generic</keyword>
+<keyword>text</keyword>
+<keyword>map</keyword>
+<keyword>devices</keyword>
+<keyword>volumes</keyword>
+<keyword>images</keyword>
+<keyword>freeze</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> environment </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>modifiable</keyword>
+<keyword>readonly</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> exit </name>
+<type> Flow control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name or block name</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> horizon </name>
+<type> GUI control </type>
+<status> Recent </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>home</keyword>
+<keyword>kleio</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>inactive</keyword>
+<keyword>active</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> image </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Context</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Convert</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Always</keyword>
+<keyword>Sometimes</keyword>
+<keyword>Never</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Palaeography</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>portrait</keyword>
+<keyword>landscape</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Resolution</name>
+<parametertype> Short decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Internal</keyword>
+<keyword>External</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>compromise</keyword>
+<keyword>quality</keyword>
+<keyword>size</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> import </name>
+<type> Import facility </type>
+<status> Rarely used </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> 3rd party software entity</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>kleio</keyword>
+<keyword>dBase</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>names</keyword>
+<keyword>parts</keyword>
+<keyword>structure</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> index </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Also</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Always</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Augment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Complete</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Comparison mask as character string</parametertype>
+</parameter>
+<parameter>
+<name>Continue</name>
+<parametertype> Comparison mask as character string</parametertype>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Display</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>start</keyword>
+<keyword>limit</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype>Keyword or object name</parametertype>
+<keywordlist>
+<keyword>left</keyword>
+<keyword>right</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Item</name>
+<parametertype>Object name</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype>Keyword or single character</parametertype>
+<keywordlist>
+<keyword>no</keyword>
+<keyword>yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>last</keyword>
+<keyword>first</keyword>
+<keyword>none</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>preserve</keyword>
+<keyword>overwrite</keyword>
+<keyword>append</keyword>
+<keyword>cumulate</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Comparison mask as character string</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Substitute</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Suppress</name>
+<parametertype> Comma separated list of object names</parametertype>
+</parameter>
+<parameter>
+<name>Suspend</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>index</keyword>
+<keyword>count</keyword>
+<keyword>table</keyword>
+<keyword>list</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Unit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Visibility</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> input </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>ascii</keyword>
+<keyword>notabene</keyword>
+<keyword>dosascii</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> interpretation </name>
+<type> Definition </type>
+<status> Experimental </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Between</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Complete</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Last</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Comma separated list of thesaurus relation names</parametertype>
+</parameter>
+<parameter>
+<name>Semantics</name>
+<parametertype> Comma separated list of thesaurus semantic names</parametertype>
+</parameter>
+<parameter>
+<name>Split</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Thesaurus</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>no</keyword>
+<keyword>interactive</keyword>
+<keyword>postscript</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> item </name>
+<type> Definition </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Explain</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Directory name of operating system as character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Permanent</keyword>
+<keyword>Temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Bitmap</keyword>
+<keyword>Browser</keyword>
+<keyword>Catalogue</keyword>
+<keyword>Category</keyword>
+<keyword>Chronology</keyword>
+<keyword>Classification</keyword>
+<keyword>Codedebook</keyword>
+<keyword>Connection</keyword>
+<keyword>Conversion</keyword>
+<keyword>Date</keyword>
+<keyword>Editor-macros</keyword>
+<keyword>Entity</keyword>
+<keyword>Environmente</keyword>
+<keyword>Guth</keyword>
+<keyword>Image</keyword>
+<keyword>Interpretation</keyword>
+<keyword>Keyword</keyword>
+<keyword>Location</keyword>
+<keyword>Macro</keyword>
+<keyword>Names</keyword>
+<keyword>Number</keyword>
+<keyword>Order</keyword>
+<keyword>Output</keyword>
+<keyword>Packackage</keyword>
+<keyword>Palaeography</keyword>
+<keyword>Path</keyword>
+<keyword>Procedure</keyword>
+<keyword>Relation</keyword>
+<keyword>Show</keyword>
+<keyword>Skeleton</keyword>
+<keyword>Soundex</keyword>
+<keyword>Source</keyword>
+<keyword>Substitution</keyword>
+<keyword>Symbol</keyword>
+<keyword>Text</keyword>
+<keyword>Thesaurus</keyword>
+<keyword>Write</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+
+
+<contextlist>
+<contextdescription>
+Different sets of directives are activated depending on the value of the
+parameter "usage".
+</contextdescription>
+<context>
+<name>Browser</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Path</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Access</name>
+<parametertype> Access mode name</parametertype>
+</parameter>
+<parameter>
+<name>Catalogue</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Condition</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Table</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Size</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>Base</keyword>
+<keyword>Candidate</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Test</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Action</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Negative</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Weight</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Category</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Import</name>
+<status> Recent  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> dBase name</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> dBase name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>kleio</keyword>
+<keyword>dBase</keyword>
+<keyword>markup</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> dBase name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Core  </status>
+<general>
+This directive does currently not use any parameters.
+</general>
+</directive>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Sign</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character or character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Text</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Sign</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Chronology</name>
+<directivelist>
+<directive>
+<name> Conversion</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Name</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>exclusive</keyword>
+<keyword>inclusive</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>exclusive</keyword>
+<keyword>inclusive</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Date</name>
+<parametertype> Two integers separated by a period</parametertype> 
+</parameter>
+<parameter>
+<name>Easter</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Weekday</name>
+<parametertype> Keyword</parametertype>
+<keyword>Sunday</keyword>
+<keyword>Monday</keyword>
+<keyword>Tuesday</keyword>
+<keyword>Wednesday</keyword>
+<keyword>Thursday</keyword>
+<keyword>Friday</keyword>
+<keyword>Saturday</keyword>
+<keyword>Absolute</keyword>
+<keyword>Octave</keyword>
+<keyword>Previous</keyword>
+<keywordlist>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Obsolete  </status>
+<general>
+After analysing the parameters, the system switches to read test input.
+</general>
+<parameterlist>
+<parameter>
+<name>Explain</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>creation</keyword>
+<keyword>insertion</keyword>
+<keyword>substitution</keyword>
+<keyword>destruction</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Classification</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Always</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Sign</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Sign</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Codebook</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Form</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Form</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Codebook variable name</parametertype>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>creation</keyword>
+<keyword>insertion</keyword>
+<keyword>substitution</keyword>
+<keyword>destruction</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Write</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Connection</name>
+<directivelist>
+<directive>
+<name> Connect</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Group name</parametertype>
+</parameter>
+<parameter>
+<name>Read</name>
+<parametertype> Group name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Conversion</name>
+<directivelist>
+<directive>
+<name> Cycle</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Order</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Limit</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Substitution</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Current</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Text</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>words</keyword>
+<keyword>terms</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Obsolete  </status>
+<general>
+After analysing the parameters, the system switches to read test input and
+expects the test arguments one per line until encountering a line
+starting with an asterisk.
+</general>
+<parameterlist>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>creation</keyword>
+<keyword>insertion</keyword>
+<keyword>substitution</keyword>
+<keyword>destruction</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>long</keyword>
+<keyword>short</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Date</name>
+<directivelist>
+<directive>
+<name> Conversion</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Period</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>First</name>
+<parametertype> One integer, optionally followd by a second after a slash</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> One integer, optionally followd by a second after a slash, optionally followed by a plus sign</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Augment</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Continue</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Date</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>day</keyword>
+<keyword>month</keyword>
+<keyword>year</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Comma separated list of character strings</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>numbers</keyword>
+<keyword>western</keyword>
+<keyword>islam</keyword>
+<keyword>revolution</keyword>
+<keyword>byzantine</keyword>
+<keyword>moses</keyword>
+<keyword>latin</keyword>
+<keyword>saints</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Same</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>day</keyword>
+<keyword>month</keyword>
+<keyword>year</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>circumcision</keyword>
+<keyword>roman</keyword>
+<keyword>annunciation</keyword>
+<keyword>easter</keyword>
+<keyword>byzantine</keyword>
+<keyword>nativity</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Editor</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Macro</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Entity</name>
+<directivelist>
+<directive>
+<name> Character</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Entity</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Symbol</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Environment</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Logo</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Start</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>data base</keyword>
+<keyword>catalogue</keyword>
+<keyword>show</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Guth</name>
+<directivelist>
+<directive>
+<name> Conversion</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Cycle</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>First</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Obsolete  </status>
+<general>
+After analysing the parameters, the system switches to read test input and
+expects the test arguments one per line until encountering a line
+starting with an asterisk.
+</general>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Image</name>
+<directivelist>
+<directive>
+<name> Associate</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Device</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Alias</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Guaranteed</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Internal device name</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>permanent</keyword>
+<keyword>temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Unit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>permanent</keyword>
+<keyword>temporary</keyword>
+<keyword>iso9660</keyword>
+<keyword>rockridge</keyword>
+<keyword>upper</keyword>
+<keyword>lower</keyword>
+<keyword>onrockridge</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Volume</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Regular expression as character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Group</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Image</name>
+<parametertype> Comma separated list of character strings</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Image</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Context</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Device</name>
+<parametertype> Internal device name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>permanent</keyword>
+<keyword>temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Volume</name>
+<parametertype> Internal volume name</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Context</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Device</name>
+<parametertype> Internal device name</parametertype>
+</parameter>
+<parameter>
+<name>Prefix</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>creation</keyword>
+<keyword>insertion</keyword>
+<keyword>substitution</keyword>
+<keyword>destruction</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Volume</name>
+<parametertype> Internal volume name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Segment</name>
+<status> Recent  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Between</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Complete</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Imply</name>
+<parametertype> Keyword or integer</parametertype>
+<keywordlist>
+<keyword><number>
+<keyword>first</keyword>
+<keyword>last</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Keyword or integer</parametertype>
+<keywordlist>
+<keyword><number>
+<keyword>first</keyword>
+<keyword>last</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Regular expression as character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Visibility</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Device</name>
+<parametertype> Internal device name</parametertype>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Visibility</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Volume</name>
+<parametertype> Internal device name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Volume</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Device</name>
+<parametertype> Internal device name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Internal volume name</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Size</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Substitute</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>permanent</keyword>
+<keyword>temporary</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Regular expression as character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Keyword</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Index</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Bridge</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Catalogue query expression</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Keyword list name</parametertype>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Location</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Location</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Always</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Bitmap</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Color</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>contrast</keyword>
+<keyword>red</keyword>
+<keyword>blue</keyword>
+<keyword>green</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>digipad</keyword>
+<keyword>arcinfo</keyword>
+<keyword>kleio</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>simple</keyword>
+<keyword>double</keyword>
+<keyword>triple</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Negate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Rotate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Size</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>circle</keyword>
+<keyword>square</keyword>
+<keyword>triangle</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>solid</keyword>
+<keyword>halftone</keyword>
+<keyword>tenthtone</keyword>
+<keyword>empty</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Source</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Angle</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Continue</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Distance</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Scale</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Synchronise</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Current</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Integer</parametertype> 
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Integer</parametertype> 
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>best</keyword>
+<keyword>mean</keyword>
+<keyword>adapt</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Bitmap</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Color</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>contrast</keyword>
+<keyword>red</keyword>
+<keyword>blue</keyword>
+<keyword>green</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>digipad</keyword>
+<keyword>arcinfo</keyword>
+<keyword>kleio</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>simple</keyword>
+<keyword>double</keyword>
+<keyword>triple</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Negate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Rotate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Size</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>circle</keyword>
+<keyword>square</keyword>
+<keyword>triangle</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>creation</keyword>
+<keyword>insertion</keyword>
+<keyword>substitution</keyword>
+<keyword>destruction</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>solid</keyword>
+<keyword>halftone</keyword>
+<keyword>tenthtone</keyword>
+<keyword>empty</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Names</name>
+<directivelist>
+<directive>
+<name> Declension</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Gender</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>Male</keyword>
+<keyword>Female</keyword>
+<keyword>Unknown</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>A declension</keyword>
+<keyword>I declension</keyword>
+<keyword>O declension</keyword>
+<keyword>S declension</keyword>
+<keyword>U declension</keyword>
+<keyword>Germanic</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Form</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Declension</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>A declension</keyword>
+<keyword>I declension</keyword>
+<keyword>O declension</keyword>
+<keyword>S declension</keyword>
+<keyword>U declension</keyword>
+<keyword>Germanic</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Gender</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>Male</keyword>
+<keyword>Female</keyword>
+<keyword>Unknown</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Language name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Suffix</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Obsolete  </status>
+<general>
+After analysing the parameters, the system switches to read test input and
+expects the test arguments one per line until encountering a line
+starting with an asterisk.
+</general>
+<parameterlist>
+<parameter>
+<name>Explain</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>long</keyword>
+<keyword>short</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>creation</keyword>
+<keyword>insertion</keyword>
+<keyword>substitution</keyword>
+<keyword>destruction</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Usage</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Type</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keyword>Foreign</keyword>
+<keyword>First</keyword>
+<keyword>Short</keyword>
+<keyword>Shsecond</keyword>
+<keyword>Second</keyword>
+<keywordlist>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Number</name>
+<directivelist>
+<directive>
+<name> Duplex</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Ignore</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>ignore</keyword>
+<keyword>addition</keyword>
+<keyword>subtraction</keyword>
+<keyword>chain</keyword>
+<keyword>glue</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Number</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Roman</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Same</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Signs</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Precise</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Simple</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Maximum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Text</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Maximum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Triplex</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>First</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Value</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Order</name>
+<directivelist>
+<directive>
+<name> Conversion</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Form</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Sign</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Integer or single character, dependent on type directive</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Integer or single character, dependent on type directive</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Integer or single character, dependent on type directive</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Integer or single character, dependent on type directive</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Obsolete  </status>
+<general>
+This directive does not analyse any parameters, but reads arguments on
+individual lines until it encounters a line starting with an asterisk.
+</general>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>letters</keyword>
+<keyword>numbers</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Output</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Symbol</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Package</name>
+<directivelist>
+<directive>
+<name> Aspect</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Connect</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Bracket</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Comment</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Connect</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Local variable name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>arabic</keyword>
+<keyword>roman</keyword>
+<keyword>letters</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>preserve</keyword>
+<keyword>overwrite</keyword>
+<keyword>append</keyword>
+<keyword>cumulate</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>local</keyword>
+<keyword>global</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Conversion</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Codebook</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Codebook variable name</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Skeleton</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Soundex</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>text</keyword>
+<keyword>number</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>Primary</keyword>
+<keyword>First</keyword>
+<keyword>Second</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Field</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Complete</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Image</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>line</keyword>
+<keyword>table</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Prefix</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>linkname</keyword>
+<keyword>name</keyword>
+<keyword>page</keyword>
+<keyword>folio</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Original</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Connect</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Local variable name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>arabic</keyword>
+<keyword>roman</keyword>
+<keyword>letters</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>preserve</keyword>
+<keyword>overwrite</keyword>
+<keyword>append</keyword>
+<keyword>cumulate</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>local</keyword>
+<keyword>global</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Palaeography</name>
+<directivelist>
+<directive>
+<name> Assign</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Comment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Form</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Comment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Refer</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Table</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Comment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Witness</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Comment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Procedure</name>
+<directivelist>
+<directive>
+<name> Catalogue</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Source</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>text</keyword>
+<keyword>file</keyword>
+<keyword>program</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Relation</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Part</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Redundancy</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Self</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Show</name>
+<directivelist>
+<directive>
+<name> Catalogue</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>text</keyword>
+<keyword>path</keyword>
+<keyword>structure</keyword>
+<keyword>display</keyword>
+<keyword>edit</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Clear</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Area</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Colour</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Current</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>white</keyword>
+<keyword>black</keyword>
+<keyword>maxred</keyword>
+<keyword>maxgreen</keyword>
+<keyword>maxblue</keyword>
+<keyword>redonly</keyword>
+<keyword>greenonly</keyword>
+<keyword>blueonly</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Create</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Area</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Color</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Internal show image name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Delay</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Always</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Explain</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Area</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>off</keyword>
+<keyword>prompt</keyword>
+<keyword>display</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Prompt</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>off</keyword>
+<keyword>short</keyword>
+<keyword>long</keyword>
+<keyword>path</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Image</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Area</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Guaranteed</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Message</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Paint</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Area</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Parameter</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Image</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>9</keyword>
+<keyword>25</keyword>
+<keyword>49</keyword>
+<keyword>81</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Point</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Color</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Preserve</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>left</keyword>
+<keyword>middle</keyword>
+<keyword>right</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Release</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>left</keyword>
+<keyword>middle</keyword>
+<keyword>right</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Source</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Editor</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Path</name>
+<parametertype> Path specification as character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Start</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>data base</keyword>
+<keyword>catalogue</keyword>
+<keyword>show</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Text</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Area</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Font</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Prompt</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Repeat</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Skeleton</name>
+<directivelist>
+<directive>
+<name> Conversion</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Rarely used  </status>
+<general>
+This directive does not analyse any parameters, but reads arguments on
+individual lines until it encounters a line starting with an asterisk.
+</general>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Soundex</name>
+<directivelist>
+<directive>
+<name> Conversion</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>After</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Prepare</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>More</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>phonetic</keyword>
+<keyword>character</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Training</name>
+<status> Core  </status>
+<general>
+This directive does not analyse any parameters, but reads arguments on
+individual lines until it encounters a line starting with an asterix.
+</general>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Substitution</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Name</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Element or group name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>group</keyword>
+<keyword>element</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Brother</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>left</keyword>
+<keyword>right</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Element or dynamic substitution name</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Group or dynamic substitution name</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Element name (data type relation)
+<parameter>
+<name>Same</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>left</keyword>
+<keyword>right</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Substitution</name>
+<parametertype> Dynamic substitution name</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Element name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Substitution</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Dynamic substitution name</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Element name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Symbol</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Symbol</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Symbol</name>
+<parametertype> Element or group name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Type</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>group</keyword>
+<keyword>element</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Text</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Signs</name>
+<status> Core  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Also</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Before</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Suppress</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Thesaurus</name>
+<directivelist>
+<directive>
+<name> Define</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Affinity</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+<parameter>
+<name>Association</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+<parameter>
+<name>Imply</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Inversion</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Keyword</parametertype>
+<keyword>one-and-only</keyword>
+<keyword>one-to-one</keyword>
+<keyword>one-to-many</keyword>
+<keyword>many-to-many</keyword>
+<keywordlist>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Network</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Imply</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of thesaurus relation names</parametertype>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype> Keyword</parametertype>
+<keyword>one-and-only</keyword>
+<keyword>one-to-one</keyword>
+<keyword>one-to-many</keyword>
+<keyword>many-to-many</keyword>
+<keywordlist>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Part</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Imply</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Thesaurus semantic name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Relation</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Term</name>
+<parametertype> Comma separated list of character strings</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Semantic</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Always</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Thesaurus semantic name</parametertype>
+</parameter>
+<parameter>
+<name>Split</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Term</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Self</name>
+<parametertype> Thesaurus relation name</parametertype>
+</parameter>
+<parameter>
+<name>Term</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+<context>
+<name>Write</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+
+
+<directive>
+<name> Text</name>
+<status> Rarely used  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Comment</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Element name</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+</contextlist>
+</command>
+
+
+<command>
+<name> language </name>
+<type> Environment control </type>
+<status> Experimental </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Interpret</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of element names</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> location </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Convert</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Always</keyword>
+<keyword>Sometimes</keyword>
+<keyword>Never</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Resolution</name>
+<parametertype> Short decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Internal</keyword>
+<keyword>External</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>dos-screen</keyword>
+<keyword>postscript</keyword>
+<keyword>colorpostscript</keyword>
+<keyword>disspla</keyword>
+<keyword>x11-screen</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> mapping </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Always</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Area</name>
+<parametertype> Comma separated pair of short decimal numbers</parametertype>
+</parameter>
+<parameter>
+<name>Bitmap</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Color</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>contrast</keyword>
+<keyword>red</keyword>
+<keyword>blue</keyword>
+<keyword>green</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>East</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Comma separated pair of short decimal numbers</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>simple</keyword>
+<keyword>double</keyword>
+<keyword>triple</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Comma separated list of names of topographical groups</parametertype>
+</parameter>
+<parameter>
+<name>Negate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>North</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype> Comma separated pair of integers</parametertype>
+</parameter>
+<parameter>
+<name>Rotate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Comma separated pair of short decimal numbers</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Size</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>South</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Symbol</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>circle</keyword>
+<keyword>square</keyword>
+<keyword>triangle</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>logarithmic</keyword>
+<keyword>area</keyword>
+<keyword>squared</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>solid</keyword>
+<keyword>halftone</keyword>
+<keyword>tenthtone</keyword>
+<keyword>empty</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>West</name>
+<parametertype> Topographical object name</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> markup </name>
+<type> Export facility </type>
+<status> Experimental </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter><link-to-explanation-with-continue>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Bitmap</keyword>
+<keyword>Browser</keyword>
+<keyword>Catalogue</keyword>
+<keyword>Category</keyword>
+<keyword>Chronology</keyword>
+<keyword>Classification</keyword>
+<keyword>Codedebook</keyword>
+<keyword>Connection</keyword>
+<keyword>Conversion</keyword>
+<keyword>Date</keyword>
+<keyword>Editor-macros</keyword>
+<keyword>Entity</keyword>
+<keyword>Environmente</keyword>
+<keyword>Guth</keyword>
+<keyword>Image</keyword>
+<keyword>Interpretation</keyword>
+<keyword>Keyword</keyword>
+<keyword>Location</keyword>
+<keyword>Macro</keyword>
+<keyword>Names</keyword>
+<keyword>Number</keyword>
+<keyword>Order</keyword>
+<keyword>Output</keyword>
+<keyword>Packackage</keyword>
+<keyword>Palaeography</keyword>
+<keyword>Path</keyword>
+<keyword>Procedure</keyword>
+<keyword>Relation</keyword>
+<keyword>Show</keyword>
+<keyword>Skeleton</keyword>
+<keyword>Soundex</keyword>
+<keyword>Source</keyword>
+<keyword>Substitution</keyword>
+<keyword>Symbol</keyword>
+<keyword>Text</keyword>
+<keyword>Thesaurus</keyword>
+<keyword>Write</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+
+
+<contextlist>
+<contextdescription>
+Different sets of directives are activated depending on the value of the
+parameter "usage".
+</contextdescription>
+<context>
+<name>Image</name>
+<directivelist>
+<directive>
+<name> exit </name>
+<identical-with-command-with-same-name>
+</directive>
+<directive>
+
+
+<name> Group</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter><link-to-explanation-with-continue>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Overwrite</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Content</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Details</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Explicite</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Implicite</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Total</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</directive>
+
+
+<directive>
+<name> Image</name>
+<status> Experimental  </status>
+<general>
+Some text explaining what the directive as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Border</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Connect</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype> Comma separated list of character strings</parametertype>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype> Keyword</parametertype>
+<keywordlist>
+<keyword>page</keyword>
+<keyword>bullet</keyword>
+<keyword>lines</keyword>
+<keyword>table</keyword>
+<keyword>associations</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</directive>
+</directivelist>
+</context>
+
+
+</contextlist>
+</command>
+
+
+<command>
+<name> negate </name>
+<type> Flow control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Block name</parametertype>
+</parameter>
+<parameter>
+<name>Type</name>
+<parametertype>Keyword</parametertype> 
+<keywordlist>
+<keyword>Permanent</keyword>
+<keyword>Temporary</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> note </name>
+<type> Comment facility </type>
+<status> Core </status>
+<general>
+All arguments following after the command word are considered a comment,
+which is written into the output stream, has no effect on execution, however.
+</general>
+</command>
+
+
+<command>
+<name> number </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Convert</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Always</keyword>
+<keyword>Sometimes</keyword>
+<keyword>Never</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Precise</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Internal</keyword>
+<keyword>External</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> options </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter><link-to-explanation-with-continue>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Also</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Always</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Bridge</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Continue</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Device</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Explain</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Sequence counter</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Identify</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>no</keyword>
+<keyword>interactive</keyword>
+<keyword>postscript</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Label</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Sequence counter</parametertype>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Visibility value</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Visibility value</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype>Keyword/parametertype>
+<keywordlist>
+<keyword>detailed</keyword>
+<keyword>survey</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Relation</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Result</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sensitive</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype>Keyword/parametertype>
+<keywordlist>
+<keyword>numbers</keyword>
+<keyword>letters</keyword>
+<keyword>roman</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype>Keyword or filename as character string</parametertype>
+<keywordlist>
+<keyword>stop</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Status</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Step</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Suppress</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Title</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>production</keyword>
+<keyword>training</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> path </name>
+<type> Definition </type>
+<status> Disabled </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+</parameterlist>
+</command>
+
+
+<command>
+<name> query </name>
+<type> Flow control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Also</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype> Path specification</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> read </name>
+<type> Input facility </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Continue</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>clio</keyword>
+<keyword>none</keyword>
+<Sonderzeichen>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Form</name>
+<parametertype>Keyword</parametertype><general>If this parameter is set to "Yes" all further parameters are considered as if they would be part of an options command</general>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Line</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Data base name</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<name>Origin</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Other</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>kleio</keyword>
+<keyword>dBase</keyword>
+<keyword>markup</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Substitute</name>
+<parametertype> Single character</parametertype>
+</parameter>
+<parameter>
+<parameter>
+<name>Supply</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>names</keyword>
+<keyword>parts</keyword>
+<keyword>structure</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> relation </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Also</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Convert</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Always</keyword>
+<keyword>Sometimes</keyword>
+<keyword>Never</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Cumulate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Visibility value</parametertype>
+</parameter>
+<parameter>
+<name>Minimum</name>
+<parametertype> Visibility value</parametertype>
+</parameter>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Text</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Internal</keyword>
+<keyword>External</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Warnings</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Integer</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> stop </name>
+<type> Flow control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter><link-to-explanation-with-continue>
+<name>Form</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Package</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter><link-to-explanation-with-continue>
+<name>Target</name>
+<parametertype> Character string</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> text </name>
+<type> Environment control </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> translation </name>
+<type> Executable </type>
+<status> Rarely used </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Codebook</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Date</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>days</keyword>
+<keyword>months</keyword>
+<keyword>years</keyword>
+<keyword>weeks</keyword>
+<keyword>difference</keyword>
+<keyword>number</keyword>
+<keyword>after</keyword>
+<keyword>before</keyword>
+<keyword>double</keyword>
+<keyword>date</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>First</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Limit</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Maximum</name>
+<parametertype> Integer</parametertype>
+</parameter>
+<parameter>
+<name>Null</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Number</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>small</keyword>
+<keyword>large</keyword>
+<keyword>mean</keyword>
+<keyword>deviation</keyword>
+<keyword>count</keyword>
+<keyword>total</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype> Character string</parametertype>
+</parameter>
+<parameter>
+<name>Sign</name>
+<parametertype> Print format as decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>spss</keyword>
+<keyword>censys</keyword>
+<keyword>pcspss</keyword>
+<keyword>sas</keyword>
+<keyword>none</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Without</name>
+<parametertype> Long decimal number</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>
+
+
+<command>
+<name> write </name>
+<type> Executable </type>
+<status> Core </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Bridge</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Comment</name>
+<parametertype>Character string</parametertype>
+</parameter>
+<parameter>
+<name>Continue</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Convert</name>
+<parametertype>Object name</parameterype>
+<parameter>
+<name>Cumulate</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Image</name>
+<parametertype>Keyword 49</parametertype>
+<keywordlist>
+<keyword>Interactive</keyword>
+<keyword>No</keyword>
+<keyword>Postscript</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Label</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>More</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Only</name>
+<parametertype>Disabled</parametertype>
+</parameter>
+<parameter>
+<name>Order</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Overwrite</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Part</name>
+<parametertype>Path specification</parametertype>
+</parameter>
+<parameter>
+<name>Position</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Repeat</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Second</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Self</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Sequence</name>
+<parametertype>Integer</parametertype>
+</parameter>
+<parameter>
+<name>Start</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>No</keyword>
+<keyword>Yes</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Suffix</name>
+<parametertype>Character string</parametertype>
+</parameter>
+<parameter>
+<name>Target</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Human</keyword>
+<keyword>Machine</keyword>
+</keywordlist>
+</parameter>
+<parameter>
+<name>Title</name>
+<parametertype>Character string</parametertype>
+</parameter>
+<parameter>
+<name>Write</name>
+<parametertype>Object name</parameterype>
+</parameterlist>
+</command> 

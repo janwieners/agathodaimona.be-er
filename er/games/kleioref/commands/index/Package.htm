@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Package.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der</b> <b>Parameter package:</b>  
+<p>Der Parameter package erlaubt, den Inhalt einzelner Sortierspalten mittels 
+festgelegter Zeichenfolgen zu umschlie&szlig;en, also zu verpacken. Der haupts&auml;chliche 
+Einsatzzweck des Parameters ist die Aufbereitung der Datenausgabe nach HTML-Konventionen, 
+um ein Listing auf diese Weise "&uuml;ber das Web" schicken und in einem Browser
+darstellen zu k&ouml;nnen.</p>
+ 
+<p>Als Wert erwartet package den Namen eines logischen Objekts (i.e. einer 
+Definition) der Klasse package, das festlegt, welche Zeichen (i.e. Tags) vor
+und nach der jeweiligen Information ausgegeben werden sollen.</p>
+ 
+<p> Als Beispiel dient die folgende Vereinbarung mit dem Namen "pack":</p>
+ 
+<p>item name=pack;usage=package;overwrite=yes<br>
+ fields start="&lt;b&gt;";<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit="&lt;/b&gt;&lt;br&gt;"<br>
+ exit name=pack</p>
+ 
+<p>Sie legt fest, da&szlig; jeweils vor Anfang und Ende der Information die 
+Tagfolge "&lt;b&gt;" bzw. "&lt;/b&gt;&lt;br&gt;" ausgegeben werden sollen.</p>
+ 
+<p>Nimmt man in einem Index-Befehl darauf Bezug, so erh&auml;lt die gesamte 
+Aufgabe die folgende Form:<br>
+ </p>
+ 
+<p>query name=basdat;part=per<br>
+ index part=:name;<b>package=pack</b>;type=list<br>
+ stop&nbsp; </p>
+ 
+<p><br>
+ Das Ergebnis ist ein Listing, das in einem Browser als fettgedruckte Namenliste 
+dargestellt w&uuml;rde:</p>
+ &lt;b&gt;ABELE&lt;/b&gt;&lt;br&gt; <br>
+ &nbsp;&nbsp;&nbsp; &nbsp;<br>
+ &lt;b&gt;ABELE&lt;/b&gt;&lt;br&gt; <br>
+ &nbsp;&nbsp;&nbsp; &nbsp;<br>
+ &lt;b&gt;ABT&lt;/b&gt;&lt;br&gt; <br>
+ &nbsp;&nbsp;&nbsp; &nbsp;<br>
+ &lt;b&gt;ABT&lt;/b&gt;&lt;br&gt; <br>
+ &nbsp;&nbsp;&nbsp; &nbsp;<br>
+ &lt;b&gt;ABT&lt;/b&gt;&lt;br&gt; <br>
+ <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;.....<br>
+ <br>
+ &lt;b&gt;ZWEIGLEN&lt;/b&gt;&lt;br&gt;<br>
+ <br>
+ &lt;b&gt;ZWEIGLEN&lt;/b&gt;&lt;br&gt;<br>
+ <br>
+ &lt;b&gt;ZWINK&lt;/b&gt;&lt;br&gt;<br>
+ <br>
+ <br>
+ In einem Browser sieht dieselbe Liste folgenderma&szlig;en aus:<br>
+ <br>
+ <br>
+ <b>ABELE</b><br>
+ <b>ABT</b><br>
+ <b>ABT</b><br>
+ <b>ABT</b><br>
+ ......<br>
+ <b>ZWEIGLEN</b><br>
+ <b>ZWEIGLEN</b><br>
+ <b>ZWINK</b><br>
+ <br>
+<br>
+<br>
+Dieser Effekt lie&szlig;e sich grunds&auml;tzlich auch durch Einsatz der
+<b>Funktion</b> <a href="../../functions/elempack.htm">package</a>
+ erzielen.<br>
+<br>
+<br>
+Dennoch w&uuml;rden die folgenden beiden Befehle in einzelnen F&auml;llen
+ein unterschiedliches Ergebnis liefern:<br>
+<br>
+Befehl 1:<br>
+ index part=:form[" "];part=:package[:name,pack];type=list<br>
+<br>
+Befehl 2:<br>
+index part=:form[" "];part=:name;<b>package=pack</b>;type=list<br>
+<br>
+Im Falle von Befehl 1 w&uuml;rde package in denjenigen F&auml;llen, in denen
+:name nicht vorliegt nicht ausgef&uuml;hrt. Dagegen werden die Verpackungsanweisungen,
+die durch den <b>Parameter</b> package (wie in Beispiel 2) angeordnet werden,
+auch dann ausgef&uuml;hrt, wenn das zu verpackende Element nicht vorliegt.
+Dies ist insbesondere Dann von Bedeutung, wenn der Inhalt des Package nicht
+nur Formatierungsanweisungen, sondern auch Textbestandteile enth&auml;lt,
+die bei der L&ouml;sung in Befehl 1 nicht ausgegeben w&uuml;rden.<br>
+ 
+<p> </p>
+ 
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Unbenanntes Dokument</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+<p><strong>note &Ouml;ffent die Definitionsumgebung und legt u.a. den Namen des 
+  Templates fest</strong></p>
+<p>item name=desmap0;usage=template;overwrite=yes<br />
+  <strong>note legt den allgemeinen Rahmen der Wiedergabe des Containers fest</strong><br>
+  frame package=desmap-a1;target=&quot;/hdf/Prometheus1/mappen&quot;;<br />
+  sensitive=yes;project=yes;catalogue=objektfiles<br />
+  initialize name=mappe;project=projekt<br>
+  <strong>note definiert die Verpackung eines bestimmten Inhalts</strong><br />
+  table package=desmap-i0;lines=1;ordered=yes;self=emptymap<br />
+  <strong>note fa&szlig;t den Informationen aus verschiendenen Datenbanken in 
+  der Variablen &quot;des-name&quot; zusammen.</strong><br><strong>note das Package 
+  &quot;desmap1-i1&quot; legt efst, wie die jeweilige Information bei der Wiedergabe 
+  der Varibalen dargestellt werden soll. </strong><br>
+  variable name=des-name<br />
+  path part=':form[&quot;&amp;nbsp;&quot;]';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=archgiessen;part=':p_k&uuml;nstler';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=wbarchiv;part=':k&uuml;nstler';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=digidianeu;part=':kuenstlerin';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=tuberlin;part=':kuenstler';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=uustb;self=&quot;&amp;nbsp;&quot;;package=desmap1-i1;<br />
+  part=&quot;/root[0]/aob30:a3100&quot;;<br />
+  path source=objectfilename;part=&quot;:object:cardkunstwerk:sdkuenstler:kuenstlerbez&quot;;<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1;<br />
+  path source=digidia;part=&quot;:nachname|+:form[', ']|+:vorname&quot;;<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=piranesi;part=&quot;:kuenstler&quot;;<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1;<br />
+  path source=dmr;part=':kuenstler';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  note path source=documents;part=':persons:lastname|+:form[&quot;, &quot;]|+persons:firstname';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=dadaweb;part=':zzzperson';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=arachne;part=':form[&quot; &quot;]';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=karlsruhe;part=':conv[:form[&quot;&quot;]|+:name|+:form[&quot;, 
+  &quot;]|+:vorname,noending]';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  path source=muenchen;part='root[0]/part[kuenstler,1]:kuenstler';<br />
+  self=&quot;&amp;nbsp;&quot;;package=desmap1-i1<br />
+  <strong>note schlie&szlig;t die Definition des templates ab</strong><br>
+  exit name=desmap0</p>
+</body>
+</html>

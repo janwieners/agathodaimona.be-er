@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,After.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der Parameter after:</b><br>
+ <br>
+         
+<p>Der Parameter after erwartet als Parameterwert den Namen einer Konversionsvereinbarung
+  (i.e. eines logischen Objekt der Klasse Conversion).</p>
+       
+<p>After bezieht sich auf die gesamte Registerzeile und&nbsp; bewirkt, da&szlig; 
+ diese in ihrem Gesamtumfang <b>nach</b> der Erstellung der Sortierung, aber 
+ <b>vor </b>der Ausgabe entsprechend den Regeln der Konversionsvereinbarung
+  behandelt wird. Das bedeutet, da&szlig; die Ersetzungen zwar <b>das Aussehen
+  </b>der Daten ver&auml;ndern, <b>nicht aber die Sortierordnung</b> beeinflussen. 
+ </p>
+       
+<p>Gegeben sei folgendes logische Objekt der Klasse conversion: <br>
+    </p>
+       
+<p>item name=<b>ohnevon</b>;<br>
+     &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+usage=conversion;<br>
+     &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+type=permanent;<br>
+     &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+overwrite=yes  <br>
+    type start=yes<br>
+    substitution current=" von";<br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result=""<br>
+    exit name=<b>ohnevon</b></p>
+       
+<p>Die Ersetzungsregeln ordnen in diesem Falle an, da&szlig; die Zeichenkette
+  "von " (unter Einschlu&szlig; der Leerstelle), sofern sie am Zeilenanfang
+  auftritt, durch nichts ersetzt wird, also entf&auml;llt. Der Name "ohnevon"
+  dient der Identifikation der Konversionsvereinbarung und ist frei w&auml;hlbar.
+  </p>
+       
+<p>Im&nbsp; Befehl </p>
+       
+<p>index part=:name;after=<b>ohnevon</b></p>
+       
+<p>stellt der Parameter after&nbsp; den Bezug zur Konversionsspezifikation
+  des Namens "ohnevon" her und bewirkt damit, da&szlig; der Name "von Altenstein"
+  in der Ausgabe als "Altenstein" erscheint, wenngleich er entsprechend dem
+  oben genannten Systemverhalten in der Sortierfolge nach wie vor als&nbsp;
+  "von Altenstein" eingeordnet wird. Folglich erscheint er konsequenterweise
+  z.B. nach "Ullmann":</p>
+       
+<p><br>
+    </p>
+       
+<p>Ullmann DOK000123<br>
+    <br>
+    Altenstein DOK000085</p>
+     
+<p> Will man erreichen, da&szlig; das Ergebnis der Ersetzungen auch die Sortierung 
+ beeinflu&szlig;t, so mu&szlig; man statt after den Parameter <a href="preparation.html">
+    preparartion</a>
+  angeben.&nbsp; </p>
+       
+<p></p>
+     
+<p> </p>
+       
+<p><br>
+    <br>
+    </p>
+       
+<p> </p>
+       
+</body>
+</html>

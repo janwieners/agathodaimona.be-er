@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Parameter limit:</b><br>
+<br>
+<br>
+     
+<p>Mit Hilfe des&nbsp; Parameters limit k&ouml;nnen zwischen die Registerspalten 
+  Zeichenketten eingef&uuml;gt werden, die in der Ausgabe als Konstante erscheinen. 
+   Die&nbsp; Zeichenketten m&uuml;ssen durch Paare von einfachen (') oder 
+doppelten  (") Hochkommata (= 'G&auml;nsef&uuml;&szlig;chen') begrenzt werden: 
+Die mit  limit eingef&uuml;gten Zeichen haben keinerlei Einflu&szlig; auf 
+die Sortierung  des Inhalts der jeweils durch part erzeugten Spalten. </p>
+     
+<p>Richtig sind also folgende Schreibweisen:</p>
+     
+<p>limit= "beliebiger Text"<br>
+      oder<br>
+     limit='beliebiger Text'</p>
+     
+<p><b>Falsch</b> ist dagegen folgendes Beispiel:</p>
+     
+<p>limit="beliebiger Text'</p>
+     
+<p>Die bei limit angegebene Zeichenkette wird jeweils nach der entsprechenden 
+  Sortierspalte als Konstante eingef&uuml;gt und hat keinen Einflu&szlig; 
+auf  die Sortierung des Inhalts der Spalte. Eine g&auml;ngige Verwendung des
+limit-Pramaters  besteht in der Etikettierung einzelner Spalten:</p>
+     
+<p>index part=:name;limit= ", Vorname: ";<br>
+      &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:coll[:vorname]</p>
+     
+<p>In diesem einfachen Namensregister wird die zweite Spalte als "Vorname" 
+  beschriftet, indem an die erste Sortierspalte die Konstante ", Vorname: 
+"  angef&uuml;gt wird. Ausgegeben werden alle Zeichen einschlie&szlig;lich 
+der  Leerstelle nach dem Doppelpunkt:</p>
+     
+<p><br>
+   </p>
+     
+<p> ABELE, Vorname: JOHANN;FRIEDRICH DOK050295 <br>
+      &nbsp; &nbsp; <br>
+     ABT, Vorname: AUGUST DOK872101 <br>
+      &nbsp; &nbsp; <br>
+     ABT, Vorname: EBERHARD DOK871619 <br>
+      &nbsp; &nbsp; <br>
+     ABT, Vorname: ERHARD;FRIEDRICH;GOTTLIEB DOK871448 <br>
+      &nbsp; &nbsp; <br>
+     ABT, Vorname: FRIEDERIKE DOK001191 <br>
+      &nbsp; &nbsp; <br>
+     ABT, Vorname: FRIEDERIKE;LOUISE DOK871126</p>
+     
+<p><br>
+   </p>
+     
+<p>Die Logik des Parameters limit sieht vor, eine Konstante an eine Registerspalte 
+  anzuf&uuml;gen, um so eine Zeichenkette zwischen zwei Spalten einf&uuml;gen 
+  zu k&ouml;nnen. Daher ist es nicht m&ouml;glich, die jeweils erste Registerspalte 
+  durch limit zu kennzeichnen. Will man auch f&uuml;r die erste Spalte die 
+ Ausgabe einer Konstante erwirken, so kann man sich behelfen, indem man mittels 
+ der Elementarfunktion :form[] ein k&uuml;nstliches Element einf&uuml;hrt 
+und dieses als Konstante in die erste Registerspalte schreiben l&auml;&szlig;t:</p>
+     index part=:form["Familienname: "];<br>
+      &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:name;limit= ", Vorname: ";<br>
+      &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:coll[:vorname]     
+<p>Familienname:&nbsp; ABELE, Vorname: CARL DOK030011 <br>
+      &nbsp; &nbsp; <br>
+     Familienname:&nbsp; ABELE, Vorname: JOHANN;FRIEDRICH DOK050295 <br>
+      &nbsp; &nbsp; <br>
+     Familienname:&nbsp; ABT, Vorname: AUGUST DOK872101 <br>
+      &nbsp; &nbsp; <br>
+     Familienname:&nbsp; ABT, Vorname: EBERHARD DOK871619 <br>
+      &nbsp; &nbsp; <br>
+     Familienname:&nbsp; ABT, Vorname: ERHARD;FRIEDRICH;GOTTLIEB DOK871448
+ <br>
+      &nbsp; &nbsp; <br>
+     Familienname:&nbsp; ABT, Vorname: FRIEDERIKE DOK001191 <br>
+      &nbsp; &nbsp; <br>
+     Familienname:&nbsp; ABT, Vorname: FRIEDERIKE;LOUISE DOK871126 <br>
+      &nbsp; &nbsp; <br>
+     Hier gilt es zu beachten, da&szlig; die Konstanten "Familienname: "
+und   ", Vorname: " jeweils auf v&ouml;llig unterschiedlicher Logik beruhen.
+Die   letztgenannte Zeichenkette ist eine Konstante zwischen zwei Registerspalten,
+  w&auml;hrend die erstgenannte Zeichenfolge selbst eine durch einen part-Parameter
+  eingeleitete&nbsp; Registerspalte darstellt. Diese Liste ist also vierspaltig:
+  </p>
+     
+<ol>
+           
+  <li>Konstante "Familienname: "</li>
+           
+  <li>Inhalt des Elements :name mit anschlie&szlig;ender Konstante ", Vorname: 
+  "</li>
+           
+  <li>Inhalt des Elements :vorname</li>
+           
+  <li>Dokumentenidentifikation</li>
+     
+</ol>
+   Standardm&auml;&szlig;ig trennt das System einzelne Registerspalten durch 
+ eine Leerstelle. Der Parameter limit kann dazu genutzt werden, die Ausgabe 
+ der Leerstelle zu unterdr&uuml;cken, indem man limit="" angibt. Hier wird 
+ also kein Zeichen (also auch keine Leerstelle) zwischen die Spalten geschrieben. 
+ Die Spaltenintr&auml;ge werden unmittelbar aneindergef&uuml;gt. Dieses Systemverhalten 
+ kann zum Beispiel sehr sinnvoll sein, wenn man eine Belegstellenliste erzeugen 
+ will, die als codebook Verwendung finden soll.<br>
+  <br>
+  Die Vergabe von Werten innerhalb eines codebook geschieht nach folgender
+ Syntyx:<br>
+  <br>
+  form text="Element";number=<br>
+  <br>
+  Diese Syntax l&auml;&szlig;t sich durch einen Index-Befehl erzeugen. Nehmen
+ wir das Beispiel einer Berufskodierung:<br>
+  <br>
+  index part=:form['form text="'];limit="";<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:coll[:beruf] ;limit='";number=';maxi=1;<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ident=root[0]:sign[];write=no<br>
+  <br>
+  <br>
+  Der Parameter limit bewirkt durch Angabe des Parameterwerts "", da&szlig;
+ der Inhalt der Berufsangabe unmittelbar an die erste Spalte angeschlossen
+ wird, die die Konstante 'form text="' enth&auml;lt:<br>
+  <br>
+  form text="ABLOESUNGSCOMISSAER;GERICHTSNOTAR";number=<br>
+  <br>
+  form text="ABLOESUNGSCOMMISSAIRE,AUSW";number=<br>
+  <br>
+  form text="ACTUAR";number=<br>
+  <br>
+  form text="ACTUAR,GERICHT";number=<br>
+  <br>
+  form text="ACTUAR,GERICHT,AUSW";number=<br>
+  <br>
+  form text="ACTUAR,GERICHT;ASSESSORATSVERW";number=<br>
+  <br>
+  form text="ACTUAR,OBERAMT";number=<br>
+  <br>
+  form text="ACTUAR,SCHULTHEISSENAMT";number=<br>
+  <br>
+  form text="ACTUAR,VERWALTUNG";number=<br>
+  <br>
+  <br>
+  <br>
+  Neben beliebigen Zeichenketten k&ouml;nnen im limi-Parameter auch drei
+spezielle  Zeichenfolgen angegeben werden, die die Druck- und Bildschirmausgabe
+des Registers steuern.<br>
+  <br>
+  Die Zeichenfolge "\n" beiwirkt einen Zeilenumbruch nach der entsprechenden
+ Spalte:<br>
+  <br>
+  <br>
+  index part=:name;signs=10;<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:coll[:vorname];signs=20;<b>limit="\n"</b><br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:hko<br>
+   &nbsp;&nbsp; &nbsp; <br>
+  Dieser Befehl bewirkt einen Zeilenumbruch nach Ausgabe des Vornamens und
+ erzeugt daher folgende Ausgabe:<br>
+  <br>
+  ABT &nbsp;&nbsp; &nbsp; &nbsp; FRIEDERIKE;LOUISE<br>
+   &nbsp; &nbsp; ESSL DOK871126<br>
+  <br>
+  ABT &nbsp;&nbsp; &nbsp; &nbsp; JOHANN;CHRISTOF;FRIE<br>
+   &nbsp; &nbsp; ESSL DOK871447<br>
+  <br>
+  ABT &nbsp;&nbsp; &nbsp; &nbsp; SOPHIE;ELISABETHE<br>
+   &nbsp; &nbsp; TUEBINGEN DOK870075<br>
+  <br>
+  ABT &nbsp;&nbsp; &nbsp; &nbsp; WILHELM;ELIAS;MARTIN<br>
+   &nbsp; &nbsp; JUNGINGEN DOK000085<br>
+  <br>
+  <br>
+  <br>
+  Die Konstante "\f" erzeugt einen Vorschub auf die n&auml;chste Seite.<br>
+  Die Konstante "\t" steuert die n&auml;chste Tabulatorposition des Druckers
+ an.<br>
+  <br>
+  <br>
+  <b>Der Parameter limit beim Einsatz mehrere Index-Befehle:</b><br>
+  <br>
+  Grunds&auml;tzlich kann der limit-Parameter auch dann verwendet werden, 
+wenn innerhalb einer Aufgabe mehrere Index-Befehle zum Einsatz kommen. Probleme
+ ergeben sich aber dann, wenn man versucht, in den einzelnen Index-Befehlen,
+ die jeweils gleiche Spalte mit verschiedenen durch limit erzeugten Konstanten
+ zu etikettieren, da die Werte im jeweils letzten index-Befehl den Inhalt
+von limit in den vorherigen Befehlen &uuml;berschreiben. Zur L&ouml;sung
+dieses Problems sei auf die grunds&auml;tzlichen Ausf&uuml;hrungen zum <a href="Disc.htm">
+  index-Befehl</a>
+ verwiesen:<br>
+  <br>
+   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+     
+</body>
+</html>

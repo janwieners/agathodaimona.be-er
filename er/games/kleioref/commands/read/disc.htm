@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Description</title>
+   
+</head>
+  <body bgcolor="#ffffff">
+<p><b>Der Befehl read</b></p>
+<p><b><br>
+</b>Der Befehl <b>read</b> dient dazu, Ausgangsdaten (Rohdaten) in eine  Kleio-Systemdatei
+ umzuwandeln.</p>
+<p>Dabei bezieht sich der <b>name-</b>Parameter des read-Befehls immer auf
+  den Namen einer Kleio-Datenbank, der wiederum im name-Parameter des <a href="../database/index.htm" target="_blank">
+     database</a>
+    -Befehls inder zugeh&ouml;rigen Kleio-Strukturvereinbarung aufscheinen
+ mu&szlig;.  Damit wird eine Verbindung zwischen den Rohdaten und der Strukturvereinbarung&nbsp;
+  hergestellt. Dies setzt implizit voraus, da&szlig; die Definition der Strukturvereinbarung
+  der Syntax der Rohdaten entsprechen mu&szlig; (bzw. vice versa). </p>
+<p>Wenn die Syntax der Rohdaten von der Definition der Strukturvereinabrung
+  abweicht, wird der read-Befehl eine entsprechende Fehlermeldung ausgeben.
+  <br>
+</p>
+<p>Der read-Befehl steuert die Umwandlung der Rohdaten in eine Systemdatei
+  in vielf&auml;ltiger Weise. Unter anderem legt er das Format der Rohdaten 
+wie auch den Pfad zu den Rohdaten fest. Der read-Befehl erlaubt bei Daten 
+im Markup-Format in Verbindung mit einem <a href="../item/index.htm" target="_blank">
+    package</a>
+     auch die Einf&uuml;gung zus&auml;tzlicher Markups in die Daten.</p>
+<p>Grunds&auml;tzlich kann ein read-Befehl unmittelbar Bestandteil der Datei 
+sein, die die Rohdaten enth&auml;lt. &nbsp;In diesem Falle mu&szlig; der Befehl
+den Daten voranstehen:</p>
+<blockquote><b>read name=fre</b><br>
+ FAM$FRE-54-2 M$m/12.8.1759/Abt/Gottlieb;Christoph/Praezeptor,Paedagogium/Esslingen/led/16.1.1820/Esslingen<br>
+ VM$m/Abt/Christoph;Michael/Schullehrer//1 MM$w/Abt/Tritschler/Maria;Margaretha///1
+   <br>
+ HEI$25.9.1792/Esslingen<br>
+ F$w/18.1.1763/Albrecht/Johanna;Catharina;Christina;Eberhardina//Kirchheim/Wwe/12.5.1803/Esslingen
+   <br>
+ VF$m/Albrecht/Christian/Hofr Einnehmer/Kirchheim/1 <br>
+ MF$w/Albrecht/Bahnmaier/Christina;Catharina///1 <br>
+ EEP$m//Caspart//Pfarrer/Vaihingen wK$e/11.6.1783/m/Christian;Erhard <br>
+ KH$FRE-54-187<br>
+  </blockquote>
+   In diesem Falle w&uuml;rde der Aufruf der entsprechenden Datei unter Kleio
+dazu f&uuml;hren, da&szlig; der read-Befehl ausgef&uuml;hrt wird und die
+nachfolgend vorkommenden Rohdaten in seine Systemdatei &uuml;berf&uuml;hrt
+werden.<br>
+  <br>
+  <br>
+Wenn die Rohdaten also in einer Datei mit dem Namen "rohdaten.dat" abgelegte
+w&auml;ren, k&ouml;nnte der read-Befehl mit folgendem Aufruf gestartet werden:<br>
+  <blockquote><b>kleiob rohdaten.dat</b><br>
+    </blockquote>
+Ebenso k&ouml;nnte der read-Befehl getrennt von den Rohdaten in einer eigenen
+Datei abgelegt sein. In diesem Fall mu&szlig; zwingend der Parameter <b>origin</b>
+ angegeben werden, der dem system mitteilt, in welchem Pfad die Rohdaten
+zu finden sind, die durch den read-Befehl abgearbeitet werden sollen.<br>
+&nbsp;<br>
+    <br>
+    <br>
+    <p> &nbsp;</p>
+    </body>
+    </html>

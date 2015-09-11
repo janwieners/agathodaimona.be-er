@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>tusage</title>
+</head>
+  <body>
+ <b>Der Paramter usage:<br>
+ <br>
+ </b>Der Parameter usage regelt das Verhalten der transparent-Direktive.
+Er kann z.Zt. zwei Werte annehmen:<br>
+ 
+<ul>
+   <li>delete</li>
+   <li>insert (=Standardverhalten)</li>
+ 
+</ul>
+Der Parameter <b>insert</b> bewirkt, da&szlig; ein transparentes Symbol in
+die Umgebung der Datenbank eingef&uuml;hrt wird. Dies ist der Standard des
+Systems. Das hei&szlig;t, die im name-Parameter benannten Symbole werden
+entsprechend den Regeln des type-Parameters behandelt. <br>
+<br>
+Dagegen entfernt der Parameter <b>delete </b>ein transparentes Symbol aus
+der Umgebung. Dies kann sich als notwendig erweisen, wenn mehrere Datenbanken
+nacheinander erstellt werden, in denen dieselben Symbole verwendet werden,
+die aber jeweils unterschiedlich behandelt &nbsp;werden sollen. In diesem
+Falle kann z.B. die "Transparenz" eines Symbols f&uuml;r bestimmte Datenbanken
+aufgehoben &nbsp;werden. Wenn der name-Parameter nicht spezifiziert ist,
+werden alle transparenten Symbole gel&ouml;scht.<br>
+<br>
+<blockquote>transparent usage=delete<br>
+  </blockquote>
+hebt also in der Gesamtumwelt als Ignorierungsanweisungen f&uuml;r bestimmte
+Tags auf.<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+ 
+  </body>
+  </html>

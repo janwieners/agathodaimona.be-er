@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Suspend.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+<b>Der </b><b>Parameter suspend:</b> 
+<p><br>
+Das Ergebnis eines Index-Befehls wird generiert, indem das System entsprechend
+der Abfrage die Datenbank durchsucht und alle angeforderten Informationen
+erst einmal in einer tempor&auml;ren Datei sammelt. Nach dem Ende der Suche
+werden die Informationen in der tempor&auml;ren Datei sortiert und ausgegeben.
+Dies erfolgt (je nach Einstellung) durch die sortierte Ausgabe auf dem Bildschirm
+oder die Ablage des Ergebnisses in einer Datei. Nach der Datenausgabe wird
+die tempor&auml;re Datei wieder gel&ouml;scht.</p>
+<p>Der Parameter suspend erlaubt die Ab&auml;nderung dieses Mechanismus.
+Er erwartet als Parameterwert den beliebig w&auml;hlbaren Namen einer Datei,
+der in Hochkommata angegeben werden mu&szlig;. Diese Datei wird bei der Abarbeitung
+des Index-Befehls nunmehr als tempor&auml;re Datei verwendet. Im Unterschied
+zum Standardverhalten erfolgt bei Einsatz des Parameters suspend <b>keine</b>
+ Ausgabe des Inhalts der tempor&auml;ren Datei. Sie wird vielmehr beibehalten
+und kann durch weitere Index-Befehle erweitert werden. Damit ist es m&ouml;glich,
+den Inhalt mehrerer Datenbankabfragen, sie sich sogar auf unterschiedliche
+Datenbanken beziehen k&ouml;nnen, in einer einzigen tempor&auml;ren Datei
+zu vereinigen. Diese tempor&auml;re Datei schlie&szlig;lich kann abschlie&szlig;end
+wiederum in Form eines einzigen, einheitlichen Registers ausgegeben werden.</p>
+<p>Die Erweiterung einer durch suspend angelegten tempor&auml;ren Datei und
+die schlie&szlig;liche Ausgabe des Listings werden durch die Parameter <a href="Augment.htm">
+augment</a>
+ und <a href="Complete.htm">complete</a>
+ gesteuert.<br>
+</p>
+<p>Ein Beispiel mag den Mechanismus verdeutlichen. Wir haben drei Datenbanken
+(basdat, fre und frk) in denen jeweils Berufsangaben (:beruf) vorliegen.
+Ziel soll es sein, aus den drei Datenbanken ein einheitliches Register aller
+Berufsbelege zu generieren. </p>
+<p>Mittels des folgenden Befehls weisen wir das System an, die Berufe in
+der Datenbank basdat in einer tempor&auml;ren Datei mit dem Namen "datei1"
+zwischenzuspeichern:</p>
+<p>query name=basdat;part=:beruf<br>
+index part=:beruf;suspend="datei1"<br>
+cont &nbsp;<br>
+<br>
+</p>
+<p>Im folgenden Schritt werden wir nun mit dem Parameter <a href="Augment.htm">
+augment</a>
+, auch die Berufsangaben aus der Datenbank fre in die tempor&auml;re Datei
+"datei1" einf&uuml;gen.<br>
+ </p>
+</body>
+</html>

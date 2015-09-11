@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Self.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der Parameter self:</b><br>
+ <br>
+ <br>
+     
+<p>Der Parameter self&nbsp; erwartet als Parameterwert eine frei w&auml;hlbare
+ Zeichenkette, die durch einfache oder doppelte Hochkommata begrenzt werden
+ mu&szlig;. Der Parameter bewirkt, da&szlig; im Falle fehlender Angaben der
+ Inhalt der Zeichenkette als Default-Wert in das Register&nbsp; eingef&uuml;gt
+ wird:</p>
+   
+<p>Gegeben sei ein Register aus Personennamen und Herkunftsort (:hko) der
+ jeweiligen Person. Der Herkunftsort liegt nicht immer vor. Dies kann man
+durch den Parameter self im Register entsprechend&nbsp; deutlich machen:</p>
+   
+<p>index part=:name;<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:hko;self="keine Angabe"</p>
+   
+<p><br>
+  Das Resultat macht die Funktion des Parameters deutlich:</p>
+   
+<p>ABT ESSL DOK872101 <br>
+   &nbsp; &nbsp; <br>
+  ABT JUNGINGEN DOK000085 <br>
+   &nbsp; &nbsp; <br>
+  ABT TUEBINGEN DOK870075 <br>
+   &nbsp; &nbsp; <br>
+  ACKER keine Angabe DOK001199 <br>
+   &nbsp; &nbsp; <br>
+  ACKERL keine Angabe DOK000147 <br>
+   &nbsp; &nbsp; <br>
+  ACKERL keine Angabe DOK000901 <br>
+   &nbsp; &nbsp; <br>
+  ACKERMANN VILLINGEN DOK872671<br>
+  <br>
+  ADELMANN VON keine Angabe DOK030015<br>
+  <br>
+  AFFENARZ keine Angabe DOK010003</p>
+<p>Die Zeichenkette bei self hat standardm&auml;&szlig;ig keinen Einflu&szlig;
+auf die Sortierung. Dies kann durch den Parameter <a href="Visibility.htm">
+visibility</a>
+ umgestellt werden.<br>
+  </p>
+<p>  </p>
+   
+<p> </p>
+   
+</body>
+</html>

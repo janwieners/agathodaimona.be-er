@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+       
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>elemview</title>
+    
+</head>
+<body>
+<b>Die Elementarfunktion :view[]<br>
+<br>
+<br>
+</b>Die Funktion :view[] erlaubt den Zugriff auf den Inhalt einer Eigenschaft,
+ die einer Gruppe order einem Element mittels der Direktive <a href="../commands/database/kleio/kleioproperties.htm" target="_blank">
+  property</a>
+   zugeordnet wurde. <br>
+<br>
+ Die Syntax erlaubt zwei Anwendungsweisen:<br>
+<br>
+ Die blo&szlig;e Angabe der Funktion <br>
+<br>
+<blockquote><b>:view[] </b><br>
+  </blockquote>
+  <br>
+ ohne weiteren Zusatz bewirkt, da&szlig; der Inhalt aller Property-Eigenschaften 
+der aktuellen Gruppe ausgegeben wird.<br>
+  <br>
+ Dagegen bewirkt<br>
+  <br>
+  <blockquote><b>:view[<i>:property</i>]</b><br>
+    </blockquote>
+ da&szlig; nur der Inhalt der jeweiligen Property-Eigenschaft wiedergegeben 
+wird.<br>
+    <br>
+ So bewirkt z.B. die Angabe <br>
+    <br>
+    <blockquote><b>:view[:authority]</b><br>
+      </blockquote>
+ da&szlig; innerhalb einer bestimmten Gruppe jeweils der Inhalt der Eigenschaft 
+authority ausgegeben wird. Nimmt man das Beispiel, das im Zusammenhang mit 
+der <a href="../commands/database/kleio/kleioproperties.htm" target="_blank">
+property-Direktive</a>
+  erl&auml;utert wurde, so bewirkt folgende Aufgabe:<br>
+      <br>
+      <br>
+      <blockquote>query name=ceec;part=bibl<br>
+write part=:biblitem,:view[:authority]<br>
+        </blockquote>
+        <br>
+unter anderem das folgende Ergebnis:<br>
+        <br>
+        <blockquote><br>
+cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; Hartzheim , p.
+46-47, 53, 55, 139<br>
+cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; Jaffe/Wattenbach,
+p. 29-31<br>
+cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; C. H. Beeson,
+lsidor-Studien (Munich 1913), p. 70, 77, 90, 95, 102, 128<br>
+cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+cec (1 = "kn28-0083ii") : biblitem&nbsp;&nbsp;&nbsp;&nbsp; Bischoff, "Panorama
+der Handschriftendberlieferung...", Studien 3, p. 9 n.15 (English trans.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"Manuscripts in the Age of Charlemagne", MLAC, p. 24)<br>
+cec (1 = "kn28-0083ii") : authority&nbsp;&nbsp;&nbsp; Hollas: 150-151<br>
+          </blockquote>
+          <br>
+          <br>
+          <br>
+Hier wird also die Information <b>biblitem</b> ausgegeben. Zus&auml;tzlich
+erfolgt jeweils die Ausgabe des Inhalts der Eigenschaft <b>authority</b>
+der des jeweiligen Elements. <br>
+          </body>
+          </html>

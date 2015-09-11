@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Parameter write:</b><br>
+<br>
+<br>
+     
+<p>Das System geht &uuml;blicherweise davon aus, da&szlig; der Inhalt der
+ durch part-Parameter erzeugten Spalten jeweils sowohl in die Sortierung
+einbezogen  als auch sichtbar dargestellt wird. Im Falle komplexerer Register
+kann es  notwendig sein, nach bestimmten Begriffen zu sortieren, die selbst
+entweder  gar nicht oder zumindest nicht an der Stelle dargestellt werden
+sollen, an  der sie in der Sortierordnung wirksam werden. Der Parameter write
+erlaubt  durch Angabe des Parameterwerts no (yes ist impliziter Standard),
+die Darstellung  von Registerspalten zu unterdr&uuml;cken. Das hei&szlig;t,
+da&szlig; der Inhalt der Spalte zwar unsichtbar ist, aber sich dennoch&nbsp;
+auf die Sortierung  des Gesamtregisters auswirkt. Der Parameter write ist
+in diesem Fall also  das funktionale Gegenteil des Parameters <a href="Without1.htm">
+ without</a>
+  .</p>
+   
+<p>Ein Beispiel soll die Funktionalit&auml;t des Parameters write verdeutlichen.
+ Zu erstellen sei ein alphabetisches Berufsregister, das nach Berufsbezeichnungen
+ sortiert ist und neben der Bezeichnung selbst auch den Namen und Vornamen
+ der Person enthalten soll, die den genannten Beruf jeweils aus&uuml;bt.
+Aus  bestimmten Gr&uuml;nden sind wir weniger an den Berufsbezeichnungen
+selbst  als an den Namen interessiert, die daher in der ersten und zweiten
+Spalte  des Registers aufscheinen sollen. </p>
+   
+<p>Folgender Befehl</p>
+   
+<p>index part=:name;<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:coll[:vorname];<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=pdat/kar:coll[:beruf]</p>
+   
+<p>w&uuml;rde nicht den erw&uuml;nschten Effekt bringen, da die resultierende
+ Liste nach Familiennamen und Vornamen und erst dann nach den Berufsbezeichnungen
+ sortiert w&auml;re:</p>
+   
+<p>ABELE CARL FABRIKANT,SESSEL(CARL ABELE) DOK030011 <br>
+   &nbsp; &nbsp; <br>
+  ABELE JOHANN;FRIEDRICH SCHMIED;FABRARB,MASCHFABR DOK050295 <br>
+   &nbsp; &nbsp; <br>
+  ABT AUGUST DR.MED DOK872101 <br>
+   &nbsp; &nbsp; <br>
+  ABT EBERHARD PROVISOR DOK871619 <br>
+   &nbsp; &nbsp; <br>
+  ABT ERHARD;FRIEDRICH;GOTTLIEB PFARRER DOK871448 </p>
+   
+<p><br>
+  Um eine Sortierung nach Berufen zu erreichen, f&uuml;gen wir nun in der 
+ersten Spalte die Berufsbezeichnung ein, deren Darstellung wir aber unterdr&uuml;cken:</p>
+   
+<p>index part=pdat/kar:coll[:beruf];<b>write=no;</b><br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=query[]:name;<br>
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=:coll[:vorname];<br>
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=pdat/kar:coll[:beruf]</p>
+   
+<p><br>
+  Das resultierende Register ist nun prim&auml;r eine alphabetisch sortierte
+ Liste von Berufen, die freilich erst nach den Namen ausgegeben werden:</p>
+  <br>
+   &nbsp; &nbsp; <br>
+  PFEIFFER VON &nbsp; ACTUAR DOK810012 <br>
+   &nbsp; &nbsp; <br>
+  BAEUERLE ANTON ACTUAR,GERICHT DOK050480 <br>
+   &nbsp; &nbsp; <br>
+  BITZER &nbsp; ACTUAR,GERICHT DOK000516 <br>
+   &nbsp; &nbsp; <br>
+  FRANK WILHELM ACTUAR,GERICHT DOK000509 <br>
+   &nbsp; &nbsp; <br>
+  MITTNACHT &nbsp; ACTUAR,GERICHT DOK030642 <br>
+   &nbsp; &nbsp; <br>
+  ZIRKLER &nbsp; ACTUAR,GERICHT DOK020447 <br>
+   &nbsp; &nbsp; <br>
+  BINDER FRIEDRICH ACTUAR,GERICHT;ASSESSORATSVERW DOK050900<br>
+  <br>
+  HUBER CARL ACTUAR,GERICHT;ASSESSORATSVERW DOK050834<br>
+  <br>
+  GAUSS &nbsp; ACTUAR,OBERAMT DOK000518<br>
+  <br>
+  ROEMER GOTTLOB ACTUAR,OBERAMT DOK050522<br>
+  <br>
+  VISCHER &nbsp; ACTUAR,OBERAMT DOK834784<br>
+  <br>
+   
+<p> </p>
+   
+<p> </p>
+   
+</body>
+</html>

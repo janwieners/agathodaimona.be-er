@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Description</title>
+</head>
+ <body bgcolor="#ffffff">
+ 
+<p><b>Der Befehl write:</b></p>
+<p>Das Kommandowort&nbsp; write stellt einen der zentralen Ausgabebefehle
+unter Kleio dar. Write bewirkt die unsortierte Ausgabe des gesamten Inhalts
+einer Datenbank oder einer spezifizierten Teilmenge desselben. Die Reihenfolge
+der Datenausgabe entspricht der Reihenfolge, in der die jeweiligen Daten
+bei der Kompilation der Datenbank eingelesen wurden. Die Datenausgabe orientiert
+sich damit implizit an der internen Ordnungsnummer der Dokumente, wie sie
+durch die Elementarfunktion <a href="../../functions/elemorde.htm">:order[]</a>
+ sichtbar gemacht werden kann.</p>
+<p>Im Unterschied zum Befehl <a href="../index/Disc.htm">index</a>
+ werden unter write keine Ausgabespalten erzeugt. Vielmehr wird der gesamte
+Inhalt der angeforderten Daten in der Reihenfolge der Dateneingabe wiedergegeben.
+Dementsprechend darf der Parameter <a href="Part.htm">part</a>
+,&nbsp; der die zur Ausgabe angeforderten Informationen anspricht, nur einmal
+angegeben werden. Die Pfadangaben und Elemente werden dann jeweils durch
+Kommata getrennt angegeben. Ein g&uuml;ltiger write-Befehl mu&szlig; damit
+folgender Syntax entsprechen:</p>
+<p>write part=:name,:vorname,/pdat:gebdat,/kar:beruf,root[0]:hko</p>
+<p>Im Unterschied zum <a href="file:///C:/doku/NEW/commands/index/Disc.htm">
+index</a>
+-Befehl besteht im write Befehl eine Default-Einstellung hinsichtlich des
+Inhalts und Umfangs der Datenausgabe. Die blo&szlig;e Angabe des Kommandowortes
+write entspricht daher einem voll g&uuml;ltigen Auswertungsbefehl. Ohne weitere
+Spezifikation gibt write den gesamten Inhalt der jeweils aktuellen Informationsgruppe
+sowie aller von dieser abh&auml;ngigen Gruppen an. Der Befehl write ohne
+weitere Zus&auml;tze entspricht damit standardm&auml;&szlig;ig der expliziten
+Angabe</p>
+<p>write part=:total[]</p>
+<p>Im Unterschied dazu gibt</p>
+<p>write part=:each[]</p>
+<p>lediglich den Inhalt der aktuellen Gruppe aus, also jener Informationsgruppe,
+die im vorangegangenen &nbsp;<a href="../query/disc.htm">query</a>
+-Befehl ausgew&auml;hlt wurde.</p>
+<p>Die Standardausgabe eines write-Befehls hat folgende Form:</p>
+<p>per (123 = "DOK030011")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; idd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DOK030011<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ABELE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vorname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CARL<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;FRIEDRICH<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; geschlecht&nbsp;&nbsp;
+maennlich<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hko&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+KIRCHHEIM,TECK<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; land&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OA KIRCHHEIM<br>
+<br>
+&nbsp; &nbsp; pdat (1 = "pda-1")<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;kar (1 = "kar-1")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+von-bis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7.1846 - 1.7.1850<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+beruf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FABRIKANT,SESSEL(CARL ABELE)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Kommentar&nbsp;&nbsp; WSP<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;mob (1 = "mob-1")<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;wsp (1 = "wsp-1")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ABELE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+vorname&nbsp;&nbsp;&nbsp;&nbsp; CARL <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FRIEDRICH<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hko&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KIRCHHEIM,TECK<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+land&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OA KIRCHHEIM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+beruf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FABRIKANT,SESSEL<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOK030011<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+verbleib&nbsp;&nbsp;&nbsp;&nbsp; 1.000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ersteintrag&nbsp; 1.7.1846<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+letzteintrag 1.7.1850<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>Wie erkenntlich werden nicht nur die Daten selbst, sondern weitere Zusatzinformationen
+ausgegeben. Diese umfassen den Namen der jeweiligen Informationsgruppe, die
+Ordnungsnummer der jeweiligen Gruppe (entspricht bei root[0] der Nummer des
+Dokuments, bei den abh&auml;ngigen Gruppe der jeweiligen Ordnungsnummer bezogen
+auf die jeweils &uuml;bergeordnete Gruppe) sowie&nbsp; die Namen der Elemente.
+Neben den Kerninformationen werden auch die Aspekte Kommentar und Originaltext
+ausgegeben. Mehrfacheintr&auml;ge (CARL;FRIEDRICH) werden jeweils auf einer
+neuen Zeile dargestellt. Durch entsprechende Einr&uuml;ckungen werden die
+hierarchischen Abh&auml;ngigkeiten in der Datenbank ausgedr&uuml;ckt.</p>
+<p>Umfang und Aussehen der Standardausgabe lassen sich durch verschiedene
+Parameter ver&auml;ndern. Insbesondere k&ouml;nnen die Angabe der Element-
+und Gruppennamen unterdr&uuml;ckt und die Ausgabe der Informationen ohne
+Umbr&uuml;che erzwungen werden.<br>
+</p>
+</body>
+</html>

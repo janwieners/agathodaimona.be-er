@@ -1,0 +1,61 @@
+<command>
+<name> alias </name>
+<type> Environment control </type>
+<status> Recent </status>
+<general>
+Some text explaining what the command as a whole is doing
+</general>
+<parameterlist>
+<parameter>
+<name>Name</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Source</name>
+<parametertype> Object name</parametertype>
+</parameter>
+<parameter>
+<name>Usage</name>
+<parametertype>Keyword</parametertype>
+<keywordlist>
+<keyword>Bitmap</keyword>
+<keyword>Browser</keyword>
+<keyword>Catalogue</keyword>
+<keyword>Category</keyword>
+<keyword>Chronology</keyword>
+<keyword>Classification</keyword>
+<keyword>Codedebook</keyword>
+<keyword>Connection</keyword>
+<keyword>Conversion</keyword>
+<keyword>Date</keyword>
+<keyword>Editor-macros</keyword>
+<keyword>Entity</keyword>
+<keyword>Environmente</keyword>
+<keyword>Guth</keyword>
+<keyword>Image</keyword>
+<keyword>Interpretation</keyword>
+<keyword>Keyword</keyword>
+<keyword>Location</keyword>
+<keyword>Macro</keyword>
+<keyword>Names</keyword>
+<keyword>Number</keyword>
+<keyword>Order</keyword>
+<keyword>Output</keyword>
+<keyword>Packackage</keyword>
+<keyword>Palaeography</keyword>
+<keyword>Path</keyword>
+<keyword>Procedure</keyword>
+<keyword>Relation</keyword>
+<keyword>Show</keyword>
+<keyword>Skeleton</keyword>
+<keyword>Soundex</keyword>
+<keyword>Source</keyword>
+<keyword>Substitution</keyword>
+<keyword>Symbol</keyword>
+<keyword>Text</keyword>
+<keyword>Thesaurus</keyword>
+<keyword>Write</keyword>
+</keywordlist>
+</parameter>
+</parameterlist>
+</command>

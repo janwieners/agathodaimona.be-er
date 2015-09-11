@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>read,Package.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+    <b>Der</b><b> Parameter package:</b>    
+<p><br>
+     Der Parameter package erwartet als Parameterwert den Namen einer <b>
+package</b>     -Vereinbarung, die zuvor durch den <a href="../item/index.htm" target="_blank">
+    item</a>
+     -Befehl in die Umwelt eingef&uuml;hrt worden sein mu&szlig;.</p>
+       
+<p>Der Parameter dient dazu die Auszeichnung vom XML-Dateien zu modifizieren.</p>
+       
+<p>Man habe zum Beispiel folgende einfache Markup-Datei:</p>
+       
+<blockquote><b><br>
+     &lt;tag1&gt;1234&lt;/tag1&gt;</b><br>
+      <b>&lt;tag2&gt;Irgendein Text&lt;/tag2&gt;</b><br>
+      <b>&lt;tag3&gt;Und noch ein Text&lt;/tag3&gt;</b><br>
+      </blockquote>
+     <br>
+   Nun wollen wir aus einem bestimmten Grund alle drei tags jeweils als Elemente 
+  definieren und diese wiederum gemeinsam in einer Gruppe "dokument" ablegen. 
+  Zu diesem Zweck definieren wir eine package-Vereinbarung, die die Auszeichnungen
+  (Markups) f&uuml;r die Gruppe "dokument" enth&auml;lt:<br>
+      <br>
+           
+  <blockquote>   <b>  item name=dok;usage=package;overwrite=yes</b><br>
+       <b>  field start="&lt;dokument&gt;";</b><br>
+       <b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; limit="&lt;/dokument&gt;"</b><br>
+       <b>  exit name=dok</b><br>
+       </blockquote>
+                     
+    <p>Das Paket mit dem Namen "<b>dok</b>" legt fest, da&szlig; jeweils an
+den Anfang bzw. das Ende der Daten der Tag &lt;dokument&gt; bzw. &lt;/dokument&gt; 
+ eingef&uuml;gt wird. </p>
+                 
+    <p>F&uuml;r die oben aufgelisteten Daten definieren wir nun folgende
+Struktur:<br>
+       <br>
+       </p>
+                 
+    <blockquote><b>database name=test;first=dokument;overwrite=yes;write=structure</b><br>
+         <b>  part name=dokument;</b><br>
+         <b>  &nbsp;&nbsp;&nbsp;&nbsp; also=tag1,tag2,tag3</b><br>
+         <b>  exit name=test</b><br>
+         </blockquote>
+                       
+      <p>   Die drei Markups "tag1", "tag2" und "tag3" sind also jetzt gemeinsam 
+ der Gruppe "dokument" zugeordnet. Gehen wir davon aus, da&szlig; die Rohdaten 
+ ein einer Datei mit dem Namen "datei.xml" enthalten seien. Damit k&ouml;nnen 
+ wir nun folgenden read-Befel formulieren<br>
+         <br>
+      <br>
+         </p>
+                       
+      <blockquote><b>  read name=test;other=markup;<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;  &nbsp; &nbsp; &nbsp;origin="datei.xml";<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; repeat=yes;</b><b><br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;  &nbsp; &nbsp; &nbsp; package=dok</b></blockquote>
+                             
+        <p><br>
+   Entscheidend ist hier der letzte Parameter package mit dem Wert <b>dok</b>
+   , der auf die oben definierte Verpackungsanweisung Bezug nimmt. <br>
+           </p>
+                             
+        <p>Die Rohdaten werden nun in dieser Form eingelesen:</p>
+                             
+        <p><br>
+           </p>
+                             
+        <blockquote><b>&lt;dokument&gt;<br>
+             </b>                                 
+          <blockquote><b>&lt;tag1&gt;1234&lt;/tag1&gt;</b><br>
+               <b>&lt;tag2&gt;Irgendein Text&lt;/tag2&gt;</b><br>
+               <b>&lt;tag3&gt;Und noch ein Text&lt;/tag3&gt;</b><br>
+               </blockquote>
+               </blockquote>
+                                         
+            <blockquote><b>&lt;/dokument&gt;</b><br>
+                 </blockquote>
+                                               
+              <p><br>
+                 </p>
+                                               
+              <p><br>
+      <br>
+      </p>
+                                                   
+              </body>
+              </html>

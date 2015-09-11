@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>switch,cascade</title>
+                                                                        
+                           
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body bgcolor="#e6e6e6">
+                            
+<p class="h">Kaskadierung von Bl&ouml;cken</p>
+          
+<p class="p"><br>
+  Der switch/block-Mechanismus kann grunds&auml;tzlich in die Tiefe gestaffelt
+ werden. Das hei&szlig;t, es ist m&ouml;glich innerhalb eines bedingten Kommandoblocks,
+ durch einen neuen switch-Befehl ein neues Unterscheidungskriterium einzuf&uuml;hren
+ und damit den jeweiligen Auswertungsbefehl wiederum in verschiedene "Sub-Kommandos"
+ zu zerlegen.<br>
+  <br>
+Grunds&auml;tzlich geschieht dies nach folgender Logik:<br>
+  </p>
+   
+<p class="b">query name=kleio;part=/catalogue[objektfiles,complete,"heged&uuml;s"]<br>
+  switch part=:database[];name=selectDB<br>
+  block name=dadaweb;part="dadaweb"<br>
+  </p>
+   
+<p class="b">Auswertungsbefehl<br>
+  </p>
+   
+<p class="b">exit name=dadaweb<br>
+  </p>
+   
+<p class="b">block name=documents;part="documents"<br>
+<u>  switch part=:doctypeid;name=mediatype</u><br>
+  block name=video;part="1"<br>
+  </p>
+   
+<p class="b">Auswertungsbefehl<br>
+  </p>
+   
+<p class="b">exit name=video<br>
+  block name=standbild;part="2"<br>
+  </p>
+   
+<p class="b">Auswertungsbefehl<br>
+  </p>
+   
+<p class="b">exit name=standbild<br>
+  exit name=mediatype<br>
+  exit name=documents<br>
+  <br>
+  exit name=selectDB<br>
+ </p>
+ 
+<p class="p">Es wird also hier (in der bereits bekannten Weise) ein Kommando
+danach ausgew&auml;hlt, aus welcher Datenbank der Suchbegriff stammt. Nun
+sei es aber so, da&szlig; die betreffende Datenbank nicht nur Standbilder,
+sondern auch z.B. Videos anbietet. das wiederum bedeutet, da&szlig; je nach
+Bilddatentyp (JPEG oder Video) ein anderes Auswertungskommando (mit einem
+anderen Package) ausgef&uuml;hrt werden mu&szlig;. In unserem Fall entstammt
+der Suchbegriff "heged&uuml;s" der Datenbank "documents". <br>
+</p>
+<p class="p">Wie man erkennen kann, wird innerhalb des entsprechenden Blocks
+nunmehr ein weiteres switch-Kommando eingef&uuml;hrt, das eine neue Kommandoumwelt
+namens <b>documents</b> innerhalb der Gesamtumwelt <b>selectDB</b> einf&uuml;hrt.
+Innerhalb der Umwelt <b>documents</b> gilt nun ein neues Auswahlkriterium,
+n&auml;mlich der Inhalt des Elements ":<b>doctypeid</b>". Je nachdem, ob
+der Inhalt den Wert "1" (Video) oder "2" (Standbild) annimmt, wird ein eigener
+Unterblock er&ouml;ffnet, der jeweils entsprechend mit einer exit-Direktive
+abgeschlossen wird. Das also hei&szlig;t, die Ausf&uuml;hrung der Bl&ouml;cke
+"<b>video</b>" und "<b>standbild</b>" h&auml;ngen von der &Uuml;bereinstimmung
+der Konstante&nbsp; (also "1" oder "2") mit dem Inhalt von doctypeid ab.
+Schlie&szlig;lich wird die "switch-Umgebung in der switch-Umgebung" durch
+die Angabe <b>  exit name=mediatype</b> abgeschlossen, ehe der gesamte Block
+"documents" beendet wird.<br>
+</p>
+<p class="p">Im Prinzip lassen sich derartige Strukturen beliebig tief verschachteln
+und in beliebiger Anzahl anlegen. <br>
+   </p>
+       
+</body>
+</html>

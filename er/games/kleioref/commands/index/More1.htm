@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+ <b>Der Parameter more:<br>
+<br>
+</b>Der Parameter more ist nur sinnvoll, wenn er zusammen mit dem Parameter
+<a href="Cumulate.htm">cumulate</a>
+ angegeben wird.<b> </b>Cumulate weist das System an, da&szlig; die Ersetzungsvorgaben
+des Parameters <a href="substitu.HTM">substitution</a>
+ nicht nur f&uuml;r eine Sortierspalte, sondern f&uuml;r mehrere aufeinanderfolgende
+Spalten zur Anwendung kommen.<br>
+<br>
+Das Systemverhalten ist dabei so definiert, da&szlig; f&uuml;r mehrere identische
+Spalten, ein gemeinsames Ersetzungszeichen ausgegeben wird.&nbsp; Es erfolgt
+in diesem Falle also (zumindest was die Ausgabe anbelangt) die Zusammenfassung
+mehrere Sortierspalten unter einem Ersetzungszeichen. Hier kann das Problem
+auftreten, da&szlig; f&uuml;r jeder der Spalten durch Angaben des Parameters
+<a href="Limit.htm">limit</a>
+ ein Textanhang zugeordnet wurde.<br>
+<br>
+In diesem Falle bestimmt der Parameter more, welcher der Anh&auml;nge in
+der Ausgabe erscheint:<br>
+<br>
+Der Parameterwert last ist der Standardwert und gibt an, da&szlig; der Inhalt
+des limit-Parameters der letzten Sortierspalte ausgegeben wird.<br>
+Der Wert frist instruiert das System dagegen, den Inhalt des ersten limit-Parameters
+auszugeben.<br>
+Der Wert null unterdr&uuml;ckt den Inhalt aller limit-Parameter der betreffenden
+Spalten.<br>
+<br>
+Gegeben sei folgendes Beispiel, bei dem die Paramater cumulate die Zusammenfassung
+identischer Familien- und Vornamen durch das Ersetzungszeichen '---' anordnen.
+Wenn beide Spalten ersetzt werden, wird der Inhalt von limit der zweiten
+Spalte ausgegeben:&nbsp; <br>
+<br>
+  index part=:name;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; limit=" Vorname: "; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; substitution="---";<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cumulate=yes;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; more=last;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; part=:vorname;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; limit=" &nbsp;Herkunftsort: ";<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cumulate=yes;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;part=:hko<br>
+<br>
+<br>
+Der Ergebnis sieht folgenderma&szlig;en aus:<br>
+<br>
+BAUSCH Vorname: WILHELM&nbsp; Herkunftsort: STETTEN DOK001276 <br>
+&nbsp;&nbsp;&nbsp; <br>
+BAY Vorname: CARL&nbsp; Herkunftsort: ESSL DOK873171 <br>
+&nbsp;&nbsp;&nbsp; <br>
+--- Vorname: CHRISTIAN&nbsp; Herkunftsort: ERDMANNSHAUSEN DOK000394 <br>
+&nbsp;&nbsp;&nbsp; <br>
+---&nbsp; Herkunftsort: ESSL DOK873171 <br>
+&nbsp;&nbsp;&nbsp; <br>
+--- Vorname: DAVID&nbsp; Herkunftsort: ERDMANNSHAUSEN DOK000394 <br>
+<br>
+<br>
+Bei der 2. Person namens "Christian Bay" (DOK000394) werden Vor- und Familienname
+durch '---' ersetzt. Ausgegeben wird nur der Inhalt des limit-Parameters
+der 2. Spalte, also "Herkunftsort".<br>
+<br>
+ 
+<p> </p>
+</body>
+</html>

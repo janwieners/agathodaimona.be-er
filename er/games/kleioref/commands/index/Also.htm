@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Also.htm</title>
+</head>
+ <body bgcolor="#ffffff">
+    <b>Der Parameter also:<br>
+   <br>
+   </b>Der Parameter also erlaubt eine Differenzierung der Sortierordnung 
+innerhalb  von Registern, die mit mehreren Index-Befehlen erzeugt wurden.<br>
+   <br>
+  Gegeben sei eine Aufgabe, in der wir Erst- und Zweitberufe gesondert ansprechen,
+ aber in ein einheitliches Register eintragen lassen.<br>
+   <br>
+   Folgende&nbsp; Befehlsfolge<br>
+   <br>
+   index part=part[kar,1]:beruf<br>
+   index part=part[kar,2]:beruf<br>
+  <br>
+   w&uuml;rde ein einheitliches Berufsregister generieren, in dem beide Berufstypen 
+ unabh&auml;ngig von ihrer Stellung in der Datenbank einfach alphabetisch
+ sortiert w&uuml;rden.<br>
+   <br>
+   Die Erweiterung <br>
+   <br>
+   index part=part[kar,1]:beruf;<a href="Line1.htm">lines</a>
+  =yes<br>
+    index part=part[kar,2]:beruf<br>
+   <br>
+  w&uuml;rde dazu f&uuml;hren, da&szlig; bei identischen Berufsangaben zuerst
+ diejenigen ausgegeben w&uuml;rden, die mittels der ersten Index-Aufgabe
+erzeugt  wurden, also die Erstberufe.<br>
+  <br>
+  Nun gibt es aber Berufsangaben, die durch eine Erg&auml;nzung differenziert
+ werden. So steht z.B. "FABRARB,DEFFNER" f&uuml;r einen Fabrikarbeiter in
+der Deffnerschen Fabrik. In diesem Falle w&uuml;rde das beschriebene Systemverhalten
+ dazu f&uuml;hren, da&szlig; Kleio zuerst die "FABRARB,DEFFNER" aus Aufgabe
+ 1 ausgibt, dann jene aus Aufgabe 2, um dann mit der n&auml;chsten alphabetischen
+ Subdifferenzierung ("FABRARB,HARTMANN") ebenso zu verfahren, und so fort.<br>
+  <br>
+  Nun will man aber f&uuml;r bestimmte Zwecke erreichen, da&szlig; alle Belege
+ f&uuml;r "FABRARB" aus Aufgabe 1 unabh&auml;ngig von ihrer Subdifferenzierung
+ als ein Block ausgegeben werden, dem sich dann derjenige Block anschlie&szlig;t,
+ der durch Aufgabe 2 erzeugt wird. <br>
+  <br>
+  Das System mu&szlig; also angewiesen werden, jeden Begriff zwar vollst&auml;ndig
+ auszugeben, aber f&uuml;r die Differenzierung zwischen den beiden Aufgaben&nbsp;
+ lediglich die Zeichenkette bis zum Komma zu ber&uuml;cksichtigen.<br>
+  <br>
+  Das Verfahren, das hierf&uuml;r angewendet werden mu&szlig;, umfa&szlig;t
+ mehrere Schritte:<br>
+  <br>
+  In der Umwelt jeder Kleio-Datenbank befindet sich standardm&auml;&szlig;ig
+ ein logisches Objekt der Klasse order, das auch den Namen order tr&auml;gt.
+ Es legt die Stellung einzelner Zeichen innerhalb der Sortierordnung fest.
+ Das Standardverhalten l&auml;&szlig;t sich durch folgenden Befehl&nbsp;
+betrachten:<br>
+  <br>
+  desc name=order;usage=order<br>
+  <br>
+  Durch entsprechende Definition mittels der Direktive conversion und dem 
+Parameter form l&auml;&szlig;t sich im&nbsp; logischen Objekt order einem 
+beliebigen Zeichen eine Sonderfunktion innerhalb von Sortierungen zuweisen. 
+Das Zeichen darf nicht anderweitig in den Daten Verwendung finden. In unserem
+Falle w&auml;hlen wir daher das Pluszeichen (+):<br>
+  <br>
+  item name=order; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; usage=order;overwrite=yes<br>
+  conversion form=+<br>
+  exit name=order<br>
+  <br>
+  Dieses Zeichen kann nun mehr im Index-Befehl durch den <a href="Line1.htm">
+  lines-</a>
+  Parameter angesprochen werden.&nbsp; Diese Zeichen gilt quasi als Sortiermarkierung
+ und weist das System an, den Inhalt der Zeichenkette ab einem bestimmten,
+ in der Zeichenkette enthaltenen Zeichen hinsichtlich der Sortierung (nicht
+ aber der Ausgabe) zu ignorieren. Das Zeichen wiederum ab dem die Trunkierung
+ wirksam wird, mu&szlig; im <b>also-Parameter</b> in Hochkommata als Konstante
+ angegeben werden. In unserem Fall w&auml;hlen wir folglich das Komma. Zur
+ Kontrolle lassen wir uns mittels :form[] ausgeben, welche Information durch
+ jeweils welchen Index-Befehl erzeugt wurde. Folglich haben die Index-Befehle
+ nunmehr die folgende Form:<br>
+  <br>
+  index part=part[kar,1]:beruf;lines=+;also=",";part=:form["Zeile 1"];without=yes<br>
+  index part=part[kar,2]:beruf;part=:form["Zeile 2"];without=yes<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <br>
+  Dies bedeutet vereinfacht gesagt, da&szlig; hinsichtlich der Unterscheidung
+ zwischen Zeile1 und Zeile2 des Index-Befehls die Zeichenketten nach dem
+Komma  irrelevant sind. Das System sortiert alle Begriffe, die mit "FABRARB"
+beginnen  und durch Zeile1 erzeugt wurden (ungeachtet der Angaben nach dem
+Komma) vor  jene Begriffe, die ebenfalls mit "FABRARB" beginnen, aber durch
+den zweite  Index-Befehl erzeugt wurden. Innerhalb der einzelnen durch Befehl
+1 und Befehl  2 erzeugten Bl&ouml;cke werden die Begriffe freilich wiederum
+(ohne R&uuml;cksicht  auf die Trunkierung) alphabetisch sortiert:<br>
+  <br>
+  Man erh&auml;lt folglich u.a. folgendes Ergebnis:<br>
+  <br>
+  FABRARB Zeile 1 DOK977271 <br>
+  &nbsp;&nbsp; <br>
+  FABRARB,DEFFNER Zeile 1 DOK000122 <br>
+  &nbsp;&nbsp; <br>
+  FABRARB,DEFFNER Zeile 1 DOK000145 <br>
+  <br>
+  ..........<br>
+  <br>
+  FABRARB,TUCHFABRIK Zeile 1 DOK870756<br>
+  <br>
+  FABRARB,WANDERSCH Zeile 1 DOK050272<br>
+  <br>
+  FABRARB Zeile 2 DOK872954<br>
+  <br>
+  FABRARB,DEFFNER Zeile 2 DOK000203<br>
+  <br>
+  FABRARB,DEFFNER Zeile 2 DOK000223<br>
+  <br>
+  ....<br>
+  <br>
+  FABRARB,REP.WERKSTATT Zeile 2 DOK050245<br>
+  <br>
+  FABRARB,REP.WERKSTATT Zeile 2 DOK050510<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+       
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterarguments</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b>Der Parameter other</b><br>
+ <br>
+ <br>
+ Der Parameter <b>other</b> legt legt das Format der Ausgangsdaten (Rohdaten) 
+fest, die durch den read-Befehl in eine Kleio-Systemdatei umgewandelt werden 
+sollen.<br>
+ <b><br>
+ </b>Gegenw&auml;rtig&nbsp; kennt der Parameter vier verschiedene Ausgangsformate:<b><br>
+ </b><br>
+ 
+<ul>
+   <li><b>kleio</b>: Dieser Parameter entspricht dem Standardverhalten des 
+Systems. Er setzt Rohdaten voraus, die im "klassischen" Kleio-Format vorliegen,a 
+lso eine ASCII-Datei, deren Inhalt durch die entsprechenden Datensignalzeichen 
+f&uuml;r Kleio lesbar gemacht wurde.</li>
+ 
+</ul>
+ 
+<ul>
+   <li><b> dBase</b>: Dieser Parameter ordnet an, da&szlig; dbf-Dateien,
+die durch die Datenbanksoftware dBase erzeugt wurde, in eine Kleio-Systemdatei 
+&uuml;berf&uuml;hrt werden.</li>
+ 
+</ul>
+ 
+<ul>
+   <li><b> markup</b>: Bei Angabe des Parameters markup setzt Kleio eine
+wohl geformte XML- oder SGML-Datei als Quelldatenformat voraus.</li>
+ 
+</ul>
+ 
+<ul>
+   <li><b> sisis</b>: Der Parameter sisis ordnet die Verarbeitung von Daten 
+im Format der Datenbanksoftware Sisis an.&nbsp;</li>
+ 
+</ul>
+ <br>
+ Ein Beispiel f&uuml;r den Einsatz der Parameters ist folgender read-Befehl:<br>
+ <br>
+ <br>
+ 
+<blockquote><b>read name=db1;other=markup;origin="rohdaten.xml"</b><br>
+   </blockquote>
+   <br>
+   <br>
+ Hier werden Daten aus der Datei "rohdaten.xml", die in einer Auszeichnungssprache 
+vorligen (other=markup) in eine Systemdatei &uuml;berf&uuml;hrt, die unter 
+dem Namen "db1" als Kleio-Datenbank ansprechbar ist.<br>
+   <br>
+   <br>
+   <br>
+   <br>
+     
+  </body>
+  </html>

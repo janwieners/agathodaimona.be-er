@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>index,Unit.htm</title>
+</head>
+  <body bgcolor="#ffffff">
+ <b>Der Parameter unit:</b> 
+<p><br>
+Der Parameter unit erwartet als Parameterwert eine ganze Zahl. Die Zahl gibt
+an, an welcher Rangfolge der Sortierordnung (also nicht der Ausgabe) die
+jeweilige Spalte ber&uuml;cksichtigt werden soll. </p>
+<p><br>
+Man nehme die folgende Aufgabe</p>
+<p>index part=:name;part=:coll[:vorname];part=pdat/kar:coll[:beruf]</p>
+<p>Dies ist ein "normaler" Index-Befehl nach folgender Logik. Zuerst werden
+alle Personen entsprechend dem Familiennamen sortiert. Bei gleichem Familiennamen
+erfolgt die Unterscheidung nach den Vornamen. Sind auch diese gleich, so
+wird der Beruf zum dritten Kriterium der Sortierordnung. </p>
+<p>Durch den Parameter unit kann dies umgestellt werden, indem man jeder
+Sortierspalte explizit ihren Rang in der Sortierordnung zuweist:</p>
+<p>index part=:name;unit=2;part=:coll[:vorname];unit=3;part=pdat/kar:coll[:beruf];unit=1</p>
+<p>Nun werden unabh&auml;ngig von der Spaltenfolge alle Zeilen erst nach
+dem Beruf (Wert 1), dann nach dem Familiennamen (Wert 2) und schlie&szlig;lich
+nach den Vornamen sortiert:</p>
+<p>Das Ergebnis hat dementsprechend die folgende Form:</p>
+LUIK WILHELM ABLOESUNGSCOMISSAER;GERICHTSNOTAR DOK050813 <br>
+&nbsp;&nbsp; &nbsp;<br>
+PFEIFFER VON&nbsp;&nbsp; ACTUAR DOK810012 <br>
+&nbsp;&nbsp; &nbsp;<br>
+BAEUERLE ANTON ACTUAR,GERICHT DOK050480 <br>
+&nbsp;&nbsp; &nbsp;<br>
+BITZER&nbsp;&nbsp; ACTUAR,GERICHT DOK000516 <br>
+&nbsp;&nbsp; &nbsp;<br>
+FRANK WILHELM ACTUAR,GERICHT DOK000509 <br>
+&nbsp;&nbsp; &nbsp;<br>
+MITTNACHT&nbsp;&nbsp; ACTUAR,GERICHT DOK030642 <br>
+&nbsp;&nbsp; &nbsp;<br>
+ZIRKLER&nbsp;&nbsp; ACTUAR,GERICHT DOK020447 <br>
+&nbsp;&nbsp; &nbsp;<br>
+BINDER FRIEDRICH ACTUAR,GERICHT;ASSESSORATSVERW DOK050900 <br>
+<br>
+<p> </p>
+</body>
+</html>

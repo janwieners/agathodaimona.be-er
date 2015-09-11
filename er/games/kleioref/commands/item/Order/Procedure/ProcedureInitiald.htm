@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Procedure, Catalogue, initial</title>
+          
+  <link rel="stylesheet" type="text/css" href="../../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+   
+<p class="h">Die Direktive initial</p>
+  
+<p class="p">   Die Direktive initial erlaubt es, einer katalogisierten Prozedur 
+  einen oder mehrere Ausgangswerte zuweisen.&nbsp;  Dies Initialisierung bezieht
+sich auf Prozeduren, denen durch <a
+ href="http://www.hki.uni-koeln.de/kleio/marker.html" target="_blank">Ersetzungsmarker</a> 
+ variable Werte zugewiesen werden k&ouml;nnen, die das jeweilige Ergebnis 
+der Prozedur bestimmen.<br>
+      Man habe zum Beispiel eine Aufgabe, die aus mehreren Katalogen eine 
+Liste   erstellt, die die Auswahl eines einzelnen Katalog aus der Liste erm&ouml;glichen 
+  soll. Dabei wiederum soll einer der Kataloge als Defaultwert voreingestellt 
+  sein. Dazu bedient man sich folgender Aufgabe:<br>
+      </p>
+  
+<p class="b">describe usage=catalogue;write=cgi;display=regular;first=@=cat2use@ 
+  </p>
+  
+<p class="p">Es wird hier - grob gesprochen - angeordnet, da&szlig; die Namen 
+ der in der Umwelt befindlichen Kataloge als Auswahlmeu ausgegeben werden 
+sollen. Bemerkenswert ist hierbei der Parameter "first", der einen der Werte 
+als "selected" markiert. Das hei&szlig;t, da&szlig; dieser Wert im Auswahlmenu 
+ voreingestellt ist. Wie man sehen kann, wird hier nicht der Name eines bestimmten 
+ Katalogs eingetragen (obwohl dieses grunds&auml;tzlich auch m&ouml;glich
+w&auml;re),  sondern ein <a
+ href="http://www.hki.uni-koeln.de/kleio/marker.html" target="_blank">Ersetzungsmarker</a>
+gesetzt. <br>
+    Das wiederum hei&szlig;t, da&szlig; der Prozedur verschiedene Werte &uuml;bergeben 
+ werden k&ouml;nnen, so da&szlig; je nach Auswahl ein anderer Wert an die 
+Proezdur &uuml;bergeben wird, der dann die Darstellung des Auswahlmenus bestimmt.<br>
+    Daraus wiederum ergibt sich automatisch die Frage nach dem Startwert
+des  Auswahlmenus. &nbsp;<br>
+      </p>
+          Dieser wird durch die Direktive initial festgelegt. Dabei bestimmt 
+ der Parameter <b>name</b> den Namen des <a
+ href="http://www.hki.uni-koeln.de/kleio/marker.html" target="_blank">Ersetzungsmarkers</a>, 
+dem ein Startwert &uuml;bergeben werden soll, w&auml;hrend der Parameter
+<b>text</b> den entsprechenden Wert als Konstante enth&auml;lt. <br>
+  <br>
+  In diese Fall hat die Definition der Prozedur als folgende Form:<br>
+  
+<p class="b"> item name=job1;usage=procedure;overwrite=yes<br>
+  catalogue source="describe usage=catalogue;write=cgi;display=regular;first=@=cat2use@"<br>
+  init name=cat2use;text="kuenstler"<br>
+  exit name=job1</p>
+  <br>
+ Wenn man diese ausf&uuml;hrt, erh&auml;lt man folgenden HTML-Quellcode zur&uuml;ckgeliefert:<br>
+ <br>
+ &lt;html&gt;&lt;head&gt;&lt;title&gt;Navigator Suche&lt;/title&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;script language="JavaScript" type="text/javascript"&gt;<br>
+ &nbsp;&nbsp;&nbsp; var project="projekt";&nbsp;&nbsp;&nbsp; var folder="";&nbsp;&nbsp;&nbsp; 
+&lt;/script&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;script language="JavaScript" type="text/javascript" 
+src="http://gilgamesch2.hki.uni-koeln.de/P<br>
+ rometheus2/scripts/starter.js"&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;/script&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;script language="JavaScript" type="text/javascript" 
+src="http://gilgamesch2.hki.uni-koeln.de/P<br>
+ rometheus2/scripts/identify.js"&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;/script&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;script language="JavaScript" type="text/javascript" 
+src="http://gilgamesch2.hki.uni-koeln.de/P<br>
+ rometheus2/scripts/searcher.js"&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;/script&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;/head&gt;<br>
+ &nbsp;&nbsp;&nbsp; &lt;body bgcolor=black&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;form target="http://gilgamesch2.hki.uni-koeln.de/promtest-cgi/kleioc" 
+method="POST" name="sea<br>
+ rch"&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="__kleioid" type="hidden" value=""&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="__kleiopass" type="hidden" value=""&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="term" type="hidden" value=""&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="dir" type="hidden" value=""&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input name="scope" type="hidden" value=""&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name="!_kleioprot" value="1010KlPTest"&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name="_1" value="search"&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="line1"&gt;&lt;/div&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;table border=0 cellspacing="0"
+cellpadding="0" width="100%"&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td class="zeile1" 
+width="25%" align="center"&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &lt;select name="cat2use" onChange="javascript:rebase();"&gt;<br>
+ &lt;option value=fundort&gt;Fundort (nur Arch&auml;ologie)&lt;/option&gt;<br>
+ &lt;option value=institution&gt;Institution&lt;/option&gt;<br>
+ &lt;option value=kuenstler SELECTED&gt;K&uuml;nstler/in&lt;/option&gt;<br>
+ &lt;option value=objektfiles&gt;objektfiles&lt;/option&gt;<br>
+ &lt;option value=schlagworte&gt;Schlagwort&lt;/option&gt;<br>
+ &lt;option value=standorte&gt;Standort&lt;/option&gt;<br>
+ &lt;option value=titel&gt;Titel&lt;/option&gt;<br>
+ &lt;option value=titelworte&gt;Titelworte&lt;/option&gt;<br>
+ &lt;option value=zeitp&gt;zeitp&lt;/option&gt;<br>
+ &lt;/select&gt;<br>
+ <br>
+ Dies entspricht folgender Funktion:<br>
+       
+<script language="JavaScript" type="text/javascript">
+    var project="projekt";    var folder="";    </script> 
+    
+<script language="JavaScript" type="text/javascript"
+ src="http://gilgamesch2.hki.uni-koeln.de/P%0D%0Arometheus2/scripts/starter.js">
+    </script> 
+    
+<script language="JavaScript" type="text/javascript"
+ src="http://gilgamesch2.hki.uni-koeln.de/P%0D%0Arometheus2/scripts/identify.js">
+    </script> 
+    
+<script language="JavaScript" type="text/javascript"
+ src="http://gilgamesch2.hki.uni-koeln.de/P%0D%0Arometheus2/scripts/searcher.js">
+    </script> 
+          
+<form target="http://gilgamesch2.hki.uni-koeln.de/promtest-cgi/kleioc"
+ method="post" name="sea
+rch">      <input name="__kleioid"
+ type="hidden" value="">      <input name="__kleiopass" type="hidden"
+ value="">      <input name="term" type="hidden" value="">      <input
+ name="dir" type="hidden" value="">      <input name="scope"
+ type="hidden" value="">      <input type="hidden" name="!_kleioprot"
+ value="1010KlPTest">      <input type="hidden" name="_1" value="search"> 
+       
+  <div class="line1"></div>
+        
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tbody>
+      <tr>
+            <td class="zeile1" width="25%" align="center">      
+        <select name="cat2use" onchange="javascript:rebase();">
+        <option value="fundort">Fundort (nur Arch&auml;ologie)</option>
+        <option value="institution">Institution</option>
+        <option value="kuenstler" selected="selected">K&uuml;nstler/in</option>
+        <option value="objektfiles">objektfiles</option>
+        <option value="schlagworte">Schlagwort</option>
+        <option value="standorte">Standort</option>
+        <option value="titel">Titel</option>
+        <option value="titelworte">Titelworte</option>
+        <option value="zeitp">zeitp</option>
+        </select>
+ </td>
+       </tr>
+     
+    </tbody>   
+  </table>
+ </form>
+ 
+<p></p>
+ 
+<p class="p">Wie man erkennen kann, ist im Auswahlmenu der Wert "K&uuml;nstler/in"
+entsprechend der Initialisierungsvariable voreingestellt.</p>
+  <br>
+</body>
+</html>

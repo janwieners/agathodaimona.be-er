@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Parameterdescription</title>
+</head>
+ <body bgcolor="#ffffff">
+<b>Der Parameter type:</b><br>
+<br>
+<br>
+     
+<p>Die Funktionalit&auml;t des Index-Befehls umfa&szlig;t zwei Aspekte: Sortieren
+ und Z&auml;hlen. Die Sortierung ist das Standardverhalten. Dabei wird standardm&auml;&szlig;ig
+ die jeweilige Dokumentenidentifikation in einer eigenen Registerspalte ausgegeben.
+ Man kann die Ausgabe unterdr&uuml;cken, indem man den Parameter type mit
+dem Parameterwert list angibt (der Wert index aktiviert das Standardverhalten):</p>
+   
+<p>index&nbsp; part=:coll[:beruf];type=list</p>
+   
+<p>Diese Aufgabe erzeugt eine alphabetische Berufsliste ohne Angabe der Dokumentenidentifikation:</p>
+  ABLOESUNGSCOMISSAER;GERICHTSNOTAR <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR&nbsp; <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT <br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT <br>
+  <br>
+  ACTUAR,GERICHT;ASSESSORATSVERW<br>
+  <br>
+   
+<p><br>
+   Durch Angabe des&nbsp; Parameterwerts count kann neben der Sortierung
+auch  eine Z&auml;hlung der ausgegebenen Informationen durchgef&uuml;hrt
+werden:</p>
+   
+<p>Der Befehl</p>
+   
+<p>index part=:beruf;type=count<br>
+  </p>
+   
+<p>erzeugt eine sortierte Liste der Berufseintr&auml;ge, innerhalb derer
+die H&auml;ufigkeit jedes Belegs gez&auml;hlt und angegeben wird:</p>
+   
+<p>ABLOESUNGSCOMISSAER;GERICHTSNOTAR erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT erscheint 5 mal.<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT;ASSESSORATSVERW erscheint 2 mal.<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,OBERAMT erscheint 3 mal.<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,SCHULTHEISSENAMT erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  ADVOKAT erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  AKZISEVERWALTERIN erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  AMTMANN erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  AMTMANNSWWE erscheint 4 mal.<br>
+   &nbsp; &nbsp; <br>
+  Durch mehrmalige Angabe des Parameters k&ouml;nnen sowohl Einzelbelege
+als auch Kombinationen von Merkmalen gez&auml;hlt werden. Will man z.B. sowohl
+ die H&auml;ufigkeit einzelner Berufe wissen als auch deren Verteilung auf
+ einzelne Stra&szlig;en, so kann man sich folgender Aufgabe bedienen: </p>
+   
+<p>index part=:coll[:beruf];type=count;<br>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; part=back[1]/mob:strasse;type=count</p>
+  <br>
+  ACTUAR erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  <b>ACTUAR,GERICHT &nbsp; erscheint 1 mal.<br>
+   &nbsp; &nbsp; <br>
+  ACTUAR,GERICHT FABRIKSTR erscheint 1 mal.<br>
+  <br>
+  ACTUAR,GERICHT INNERE BRUECKE erscheint 1 mal.<br>
+  <br>
+  ACTUAR,GERICHT RITTERSTR erscheint 2 mal.<br>
+  <br>
+  ACTUAR,GERICHT erscheint 5 mal.</b><br>
+  <br>
+  ACTUAR,GERICHT;ASSESSORATSVERW HINT.KIRCHGASSE erscheint 1 mal.<br>
+  <br>
+  ACTUAR,GERICHT;ASSESSORATSVERW KUEFERSTR erscheint 1 mal.<br>
+  <br>
+  ACTUAR,GERICHT;ASSESSORATSVERW erscheint 2 mal.<br>
+  <br>
+  <br>
+  Das Resultat ist folgenderma&szlig;en zu verstehen: Der Beleg "ACTUAR,GERICHT"&nbsp;
+ erscheint einmal ohne Strassenangabe, einmal in der Fabrikstra&szlig;e,
+einmal  an der Inneren Br&uuml;cke, zweimal in der Ritterstra&szlig;e. Dies
+ergibt  insgesamt f&uuml;nf Belege des Begriffs. <br>
+  <br>
+  <br>
+  <br>
+   
+<p><br>
+  </p>
+   
+<p><br>
+  <br>
+  </p>
+   
+<p> </p>
+   
+</body>
+</html>

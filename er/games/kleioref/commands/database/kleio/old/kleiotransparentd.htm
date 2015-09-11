@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>kleio,transparent</title>
+</head>
+  <body bgcolor="#ffffff">
+  <b> Die Direktive transparent:</b>   
+<p><br>
+  Die Direktive transparent ist sinnvoll bei der Verarbeitung von Daten,
+die  im XML-Format vorliegen. Sie erlaubt bestimmte Tags, Inhalte bestimmter
+Tags und/oder Attribute zu ignorieren, indem diese als "tranparente Symbole"
+derfiniert werden. Das hei&szlig;t, da&szlig; das System diese Tags und (fall
+erw&uuml;nscht) auch deren&nbsp; Inhalt bei der Kompilation der Datenbank
+&uuml;bergeht. Damit ist ein selektiver Zugriff auf die Daten in der XML-Datei
+m&ouml;glich. Der Name des betreffenden Tags mu&szlig; durch den Parameter
+name angegeben werden, der sich jeweils zugleich auf das Start- und das Endtag
+bezieht.&nbsp;</p>
+ 
+<p>Man ben&ouml;tigt diese Anweisung z.B., wenn ein XML-Dump aus einem anderen 
+Datenbankprogramm verarbeitet werden soll, der neben den eigentlichen Daten 
+u.U. auch systeminterne Angaben enthalten kann, die durch entsprechende Auszeichnungen 
+kenntlich gemacht sind. Diese k&ouml;nnen durch die Direktive transparent 
+als irrelevant gekennzeichnet werden. Das System kann diese dann beim Einlesevorgang 
+gezielt &uuml;bergehen. </p>
+ 
+<p>Ein Beispiel f&uuml;r eine korrekte transparent-Direktive stellt das folgende 
+Beispiel dar:</p>
+ 
+<p>transparent name=text;type=element</p>
+ 
+<p>Hier wird das System angewiesen, in einem Datensatz das Startag "&lt;text&gt;" 
+bzw. das Endtag "&lt;/text&gt; zu ignorieren. Der Parameter type mit dem Wert
+Element legt aber fest, der Inhalt des Tags dennoch in die Datenbank &uuml;bernommen
+wird. Durch andere Parameterwerte bei type kann dieses Verhalten differenziert
+modifiziert werden.<br>
+ </p>
+   
+<p><br>
+   </p>
+   
+<p> </p>
+   
+</body>
+</html>

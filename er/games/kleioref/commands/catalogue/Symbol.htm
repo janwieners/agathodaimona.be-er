@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>catalogue,Explain</title>
+                                                                        
+                                                                        
+                                                      
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+  <body bgcolor="#e6e6e6">
+                                                    
+<p class="h">Der Parameter symbol</p>
+                                  <br>
+         
+<p class="p"> Der Parameter symbol erwartet als Parameterwert ein einzelnes,
+  frei w&auml;hlbares Zeichen. Dieses Zeichen dient bei der Abfrage des Katalogs
+  als Trunkierungssymbol. Das hei&szlig;t, es kann als Wildcard eingesetzt
+ werden, um "alles ab einschlie&szlig;lich einer bestimmten Zeichenkette"
+als Vergleichsmuster im Katalog zu suchen.&nbsp;<br>
+    </p>
+       
+<p class="p">Man kann also mit dem Parameter symbol nach folgender Syntax 
+ einen Katalog erzeugen:<br>
+    </p>
+       
+<p class="b">query name=datenbank;part=:kuenstlername<br>
+    catalogue name=kuenstler;part=:name;overwrite=yes;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; symbol=*<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+   </p>
+     
+<p class="p">Damit ist es nun m&ouml;glich unter Einsatz des Trunkierungssymbols
+ "*" nach allen K&uuml;nstlern zu suchen, deren Eintrag mit einer bestimmten
+ Zeichenfolge beginnt. Die folgende Aufgabe <br>
+  </p>
+   
+<p class="b">query name=kleio;part=/catalogue[kuenstler,complete,"RUB*"]:order[]=not
+ null<br>
+  write </p>
+ 
+<p class="p">liefert daher folgendes Ergebnis:<br>
+ </p>
+    
+<p class="b">row (301 = "33290")<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vorname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Peter Paul<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; recordid&nbsp;&nbsp;&nbsp;&nbsp; 
+33290<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u> nachname&nbsp;&nbsp;&nbsp;&nbsp; 
+Rubens</u><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; datierung_1&nbsp; 
+1612<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ort&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Vaduz<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aufbewahrungsort
+Galerie Lichtenstein<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; titel_uebersetzung 
+Die Toilette der Venus<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abbildungsnachweis 
+Gerstenberg: Velazquez, S. 231, Abb 193<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; schlagw&ouml;rter 
+Venus<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gespeichert_unter 
+e:\bilder\231199\bild14a<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; medium&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Malerei<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eingabedatum 23.11.1999<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gdest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+231199bild14a<br>
+ <br>
+ <br>
+   </p>
+<p class="p">Es wurde als der K&uuml;nstler "<i>Rubens</i>" gefunden, obwohl
+der Katalog "nur" nach "<i>RUB</i>" durchsucht worden war.<br>
+   </p>
+           
+</body>
+</html>

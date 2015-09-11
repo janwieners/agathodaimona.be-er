@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="3" height="3" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="simples_pimples" tilewidth="16" tileheight="16" tilecount="4000">
+  <tileoffset x="2" y="2"/>
+  <image source="simples_pimples.png" width="800" height="1280"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="3" height="3">
+  <data>
+   <tile gid="212"/>
+   <tile gid="213"/>
+   <tile gid="214"/>
+   <tile gid="262"/>
+   <tile gid="263"/>
+   <tile gid="264"/>
+   <tile gid="312"/>
+   <tile gid="312"/>
+   <tile gid="312"/>
+  </data>
+ </layer>
+</map>
